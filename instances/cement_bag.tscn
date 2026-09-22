@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://7clljett1r8u"]
+
+[ext_resource type="PackedScene" uid="uid://x8jofwjxb3dl" path="res://blend/cement_bag_1k.glb" id="1_5g2d5"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_lexek"]
+rough = true
+absorbent = true
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8mt0l"]
+size = Vector3(0.43554688, 0.1665039, 0.67871094)
+
+[node name="cement_bag" type="RigidBody3D" unique_id=1017875473]
+mass = 20.0
+physics_material_override = SubResource("PhysicsMaterial_lexek")
+
+[node name="cement_bag_1k" parent="." unique_id=1394264348 instance=ExtResource("1_5g2d5")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=798735889]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.08413696, 0)
+shape = SubResource("BoxShape3D_8mt0l")

@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://biro1v6rgmrre"]
+
+[ext_resource type="Script" uid="uid://duf1j3cvni1hk" path="res://instances/GUI/gui.gd" id="1_yumji"]
+[ext_resource type="PackedScene" uid="uid://bp6i4usty07fs" path="res://instances/GUI/hud.tscn" id="2_yumji"]
+[ext_resource type="PackedScene" uid="uid://baqkc3uq8om3n" path="res://instances/GUI/in_game_menu.tscn" id="3_fvtg6"]
+
+[node name="GUI" type="CanvasLayer" unique_id=1226663711]
+script = ExtResource("1_yumji")
+
+[node name="HUD" parent="." unique_id=99248591 instance=ExtResource("2_yumji")]
+
+[node name="in_game_menu" parent="." unique_id=945941104 instance=ExtResource("3_fvtg6")]

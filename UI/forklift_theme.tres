@@ -1,0 +1,28 @@
+[gd_resource type="Theme" format=3 uid="uid://pnmwnb6d5ysq"]
+
+[ext_resource type="FontFile" uid="uid://dmxoepccovu4u" path="res://UI/fonts/jetbrains-mono/JetBrainsMono-Bold.ttf" id="1_7dubs"]
+[ext_resource type="FontFile" uid="uid://d23c8byrn11od" path="res://UI/fonts/jetbrains-mono/JetBrainsMono-ExtraBold.ttf" id="1_gvixn"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8mt0l"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+
+[resource]
+default_font = ExtResource("1_gvixn")
+default_font_size = 18
+TitleButton/base_type = &"Button"
+TitleButton/colors/font_color = Color(0.9788577, 0.859332, 0.46146238, 1)
+TitleButton/colors/font_hover_color = Color(1, 1, 1, 1)
+TitleButton/colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+TitleButton/colors/font_pressed_color = Color(1, 1, 1, 1)
+TitleButton/colors/icon_disabled_color = Color(0.9788577, 0.859332, 0.46146238, 0.43137255)
+TitleButton/font_sizes/font_size = 28
+TitleButton/fonts/font = ExtResource("1_7dubs")
+TitleButton/styles/disabled = SubResource("StyleBoxEmpty_8mt0l")
+TitleButton/styles/focus = SubResource("StyleBoxEmpty_8mt0l")
+TitleButton/styles/hover = SubResource("StyleBoxEmpty_8mt0l")
+TitleButton/styles/hover_pressed = SubResource("StyleBoxEmpty_8mt0l")
+TitleButton/styles/normal = SubResource("StyleBoxEmpty_8mt0l")
+TitleButton/styles/pressed = SubResource("StyleBoxEmpty_8mt0l")

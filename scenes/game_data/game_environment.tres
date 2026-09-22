@@ -1,0 +1,18 @@
+[gd_resource type="Environment" format=3 uid="uid://bl1fub2kdtprp"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_0bakh"]
+sky_top_color = Color(0.11836771, 0.15043408, 0.19314775, 1)
+sky_horizon_color = Color(0.14763683, 0.15150547, 0.15925139, 1)
+ground_bottom_color = Color(0.0353252, 0.008267484, 0, 1)
+ground_horizon_color = Color(0.09560349, 0.1642279, 0.25981236, 1)
+sun_angle_max = 2.0
+sun_curve = 2.662969
+energy_multiplier = 3.2
+
+[sub_resource type="Sky" id="Sky_slekq"]
+sky_material = SubResource("ProceduralSkyMaterial_0bakh")
+
+[resource]
+background_mode = 2
+sky = SubResource("Sky_slekq")
+glow_enabled = true

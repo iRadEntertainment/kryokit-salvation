@@ -1,0 +1,125 @@
+[gd_scene format=3 uid="uid://4etuo4dq13m0"]
+
+[ext_resource type="Script" uid="uid://dnidtpkq32g0c" path="res://scenes/game.gd" id="1_lbhrr"]
+[ext_resource type="PackedScene" uid="uid://blseo38kk11bo" path="res://instances/forklift.tscn" id="2_iywne"]
+[ext_resource type="Environment" uid="uid://bl1fub2kdtprp" path="res://scenes/game_data/game_environment.tres" id="2_p57ef"]
+[ext_resource type="PackedScene" uid="uid://xu0r8ac28h4g" path="res://instances/pallet.tscn" id="3_p57ef"]
+[ext_resource type="PackedScene" uid="uid://7clljett1r8u" path="res://instances/cement_bag.tscn" id="4_u5sy4"]
+[ext_resource type="PackedScene" uid="uid://biro1v6rgmrre" path="res://instances/GUI/gui.tscn" id="6_p57ef"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_v6tai"]
+rough = true
+absorbent = true
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_f3sb7"]
+size = Vector3(300, 0.3, 300)
+
+[sub_resource type="Gradient" id="Gradient_uuti7"]
+offsets = PackedFloat32Array(0, 0.75357145, 1)
+colors = PackedColorArray(0.02450536, 0.030421074, 0.123906486, 1, 0.13483018, 0.22499788, 0.45520014, 1, 0, 0.696819, 0.69988126, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_mdew2"]
+noise_type = 2
+frequency = 0.2946
+fractal_type = 0
+cellular_return_type = 0
+domain_warp_type = 2
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_q5rnw"]
+width = 2048
+height = 2048
+generate_mipmaps = false
+noise = SubResource("FastNoiseLite_mdew2")
+color_ramp = SubResource("Gradient_uuti7")
+normalize = false
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lexek"]
+albedo_texture = SubResource("NoiseTexture2D_q5rnw")
+
+[sub_resource type="QuadMesh" id="QuadMesh_8mt0l"]
+size = Vector2(300, 300)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_lexek"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_8mt0l"]
+
+[node name="game" type="Node3D" unique_id=349299851]
+script = ExtResource("1_lbhrr")
+
+[node name="game_env" type="WorldEnvironment" parent="." unique_id=1576902409]
+environment = ExtResource("2_p57ef")
+
+[node name="moon" type="DirectionalLight3D" parent="." unique_id=41652714]
+transform = Transform3D(-0.8275823, -0.16980088, -0.535047, -0.5000933, 0.6559697, 0.5653411, 0.2549792, 0.7354397, -0.62778515, 0, 0, 0)
+light_energy = 0.5
+shadow_enabled = true
+
+[node name="floor" type="StaticBody3D" parent="." unique_id=127749720]
+physics_material_override = SubResource("PhysicsMaterial_v6tai")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="floor" unique_id=1865197163]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.15, 0)
+shape = SubResource("BoxShape3D_f3sb7")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="floor" unique_id=416695914]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_lexek")
+mesh = SubResource("QuadMesh_8mt0l")
+
+[node name="forklift" parent="." unique_id=1776535538 instance=ExtResource("2_iywne")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.001, 0)
+
+[node name="pallets" type="Node3D" parent="." unique_id=23978430]
+
+[node name="pallet" parent="pallets" unique_id=143866765 instance=ExtResource("3_p57ef")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 1.3923718, 0, 5.465491)
+
+[node name="pallet2" parent="pallets" unique_id=1176506879 instance=ExtResource("3_p57ef")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.44948125, 0, -5.114949)
+
+[node name="pallet8" parent="pallets" unique_id=1592418653 instance=ExtResource("3_p57ef")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -3.4377666, 0, -0.049259663)
+
+[node name="pallet9" parent="pallets" unique_id=1287564226 instance=ExtResource("3_p57ef")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.2440295, 0, 0.90800714)
+
+[node name="pallet10" parent="pallets" unique_id=1431618184 instance=ExtResource("3_p57ef")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -3.2068996)
+
+[node name="pallet3" parent="pallets" unique_id=1933388365 instance=ExtResource("3_p57ef")]
+transform = Transform3D(-0.33013636, 0, 0.94393325, 0, 1, 0, -0.94393325, 0, -0.33013636, 2.6145592, 0, 4.16358)
+
+[node name="pallet4" parent="pallets" unique_id=1621356350 instance=ExtResource("3_p57ef")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 3.7998013, 0, 6.652914)
+
+[node name="pallet5" parent="pallets" unique_id=45633811 instance=ExtResource("3_p57ef")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -0.014097631, 0, 3.8124094)
+
+[node name="pallet6" parent="pallets" unique_id=165455430 instance=ExtResource("3_p57ef")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -3.2024994, 0, 3.9297767)
+
+[node name="pallet7" parent="pallets" unique_id=223368226 instance=ExtResource("3_p57ef")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -3.2424974, 0, 2.6104531)
+
+[node name="cement_bag" parent="pallets" unique_id=1017875473 instance=ExtResource("4_u5sy4")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.024310738, 0.15243468, 4.083441)
+
+[node name="cement_bag2" parent="pallets" unique_id=920943730 instance=ExtResource("4_u5sy4")]
+transform = Transform3D(-0.027184421, 0, -0.99963045, 0, 1, 0, 0.99963045, 0, -0.027184421, 0.024310738, 0.15243468, 3.5741627)
+
+[node name="cement_bag3" parent="pallets" unique_id=257830184 instance=ExtResource("4_u5sy4")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.024310738, 0.3220869, 4.083441)
+
+[node name="cement_bag4" parent="pallets" unique_id=581274967 instance=ExtResource("4_u5sy4")]
+transform = Transform3D(-0.027184421, 0, -0.99963045, 0, 1, 0, 0.99963045, 0, -0.027184421, 0.024310738, 0.3220869, 3.5741627)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=975494975]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.3007154, 0.36346817, 5.8319)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1350593077]
+shape = SubResource("BoxShape3D_lexek")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D" unique_id=1016744351]
+mesh = SubResource("BoxMesh_8mt0l")
+
+[node name="GUI" parent="." unique_id=1226663711 instance=ExtResource("6_p57ef")]

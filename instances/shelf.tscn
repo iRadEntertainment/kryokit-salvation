@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://c1sb5rpp2v40s"]
+
+[ext_resource type="Script" uid="uid://cm14qd6iri7xo" path="res://instances/shelf.gd" id="1_1t0n2"]
+
+[node name="shelf" type="StaticBody3D" unique_id=842112793]
+script = ExtResource("1_1t0n2")
+horiz_spots = Array[int]([3, 3, 3, 3])

@@ -1,0 +1,81 @@
+[gd_scene format=3 uid="uid://xu0r8ac28h4g"]
+
+[ext_resource type="PackedScene" uid="uid://mfyqgabbf30" path="res://blend/pallet.glb" id="1_r8q5o"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ipn1s"]
+size = Vector3(1.2, 0.04, 0.8)
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_1t0n2"]
+height = 0.144
+radius = 0.072
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_f1ddu"]
+height = 0.1
+radius = 0.072
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_25h8u"]
+size = Vector3(1.1943359, 0.015686035, 0.10211182)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ubkpa"]
+size = Vector3(1.1943359, 0.015686035, 0.14453125)
+
+[node name="pallet" type="RigidBody3D" unique_id=143866765]
+collision_mask = 3
+mass = 25.0
+center_of_mass_mode = 1
+center_of_mass = Vector3(0, 0.1, 0)
+continuous_cd = true
+
+[node name="coll_top" type="CollisionShape3D" parent="." unique_id=356959116]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.13, 0)
+shape = SubResource("BoxShape3D_ipn1s")
+
+[node name="coll_cube_m1" type="CollisionShape3D" parent="." unique_id=1282340401]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.53, 0.072, 0)
+shape = SubResource("CylinderShape3D_1t0n2")
+
+[node name="coll_cube_m2" type="CollisionShape3D" parent="." unique_id=61768513]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.072143555, 0)
+shape = SubResource("CylinderShape3D_1t0n2")
+
+[node name="coll_cube_m3" type="CollisionShape3D" parent="." unique_id=1673035797]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.53, 0.072, 0)
+shape = SubResource("CylinderShape3D_1t0n2")
+
+[node name="coll_cube_l4" type="CollisionShape3D" parent="." unique_id=1741396695]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5298654, 0.072, -0.35021025)
+shape = SubResource("CylinderShape3D_f1ddu")
+
+[node name="coll_cube_l5" type="CollisionShape3D" parent="." unique_id=594506130]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.072, -0.35021025)
+shape = SubResource("CylinderShape3D_f1ddu")
+
+[node name="coll_cube_l6" type="CollisionShape3D" parent="." unique_id=1369527535]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.52723837, 0.072, -0.35021025)
+shape = SubResource("CylinderShape3D_f1ddu")
+
+[node name="coll_cube_r7" type="CollisionShape3D" parent="." unique_id=457152798]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5298654, 0.072, 0.35059512)
+shape = SubResource("CylinderShape3D_f1ddu")
+
+[node name="coll_cube_r8" type="CollisionShape3D" parent="." unique_id=1554679686]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.072, 0.35059512)
+shape = SubResource("CylinderShape3D_f1ddu")
+
+[node name="coll_cube_r9" type="CollisionShape3D" parent="." unique_id=1125865817]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.52723837, 0.072, 0.35059512)
+shape = SubResource("CylinderShape3D_f1ddu")
+
+[node name="coll_bot_l" type="CollisionShape3D" parent="." unique_id=207665552]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.007843018, -0.35012817)
+shape = SubResource("BoxShape3D_25h8u")
+
+[node name="coll_bot_m" type="CollisionShape3D" parent="." unique_id=2091973110]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.007843018, 0)
+shape = SubResource("BoxShape3D_ubkpa")
+
+[node name="coll_bot_r" type="CollisionShape3D" parent="." unique_id=2070084847]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.007843018, 0.3498206)
+shape = SubResource("BoxShape3D_25h8u")
+
+[node name="mesh" parent="." unique_id=1243919666 instance=ExtResource("1_r8q5o")]

@@ -1,0 +1,271 @@
+[gd_scene format=3 uid="uid://blseo38kk11bo"]
+
+[ext_resource type="Script" uid="uid://cnfbaroo8mcku" path="res://instances/forklift.gd" id="1_ddviu"]
+[ext_resource type="PackedScene" uid="uid://dd1m85b0evov" path="res://blend/thrust_wheel.glb" id="2_ryygl"]
+[ext_resource type="PackedScene" uid="uid://c1bayfbp7p518" path="res://blend/load_wheel.glb" id="2_xn44t"]
+[ext_resource type="PackedScene" uid="uid://b1c2j566p32pb" path="res://blend/carriage.glb" id="4_32q5h"]
+[ext_resource type="PackedScene" uid="uid://divu04mo3x1vn" path="res://blend/fork.glb" id="5_x3x2s"]
+[ext_resource type="Script" uid="uid://bewj0dep4bhip" path="res://instances/cam.gd" id="6_v6tai"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_mdew2"]
+viewport_path = NodePath("vehicle_body/monitor/sv_screen")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_q5rnw"]
+resource_local_to_scene = true
+albedo_texture = SubResource("ViewportTexture_mdew2")
+
+[sub_resource type="QuadMesh" id="QuadMesh_8mt0l"]
+size = Vector2(1.3, 0.46)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8mt0l"]
+size = Vector3(1.1542969, 0.9510193, 1.6444092)
+
+[sub_resource type="Gradient" id="Gradient_wo3l7"]
+offsets = PackedFloat32Array(0, 0.7319277)
+colors = PackedColorArray(1, 1, 1, 0.1764706, 1, 1, 1, 0)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_fmuwq"]
+noise_type = 2
+frequency = 0.0584
+fractal_octaves = 2
+fractal_lacunarity = 2.72
+cellular_jitter = 0.955
+cellular_return_type = 0
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_ddviu"]
+noise = SubResource("FastNoiseLite_fmuwq")
+color_ramp = SubResource("Gradient_wo3l7")
+normalize = false
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_f3sb7"]
+transparency = 1
+depth_draw_mode = 1
+albedo_color = Color(1, 0.32156864, 0, 0.28235295)
+albedo_texture = SubResource("NoiseTexture2D_ddviu")
+
+[sub_resource type="BoxMesh" id="BoxMesh_8mt0l"]
+size = Vector3(1.123291, 0.8539429, 1.8066406)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_q5rnw"]
+size = Vector3(0.76660156, 2.4359741, 0.09667969)
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ryygl"]
+rough = true
+absorbent = true
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_lexek"]
+size = Vector3(1.0061035, 1.2691345, 0.06681396)
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_v6tai"]
+friction = 0.95
+rough = true
+absorbent = true
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xoi5w"]
+size = Vector3(0.1, 0.04, 1.3)
+
+[node name="forklift" type="Node3D" unique_id=983298835]
+script = ExtResource("1_ddviu")
+mast_tilt_max = 4.0
+lift_min_height = -0.07
+
+[node name="vehicle_body" type="VehicleBody3D" parent="." unique_id=1776535538]
+unique_name_in_owner = true
+mass = 1800.0
+center_of_mass_mode = 1
+center_of_mass = Vector3(0, 0.14, -0.5)
+engine_force = 800.0
+steering = 3.1415927
+
+[node name="monitor" type="MeshInstance3D" parent="vehicle_body" unique_id=150643878]
+transform = Transform3D(-1, 0, -8.742278e-08, -6.181724e-08, 0.70710677, 0.70710677, 6.181724e-08, 0.70710677, -0.70710677, 0, 1.1776357, 0.6603867)
+visible = false
+material_override = SubResource("StandardMaterial3D_q5rnw")
+mesh = SubResource("QuadMesh_8mt0l")
+
+[node name="sv_screen" type="SubViewport" parent="vehicle_body/monitor" unique_id=2023285251]
+size = Vector2i(650, 230)
+
+[node name="screen" type="PanelContainer" parent="vehicle_body/monitor/sv_screen" unique_id=1568696518]
+custom_minimum_size = Vector2(650, 230)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="lb_bg" type="Label" parent="vehicle_body/monitor/sv_screen/screen" unique_id=328841860]
+self_modulate = Color(1, 1, 1, 0.3647059)
+layout_mode = 2
+text = "TEST"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="vb" type="VBoxContainer" parent="vehicle_body/monitor/sv_screen/screen" unique_id=997258077]
+layout_mode = 2
+
+[node name="text_nfo" type="TextEdit" parent="vehicle_body/monitor/sv_screen/screen/vb" unique_id=1345678512]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+placeholder_text = "test"
+
+[node name="coll" type="CollisionShape3D" parent="vehicle_body" unique_id=491634650]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4877472, -0.08746338)
+shape = SubResource("BoxShape3D_8mt0l")
+
+[node name="mesh" type="MeshInstance3D" parent="vehicle_body" unique_id=1829742512]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.53286743, 0)
+material_override = SubResource("StandardMaterial3D_f3sb7")
+mesh = SubResource("BoxMesh_8mt0l")
+
+[node name="wheel_rear_center" type="VehicleWheel3D" parent="vehicle_body" unique_id=1335644928]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.12, -0.65)
+engine_force = 800.0
+steering = 3.1415927
+use_as_traction = true
+use_as_steering = true
+wheel_roll_influence = 0.5
+wheel_radius = 0.12
+suspension_stiffness = 800.0
+suspension_max_force = 35000.0
+
+[node name="thrust_wheel" parent="vehicle_body/wheel_rear_center" unique_id=1368001363 instance=ExtResource("2_ryygl")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="wheel_front_r" type="VehicleWheel3D" parent="vehicle_body" unique_id=457649157]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.51, 0.2, 0.712)
+wheel_roll_influence = 0.5
+wheel_radius = 0.2
+suspension_stiffness = 800.0
+suspension_max_force = 15000.0
+
+[node name="load_wheel" parent="vehicle_body/wheel_front_r" unique_id=440341516 instance=ExtResource("2_xn44t")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="wheel_front_l" type="VehicleWheel3D" parent="vehicle_body" unique_id=917327415]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.51, 0.2, 0.71176445)
+wheel_roll_influence = 0.5
+wheel_radius = 0.2
+suspension_stiffness = 800.0
+suspension_max_force = 15000.0
+
+[node name="load_wheel" parent="vehicle_body/wheel_front_l" unique_id=229059332 instance=ExtResource("2_xn44t")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Camera3D" type="Camera3D" parent="vehicle_body" unique_id=314452289 node_paths=PackedStringArray("target")]
+transform = Transform3D(-1, 5.440307e-08, -6.843283e-08, 0, 0.7827802, 0.6222984, 8.74228e-08, 0.6222984, -0.7827802, 0, 2.2148993, -1.310821)
+script = ExtResource("6_v6tai")
+target = NodePath("../../carriage_body/cam_target")
+
+[node name="mast_body" type="RigidBody3D" parent="." unique_id=958273445]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.14854652, 0.92283607)
+mass = 120.0
+can_sleep = false
+
+[node name="mast_mesh" type="CSGBox3D" parent="mast_body" unique_id=1718621437]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1218491, 0)
+size = Vector3(0.77563477, 2.4487457, 0.109375)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="mast_body/mast_mesh" unique_id=411473003]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.15442276, 0)
+operation = 2
+size = Vector3(0.44726563, 2.3674393, 0.109375)
+
+[node name="coll" type="CollisionShape3D" parent="mast_body" unique_id=770754949]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1208191, 0)
+shape = SubResource("BoxShape3D_q5rnw")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="mast_body" unique_id=1872910030]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0.42999998, 1.9056296, 0.048130274)
+light_energy = 5.0
+spot_range = 11.907
+spot_angle = 70.0
+spot_angle_attenuation = 0.2871746
+
+[node name="carriage_body" type="RigidBody3D" parent="." unique_id=815795375]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.026)
+collision_layer = 2
+collision_mask = 2
+mass = 45.0
+physics_material_override = SubResource("PhysicsMaterial_ryygl")
+can_sleep = false
+continuous_cd = true
+
+[node name="carriage_mesh" parent="carriage_body" unique_id=1680499728 instance=ExtResource("4_32q5h")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="coll_carriage" type="CollisionShape3D" parent="carriage_body" unique_id=1206881159]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.62898254, 0.032877207)
+shape = SubResource("BoxShape3D_lexek")
+
+[node name="cam_target" type="Marker3D" parent="carriage_body" unique_id=1275762858]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1303711, 1.2201538)
+
+[node name="fork_l_body" type="RigidBody3D" parent="." unique_id=1849089295]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2, 0, 1.026)
+mass = 30.0
+physics_material_override = SubResource("PhysicsMaterial_v6tai")
+center_of_mass_mode = 1
+can_sleep = false
+continuous_cd = true
+
+[node name="fork_l_coll" type="CollisionShape3D" parent="fork_l_body" unique_id=171380691]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.02, 0.65)
+shape = SubResource("BoxShape3D_xoi5w")
+
+[node name="fork_mesh" parent="fork_l_body" unique_id=1599815123 instance=ExtResource("5_x3x2s")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="fork_r_body" type="RigidBody3D" parent="." unique_id=1816431836]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2, 0, 1.026)
+mass = 30.0
+physics_material_override = SubResource("PhysicsMaterial_v6tai")
+center_of_mass_mode = 1
+can_sleep = false
+continuous_cd = true
+
+[node name="fork_r_coll" type="CollisionShape3D" parent="fork_r_body" unique_id=651667797]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.02, 0.65)
+shape = SubResource("BoxShape3D_xoi5w")
+
+[node name="fork_mesh" parent="fork_r_body" unique_id=304025479 instance=ExtResource("5_x3x2s")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="joint_mast" type="Generic6DOFJoint3D" parent="." unique_id=462628112]
+unique_name_in_owner = true
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 0.08323163, 0.92283607)
+node_a = NodePath("../vehicle_body")
+node_b = NodePath("../mast_body")
+angular_limit_x/upper_angle = 0.04363323
+angular_limit_x/lower_angle = -0.1134464
+angular_motor_x/enabled = true
+angular_motor_x/force_limit = 9000.0
+
+[node name="joint_carriage" type="Generic6DOFJoint3D" parent="." unique_id=1180064423]
+unique_name_in_owner = true
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0, 0, 1.026)
+node_a = NodePath("../mast_body")
+node_b = NodePath("../carriage_body")
+linear_limit_x/upper_distance = 3.5
+linear_motor_x/enabled = true
+
+[node name="joint_fork_l" type="Generic6DOFJoint3D" parent="." unique_id=1963313065]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2, 0, 1.026)
+node_a = NodePath("../carriage_body")
+node_b = NodePath("../fork_l_body")
+linear_motor_x/enabled = true
+
+[node name="joint_fork_r" type="Generic6DOFJoint3D" parent="." unique_id=678387032]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2, 0, 1.026)
+node_a = NodePath("../carriage_body")
+node_b = NodePath("../fork_r_body")
+linear_motor_x/enabled = true

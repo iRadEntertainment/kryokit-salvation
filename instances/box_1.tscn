@@ -1,0 +1,3 @@
+[gd_scene format=3 uid="uid://da24m1lodmdyl"]
+
+[node name="box1" type="RigidBody3D" unique_id=164725098]

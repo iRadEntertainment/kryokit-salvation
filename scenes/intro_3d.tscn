@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://d1vxrs25il0vk"]
+
+[ext_resource type="Environment" uid="uid://bl1fub2kdtprp" path="res://scenes/game_data/game_environment.tres" id="1_0bakh"]
+[ext_resource type="PackedScene" uid="uid://blseo38kk11bo" path="res://instances/forklift.tscn" id="1_7m2fh"]
+
+[node name="intro_3d" type="Node3D" unique_id=1815666335]
+
+[node name="game_env" type="WorldEnvironment" parent="." unique_id=537664222]
+environment = ExtResource("1_0bakh")
+
+[node name="moon" type="DirectionalLight3D" parent="." unique_id=1108716372]
+transform = Transform3D(-0.8275823, -0.16980097, -0.53504694, -0.5000933, 0.6559697, 0.56534106, 0.2549792, 0.7354398, -0.62778527, 0, 0, 0)
+light_energy = 0.5
+shadow_enabled = true
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=290308415]
+transform = Transform3D(0.87474084, 0.1048499, 0.47311202, 0, 0.976312, -0.21636778, -0.48459107, 0.18926574, 0.8540199, 0.8085811, 0.51169944, 2.9555805)
+
+[node name="forklift" parent="." unique_id=983298835 instance=ExtResource("1_7m2fh")]
+process_mode = 4

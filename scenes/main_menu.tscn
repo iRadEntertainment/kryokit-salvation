@@ -1,0 +1,196 @@
+[gd_scene format=3 uid="uid://31e1t125m574"]
+
+[ext_resource type="FontFile" uid="uid://b0osbfrla8fsn" path="res://UI/fonts/jetbrains-mono/JetBrainsMono-Italic.ttf" id="1_bqqt6"]
+[ext_resource type="Script" uid="uid://1peor35w8umw" path="res://scenes/main_menu.gd" id="1_wu84c"]
+[ext_resource type="PackedScene" uid="uid://d1vxrs25il0vk" path="res://scenes/intro_3d.tscn" id="2_8ln24"]
+[ext_resource type="Texture2D" uid="uid://eaayxbbjpfm5" path="res://UI/logos/icon_irad.png" id="2_wu84c"]
+[ext_resource type="Texture2D" uid="uid://bdniatwpfr0x7" path="res://UI/logos/jern-jam-2026.png" id="3_8ln24"]
+[ext_resource type="Texture2D" uid="uid://7l3v0vadutam" path="res://UI/logos/krikit_logo.png" id="6_oa1go"]
+[ext_resource type="Texture2D" uid="uid://vgdsdawmoi1h" path="res://UI/logos/pgorley_face.jpg" id="7_tbmy8"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_8mt0l"]
+font = ExtResource("1_bqqt6")
+
+[sub_resource type="LabelSettings" id="LabelSettings_lexek"]
+font_size = 50
+
+[node name="main_menu" type="Control" unique_id=940865601]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_wu84c")
+metadata/_edit_lock_ = true
+
+[node name="bg_color" type="ColorRect" parent="." unique_id=999623212]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.010995783, 0.14256367, 0.23257175, 1)
+metadata/_edit_lock_ = true
+
+[node name="main" type="MarginContainer" parent="." unique_id=1183907343]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 24
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 12
+
+[node name="vb_bg" type="VBoxContainer" parent="main" unique_id=251065737]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="sv_bg" type="SubViewportContainer" parent="main/vb_bg" unique_id=1487451703]
+layout_mode = 2
+size_flags_vertical = 3
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="main/vb_bg/sv_bg" unique_id=604217190]
+handle_input_locally = false
+size = Vector2i(1104, 569)
+size_2d_override_stretch = true
+render_target_update_mode = 4
+
+[node name="intro_3d" parent="main/vb_bg/sv_bg/SubViewport" unique_id=1815666335 instance=ExtResource("2_8ln24")]
+
+[node name="hb_credits" type="HBoxContainer" parent="main/vb_bg" unique_id=1311035237]
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+size_flags_vertical = 8
+alignment = 2
+
+[node name="lb_a_game_by" type="Label" parent="main/vb_bg/hb_credits" unique_id=826785292]
+layout_mode = 2
+text = "a game by"
+label_settings = SubResource("LabelSettings_8mt0l")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="logo_irad" type="TextureRect" parent="main/vb_bg/hb_credits" unique_id=203159304]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+size_flags_vertical = 6
+texture = ExtResource("2_wu84c")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="empty" type="Control" parent="main/vb_bg/hb_credits" unique_id=1227435649]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+
+[node name="lb_for" type="Label" parent="main/vb_bg/hb_credits" unique_id=1905140913]
+layout_mode = 2
+text = "for"
+label_settings = SubResource("LabelSettings_8mt0l")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="logo_jam" type="TextureRect" parent="main/vb_bg/hb_credits" unique_id=2082992728]
+custom_minimum_size = Vector2(110, 40)
+layout_mode = 2
+texture = ExtResource("3_8ln24")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="lb_2026" type="Label" parent="main/vb_bg/hb_credits" unique_id=2065982587]
+layout_mode = 2
+text = "2026"
+label_settings = SubResource("LabelSettings_8mt0l")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="empty2" type="Control" parent="main/vb_bg/hb_credits" unique_id=130685617]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+
+[node name="lb_inspired_by" type="Label" parent="main/vb_bg/hb_credits" unique_id=1039218156]
+layout_mode = 2
+text = "inspired by
+the work of"
+label_settings = SubResource("LabelSettings_8mt0l")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="logo_krikit" type="TextureRect" parent="main/vb_bg/hb_credits" unique_id=282047621]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+texture = ExtResource("6_oa1go")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="empty3" type="Control" parent="main/vb_bg/hb_credits" unique_id=917533824]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+
+[node name="lb_music_by" type="Label" parent="main/vb_bg/hb_credits" unique_id=1084448022]
+layout_mode = 2
+text = "music by
+Conduit"
+label_settings = SubResource("LabelSettings_8mt0l")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="logo_krikit2" type="TextureRect" parent="main/vb_bg/hb_credits" unique_id=1337291682]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+texture = ExtResource("7_tbmy8")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="vb_left" type="VBoxContainer" parent="main" unique_id=482940171]
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="lb_title" type="Label" parent="main/vb_left" unique_id=2064161769]
+layout_mode = 2
+size_flags_vertical = 3
+text = "KryoKit_
+Salvation"
+label_settings = SubResource("LabelSettings_lexek")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="buttons" type="VBoxContainer" parent="main/vb_left" unique_id=1974608544]
+layout_mode = 2
+size_flags_vertical = 3
+alignment = 1
+
+[node name="btn_start" type="Button" parent="main/vb_left/buttons" unique_id=224013207]
+layout_mode = 2
+theme_type_variation = &"TitleButton"
+text = "Start"
+alignment = 0
+
+[node name="btn_quit" type="Button" parent="main/vb_left/buttons" unique_id=122946659]
+unique_name_in_owner = true
+layout_mode = 2
+theme_type_variation = &"TitleButton"
+text = "Quit"
+alignment = 0
+
+[node name="lb_story" type="RichTextLabel" parent="main" unique_id=1062620411]
+custom_minimum_size = Vector2(300, 200)
+layout_mode = 2
+size_flags_horizontal = 8
+bbcode_enabled = true
+text = "You are [shake]Mr. Coppetta[/shake], a forklift operator at Kryokit_ Inc.
+
+It's the last night shift of a long week. When you arrive to the premises, there is just one car in the parking lot.
+
+It looks like there is no power in one of the warehouses. You know... it's not going to be an easy shift.
+
+Learn how to operate a three-wheel stand-up electric rider forklift and save the day."
+fit_content = true
+
+[connection signal="pressed" from="main/vb_left/buttons/btn_start" to="." method="_on_btn_start_pressed"]
+[connection signal="pressed" from="main/vb_left/buttons/btn_quit" to="." method="_on_btn_quit_pressed"]

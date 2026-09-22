@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://bp6i4usty07fs"]
+
+[ext_resource type="Script" uid="uid://itto84w3rq5s" path="res://instances/GUI/hud.gd" id="1_22wxp"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8mt0l"]
+
+[node name="HUD" type="Control" unique_id=99248591]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_22wxp")
+metadata/_edit_lock_ = true
+
+[node name="controls" type="PanelContainer" parent="." unique_id=381618789]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -365.80005
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_8mt0l")
+
+[node name="hb_forklift_controls" type="HBoxContainer" parent="controls" unique_id=799991730]
+layout_mode = 2
+
+[node name="_lb_forward" type="Label" parent="controls/hb_forklift_controls" unique_id=491947378]
+layout_mode = 2
+text = "forward"
