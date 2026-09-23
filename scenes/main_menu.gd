@@ -7,7 +7,8 @@ extends Control
 
 func _ready() -> void:
 	btn_quit.visible = not OS.has_feature("web")
-	#Aud.play_mus_title()
+	if OS.is_debug_build():
+		Aud.play_mus_title()
 
 
 func _on_btn_start_pressed() -> void:
