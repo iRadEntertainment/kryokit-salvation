@@ -7,12 +7,11 @@
 [ext_resource type="Texture2D" uid="uid://bdniatwpfr0x7" path="res://UI/logos/jern-jam-2026.png" id="3_8ln24"]
 [ext_resource type="Texture2D" uid="uid://7l3v0vadutam" path="res://UI/logos/krikit_logo.png" id="6_oa1go"]
 [ext_resource type="Texture2D" uid="uid://vgdsdawmoi1h" path="res://UI/logos/pgorley_face.jpg" id="7_tbmy8"]
+[ext_resource type="Texture2D" uid="uid://tpeor1upsawm" path="res://UI/logos/Kryokit.svg" id="8_jk1qb"]
+[ext_resource type="Texture2D" uid="uid://cyqpdn8gyj118" path="res://UI/logos/salvation.svg" id="9_5dd4i"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_8mt0l"]
 font = ExtResource("1_bqqt6")
-
-[sub_resource type="LabelSettings" id="LabelSettings_lexek"]
-font_size = 50
 
 [node name="main_menu" type="Control" unique_id=940865601]
 layout_mode = 3
@@ -151,15 +150,6 @@ stretch_mode = 5
 layout_mode = 2
 size_flags_horizontal = 0
 
-[node name="lb_title" type="Label" parent="main/vb_left" unique_id=2064161769]
-layout_mode = 2
-size_flags_vertical = 3
-text = "KryoKit_
-Salvation"
-label_settings = SubResource("LabelSettings_lexek")
-horizontal_alignment = 1
-vertical_alignment = 1
-
 [node name="buttons" type="VBoxContainer" parent="main/vb_left" unique_id=1974608544]
 layout_mode = 2
 size_flags_vertical = 3
@@ -191,6 +181,26 @@ It looks like there is no power in one of the warehouses. You know... it's not g
 
 Learn how to operate a three-wheel stand-up electric rider forklift and save the day."
 fit_content = true
+
+[node name="tex_title" type="TextureRect" parent="." unique_id=1306083447]
+layout_mode = 0
+offset_left = 95.0
+offset_top = 74.0
+offset_right = 373.0
+offset_bottom = 196.0
+texture = ExtResource("8_jk1qb")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="tex_subtitle" type="TextureRect" parent="tex_title" unique_id=1167077208]
+layout_mode = 0
+offset_left = 92.0
+offset_top = 88.0
+offset_right = 312.0
+offset_bottom = 140.86823
+texture = ExtResource("9_5dd4i")
+expand_mode = 5
+stretch_mode = 5
 
 [connection signal="pressed" from="main/vb_left/buttons/btn_start" to="." method="_on_btn_start_pressed"]
 [connection signal="pressed" from="main/vb_left/buttons/btn_quit" to="." method="_on_btn_quit_pressed"]
