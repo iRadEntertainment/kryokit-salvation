@@ -17,3 +17,7 @@ func _on_btn_start_pressed() -> void:
 
 func _on_btn_quit_pressed() -> void:
 	Mng.quit_game()
+
+
+func _on_btn_setting_pressed() -> void:
+	pass # Replace with function body.
