@@ -34,6 +34,25 @@ grow_vertical = 2
 color = Color(0.007843138, 0.21568628, 0.3137255, 1)
 metadata/_edit_lock_ = true
 
+[node name="sv_bg" type="SubViewportContainer" parent="." unique_id=1487451703]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -65.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="sv_bg" unique_id=604217190]
+handle_input_locally = false
+size = Vector2i(1152, 583)
+size_2d_override_stretch = true
+render_target_update_mode = 4
+
+[node name="intro_3d" parent="sv_bg/SubViewport" unique_id=1815666335 instance=ExtResource("2_8ln24")]
+
 [node name="main" type="MarginContainer" parent="." unique_id=1183907343]
 layout_mode = 1
 anchors_preset = 15
@@ -46,37 +65,20 @@ theme_override_constants/margin_top = 24
 theme_override_constants/margin_right = 24
 theme_override_constants/margin_bottom = 12
 
-[node name="vb_bg" type="VBoxContainer" parent="main" unique_id=251065737]
-layout_mode = 2
-theme_override_constants/separation = 0
-
-[node name="sv_bg" type="SubViewportContainer" parent="main/vb_bg" unique_id=1487451703]
-layout_mode = 2
-size_flags_vertical = 3
-stretch = true
-
-[node name="SubViewport" type="SubViewport" parent="main/vb_bg/sv_bg" unique_id=604217190]
-handle_input_locally = false
-size = Vector2i(1104, 569)
-size_2d_override_stretch = true
-render_target_update_mode = 4
-
-[node name="intro_3d" parent="main/vb_bg/sv_bg/SubViewport" unique_id=1815666335 instance=ExtResource("2_8ln24")]
-
-[node name="hb_credits" type="HBoxContainer" parent="main/vb_bg" unique_id=1311035237]
+[node name="hb_credits" type="HBoxContainer" parent="main" unique_id=1311035237]
 custom_minimum_size = Vector2(500, 0)
 layout_mode = 2
 size_flags_vertical = 8
 alignment = 2
 
-[node name="lb_a_game_by" type="Label" parent="main/vb_bg/hb_credits" unique_id=826785292]
+[node name="lb_a_game_by" type="Label" parent="main/hb_credits" unique_id=826785292]
 layout_mode = 2
 text = "a game by"
 label_settings = SubResource("LabelSettings_8mt0l")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="logo_irad" type="TextureRect" parent="main/vb_bg/hb_credits" unique_id=203159304]
+[node name="logo_irad" type="TextureRect" parent="main/hb_credits" unique_id=203159304]
 custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
 size_flags_vertical = 6
@@ -84,43 +86,43 @@ texture = ExtResource("2_wu84c")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="lb_and_idw25" type="Label" parent="main/vb_bg/hb_credits" unique_id=304392934]
+[node name="lb_and_idw25" type="Label" parent="main/hb_credits" unique_id=304392934]
 layout_mode = 2
 text = "and idw25"
 label_settings = SubResource("LabelSettings_8mt0l")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="empty" type="Control" parent="main/vb_bg/hb_credits" unique_id=1227435649]
+[node name="empty" type="Control" parent="main/hb_credits" unique_id=1227435649]
 custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
 
-[node name="lb_for" type="Label" parent="main/vb_bg/hb_credits" unique_id=1905140913]
+[node name="lb_for" type="Label" parent="main/hb_credits" unique_id=1905140913]
 layout_mode = 2
 text = "for"
 label_settings = SubResource("LabelSettings_8mt0l")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="logo_jam" type="TextureRect" parent="main/vb_bg/hb_credits" unique_id=2082992728]
+[node name="logo_jam" type="TextureRect" parent="main/hb_credits" unique_id=2082992728]
 custom_minimum_size = Vector2(110, 40)
 layout_mode = 2
 texture = ExtResource("3_8ln24")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="lb_2026" type="Label" parent="main/vb_bg/hb_credits" unique_id=2065982587]
+[node name="lb_2026" type="Label" parent="main/hb_credits" unique_id=2065982587]
 layout_mode = 2
 text = "2026"
 label_settings = SubResource("LabelSettings_8mt0l")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="empty2" type="Control" parent="main/vb_bg/hb_credits" unique_id=130685617]
+[node name="empty2" type="Control" parent="main/hb_credits" unique_id=130685617]
 custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
 
-[node name="lb_inspired_by" type="Label" parent="main/vb_bg/hb_credits" unique_id=1039218156]
+[node name="lb_inspired_by" type="Label" parent="main/hb_credits" unique_id=1039218156]
 layout_mode = 2
 text = "inspired by
 the work of"
@@ -128,18 +130,18 @@ label_settings = SubResource("LabelSettings_8mt0l")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="logo_krikit" type="TextureRect" parent="main/vb_bg/hb_credits" unique_id=282047621]
+[node name="logo_krikit" type="TextureRect" parent="main/hb_credits" unique_id=282047621]
 custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
 texture = ExtResource("6_oa1go")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="empty3" type="Control" parent="main/vb_bg/hb_credits" unique_id=917533824]
+[node name="empty3" type="Control" parent="main/hb_credits" unique_id=917533824]
 custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
 
-[node name="lb_music_by" type="Label" parent="main/vb_bg/hb_credits" unique_id=1084448022]
+[node name="lb_music_by" type="Label" parent="main/hb_credits" unique_id=1084448022]
 layout_mode = 2
 text = "music by
 Conduit"
@@ -147,7 +149,7 @@ label_settings = SubResource("LabelSettings_8mt0l")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="logo_krikit2" type="TextureRect" parent="main/vb_bg/hb_credits" unique_id=1337291682]
+[node name="logo_krikit2" type="TextureRect" parent="main/hb_credits" unique_id=1337291682]
 custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
 texture = ExtResource("7_tbmy8")
