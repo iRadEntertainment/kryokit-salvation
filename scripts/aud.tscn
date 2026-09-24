@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://6vyc3t2jgbu"]
 
 [ext_resource type="Script" uid="uid://cx1lxbf8pfbit" path="res://scripts/aud.gd" id="1_ff6y4"]
-[ext_resource type="AudioStream" uid="uid://bda0xolo30ww7" path="res://audio/mus_Conduit-Rocket-Mobilization.mp3" id="2_bs1vv"]
+[ext_resource type="AudioStream" uid="uid://bda0xolo30ww7" path="res://assets/audio/mus_Conduit-Rocket-Mobilization.mp3" id="2_bs1vv"]
 
 [node name="aud" type="Node" unique_id=323846087]
 script = ExtResource("1_ff6y4")

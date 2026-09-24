@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://blseo38kk11bo"]
 
 [ext_resource type="Script" uid="uid://cnfbaroo8mcku" path="res://instances/forklift.gd" id="1_ddviu"]
-[ext_resource type="PackedScene" uid="uid://dd1m85b0evov" path="res://blend/thrust_wheel.glb" id="2_ryygl"]
-[ext_resource type="PackedScene" uid="uid://c1bayfbp7p518" path="res://blend/load_wheel.glb" id="2_xn44t"]
-[ext_resource type="PackedScene" uid="uid://b1c2j566p32pb" path="res://blend/carriage.glb" id="4_32q5h"]
-[ext_resource type="PackedScene" uid="uid://divu04mo3x1vn" path="res://blend/fork.glb" id="5_x3x2s"]
+[ext_resource type="PackedScene" uid="uid://dd1m85b0evov" path="res://assets/glbs/thrust_wheel.glb" id="2_ryygl"]
+[ext_resource type="PackedScene" uid="uid://c1bayfbp7p518" path="res://assets/glbs/load_wheel.glb" id="2_xn44t"]
+[ext_resource type="PackedScene" uid="uid://b1c2j566p32pb" path="res://assets/glbs/carriage.glb" id="4_32q5h"]
+[ext_resource type="PackedScene" uid="uid://divu04mo3x1vn" path="res://assets/glbs/fork.glb" id="5_x3x2s"]
 [ext_resource type="Script" uid="uid://bewj0dep4bhip" path="res://instances/cam.gd" id="6_v6tai"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_mdew2"]

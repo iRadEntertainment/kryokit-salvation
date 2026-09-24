@@ -40,6 +40,15 @@ window/stretch/aspect="expand"
 
 theme/custom="uid://pnmwnb6d5ysq"
 
+[importer_defaults]
+
+scene={
+&"gltf/embedded_image_handling": 2,
+&"materials/extract": 1,
+&"materials/extract_format": 1,
+&"materials/extract_path": "res://assets/materials"
+}
+
 [input]
 
 forward={

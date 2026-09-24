@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://7clljett1r8u"]
 
-[ext_resource type="PackedScene" uid="uid://x8jofwjxb3dl" path="res://blend/cement_bag_1k.glb" id="1_5g2d5"]
+[ext_resource type="PackedScene" uid="uid://x8jofwjxb3dl" path="res://assets/glbs/cement_bag_1k.glb" id="1_5g2d5"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_lexek"]
 rough = true
