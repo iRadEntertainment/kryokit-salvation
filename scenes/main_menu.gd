@@ -20,4 +20,5 @@ func _on_btn_quit_pressed() -> void:
 
 
 func _on_btn_setting_pressed() -> void:
+	# TODO: popup settings
 	pass # Replace with function body.

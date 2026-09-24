@@ -84,6 +84,13 @@ texture = ExtResource("2_wu84c")
 expand_mode = 1
 stretch_mode = 5
 
+[node name="lb_and_idw25" type="Label" parent="main/vb_bg/hb_credits" unique_id=304392934]
+layout_mode = 2
+text = "and idw25"
+label_settings = SubResource("LabelSettings_8mt0l")
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="empty" type="Control" parent="main/vb_bg/hb_credits" unique_id=1227435649]
 custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
@@ -162,6 +169,13 @@ theme_type_variation = &"TitleButton"
 text = "Start"
 alignment = 0
 
+[node name="btn_setting" type="Button" parent="main/vb_left/buttons" unique_id=920973542]
+layout_mode = 2
+theme_type_variation = &"TitleButton"
+disabled = true
+text = "Settings"
+alignment = 0
+
 [node name="btn_quit" type="Button" parent="main/vb_left/buttons" unique_id=122946659]
 unique_name_in_owner = true
 layout_mode = 2
@@ -208,4 +222,5 @@ position = Vector2(788, -100)
 texture = ExtResource("10_5dd4i")
 
 [connection signal="pressed" from="main/vb_left/buttons/btn_start" to="." method="_on_btn_start_pressed"]
+[connection signal="pressed" from="main/vb_left/buttons/btn_setting" to="." method="_on_btn_setting_pressed"]
 [connection signal="pressed" from="main/vb_left/buttons/btn_quit" to="." method="_on_btn_quit_pressed"]
