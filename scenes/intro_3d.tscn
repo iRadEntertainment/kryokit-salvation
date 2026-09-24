@@ -2,6 +2,7 @@
 
 [ext_resource type="Environment" uid="uid://bl1fub2kdtprp" path="res://scenes/game_data/game_environment.tres" id="1_0bakh"]
 [ext_resource type="PackedScene" uid="uid://blseo38kk11bo" path="res://instances/forklift.tscn" id="1_7m2fh"]
+[ext_resource type="PackedScene" uid="uid://c7mpk34aet8yd" path="res://assets/glbs/kryokit_logo_model.glb" id="3_slekq"]
 
 [node name="intro_3d" type="Node3D" unique_id=1815666335]
 
@@ -14,7 +15,26 @@ light_energy = 0.5
 shadow_enabled = true
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=290308415]
-transform = Transform3D(0.87474084, 0.1048499, 0.47311202, 0, 0.976312, -0.21636778, -0.48459107, 0.18926574, 0.8540199, 0.8085811, 0.51169944, 2.9555805)
+transform = Transform3D(0.9139394, 0.08781301, 0.39623696, 4.229901e-09, 0.976312, -0.2163678, -0.40585074, 0.19774705, 0.89228994, 1.3341458, 0.51169944, 3.1740077)
 
 [node name="forklift" parent="." unique_id=983298835 instance=ExtResource("1_7m2fh")]
 process_mode = 4
+
+[node name="kryokit_logo_model" parent="." unique_id=86774259 instance=ExtResource("3_slekq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.1227555, 2.6028955, -4.954216)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="kryokit_logo_model" unique_id=2014817583]
+transform = Transform3D(1, 0, 0, 0, 0.25881907, -0.9659258, 0, 0.9659258, 0.25881907, 0.9144907, -1.3594993, 0.45062923)
+light_energy = 6.433
+shadow_enabled = true
+spot_range = 3.192
+spot_angle = 59.92
+spot_angle_attenuation = 2.6390173
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="kryokit_logo_model" unique_id=626497771]
+transform = Transform3D(1, 0, 0, 0, 0.25881907, -0.9659258, 0, 0.9659258, 0.25881907, -1.0831833, -1.3594993, 0.45062923)
+light_energy = 6.433
+shadow_enabled = true
+spot_range = 3.192
+spot_angle = 59.92
+spot_angle_attenuation = 2.6390173
