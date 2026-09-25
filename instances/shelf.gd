@@ -11,7 +11,7 @@ var _btn_generate: Callable = _generate_in_engine
 
 @export var post_dimensions := Vector3(0.20, 6.40, 0.12)
 @export var beam_dimensions := Vector3(3.00, 0.15, 0.08)
-@export var bay_depth_post_to_post: float = 1.1
+@export var bay_depth_post_to_post: float = 0.95
 @export var bays_data: Array[Array] = [
 	[1.6, 3.2, 4.8],
 	[1.6, 3.2, 4.8],
