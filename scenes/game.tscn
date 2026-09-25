@@ -12,8 +12,7 @@
 rough = true
 absorbent = true
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_f3sb7"]
-size = Vector3(300, 0.3, 300)
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_u5sy4"]
 
 [sub_resource type="Gradient" id="Gradient_uuti7"]
 offsets = PackedFloat32Array(0, 0.75357145, 1)
@@ -40,10 +39,6 @@ albedo_texture = SubResource("NoiseTexture2D_q5rnw")
 [sub_resource type="QuadMesh" id="QuadMesh_8mt0l"]
 size = Vector2(300, 300)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_lexek"]
-
-[sub_resource type="BoxMesh" id="BoxMesh_8mt0l"]
-
 [node name="game" type="Node3D" unique_id=349299851]
 script = ExtResource("1_lbhrr")
 
@@ -65,8 +60,7 @@ metadata/_edit_group_ = true
 metadata/_edit_lock_ = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="floor" unique_id=1865197163]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.15, 0)
-shape = SubResource("BoxShape3D_f3sb7")
+shape = SubResource("WorldBoundaryShape3D_u5sy4")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="floor" unique_id=416695914]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0)
@@ -189,17 +183,13 @@ transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 6.62
 [node name="cement_bag16" parent="pallets" unique_id=379646153 instance=ExtResource("4_u5sy4")]
 transform = Transform3D(-0.027184421, 0, -0.99963045, 0, 1, 0, 0.99963045, 0, -0.027184421, 6.6222305, 3.6130414, 3.5741627)
 
-[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=975494975]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.3007154, 0.36346817, 5.8319)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1350593077]
-shape = SubResource("BoxShape3D_lexek")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D" unique_id=1016744351]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.7367835, 0, -0.12155056)
-mesh = SubResource("BoxMesh_8mt0l")
-
 [node name="GUI" parent="." unique_id=1226663711 instance=ExtResource("6_p57ef")]
 
 [node name="shelf" parent="." unique_id=842112793 instance=ExtResource("7_u5sy4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8493252, 0, 3.3406777)
+
+[node name="shelf2" parent="." unique_id=1220127838 instance=ExtResource("7_u5sy4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 11)
+
+[node name="shelf3" parent="." unique_id=618751701 instance=ExtResource("7_u5sy4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 12.605203)
