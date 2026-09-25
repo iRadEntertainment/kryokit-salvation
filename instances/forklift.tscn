@@ -96,14 +96,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4049973, -0.2361908)
 shape = SubResource("BoxShape3D_8mt0l")
 debug_color = Color(0.67276233, 0.30755237, 1, 0.41960785)
 
-[node name="wheel_rear_center" type="VehicleWheel3D" parent="vehicle_body" unique_id=1335644928]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.22160354, -0.91411704)
+[node name="wheel_thrust" type="VehicleWheel3D" parent="vehicle_body" unique_id=1335644928]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.22, -0.914)
 engine_force = 800.0
 steering = 3.1415927
 use_as_traction = true
 use_as_steering = true
 wheel_roll_influence = 0.5
-wheel_radius = 0.231
+wheel_radius = 0.22
 wheel_rest_length = 0.04
 suspension_travel = 0.02
 suspension_stiffness = 800.0
@@ -113,14 +114,13 @@ damping_relaxation = 3.8
 
 [node name="IDW_SteeringPivot" type="Node3D" parent="vehicle_body" unique_id=1406832720]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.325, 0.267, -0.914)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.325, 0.22, -0.914)
 
 [node name="thrust_wheel" parent="vehicle_body/IDW_SteeringPivot" unique_id=1800178509 instance=ExtResource("2_ryygl")]
 unique_name_in_owner = true
 
 [node name="wheel_front_r" type="VehicleWheel3D" parent="vehicle_body" unique_id=457649157]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.51, 0.26660353, 0.712)
-use_as_traction = true
 wheel_roll_influence = 0.5
 wheel_radius = 0.275
 wheel_rest_length = 0.05
@@ -135,7 +135,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5597757, -0.30851865, 0)
 
 [node name="wheel_front_l" type="VehicleWheel3D" parent="vehicle_body" unique_id=917327415]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.51, 0.26660353, 0.71176445)
-use_as_traction = true
 wheel_roll_influence = 0.5
 wheel_radius = 0.275
 wheel_rest_length = 0.05
@@ -284,3 +283,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2, 0, 1.026)
 node_a = NodePath("../carriage_body")
 node_b = NodePath("../fork_r_body")
 linear_motor_x/enabled = true
+
+[editable path="mast_body/mast"]
