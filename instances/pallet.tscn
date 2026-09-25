@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://xu0r8ac28h4g"]
 
 [ext_resource type="PackedScene" uid="uid://mfyqgabbf30" path="res://assets/glbs/pallet.glb" id="1_r8q5o"]
+[ext_resource type="Script" uid="uid://cq0kjbd1i4q8o" path="res://instances/pallet.gd" id="1_ytwti"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_v6tai"]
 friction = 0.95
@@ -30,6 +31,7 @@ mass = 25.0
 physics_material_override = SubResource("PhysicsMaterial_v6tai")
 center_of_mass_mode = 1
 center_of_mass = Vector3(0, 0.1, 0)
+script = ExtResource("1_ytwti")
 
 [node name="coll_top" type="CollisionShape3D" parent="." unique_id=356959116]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.13, 0)
