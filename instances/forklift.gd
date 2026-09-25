@@ -196,11 +196,13 @@ func _process_driving(delta: float) -> void:
 	# steering
 	_target_steering += _steer_input * 3.0 * _steering_acc * delta
 	vehicle_body.steering = lerp(vehicle_body.steering, _target_steering, 5.0 * delta)
-	
-	# drive
-	if _drive_input:
+	if Input.is_action_just_pressed(&"back") or \
+			Input.is_action_just_pressed(&"forward"):
 		_wrapped_steering = abs(wrapf(vehicle_body.steering, -PI, PI))
 		_throttle_dir = -1 if _wrapped_steering > PI/2 else 1
+
+	# drive
+	if _drive_input:
 		_target_throttle = lerp(
 			_target_throttle,
 			throttle_max_power * _drive_input * _throttle_dir,
@@ -208,7 +210,7 @@ func _process_driving(delta: float) -> void:
 		vehicle_body.brake = 0.0
 	
 	else:
-		_target_throttle = 20.0
+		_target_throttle = 0.0
 		vehicle_body.engine_force = 0.0
 		if current_speed > 1.0:
 			vehicle_body.brake = brake_max_force
