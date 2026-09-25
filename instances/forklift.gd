@@ -39,6 +39,10 @@ class_name Forklift extends Node3D
 @onready var thrust_wheel: Node3D = %thrust_wheel
 @onready var wheel_thrust: VehicleWheel3D = %wheel_thrust
 
+@onready var mast_1: Node3D = %mast_1
+@onready var mast_2: Node3D = %mast_2
+
+
 @onready var joint_mast: Generic6DOFJoint3D = %joint_mast
 @onready var joint_carriage: Generic6DOFJoint3D = %joint_carriage
 @onready var joint_fork_l: Generic6DOFJoint3D = %joint_fork_l
@@ -207,9 +211,6 @@ func _process_driving(delta: float) -> void:
 		5.0 * delta
 	)
 	
-	# update visual steering
-	rear_wheel_visual_pivot.rotation.y = wheel_thrust.rotation.y
-	
 	# drive
 	if Input.is_action_just_pressed(&"back") or \
 			Input.is_action_just_pressed(&"forward"):
@@ -244,17 +245,6 @@ func _process_driving(delta: float) -> void:
 		_target_throttle,
 		5.0 * delta
 	)
-	
-	# update visual wheel rotation
-	var forward_velocity: float = vehicle_body.global_transform.basis.z.dot(
-		vehicle_body.linear_velocity
-	)
-	var wheel_rotation_speed := forward_velocity / wheel_thrust.wheel_radius
-	thrust_wheel.rotate_object_local(Vector3.RIGHT, wheel_rotation_speed * delta)
-	
-	# alternate wheel rotation implementation
-	#var wheel_rps: float = wheel_thrust.get_rpm() / 60.0
-	#thrust_wheel.rotate_object_local(Vector3.RIGHT, TAU * wheel_rps * delta)
 
 
 func _process_mast(_delta: float) -> void:
@@ -311,10 +301,41 @@ func _process_fork(delta: float) -> void:
 	)
 
 
-func _process(_delta: float) -> void:
+func _process(delta: float) -> void:
+	_process_mast_extension()
+	_process_thrust_wheel_visuals(delta)
+	
 	var info: String = "wrapped_steering: %.3f" % [rad_to_deg(_wrapped_steering)]
 	info += "\n Forward Verse: %d" % _throttle_dir
 	text_nfo.text = info
+
+
+func _process_mast_extension() -> void:
+	const START_EXTENSION: float = 2.0 # m
+	const MAX_EXTENSION_1: float = 1.6 # m
+	var extension_offset1: float = maxf(0.0, lift_height - START_EXTENSION)
+	var extension_offset2: float = minf(extension_offset1, MAX_EXTENSION_1)
+	mast_1.position.y = extension_offset1
+	mast_2.position.y = extension_offset2
+
+
+func _process_thrust_wheel_visuals(delta: float) -> void:
+	# update visual steering
+	rear_wheel_visual_pivot.rotation.y = wheel_thrust.rotation.y
+	
+	# update visual wheel rotation
+	var forward_velocity: float = vehicle_body.global_transform.basis.z.dot(
+		vehicle_body.linear_velocity
+	)
+	var wheel_rotation_speed := forward_velocity / wheel_thrust.wheel_radius
+	thrust_wheel.rotate_object_local(Vector3.RIGHT, wheel_rotation_speed * delta)
+	
+	# alternate wheel rotation implementation
+	#var wheel_rps: float = wheel_thrust.get_rpm() / 60.0
+	#thrust_wheel.rotate_object_local(Vector3.RIGHT, TAU * wheel_rps * delta)
+	
+	# update suspension position
+	rear_wheel_visual_pivot.position.y = wheel_thrust.position.y
 
 
 func reset_truck() -> void:
