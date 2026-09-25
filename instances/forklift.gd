@@ -251,6 +251,10 @@ func _process_driving(delta: float) -> void:
 	)
 	var wheel_rotation_speed := forward_velocity / wheel_thrust.wheel_radius
 	thrust_wheel.rotate_object_local(Vector3.RIGHT, wheel_rotation_speed * delta)
+	
+	# alternate wheel rotation implementation
+	#var wheel_rps: float = wheel_thrust.get_rpm() / 60.0
+	#thrust_wheel.rotate_object_local(Vector3.RIGHT, TAU * wheel_rps * delta)
 
 
 func _process_mast(_delta: float) -> void:
