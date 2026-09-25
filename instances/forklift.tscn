@@ -1,10 +1,14 @@
 [gd_scene format=3 uid="uid://blseo38kk11bo"]
 
 [ext_resource type="Script" uid="uid://cnfbaroo8mcku" path="res://instances/forklift.gd" id="1_ddviu"]
+[ext_resource type="PackedScene" uid="uid://fplixeadvfo6" path="res://assets/glbs/body.glb" id="2_r8te8"]
 [ext_resource type="PackedScene" uid="uid://dd1m85b0evov" path="res://assets/glbs/thrust_wheel.glb" id="2_ryygl"]
-[ext_resource type="PackedScene" uid="uid://c1bayfbp7p518" path="res://assets/glbs/load_wheel.glb" id="2_xn44t"]
+[ext_resource type="PackedScene" uid="uid://bk7uhy3mf20jf" path="res://assets/glbs/load_wheel_R.glb" id="2_xn44t"]
 [ext_resource type="PackedScene" uid="uid://b1c2j566p32pb" path="res://assets/glbs/carriage.glb" id="4_32q5h"]
+[ext_resource type="PackedScene" uid="uid://c1bayfbp7p518" path="res://assets/glbs/load_wheel_L.glb" id="4_ri2lj"]
 [ext_resource type="PackedScene" uid="uid://divu04mo3x1vn" path="res://assets/glbs/fork.glb" id="5_x3x2s"]
+[ext_resource type="Script" uid="uid://bjanjit7rbf2y" path="res://scripts/forklift_rotating_spot_light_.gd" id="5_xomti"]
+[ext_resource type="PackedScene" uid="uid://ci07wfnk1n4hu" path="res://assets/glbs/mast.glb" id="6_c51dl"]
 [ext_resource type="Script" uid="uid://bewj0dep4bhip" path="res://instances/cam.gd" id="6_v6tai"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_mdew2"]
@@ -18,33 +22,7 @@ albedo_texture = SubResource("ViewportTexture_mdew2")
 size = Vector2(1.3, 0.46)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_8mt0l"]
-size = Vector3(1.1542969, 0.9510193, 1.6444092)
-
-[sub_resource type="Gradient" id="Gradient_wo3l7"]
-offsets = PackedFloat32Array(0, 0.7319277)
-colors = PackedColorArray(1, 1, 1, 0.1764706, 1, 1, 1, 0)
-
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_fmuwq"]
-noise_type = 2
-frequency = 0.0584
-fractal_octaves = 2
-fractal_lacunarity = 2.72
-cellular_jitter = 0.955
-cellular_return_type = 0
-
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_ddviu"]
-noise = SubResource("FastNoiseLite_fmuwq")
-color_ramp = SubResource("Gradient_wo3l7")
-normalize = false
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_f3sb7"]
-transparency = 1
-depth_draw_mode = 1
-albedo_color = Color(1, 0.32156864, 0, 0.28235295)
-albedo_texture = SubResource("NoiseTexture2D_ddviu")
-
-[sub_resource type="BoxMesh" id="BoxMesh_8mt0l"]
-size = Vector3(1.123291, 0.8539429, 1.8066406)
+size = Vector3(1.1542969, 2.8114576, 1.941864)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_q5rnw"]
 size = Vector3(0.76660156, 2.4359741, 0.09667969)
@@ -54,22 +32,21 @@ rough = true
 absorbent = true
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_lexek"]
-size = Vector3(1.0061035, 1.2691345, 0.06681396)
+size = Vector3(1.0061035, 0.6747246, 0.18076599)
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_v6tai"]
 friction = 0.95
 rough = true
 absorbent = true
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_r8te8"]
+size = Vector3(0.1, 0.04, 1.2223877)
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_xoi5w"]
-size = Vector3(0.1, 0.04, 1.3)
+size = Vector3(0.1, 0.04, 1.2206299)
 
 [node name="forklift" type="Node3D" unique_id=983298835]
 script = ExtResource("1_ddviu")
-brake_max_force = 30.0
-mast_tilt_max = 4.0
-lift_min_height = -0.07
-lift_max_height = 4.9
 
 [node name="vehicle_body" type="VehicleBody3D" parent="." unique_id=1776535538]
 unique_name_in_owner = true
@@ -79,9 +56,11 @@ center_of_mass = Vector3(0, 0.14, -0.5)
 engine_force = 800.0
 steering = 3.1415927
 
+[node name="body" parent="vehicle_body" unique_id=661026329 instance=ExtResource("2_r8te8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.05977571, -0.090037405, 0.72029924)
+
 [node name="monitor" type="MeshInstance3D" parent="vehicle_body" unique_id=150643878]
-transform = Transform3D(-1, 0, -8.742278e-08, -6.181724e-08, 0.70710677, 0.70710677, 6.181724e-08, 0.70710677, -0.70710677, 0, 1.1776357, 0.6603867)
-visible = false
+transform = Transform3D(-1, 0, -8.742278e-08, -6.181724e-08, 0.70710677, 0.70710677, 6.181724e-08, 0.70710677, -0.70710677, 0, 1.7686391, 0.26978076)
 material_override = SubResource("StandardMaterial3D_q5rnw")
 mesh = SubResource("QuadMesh_8mt0l")
 
@@ -113,61 +92,79 @@ size_flags_vertical = 3
 placeholder_text = "test"
 
 [node name="coll" type="CollisionShape3D" parent="vehicle_body" unique_id=491634650]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4877472, -0.08746338)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4049973, -0.2361908)
 shape = SubResource("BoxShape3D_8mt0l")
-
-[node name="mesh" type="MeshInstance3D" parent="vehicle_body" unique_id=1829742512]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.53286743, 0)
-material_override = SubResource("StandardMaterial3D_f3sb7")
-mesh = SubResource("BoxMesh_8mt0l")
+debug_color = Color(0.67276233, 0.30755237, 1, 0.41960785)
 
 [node name="wheel_rear_center" type="VehicleWheel3D" parent="vehicle_body" unique_id=1335644928]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.12, -0.65)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.22160354, -0.91411704)
 engine_force = 800.0
 steering = 3.1415927
 use_as_traction = true
 use_as_steering = true
 wheel_roll_influence = 0.5
-wheel_radius = 0.12
+wheel_radius = 0.231
+wheel_rest_length = 0.04
 suspension_travel = 0.02
 suspension_stiffness = 800.0
 suspension_max_force = 35000.0
 damping_compression = 3.5
 damping_relaxation = 3.8
 
-[node name="thrust_wheel" parent="vehicle_body/wheel_rear_center" unique_id=1368001363 instance=ExtResource("2_ryygl")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
+[node name="IDW_SteeringPivot" type="Node3D" parent="vehicle_body" unique_id=1406832720]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.325, 0.267, -0.914)
+
+[node name="thrust_wheel" parent="vehicle_body/IDW_SteeringPivot" unique_id=1800178509 instance=ExtResource("2_ryygl")]
+unique_name_in_owner = true
 
 [node name="wheel_front_r" type="VehicleWheel3D" parent="vehicle_body" unique_id=457649157]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.51, 0.2, 0.712)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.51, 0.26660353, 0.712)
+use_as_traction = true
 wheel_roll_influence = 0.5
-wheel_radius = 0.2
+wheel_radius = 0.275
+wheel_rest_length = 0.05
 suspension_travel = 0.02
 suspension_stiffness = 800.0
 suspension_max_force = 15000.0
 damping_compression = 3.5
 damping_relaxation = 3.8
 
-[node name="load_wheel" parent="vehicle_body/wheel_front_r" unique_id=440341516 instance=ExtResource("2_xn44t")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
+[node name="load_wheel_R" parent="vehicle_body/wheel_front_r" unique_id=96352260 instance=ExtResource("2_xn44t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5597757, -0.30851865, 0)
 
 [node name="wheel_front_l" type="VehicleWheel3D" parent="vehicle_body" unique_id=917327415]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.51, 0.2, 0.71176445)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.51, 0.26660353, 0.71176445)
+use_as_traction = true
 wheel_roll_influence = 0.5
-wheel_radius = 0.2
+wheel_radius = 0.275
+wheel_rest_length = 0.05
 suspension_travel = 0.02
 suspension_stiffness = 800.0
 suspension_max_force = 15000.0
 damping_compression = 3.5
 damping_relaxation = 3.8
 
-[node name="load_wheel" parent="vehicle_body/wheel_front_l" unique_id=229059332 instance=ExtResource("2_xn44t")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
+[node name="load_wheel_L" parent="vehicle_body/wheel_front_l" unique_id=611269869 instance=ExtResource("4_ri2lj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4402243, -0.30851865, 0)
 
 [node name="Camera3D" type="Camera3D" parent="vehicle_body" unique_id=314452289 node_paths=PackedStringArray("target")]
-transform = Transform3D(-1, 5.440307e-08, -6.843283e-08, 0, 0.7827802, 0.6222984, 8.74228e-08, 0.6222984, -0.7827802, 0, 2.2148993, -1.310821)
+transform = Transform3D(-1, 5.440307e-08, -6.843283e-08, 0, 0.7827802, 0.6222984, 8.74228e-08, 0.6222984, -0.7827802, 0, 2.3947394, -1.5647922)
 script = ExtResource("6_v6tai")
 target = NodePath("../../carriage_body/cam_target")
+
+[node name="IDW_Rotating_Spotlight3D" type="SpotLight3D" parent="vehicle_body" unique_id=1382821880]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.27493212, 2.6320844, -0.6610342)
+light_color = Color(0.90588236, 0.47058824, 0, 1)
+light_energy = 2.0
+light_volumetric_fog_energy = 5.0
+light_specular = 1.1
+spot_range = 30.0
+spot_attenuation = 1.25
+spot_angle = 20.0
+script = ExtResource("5_xomti")
+blink_enabled = false
+rotation_speed = 720.0
 
 [node name="mast_body" type="RigidBody3D" parent="." unique_id=958273445]
 unique_name_in_owner = true
@@ -177,6 +174,7 @@ can_sleep = false
 
 [node name="mast_mesh" type="CSGBox3D" parent="mast_body" unique_id=1718621437]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1218491, 0)
+visible = false
 size = Vector3(0.77563477, 2.4487457, 0.109375)
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="mast_body/mast_mesh" unique_id=411473003]
@@ -195,9 +193,12 @@ spot_range = 11.907
 spot_angle = 70.0
 spot_angle_attenuation = 0.2871746
 
+[node name="mast" parent="mast_body" unique_id=1035341684 instance=ExtResource("6_c51dl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.05977571, 0, 0)
+
 [node name="carriage_body" type="RigidBody3D" parent="." unique_id=815795375]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.026)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.8529252)
 collision_layer = 2
 collision_mask = 2
 mass = 45.0
@@ -209,15 +210,16 @@ continuous_cd = true
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
 
 [node name="coll_carriage" type="CollisionShape3D" parent="carriage_body" unique_id=1206881159]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.62898254, 0.032877207)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3981037, 0.26405263)
 shape = SubResource("BoxShape3D_lexek")
+debug_color = Color(0.9974175, 0, 0.17626175, 0.41960785)
 
 [node name="cam_target" type="Marker3D" parent="carriage_body" unique_id=1275762858]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1303711, 1.2201538)
 
 [node name="fork_l_body" type="RigidBody3D" parent="." unique_id=1849089295]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2, 0, 1.026)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2, 0.0021187663, 0.8538488)
 mass = 30.0
 physics_material_override = SubResource("PhysicsMaterial_v6tai")
 center_of_mass_mode = 1
@@ -226,15 +228,16 @@ continuous_cd = true
 
 [node name="fork_l_coll" type="CollisionShape3D" parent="fork_l_body" unique_id=171380691]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.02, 0.65)
-shape = SubResource("BoxShape3D_xoi5w")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.04121323, 0.91564333)
+shape = SubResource("BoxShape3D_r8te8")
+debug_color = Color(0.639403, 0.5325897, 0, 0.83137256)
 
 [node name="fork_mesh" parent="fork_l_body" unique_id=1599815123 instance=ExtResource("5_x3x2s")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
 
 [node name="fork_r_body" type="RigidBody3D" parent="." unique_id=1816431836]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2, 0, 1.026)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2, 0.0021187663, 0.8538488)
 mass = 30.0
 physics_material_override = SubResource("PhysicsMaterial_v6tai")
 center_of_mass_mode = 1
@@ -243,8 +246,9 @@ continuous_cd = true
 
 [node name="fork_r_coll" type="CollisionShape3D" parent="fork_r_body" unique_id=651667797]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.02, 0.65)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.04121323, 0.9147645)
 shape = SubResource("BoxShape3D_xoi5w")
+debug_color = Color(0.639403, 0.5325897, 0, 0.83137256)
 
 [node name="fork_mesh" parent="fork_r_body" unique_id=304025479 instance=ExtResource("5_x3x2s")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)

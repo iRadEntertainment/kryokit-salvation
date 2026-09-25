@@ -50,6 +50,10 @@ script = ExtResource("1_lbhrr")
 [node name="game_env" type="WorldEnvironment" parent="." unique_id=1576902409]
 environment = ExtResource("2_p57ef")
 
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="game_env" unique_id=877496140]
+transform = Transform3D(-0.7845392, 0.519521, -0.33852053, 0, 0.5459311, 0.83783007, 0.6200792, 0.65731055, -0.42830437, 0, 0, 0)
+shadow_enabled = true
+
 [node name="moon" type="DirectionalLight3D" parent="." unique_id=41652714]
 transform = Transform3D(-0.8275823, -0.16980088, -0.535047, -0.5000933, 0.6559697, 0.5653411, 0.2549792, 0.7354397, -0.62778515, 0, 0, 0)
 light_energy = 0.5
@@ -70,7 +74,7 @@ material_override = SubResource("StandardMaterial3D_lexek")
 mesh = SubResource("QuadMesh_8mt0l")
 
 [node name="forklift" parent="." unique_id=1776535538 instance=ExtResource("2_iywne")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.001, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.08696018, 0)
 
 [node name="pallets" type="Node3D" parent="." unique_id=23978430]
 

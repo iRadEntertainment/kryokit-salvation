@@ -15,4 +15,11 @@ sky_material = SubResource("ProceduralSkyMaterial_0bakh")
 [resource]
 background_mode = 2
 sky = SubResource("Sky_slekq")
+tonemap_mode = 2
+tonemap_exposure = 1.32
+ssao_radius = 0.5
+ssao_intensity = 4.0
 glow_enabled = true
+glow_normalized = true
+glow_strength = 0.5
+glow_bloom = 0.5
