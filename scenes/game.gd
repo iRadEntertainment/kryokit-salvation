@@ -2,6 +2,9 @@ class_name Game
 extends Node3D
 
 
+@export var is_tutorial: bool = false
+
+
 func _init() -> void:
 	Mng.game = self
 

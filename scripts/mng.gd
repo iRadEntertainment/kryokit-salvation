@@ -18,5 +18,9 @@ func go_to_new_game() -> void:
 	get_tree().change_scene_to_file("uid://4etuo4dq13m0")
 
 
+func go_to_tutorial() -> void:
+	get_tree().change_scene_to_file("uid://k4dekefb6nc3")
+
+
 func quit_game() -> void:
 	get_tree().quit()
