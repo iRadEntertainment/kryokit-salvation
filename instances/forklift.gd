@@ -9,6 +9,7 @@ class_name Forklift extends Node3D
 @export var brake_max_force: float = 50.0
 @export var brake_min_force: float = 5.5
 @export_range(0.1, 5.0, 0.01) var steering_speed: float = 1.8
+@export_range(1, 5, 1) var steering_snap_division: int = 3
 
 @export_group("Mast")
 @export var mast_tilt_speed: float = 0.15 #degrees/s
@@ -212,6 +213,9 @@ func _process_driving(delta: float) -> void:
 			Input.is_action_just_pressed(&"forward"):
 		_wrapped_steering = abs(wrapf(vehicle_body.steering, -PI, PI))
 		_throttle_dir = -1 if _wrapped_steering > PI/2 else 1
+		# snap steering
+		var increment: float = PI * 0.5 / pow(2, steering_snap_division)
+		_target_steering = snappedf(_target_steering, increment)
 	
 	if _drive_input:
 		_target_throttle = lerp(
