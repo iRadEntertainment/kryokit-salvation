@@ -1,0 +1,64 @@
+[gd_scene format=3 uid="uid://baeta3affchh4"]
+
+[ext_resource type="Script" uid="uid://cv0257edumg0q" path="res://instances/menus/pnl_instructions.gd" id="1_3cq71"]
+[ext_resource type="LabelSettings" uid="uid://bsqx4o12mbbs3" path="res://UI/styles/label_titles.tres" id="1_lsjfp"]
+
+[node name="pnl_instructions" type="PanelContainer" unique_id=1734069950]
+offset_right = 553.0
+offset_bottom = 438.0
+script = ExtResource("1_3cq71")
+metadata/_tab_index = 1
+
+[node name="vb" type="VBoxContainer" parent="." unique_id=685655145]
+layout_mode = 2
+
+[node name="title" type="Label" parent="vb" unique_id=891340885]
+layout_mode = 2
+text = "Instructions"
+label_settings = ExtResource("1_lsjfp")
+horizontal_alignment = 1
+
+[node name="sep" type="HSeparator" parent="vb" unique_id=229507903]
+layout_mode = 2
+
+[node name="scroll" type="ScrollContainer" parent="vb" unique_id=997210015]
+layout_mode = 2
+size_flags_vertical = 3
+vertical_scroll_mode = 4
+
+[node name="vb" type="VBoxContainer" parent="vb/scroll" unique_id=1921625550]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="lb_instruction1" type="RichTextLabel" parent="vb/scroll/vb" unique_id=536399632]
+custom_minimum_size = Vector2(300, 200)
+layout_mode = 2
+size_flags_vertical = 3
+bbcode_enabled = true
+text = "Driving a forklift is a complicated matter. There are plenty of things to think about at any give moment. And you'll make mistakes.
+[b]Drive[/b]
+The drive wheel is actually on the back, while the two front wheels will be your turning pivot."
+fit_content = true
+
+[node name="hb_bottom" type="HBoxContainer" parent="vb" unique_id=950580421]
+layout_mode = 2
+
+[node name="btn_ok" type="Button" parent="vb/hb_bottom" unique_id=330719681]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Ok got it!"
+
+[node name="btn_didnt_get_it" type="Button" parent="vb/hb_bottom" unique_id=271477159]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "I didn't get it, but ok!"
+
+[node name="btn_wtf" type="Button" parent="vb/hb_bottom" unique_id=1263919786]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "wut?"
+
+[connection signal="pressed" from="vb/hb_bottom/btn_ok" to="." method="_on_btn_ok_pressed"]
+[connection signal="pressed" from="vb/hb_bottom/btn_didnt_get_it" to="." method="_on_btn_ok_pressed"]
+[connection signal="pressed" from="vb/hb_bottom/btn_wtf" to="." method="_on_btn_ok_pressed"]

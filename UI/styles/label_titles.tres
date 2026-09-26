@@ -1,0 +1,7 @@
+[gd_resource type="LabelSettings" format=3 uid="uid://bsqx4o12mbbs3"]
+
+[ext_resource type="FontFile" uid="uid://ngge52vbtscg" path="res://UI/fonts/MuseoModerno/static/MuseoModerno-ExtraBold.ttf" id="1_2hcl1"]
+
+[resource]
+font = ExtResource("1_2hcl1")
+font_size = 32

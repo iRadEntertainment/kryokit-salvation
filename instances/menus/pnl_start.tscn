@@ -1,0 +1,52 @@
+[gd_scene format=3 uid="uid://d1i06xdp8lji2"]
+
+[ext_resource type="Script" uid="uid://bticgx8lrhg6m" path="res://instances/menus/pnl_start.gd" id="1_h77qs"]
+[ext_resource type="LabelSettings" uid="uid://bsqx4o12mbbs3" path="res://UI/styles/label_titles.tres" id="2_rqwd6"]
+
+[node name="pnl_start" type="PanelContainer" unique_id=754080212]
+offset_right = 598.0
+offset_bottom = 430.0
+size_flags_horizontal = 10
+script = ExtResource("1_h77qs")
+metadata/_tab_index = 0
+
+[node name="vb" type="VBoxContainer" parent="." unique_id=1692072196]
+layout_mode = 2
+
+[node name="title" type="Label" parent="vb" unique_id=103190130]
+layout_mode = 2
+text = "Getting to the shift..."
+label_settings = ExtResource("2_rqwd6")
+horizontal_alignment = 1
+
+[node name="sep" type="HSeparator" parent="vb" unique_id=822622251]
+layout_mode = 2
+
+[node name="lb_story" type="RichTextLabel" parent="vb" unique_id=1810320566]
+custom_minimum_size = Vector2(300, 200)
+layout_mode = 2
+size_flags_vertical = 3
+bbcode_enabled = true
+text = "You are [shake]Mr. Coppetta[/shake], a forklift operator at Kryokit_ Inc.
+
+It's the last night shift of a long week. When you arrive to the premises, there is just one car in the parking lot.
+
+It looks like there is no power in one of the warehouses. You know... it's not going to be an easy shift.
+
+Learn how to operate a three-wheel stand-up electric rider forklift and save the day."
+
+[node name="hb_bottom" type="HBoxContainer" parent="vb" unique_id=600433039]
+layout_mode = 2
+
+[node name="btn_tutorial" type="Button" parent="vb/hb_bottom" unique_id=188817418]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Learn how to drive first"
+
+[node name="btn_start" type="Button" parent="vb/hb_bottom" unique_id=894693022]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Start the shift"
+
+[connection signal="pressed" from="vb/hb_bottom/btn_tutorial" to="." method="_on_btn_tutorial_pressed"]
+[connection signal="pressed" from="vb/hb_bottom/btn_start" to="." method="_on_btn_start_pressed"]
