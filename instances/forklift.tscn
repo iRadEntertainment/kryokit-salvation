@@ -41,21 +41,25 @@ rough = true
 absorbent = true
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_r8te8"]
-size = Vector3(0.1, 0.04, 1.2223877)
+size = Vector3(0.08, 0.04, 1.169138)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_xoi5w"]
-size = Vector3(0.1, 0.04, 1.2206299)
+size = Vector3(0.08, 0.04, 1.1614511)
 
 [node name="forklift" type="Node3D" unique_id=983298835]
 script = ExtResource("1_ddviu")
-lift_min_height = -0.05
+reset_raise = 2.0
+throttle_max_power = 3500.0
+mast_tilt_min = -4.5
+lift_min_height = -0.02
 lift_max_height = 5.2
+fork_max_width = 0.76
 
 [node name="vehicle_body" type="VehicleBody3D" parent="." unique_id=1776535538]
 unique_name_in_owner = true
-mass = 1800.0
+mass = 1300.0
 center_of_mass_mode = 1
-center_of_mass = Vector3(0, 0.14, -0.5)
+center_of_mass = Vector3(0, 0.5, -0.5)
 engine_force = 800.0
 steering = 3.1415927
 
@@ -209,7 +213,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.05977571, 0, 0)
 
 [node name="carriage_body" type="RigidBody3D" parent="." unique_id=815795375]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.8529252)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.05805105, 0.8529252)
 collision_layer = 2
 collision_mask = 2
 mass = 45.0
@@ -230,7 +234,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1303711, 1.2201538)
 
 [node name="fork_l_body" type="RigidBody3D" parent="." unique_id=1849089295]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2, 0.0021187663, 0.8538488)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2, -0.05805105, 0.8538488)
 mass = 30.0
 physics_material_override = SubResource("PhysicsMaterial_v6tai")
 center_of_mass_mode = 1
@@ -239,7 +243,7 @@ continuous_cd = true
 
 [node name="fork_l_coll" type="CollisionShape3D" parent="fork_l_body" unique_id=171380691]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.04121323, 0.91564333)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.04121323, 0.9024855)
 shape = SubResource("BoxShape3D_r8te8")
 debug_color = Color(0.639403, 0.5325897, 0, 0.83137256)
 
@@ -248,7 +252,7 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0
 
 [node name="fork_r_body" type="RigidBody3D" parent="." unique_id=1816431836]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2, 0.0021187663, 0.8538488)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2, -0.05805105, 0.8538488)
 mass = 30.0
 physics_material_override = SubResource("PhysicsMaterial_v6tai")
 center_of_mass_mode = 1
@@ -257,7 +261,7 @@ continuous_cd = true
 
 [node name="fork_r_coll" type="CollisionShape3D" parent="fork_r_body" unique_id=651667797]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.04121323, 0.9147645)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.04121323, 0.8989805)
 shape = SubResource("BoxShape3D_xoi5w")
 debug_color = Color(0.639403, 0.5325897, 0, 0.83137256)
 

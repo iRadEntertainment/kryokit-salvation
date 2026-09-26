@@ -8,12 +8,12 @@ class_name Forklift extends Node3D
 @export var throttle_max_power: float = 1500.0
 @export var brake_max_force: float = 50.0
 @export var brake_min_force: float = 5.5
+@export_range(0.1, 5.0, 0.01) var steering_speed: float = 1.8
 
 @export_group("Mast")
 @export var mast_tilt_speed: float = 0.15 #degrees/s
 @export var mast_tilt_max: float = 2.5 #degrees
 @export var mast_tilt_min: float = -6.5 #degrees
-@export var mast_motor_max_acc: float = 10.0 #kg*m2/s2
 
 @export_group("Lift")
 @export var lift_min_height: float = -0.15 #m
@@ -127,10 +127,6 @@ func _setup_tilt() -> void:
 		Generic6DOFJoint3D.PARAM_ANGULAR_UPPER_LIMIT,
 		deg_to_rad(mast_tilt_max)
 	)
-	joint_mast.set_param_x(
-		Generic6DOFJoint3D.PARAM_ANGULAR_FORCE_LIMIT,
-		mast_motor_max_acc
-	)
 
 
 func _setup_fork() -> void:
@@ -181,7 +177,7 @@ func _physics_process(delta: float) -> void:
 
 func _process_accellerations(delta: float) -> void:
 	if _steer_input:
-		_steering_acc = min(_steering_acc + delta, abs(_steer_input))
+		_steering_acc = min(_steering_acc + 5.0 * delta, 1.0)
 	else:
 		_steering_acc = 0.0
 	
@@ -204,11 +200,11 @@ func _process_accellerations(delta: float) -> void:
 
 func _process_driving(delta: float) -> void:
 	# steering
-	_target_steering += _steer_input * 3.0 * _steering_acc * delta
-	vehicle_body.steering = lerp(
+	_target_steering += _steer_input * steering_speed * _steering_acc * delta
+	vehicle_body.steering = lerpf(
 		vehicle_body.steering,
 		_target_steering,
-		5.0 * delta
+		15.0 * delta
 	)
 	
 	# drive
