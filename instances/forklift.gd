@@ -11,9 +11,6 @@ class_name Forklift extends Node3D
 @export_range(0.1, 5.0, 0.01) var steering_speed: float = 1.8
 @export_range(1, 5, 1) var steering_snap_division: int = 3
 
-var _was_accelerating: bool = false
-
-
 @export_group("Mast")
 @export var mast_tilt_speed: float = 0.15 #degrees/s
 @export var mast_tilt_max: float = 2.5 #degrees
@@ -53,13 +50,6 @@ var _was_accelerating: bool = false
 @onready var joint_fork_r: Generic6DOFJoint3D = %joint_fork_r
 
 @onready var text_nfo: TextEdit = %text_nfo
-
-#Audio
-@onready var audio_accel: AudioStreamPlayer3D = %AudioAccel
-@onready var audio_decel: AudioStreamPlayer3D = %AudioDecel
-@onready var audio_loop: AudioStreamPlayer3D = %AudioLoop
-
-
 
 # movement
 var current_speed: float:
@@ -112,15 +102,7 @@ func _ready() -> void:
 	_setup_fork()
 	fork_shift = 0.0
 	fork_width = 0.4
-	
-	
 
-func _on_audio_accel_finished() -> void:
-	# Once the ramp-up sound finishes, switch to the continuous loop if still moving/accelerating
-	var is_accelerating: bool = abs(_drive_input) > 0.01
-	if is_accelerating or vehicle_body.linear_velocity.length() > 0.5:
-		if not audio_loop.playing:
-			audio_loop.play()
 
 func _setup_lift() -> void:
 	joint_carriage.set_param_x(
@@ -192,7 +174,6 @@ func _physics_process(delta: float) -> void:
 	_process_driving(delta)
 	_process_mast(delta)
 	_process_fork(delta)
-	_process_audio(delta)
 
 
 func _process_accellerations(delta: float) -> void:
@@ -216,7 +197,6 @@ func _process_accellerations(delta: float) -> void:
 		_shift_acc = min(_shift_acc + delta * 0.7, abs(_shift_input))
 	else:
 		_shift_acc = 0.0
-
 
 
 func _process_driving(delta: float) -> void:
@@ -265,65 +245,6 @@ func _process_driving(delta: float) -> void:
 		_target_throttle,
 		5.0 * delta
 	)
-
-
-
-func _process_audio(_delta: float) -> void:
-	var is_accelerating: bool = abs(_drive_input) > 0.01
-	var moving_speed: float = vehicle_body.linear_velocity.length()
-
-
-
-
-#Release
-	if _was_accelerating and not is_accelerating and moving_speed > 0.5:
-		audio_accel.stop()
-		audio_loop.stop()
-		
-		audio_decel.play()
-	
-#Accelerate
-	if is_accelerating and not _was_accelerating:
-		audio_decel.stop()
-		audio_loop.stop()
-	
-		audio_accel.play()
-	
-
-# 		Crossfade ( I cannot seem to get this crossfading working between accelerate - loop - decelerate, 
-# 		try cutting off the accelerate off at the end and decelerate so they hit dont fade out)
-	
-	
-	if audio_accel.playing and audio_accel.stream:
-		var stream_length := audio_accel.stream.get_length()
-		var current_pos := audio_accel.get_playback_position()
-		var blend_duration: float = 1.0
-		if stream_length > blend_duration and current_pos >= (stream_length - blend_duration):
-			if not audio_loop.playing:
-				audio_loop.volume_db = 0.0
-				audio_loop.play()
-
-#crossfade
-			var progress := (current_pos - (stream_length - blend_duration)) / blend_duration
-			audio_accel.volume_db = linear_to_db(clamp(1.0 - progress, 0.0, 1.0))
-			audio_loop.volume_db = linear_to_db(clamp(progress, 0.0, 1.0))
-	
-	elif is_accelerating and not audio_accel.playing and not audio_loop.playing:
-		audio_loop.volume_db = 0.0
-		audio_loop.play()
-
-	# stop sounds when stopped
-	if moving_speed < 0.1 and not is_accelerating:
-		audio_accel.stop()
-		audio_loop.stop()
-		audio_decel.stop()
-	
-	# Pitch mod (working)
-	if audio_loop.playing:
-		audio_loop.pitch_scale = clamp(0.8 + (moving_speed * 0.05), 0.8, 1.4)
-	
-	_was_accelerating = is_accelerating
-
 
 
 func _process_mast(_delta: float) -> void:
