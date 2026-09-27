@@ -13,6 +13,9 @@
 [ext_resource type="Script" uid="uid://bewj0dep4bhip" path="res://instances/cam.gd" id="6_v6tai"]
 [ext_resource type="PackedScene" uid="uid://dm35x7ohux76s" path="res://assets/glbs/mast_2.glb" id="9_bwns0"]
 [ext_resource type="PackedScene" uid="uid://crby8705xrn1x" path="res://assets/glbs/mast_3.glb" id="10_ygvo3"]
+[ext_resource type="AudioStream" uid="uid://b8vookffldlwj" path="res://assets/audio/forklift_accelerate.wav" id="14_n06h1"]
+[ext_resource type="AudioStream" uid="uid://dbbg7m16lf87d" path="res://assets/audio/forklift_deccelerate.wav" id="15_4slcw"]
+[ext_resource type="AudioStream" uid="uid://cd1ex64jk41r4" path="res://assets/audio/forklift_loop.wav" id="16_qkf0m"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_mdew2"]
 viewport_path = NodePath("vehicle_body/monitor/sv_screen")
@@ -312,3 +315,21 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2, 0, 1.026)
 node_a = NodePath("../carriage_body")
 node_b = NodePath("../fork_r_body")
 linear_motor_x/enabled = true
+
+[node name="AudioAccel" type="AudioStreamPlayer3D" parent="." unique_id=2020344334]
+unique_name_in_owner = true
+stream = ExtResource("14_n06h1")
+attenuation_model = 3
+bus = &"SFX"
+
+[node name="AudioDecel" type="AudioStreamPlayer3D" parent="." unique_id=930164964]
+unique_name_in_owner = true
+stream = ExtResource("15_4slcw")
+attenuation_model = 3
+bus = &"SFX"
+
+[node name="AudioLoop" type="AudioStreamPlayer3D" parent="." unique_id=353214439]
+unique_name_in_owner = true
+stream = ExtResource("16_qkf0m")
+attenuation_model = 3
+bus = &"SFX"
