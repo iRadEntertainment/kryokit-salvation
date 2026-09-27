@@ -1,8 +1,29 @@
 [gd_scene format=3 uid="uid://bp6i4usty07fs"]
 
 [ext_resource type="Script" uid="uid://itto84w3rq5s" path="res://instances/GUI/hud.gd" id="1_22wxp"]
+[ext_resource type="Texture2D" uid="uid://cclbnt0k328nb" path="res://UI/hud/drive-wheel.svg" id="2_qw6lo"]
+[ext_resource type="Texture2D" uid="uid://bsx6l2vwiqf7r" path="res://UI/hud/wheel_indicator.svg" id="3_fx2am"]
+[ext_resource type="Texture2D" uid="uid://cm1ssacx11n2y" path="res://UI/hud/truck-ico.svg" id="4_q8bvl"]
+[ext_resource type="Texture2D" uid="uid://fo1divmww20i" path="res://UI/hud/fork-ico.svg" id="5_hbaeo"]
+[ext_resource type="Texture2D" uid="uid://dm5crq07hp352" path="res://UI/hud/wheel_ico.svg" id="6_gonos"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8mt0l"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8mt0l"]
+content_margin_left = 8.0
+content_margin_right = 8.0
+bg_color = Color(0.0115184765, 0.12850732, 0.18607476, 0.70980394)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.77254903, 0.8745098, 0.95686275, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fx2am"]
+bg_color = Color(0.9764706, 0.6901961, 0.41960785, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.8001508, 0.8001509, 0.8001508, 0)
 
 [node name="HUD" type="Control" unique_id=99248591]
 layout_mode = 3
@@ -14,20 +35,131 @@ grow_vertical = 2
 script = ExtResource("1_22wxp")
 metadata/_edit_lock_ = true
 
-[node name="controls" type="PanelContainer" parent="." unique_id=381618789]
+[node name="controls" type="Panel" parent="." unique_id=1988276436]
 layout_mode = 1
-anchors_preset = -1
+anchors_preset = 3
+anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_bottom = -365.80005
-grow_horizontal = 2
+offset_left = -464.0
+offset_top = -194.0
+offset_right = -13.0
+offset_bottom = -12.0
+grow_horizontal = 0
 grow_vertical = 0
-theme_override_styles/panel = SubResource("StyleBoxEmpty_8mt0l")
+theme_type_variation = &"PanelTransparent"
 
 [node name="hb_forklift_controls" type="HBoxContainer" parent="controls" unique_id=799991730]
-layout_mode = 2
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_left = 18.0
+offset_top = 15.0
+offset_right = 181.0
+offset_bottom = -15.0
+grow_vertical = 2
 
-[node name="_lb_forward" type="Label" parent="controls/hb_forklift_controls" unique_id=491947378]
+[node name="throttle_bar" type="ProgressBar" parent="controls/hb_forklift_controls" unique_id=68479753]
+unique_name_in_owner = true
 layout_mode = 2
-text = "forward"
+size_flags_vertical = 1
+theme_override_styles/background = SubResource("StyleBoxFlat_8mt0l")
+theme_override_styles/fill = SubResource("StyleBoxFlat_fx2am")
+max_value = 1.0
+value = 0.4
+fill_mode = 3
+show_percentage = false
+
+[node name="drive_wheel" type="TextureRect" parent="controls/hb_forklift_controls" unique_id=193321081]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(120, 120)
+layout_mode = 2
+offset_transform_enabled = true
+texture = ExtResource("2_qw6lo")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="wheel_indicator" type="TextureRect" parent="controls/hb_forklift_controls" unique_id=276071305]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(48, 48)
+layout_mode = 2
+offset_transform_enabled = true
+texture = ExtResource("3_fx2am")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="truck" type="TextureRect" parent="controls" unique_id=2028290129]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(58, 95)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 328.0
+offset_top = 74.0
+offset_right = -65.0
+offset_bottom = -13.0
+grow_horizontal = 2
+grow_vertical = 2
+offset_transform_enabled = true
+texture = ExtResource("4_q8bvl")
+expand_mode = 1
+stretch_mode = 5
+metadata/_edit_group_ = true
+
+[node name="fork_l" type="TextureRect" parent="controls/truck" unique_id=379813822]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(6, 64)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 13.0
+offset_top = -62.0
+offset_right = -39.0
+offset_bottom = -93.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(3, 0)
+offset_transform_enabled = true
+texture = ExtResource("5_hbaeo")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="fork_r" type="TextureRect" parent="controls/truck" unique_id=737865130]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(6, 64)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 39.0
+offset_top = -62.0
+offset_right = -13.0
+offset_bottom = -93.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(3, 0)
+offset_transform_enabled = true
+texture = ExtResource("5_hbaeo")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="thrust_wheel" type="TextureRect" parent="controls/truck" unique_id=1559797709]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(14, 14)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 9.0
+offset_top = 74.0
+offset_right = -35.0
+offset_bottom = -7.0
+grow_horizontal = 2
+grow_vertical = 2
+offset_transform_enabled = true
+texture = ExtResource("6_gonos")
+expand_mode = 1
+stretch_mode = 5

@@ -55,7 +55,7 @@ class_name Forklift extends Node3D
 var current_speed: float:
 	get: return vehicle_body.linear_velocity.length_squared()
 
-var _target_steering: float = 0.0
+var target_steering: float = 0.0
 var _target_throttle: float = 0.0
 var _wrapped_steering: float = 1
 var _throttle_dir: int = 1
@@ -76,8 +76,8 @@ var fork_width: float:
 # Inputs and input accellerations
 var _drive_input: float:
 	get: return Input.get_axis(&"back", &"forward")
-var _steering_acc: float
-var _steer_input: float:
+var steering_acc: float
+var steer_input: float:
 	get: return -Input.get_axis(&"steer_left", &"steer_right")
 var _lift_acc: float
 var _lift_input: float:
@@ -177,10 +177,10 @@ func _physics_process(delta: float) -> void:
 
 
 func _process_accellerations(delta: float) -> void:
-	if _steer_input:
-		_steering_acc = min(_steering_acc + 5.0 * delta, 1.0)
+	if steer_input:
+		steering_acc = min(steering_acc + 5.0 * delta, 1.0)
 	else:
-		_steering_acc = 0.0
+		steering_acc = 0.0
 	
 	if _tilt_input:
 		_tilt_acc = min(_tilt_acc + delta, abs(_tilt_input))
@@ -201,10 +201,10 @@ func _process_accellerations(delta: float) -> void:
 
 func _process_driving(delta: float) -> void:
 	# steering
-	_target_steering += _steer_input * steering_speed * _steering_acc * delta
+	target_steering += steer_input * steering_speed * steering_acc * delta
 	vehicle_body.steering = lerpf(
 		vehicle_body.steering,
-		_target_steering,
+		target_steering,
 		15.0 * delta
 	)
 	
@@ -215,7 +215,7 @@ func _process_driving(delta: float) -> void:
 		_throttle_dir = -1 if _wrapped_steering > PI/2 else 1
 		# snap steering
 		var increment: float = PI * 0.5 / pow(2, steering_snap_division)
-		_target_steering = snappedf(_target_steering, increment)
+		target_steering = snappedf(target_steering, increment)
 	
 	if _drive_input:
 		_target_throttle = lerp(
