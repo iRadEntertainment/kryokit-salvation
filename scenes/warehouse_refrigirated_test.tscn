@@ -5,6 +5,8 @@
 [ext_resource type="PackedScene" uid="uid://dlyayug82m5ux" path="res://assets/glbs/warehouse/refrigerated/refrigerated_doorframe.glb" id="3_8p85l"]
 [ext_resource type="PackedScene" uid="uid://ctw07nk0o84ue" path="res://assets/glbs/warehouse/refrigerated/refrigerated_roof_frame.glb" id="4_gutbd"]
 [ext_resource type="PackedScene" uid="uid://c1t1pq0n2rpv5" path="res://assets/glbs/warehouse/regular/roof_corrugated.glb" id="5_5wh4k"]
+[ext_resource type="PackedScene" uid="uid://dpnefjtqisswu" path="res://assets/glbs/warehouse/regular/roof_frame.glb" id="6_5ny2n"]
+[ext_resource type="PackedScene" uid="uid://b0vo181ogbtpj" path="res://instances/refrigeration_unit.tscn" id="7_bl6k7"]
 
 [node name="Warehouse_Refrigirated_Test" type="Node3D" unique_id=100941699]
 
@@ -348,6 +350,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0)
 
 [node name="roof_corrugated" parent="ROOF/refrigerated_roof_frame" unique_id=1607303543 instance=ExtResource("5_5wh4k")]
 
+[node name="roof_frame" parent="ROOF/refrigerated_roof_frame" unique_id=1850669817 instance=ExtResource("6_5ny2n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4, 0)
+
+[node name="roof_corrugated" parent="ROOF/refrigerated_roof_frame/roof_frame" unique_id=37708133 instance=ExtResource("5_5wh4k")]
+
 [node name="refrigerated_roof_frame2" parent="ROOF" unique_id=1708443556 instance=ExtResource("4_gutbd")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 4, 0)
 
@@ -393,10 +400,20 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36, 4, 0)
 
 [node name="roof_corrugated" parent="ROOF/refrigerated_roof_frame10" unique_id=2007983100 instance=ExtResource("5_5wh4k")]
 
+[node name="roof_frame" parent="ROOF/refrigerated_roof_frame10" unique_id=131997680 instance=ExtResource("6_5ny2n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4, 0)
+
+[node name="roof_corrugated" parent="ROOF/refrigerated_roof_frame10/roof_frame" unique_id=2007639665 instance=ExtResource("5_5wh4k")]
+
 [node name="refrigerated_roof_frame11" parent="ROOF" unique_id=2041203085 instance=ExtResource("4_gutbd")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 4)
 
 [node name="roof_corrugated" parent="ROOF/refrigerated_roof_frame11" unique_id=1199512344 instance=ExtResource("5_5wh4k")]
+
+[node name="roof_frame" parent="ROOF/refrigerated_roof_frame11/roof_corrugated" unique_id=1582083094 instance=ExtResource("6_5ny2n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4, 0)
+
+[node name="roof_corrugated" parent="ROOF/refrigerated_roof_frame11/roof_corrugated/roof_frame" unique_id=715719699 instance=ExtResource("5_5wh4k")]
 
 [node name="refrigerated_roof_frame12" parent="ROOF" unique_id=631920617 instance=ExtResource("4_gutbd")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 4, 4)
@@ -443,10 +460,20 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36, 4, 4)
 
 [node name="roof_corrugated" parent="ROOF/refrigerated_roof_frame20" unique_id=398122901 instance=ExtResource("5_5wh4k")]
 
+[node name="roof_frame" parent="ROOF/refrigerated_roof_frame20" unique_id=2125180434 instance=ExtResource("6_5ny2n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4, 0)
+
+[node name="roof_corrugated" parent="ROOF/refrigerated_roof_frame20/roof_frame" unique_id=2069976860 instance=ExtResource("5_5wh4k")]
+
 [node name="refrigerated_roof_frame21" parent="ROOF" unique_id=2110275310 instance=ExtResource("4_gutbd")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 8)
 
 [node name="roof_corrugated" parent="ROOF/refrigerated_roof_frame21" unique_id=1269864104 instance=ExtResource("5_5wh4k")]
+
+[node name="roof_frame" parent="ROOF/refrigerated_roof_frame21/roof_corrugated" unique_id=66728842 instance=ExtResource("6_5ny2n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4, 0)
+
+[node name="roof_corrugated" parent="ROOF/refrigerated_roof_frame21/roof_corrugated/roof_frame" unique_id=1162608951 instance=ExtResource("5_5wh4k")]
 
 [node name="refrigerated_roof_frame22" parent="ROOF" unique_id=40369935 instance=ExtResource("4_gutbd")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 4, 8)
@@ -493,10 +520,20 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36, 4, 8)
 
 [node name="roof_corrugated" parent="ROOF/refrigerated_roof_frame30" unique_id=1543110394 instance=ExtResource("5_5wh4k")]
 
+[node name="roof_frame" parent="ROOF/refrigerated_roof_frame30" unique_id=1134112713 instance=ExtResource("6_5ny2n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4, 0)
+
+[node name="roof_corrugated" parent="ROOF/refrigerated_roof_frame30/roof_frame" unique_id=1124015012 instance=ExtResource("5_5wh4k")]
+
 [node name="refrigerated_roof_frame31" parent="ROOF" unique_id=215083194 instance=ExtResource("4_gutbd")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 12)
 
 [node name="roof_corrugated" parent="ROOF/refrigerated_roof_frame31" unique_id=272216972 instance=ExtResource("5_5wh4k")]
+
+[node name="roof_frame" parent="ROOF/refrigerated_roof_frame31" unique_id=1791882273 instance=ExtResource("6_5ny2n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4, 0)
+
+[node name="roof_corrugated" parent="ROOF/refrigerated_roof_frame31/roof_frame" unique_id=2016953159 instance=ExtResource("5_5wh4k")]
 
 [node name="refrigerated_roof_frame32" parent="ROOF" unique_id=194756897 instance=ExtResource("4_gutbd")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 4, 12)
@@ -543,10 +580,20 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36, 4, 12)
 
 [node name="roof_corrugated" parent="ROOF/refrigerated_roof_frame40" unique_id=939019604 instance=ExtResource("5_5wh4k")]
 
+[node name="roof_frame" parent="ROOF/refrigerated_roof_frame40" unique_id=65024284 instance=ExtResource("6_5ny2n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4, 0)
+
+[node name="roof_corrugated" parent="ROOF/refrigerated_roof_frame40/roof_frame" unique_id=1957344982 instance=ExtResource("5_5wh4k")]
+
 [node name="refrigerated_roof_frame41" parent="ROOF" unique_id=78506851 instance=ExtResource("4_gutbd")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 16)
 
 [node name="roof_corrugated" parent="ROOF/refrigerated_roof_frame41" unique_id=1956023294 instance=ExtResource("5_5wh4k")]
+
+[node name="roof_frame" parent="ROOF/refrigerated_roof_frame41/roof_corrugated" unique_id=1339753478 instance=ExtResource("6_5ny2n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4, 0)
+
+[node name="roof_corrugated" parent="ROOF/refrigerated_roof_frame41/roof_corrugated/roof_frame" unique_id=339940917 instance=ExtResource("5_5wh4k")]
 
 [node name="refrigerated_roof_frame42" parent="ROOF" unique_id=856894285 instance=ExtResource("4_gutbd")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 4, 16)
@@ -592,3 +639,22 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32, 4, 16)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36, 4, 16)
 
 [node name="roof_corrugated" parent="ROOF/refrigerated_roof_frame50" unique_id=595821102 instance=ExtResource("5_5wh4k")]
+
+[node name="roof_frame" parent="ROOF/refrigerated_roof_frame50" unique_id=205859795 instance=ExtResource("6_5ny2n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4, 0)
+
+[node name="roof_corrugated" parent="ROOF/refrigerated_roof_frame50/roof_frame" unique_id=382973494 instance=ExtResource("5_5wh4k")]
+
+[node name="DECORATION" type="Node3D" parent="." unique_id=1449582402]
+
+[node name="refrigeration_unit2" parent="DECORATION" unique_id=1750866330 instance=ExtResource("7_bl6k7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36, -0.2, 2)
+
+[node name="refrigeration_unit5" parent="DECORATION" unique_id=1908067651 instance=ExtResource("7_bl6k7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36, -0.2, 14)
+
+[node name="refrigeration_unit3" parent="DECORATION" unique_id=1671265384 instance=ExtResource("7_bl6k7")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, -0.2, 14)
+
+[node name="refrigeration_unit6" parent="DECORATION" unique_id=403354639 instance=ExtResource("7_bl6k7")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, -0.2, 2)

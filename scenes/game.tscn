@@ -70,7 +70,7 @@ material_override = SubResource("StandardMaterial3D_lexek")
 mesh = SubResource("QuadMesh_8mt0l")
 
 [node name="forklift" parent="." unique_id=1776535538 instance=ExtResource("2_iywne")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.08696018, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.08696018, -19.477402)
 
 [node name="pallets" type="Node3D" parent="." unique_id=23978430]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0.1424138, 0)
