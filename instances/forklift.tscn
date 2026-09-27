@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://fplixeadvfo6" path="res://assets/glbs/body.glb" id="2_r8te8"]
 [ext_resource type="PackedScene" uid="uid://dd1m85b0evov" path="res://assets/glbs/thrust_wheel.glb" id="2_ryygl"]
 [ext_resource type="PackedScene" uid="uid://bk7uhy3mf20jf" path="res://assets/glbs/load_wheel_R.glb" id="2_xn44t"]
+[ext_resource type="Texture2D" uid="uid://dfak6apgtachb" path="res://assets/decals/KryoKitincLogo copy.png" id="3_syp4r"]
 [ext_resource type="PackedScene" uid="uid://b1c2j566p32pb" path="res://assets/glbs/carriage.glb" id="4_32q5h"]
 [ext_resource type="PackedScene" uid="uid://c1bayfbp7p518" path="res://assets/glbs/load_wheel_L.glb" id="4_ri2lj"]
 [ext_resource type="PackedScene" uid="uid://divu04mo3x1vn" path="res://assets/glbs/fork.glb" id="5_x3x2s"]
@@ -11,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://ci07wfnk1n4hu" path="res://assets/glbs/mast.glb" id="6_c51dl"]
 [ext_resource type="Script" uid="uid://bewj0dep4bhip" path="res://instances/cam.gd" id="6_v6tai"]
 [ext_resource type="PackedScene" uid="uid://dm35x7ohux76s" path="res://assets/glbs/mast_2.glb" id="9_bwns0"]
+[ext_resource type="PackedScene" uid="uid://crby8705xrn1x" path="res://assets/glbs/mast_3.glb" id="10_ygvo3"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_mdew2"]
 viewport_path = NodePath("vehicle_body/monitor/sv_screen")
@@ -41,10 +43,10 @@ rough = true
 absorbent = true
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_r8te8"]
-size = Vector3(0.08, 0.04, 1.169138)
+size = Vector3(0.08, 0.04, 1.3)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_xoi5w"]
-size = Vector3(0.08, 0.04, 1.1614511)
+size = Vector3(0.08, 0.04, 1.3)
 
 [node name="forklift" type="Node3D" unique_id=983298835]
 script = ExtResource("1_ddviu")
@@ -64,7 +66,19 @@ engine_force = 800.0
 steering = 3.1415927
 
 [node name="body" parent="vehicle_body" unique_id=661026329 instance=ExtResource("2_r8te8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.05977571, -0.090037405, 0.72029924)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.09, 0.72)
+
+[node name="Decals" type="Node3D" parent="vehicle_body/body" unique_id=1542758270]
+
+[node name="Decal" type="Decal" parent="vehicle_body/body/Decals" unique_id=1905160401]
+transform = Transform3D(3.004036e-08, 1, -6.008072e-08, 3.0040358e-08, -8.742278e-08, -0.68724334, -0.68724334, 4.371139e-08, -3.004036e-08, 0.6613232, 1.33621, -0.4685136)
+size = Vector3(0.5, 0.07714844, 0.262)
+texture_albedo = ExtResource("3_syp4r")
+
+[node name="Decal2" type="Decal" parent="vehicle_body/body/Decals" unique_id=1565103718]
+transform = Transform3D(-0.6872434, 5.9604645e-08, -3.0040376e-08, 3.0040358e-08, -8.742276e-08, -0.68724334, -5.9604645e-08, -0.9999999, 6.0080716e-08, 0.35225144, 1.0229841, -1.9254901)
+size = Vector3(0.5, 0.12646484, 0.262)
+texture_albedo = ExtResource("3_syp4r")
 
 [node name="monitor" type="MeshInstance3D" parent="vehicle_body" unique_id=150643878]
 transform = Transform3D(-1, 0, -8.742278e-08, -6.181724e-08, 0.70710677, 0.70710677, 6.181724e-08, 0.70710677, -0.70710677, 0, 1.7686391, 0.26978076)
@@ -117,8 +131,8 @@ wheel_rest_length = 0.04
 suspension_travel = 0.02
 suspension_stiffness = 800.0
 suspension_max_force = 35000.0
-damping_compression = 3.5
-damping_relaxation = 3.8
+damping_compression = 56.0
+damping_relaxation = 60.8
 
 [node name="IDW_SteeringPivot" type="Node3D" parent="vehicle_body" unique_id=1406832720]
 unique_name_in_owner = true
@@ -135,8 +149,8 @@ wheel_rest_length = 0.05
 suspension_travel = 0.02
 suspension_stiffness = 800.0
 suspension_max_force = 15000.0
-damping_compression = 3.5
-damping_relaxation = 3.8
+damping_compression = 56.0
+damping_relaxation = 60.8
 
 [node name="load_wheel_R" parent="vehicle_body/wheel_front_r" unique_id=96352260 instance=ExtResource("2_xn44t")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5597757, -0.30851865, 0)
@@ -149,8 +163,8 @@ wheel_rest_length = 0.05
 suspension_travel = 0.02
 suspension_stiffness = 800.0
 suspension_max_force = 15000.0
-damping_compression = 3.5
-damping_relaxation = 3.8
+damping_compression = 56.0
+damping_relaxation = 60.8
 
 [node name="load_wheel_L" parent="vehicle_body/wheel_front_l" unique_id=611269869 instance=ExtResource("4_ri2lj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4402243, -0.30851865, 0)
@@ -163,7 +177,7 @@ target = NodePath("../../carriage_body/cam_target")
 [node name="IDW_Rotating_Spotlight3D" type="SpotLight3D" parent="vehicle_body" unique_id=1382821880]
 process_mode = 3
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.27493212, 2.6320844, -0.6610342)
-light_color = Color(0.90588236, 0.47058824, 0, 1)
+light_color = Color(1, 0.51950234, 0.23511073, 1)
 light_energy = 2.0
 light_volumetric_fog_energy = 5.0
 light_specular = 1.1
@@ -201,15 +215,14 @@ spot_range = 11.907
 spot_angle = 70.0
 spot_angle_attenuation = 0.2871746
 
-[node name="mast_1" parent="mast_body" unique_id=1035341684 instance=ExtResource("6_c51dl")]
+[node name="mast_3" parent="mast_body" unique_id=1035341684 instance=ExtResource("6_c51dl")]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.05977571, 0, 0)
 
-[node name="mast_2" parent="mast_body" unique_id=2069836780 instance=ExtResource("9_bwns0")]
+[node name="mast_2" parent="mast_body" unique_id=1228464593 instance=ExtResource("10_ygvo3")]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.05977571, 0, 0)
 
-[node name="mast_3" parent="mast_body" unique_id=407813819 instance=ExtResource("9_bwns0")]
+[node name="mast_1" parent="mast_body" unique_id=407813819 instance=ExtResource("9_bwns0")]
+unique_name_in_owner = true
 
 [node name="carriage_body" type="RigidBody3D" parent="." unique_id=815795375]
 unique_name_in_owner = true
@@ -222,7 +235,7 @@ can_sleep = false
 continuous_cd = true
 
 [node name="carriage_mesh" parent="carriage_body" unique_id=1680499728 instance=ExtResource("4_32q5h")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.063405514)
 
 [node name="coll_carriage" type="CollisionShape3D" parent="carriage_body" unique_id=1206881159]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3981037, 0.26405263)
@@ -243,12 +256,12 @@ continuous_cd = true
 
 [node name="fork_l_coll" type="CollisionShape3D" parent="fork_l_body" unique_id=171380691]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.04121323, 0.9024855)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.04121323, 0.9916544)
 shape = SubResource("BoxShape3D_r8te8")
 debug_color = Color(0.639403, 0.5325897, 0, 0.83137256)
 
 [node name="fork_mesh" parent="fork_l_body" unique_id=1599815123 instance=ExtResource("5_x3x2s")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.34604788, 0.028, 0.068359375)
 
 [node name="fork_r_body" type="RigidBody3D" parent="." unique_id=1816431836]
 unique_name_in_owner = true
@@ -261,12 +274,12 @@ continuous_cd = true
 
 [node name="fork_r_coll" type="CollisionShape3D" parent="fork_r_body" unique_id=651667797]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.04121323, 0.8989805)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.04121323, 0.9881494)
 shape = SubResource("BoxShape3D_xoi5w")
 debug_color = Color(0.639403, 0.5325897, 0, 0.83137256)
 
 [node name="fork_mesh" parent="fork_r_body" unique_id=304025479 instance=ExtResource("5_x3x2s")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.34694678, 0.028, 0.068359375)
 
 [node name="joint_mast" type="Generic6DOFJoint3D" parent="." unique_id=462628112]
 unique_name_in_owner = true

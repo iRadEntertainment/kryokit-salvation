@@ -4,3 +4,4 @@
 
 # VSCode specific ignore
 .vscode/
+*.import

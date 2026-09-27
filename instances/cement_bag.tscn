@@ -12,6 +12,8 @@ size = Vector3(0.43554688, 0.1665039, 0.67871094)
 [node name="cement_bag" type="RigidBody3D" unique_id=1017875473]
 mass = 20.0
 physics_material_override = SubResource("PhysicsMaterial_lexek")
+linear_damp = 0.01
+angular_damp = 0.01
 
 [node name="cement_bag_1k" parent="." unique_id=1394264348 instance=ExtResource("1_5g2d5")]
 
