@@ -1,235 +1,314 @@
 [gd_scene format=3 uid="uid://blseo38kk11bo"]
 
-[ext_resource type="Script" uid="uid://dnidtpkq32g0c" path="res://scenes/game.gd" id="1_ri2lj"]
-[ext_resource type="PackedScene" uid="uid://bn4m8aiq6k0hj" path="res://scenes/warehouse_test.tscn" id="2_r8te8"]
-[ext_resource type="PackedScene" uid="uid://bn3gntsl510ao" path="res://scenes/warehouse_refrigirated_test.tscn" id="3_bwns0"]
-[ext_resource type="PackedScene" uid="uid://xu0r8ac28h4g" path="res://instances/pallet.tscn" id="4_syp4r"]
-[ext_resource type="PackedScene" uid="uid://7clljett1r8u" path="res://instances/cement_bag.tscn" id="5_ygvo3"]
-[ext_resource type="PackedScene" uid="uid://dnqg04fl6j6" path="res://instances/load_blackwrap.tscn" id="6_n06h1"]
-[ext_resource type="PackedScene" uid="uid://biro1v6rgmrre" path="res://instances/GUI/gui.tscn" id="7_tixgj"]
-[ext_resource type="PackedScene" uid="uid://c1sb5rpp2v40s" path="res://instances/shelf.tscn" id="8_4slcw"]
-[ext_resource type="PackedScene" uid="uid://blseo38kk11bo" path="res://instances/forklift.tscn" id="9_qkf0m"]
+[ext_resource type="Script" uid="uid://cnfbaroo8mcku" path="res://instances/forklift.gd" id="1_ddviu"]
+[ext_resource type="PackedScene" uid="uid://fplixeadvfo6" path="res://assets/glbs/body.glb" id="2_r8te8"]
+[ext_resource type="PackedScene" uid="uid://dd1m85b0evov" path="res://assets/glbs/thrust_wheel.glb" id="2_ryygl"]
+[ext_resource type="PackedScene" uid="uid://bk7uhy3mf20jf" path="res://assets/glbs/load_wheel_R.glb" id="2_xn44t"]
+[ext_resource type="Texture2D" uid="uid://dfak6apgtachb" path="res://assets/decals/KryoKitincLogo copy.png" id="3_syp4r"]
+[ext_resource type="PackedScene" uid="uid://b1c2j566p32pb" path="res://assets/glbs/carriage.glb" id="4_32q5h"]
+[ext_resource type="PackedScene" uid="uid://c1bayfbp7p518" path="res://assets/glbs/load_wheel_L.glb" id="4_ri2lj"]
+[ext_resource type="PackedScene" uid="uid://divu04mo3x1vn" path="res://assets/glbs/fork.glb" id="5_x3x2s"]
+[ext_resource type="Script" uid="uid://bjanjit7rbf2y" path="res://scripts/forklift_rotating_spot_light_.gd" id="5_xomti"]
+[ext_resource type="PackedScene" uid="uid://ci07wfnk1n4hu" path="res://assets/glbs/mast.glb" id="6_c51dl"]
+[ext_resource type="Script" uid="uid://bewj0dep4bhip" path="res://instances/cam.gd" id="6_v6tai"]
+[ext_resource type="PackedScene" uid="uid://dm35x7ohux76s" path="res://assets/glbs/mast_2.glb" id="9_bwns0"]
+[ext_resource type="PackedScene" uid="uid://crby8705xrn1x" path="res://assets/glbs/mast_3.glb" id="10_ygvo3"]
 
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_663hl"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_mdew2"]
+viewport_path = NodePath("vehicle_body/monitor/sv_screen")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_q5rnw"]
+resource_local_to_scene = true
+albedo_texture = SubResource("ViewportTexture_mdew2")
+
+[sub_resource type="QuadMesh" id="QuadMesh_8mt0l"]
+size = Vector2(1.3, 0.46)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8mt0l"]
+size = Vector3(1.1542969, 2.8114576, 1.941864)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_q5rnw"]
+size = Vector3(0.76660156, 2.856186, 0.41381836)
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ryygl"]
 rough = true
 absorbent = true
 
-[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_k6dd2"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_lexek"]
+size = Vector3(1.0061035, 0.6747246, 0.18076599)
 
-[sub_resource type="Gradient" id="Gradient_tie64"]
-offsets = PackedFloat32Array(0, 0.75357145, 1)
-colors = PackedColorArray(0.02450536, 0.030421074, 0.123906486, 1, 0.13483018, 0.22499788, 0.45520014, 1, 0, 0.696819, 0.69988126, 1)
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_v6tai"]
+friction = 0.95
+rough = true
+absorbent = true
 
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_dlrnw"]
-noise_type = 2
-frequency = 0.2946
-fractal_type = 0
-cellular_return_type = 0
-domain_warp_type = 2
+[sub_resource type="BoxShape3D" id="BoxShape3D_r8te8"]
+size = Vector3(0.08, 0.04, 1.3)
 
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_0tnpc"]
-width = 2048
-height = 2048
-generate_mipmaps = false
-noise = SubResource("FastNoiseLite_dlrnw")
-color_ramp = SubResource("Gradient_tie64")
-normalize = false
+[sub_resource type="BoxShape3D" id="BoxShape3D_xoi5w"]
+size = Vector3(0.08, 0.04, 1.3)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8284g"]
-albedo_texture = SubResource("NoiseTexture2D_0tnpc")
+[node name="forklift" type="Node3D" unique_id=983298835]
+script = ExtResource("1_ddviu")
+reset_raise = 2.0
+throttle_max_power = 3500.0
+mast_tilt_min = -4.5
+lift_min_height = -0.02
+lift_max_height = 5.2
+fork_max_width = 0.76
 
-[sub_resource type="QuadMesh" id="QuadMesh_1ncja"]
-size = Vector2(300, 300)
+[node name="vehicle_body" type="VehicleBody3D" parent="." unique_id=1776535538]
+unique_name_in_owner = true
+mass = 1300.0
+center_of_mass_mode = 1
+center_of_mass = Vector3(0, 0.5, -0.5)
+engine_force = 800.0
+steering = 3.1415927
 
-[sub_resource type="Environment" id="Environment_64wi0"]
-background_mode = 4
-sdfgi_enabled = true
+[node name="Camera3D" type="Camera3D" parent="vehicle_body" unique_id=314452289 node_paths=PackedStringArray("target")]
+transform = Transform3D(-1, 5.440307e-08, -6.843283e-08, 0, 0.7827802, 0.6222984, 8.74228e-08, 0.6222984, -0.7827802, 0, 2.3947394, -1.5647922)
+script = ExtResource("6_v6tai")
+target = NodePath("../../carriage_body/cam_target")
 
-[node name="Game" type="Node3D" unique_id=1497330775]
-script = ExtResource("1_ri2lj")
-metadata/_custom_type_script = "uid://dnidtpkq32g0c"
+[node name="body" parent="vehicle_body" unique_id=661026329 instance=ExtResource("2_r8te8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.09, 0.72)
 
-[node name="moon" type="DirectionalLight3D" parent="." unique_id=252260589]
-transform = Transform3D(-0.8275823, -0.16980088, -0.535047, -0.5000933, 0.6559697, 0.5653411, 0.2549792, 0.7354397, -0.62778515, 0, 0, 0)
-shadow_enabled = true
-shadow_bias = 0.01
-shadow_normal_bias = 1.55
-shadow_opacity = 0.8
-shadow_blur = 0.3
+[node name="Decals" type="Node3D" parent="vehicle_body/body" unique_id=1542758270]
 
-[node name="WarehouseTest" parent="." unique_id=61947791 instance=ExtResource("2_r8te8")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 25.023, 0, 12)
+[node name="Decal" type="Decal" parent="vehicle_body/body/Decals" unique_id=1905160401]
+transform = Transform3D(3.004036e-08, 1, -6.008072e-08, 3.0040358e-08, -8.742278e-08, -0.68724334, -0.68724334, 4.371139e-08, -3.004036e-08, 0.6613232, 1.33621, -0.4685136)
+size = Vector3(0.5, 0.07714844, 0.262)
+texture_albedo = ExtResource("3_syp4r")
 
-[node name="Warehouse_Refrigirated_Test" parent="." unique_id=100941699 instance=ExtResource("3_bwns0")]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 73, 0, 12)
+[node name="Decal2" type="Decal" parent="vehicle_body/body/Decals" unique_id=1565103718]
+transform = Transform3D(-0.6872434, 5.9604645e-08, -3.0040376e-08, 3.0040358e-08, -8.742276e-08, -0.68724334, -5.9604645e-08, -0.9999999, 6.0080716e-08, 0.35225144, 1.0229841, -1.9254901)
+size = Vector3(0.5, 0.12646484, 0.262)
+texture_albedo = ExtResource("3_syp4r")
 
-[node name="floor" type="StaticBody3D" parent="." unique_id=1421173993]
-physics_material_override = SubResource("PhysicsMaterial_663hl")
-metadata/_edit_group_ = true
-metadata/_edit_lock_ = true
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="floor" unique_id=1477452762]
-shape = SubResource("WorldBoundaryShape3D_k6dd2")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="floor" unique_id=2052326251]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0)
+[node name="monitor" type="MeshInstance3D" parent="vehicle_body" unique_id=150643878]
+transform = Transform3D(-1, 0, -8.742278e-08, -6.181724e-08, 0.70710677, 0.70710677, 6.181724e-08, 0.70710677, -0.70710677, 0, 1.7686391, 0.26978076)
 visible = false
-material_override = SubResource("StandardMaterial3D_8284g")
-mesh = SubResource("QuadMesh_1ncja")
+material_override = SubResource("StandardMaterial3D_q5rnw")
+mesh = SubResource("QuadMesh_8mt0l")
 
-[node name="forklift" parent="." unique_id=983298835 instance=ExtResource("9_qkf0m")]
+[node name="sv_screen" type="SubViewport" parent="vehicle_body/monitor" unique_id=2023285251]
+size = Vector2i(650, 230)
 
-[node name="pallets" type="Node3D" parent="." unique_id=1279357182]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0.1424138, 0)
+[node name="screen" type="PanelContainer" parent="vehicle_body/monitor/sv_screen" unique_id=1568696518]
+custom_minimum_size = Vector2(650, 230)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="pallet" parent="pallets" unique_id=143866765 instance=ExtResource("4_syp4r")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 5.251619, 0, 9.874026)
+[node name="lb_bg" type="Label" parent="vehicle_body/monitor/sv_screen/screen" unique_id=328841860]
+self_modulate = Color(1, 1, 1, 0.3647059)
+layout_mode = 2
+text = "TEST"
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="pallet2" parent="pallets" unique_id=366049864 instance=ExtResource("4_syp4r")]
-transform = Transform3D(0.70710677, 0, -0.70710677, 0, 1, 0, 0.70710677, 0, 0.70710677, 5.6361885, 9.536743e-07, 2.6909916)
+[node name="vb" type="VBoxContainer" parent="vehicle_body/monitor/sv_screen/screen" unique_id=997258077]
+layout_mode = 2
 
-[node name="pallet8" parent="pallets" unique_id=1322783570 instance=ExtResource("4_syp4r")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -3.4377666, 0, 8.950741)
+[node name="text_nfo" type="TextEdit" parent="vehicle_body/monitor/sv_screen/screen/vb" unique_id=1345678512]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+placeholder_text = "test"
 
-[node name="pallet9" parent="pallets" unique_id=1628340947 instance=ExtResource("4_syp4r")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.613396, 2.3841858e-07, -3.7137964)
+[node name="coll" type="CollisionShape3D" parent="vehicle_body" unique_id=491634650]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4049973, -0.2361908)
+shape = SubResource("BoxShape3D_8mt0l")
+debug_color = Color(0.67276233, 0.30755237, 1, 0.41960785)
 
-[node name="pallet10" parent="pallets" unique_id=1818545164 instance=ExtResource("4_syp4r")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.6044035, 0, 10.463965)
+[node name="wheel_thrust" type="VehicleWheel3D" parent="vehicle_body" unique_id=1335644928]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.22, -0.914)
+engine_force = 800.0
+steering = 3.1415927
+use_as_traction = true
+use_as_steering = true
+wheel_roll_influence = 0.5
+wheel_radius = 0.22
+wheel_rest_length = 0.04
+suspension_travel = 0.02
+suspension_stiffness = 800.0
+suspension_max_force = 35000.0
+damping_compression = 56.0
+damping_relaxation = 60.8
 
-[node name="pallet3" parent="pallets" unique_id=1016000199 instance=ExtResource("4_syp4r")]
-transform = Transform3D(-0.33013636, 0, 0.94393325, 0, 1, 0, -0.94393325, 0, -0.33013636, -9.177868, 2.3841858e-07, -3.841242)
+[node name="IDW_SteeringPivot" type="Node3D" parent="vehicle_body" unique_id=1406832720]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.325, 0.21837932, -0.914)
 
-[node name="pallet4" parent="pallets" unique_id=931817998 instance=ExtResource("4_syp4r")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.6598897, 0, -3.7377644)
+[node name="thrust_wheel" parent="vehicle_body/IDW_SteeringPivot" unique_id=1800178509 instance=ExtResource("2_ryygl")]
+unique_name_in_owner = true
 
-[node name="pallet5" parent="pallets" unique_id=1593110529 instance=ExtResource("4_syp4r")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 3.4209497, 0, 6.7124095)
+[node name="wheel_front_r" type="VehicleWheel3D" parent="vehicle_body" unique_id=457649157]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.51, 0.26660353, 0.712)
+wheel_roll_influence = 0.5
+wheel_radius = 0.275
+wheel_rest_length = 0.05
+suspension_travel = 0.02
+suspension_stiffness = 800.0
+suspension_max_force = 15000.0
+damping_compression = 56.0
+damping_relaxation = 60.8
 
-[node name="pallet11" parent="pallets" unique_id=1320549125 instance=ExtResource("4_syp4r")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 2.503013, 0, 6.7124095)
+[node name="load_wheel_R" parent="vehicle_body/wheel_front_r" unique_id=96352260 instance=ExtResource("2_xn44t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5597757, -0.30851865, 0)
 
-[node name="pallet12" parent="pallets" unique_id=492521991 instance=ExtResource("4_syp4r")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 1.5326221, 0, 6.7124095)
+[node name="wheel_front_l" type="VehicleWheel3D" parent="vehicle_body" unique_id=917327415]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.51, 0.26660353, 0.71176445)
+wheel_roll_influence = 0.5
+wheel_radius = 0.275
+wheel_rest_length = 0.05
+suspension_travel = 0.02
+suspension_stiffness = 800.0
+suspension_max_force = 15000.0
+damping_compression = 56.0
+damping_relaxation = 60.8
 
-[node name="pallet6" parent="pallets" unique_id=1472462610 instance=ExtResource("4_syp4r")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -6.2024994, 0, 4.9297767)
+[node name="load_wheel_L" parent="vehicle_body/wheel_front_l" unique_id=611269869 instance=ExtResource("4_ri2lj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4402243, -0.30851865, 0)
 
-[node name="pallet7" parent="pallets" unique_id=1749422111 instance=ExtResource("4_syp4r")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 10.757503, 0, 4.610453)
+[node name="IDW_Rotating_Spotlight3D" type="SpotLight3D" parent="vehicle_body" unique_id=1382821880]
+process_mode = 3
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.27493212, 2.6320844, -0.6610342)
+light_color = Color(1, 0.51950234, 0.23511073, 1)
+light_energy = 2.0
+light_volumetric_fog_energy = 5.0
+light_specular = 1.1
+spot_range = 50.0
+spot_attenuation = 1.25
+spot_angle = 50.0
+script = ExtResource("5_xomti")
+blink_enabled = false
+rotation_speed = 720.0
 
-[node name="cement_bag" parent="pallets" unique_id=1017875473 instance=ExtResource("5_ygvo3")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 3.4593582, 0.19471058, 6.983441)
+[node name="mast_body" type="RigidBody3D" parent="." unique_id=958273445]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.14854652, 0.92283607)
+mass = 120.0
+can_sleep = false
 
-[node name="cement_bag2" parent="pallets" unique_id=597842006 instance=ExtResource("5_ygvo3")]
-transform = Transform3D(-0.027184421, 0, -0.99963045, 0, 1, 0, 0.99963045, 0, -0.027184421, 3.4593582, 0.19471058, 6.4741626)
+[node name="mast_mesh" type="CSGBox3D" parent="mast_body" unique_id=1718621437]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1218491, 0)
+visible = false
+size = Vector3(0.77563477, 2.4487457, 0.109375)
 
-[node name="cement_bag3" parent="pallets" unique_id=542071544 instance=ExtResource("5_ygvo3")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 3.4593582, 0.36436284, 6.983441)
+[node name="CSGBox3D2" type="CSGBox3D" parent="mast_body/mast_mesh" unique_id=411473003]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.15442276, 0)
+operation = 2
+size = Vector3(0.44726563, 2.3674393, 0.109375)
 
-[node name="cement_bag4" parent="pallets" unique_id=2005871517 instance=ExtResource("5_ygvo3")]
-transform = Transform3D(-0.027184421, 0, -0.99963045, 0, 1, 0, 0.99963045, 0, -0.027184421, 3.4593582, 0.36436284, 6.4741626)
+[node name="coll" type="CollisionShape3D" parent="mast_body" unique_id=770754949]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.330925, -0.12805176)
+shape = SubResource("BoxShape3D_q5rnw")
 
-[node name="pallet13" parent="pallets" unique_id=1354268859 instance=ExtResource("4_syp4r")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 3.4209497, 2.0307522, 6.7124095)
+[node name="SpotLight3D" type="SpotLight3D" parent="mast_body" unique_id=1872910030]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0.42999998, 1.9056296, 0.048130274)
+light_energy = 5.0
+spot_range = 11.907
+spot_angle = 70.0
+spot_angle_attenuation = 0.2871746
 
-[node name="pallet14" parent="pallets" unique_id=283637109 instance=ExtResource("4_syp4r")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 2.503013, 2.0307522, 6.7124095)
+[node name="mast_3" parent="mast_body" unique_id=1035341684 instance=ExtResource("6_c51dl")]
+unique_name_in_owner = true
 
-[node name="pallet15" parent="pallets" unique_id=539135879 instance=ExtResource("4_syp4r")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 1.5326221, 2.0307522, 6.7124095)
+[node name="mast_2" parent="mast_body" unique_id=1228464593 instance=ExtResource("10_ygvo3")]
+unique_name_in_owner = true
 
-[node name="cement_bag5" parent="pallets" unique_id=1362479946 instance=ExtResource("5_ygvo3")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 3.4593582, 2.183187, 6.983441)
+[node name="mast_1" parent="mast_body" unique_id=407813819 instance=ExtResource("9_bwns0")]
+unique_name_in_owner = true
 
-[node name="cement_bag6" parent="pallets" unique_id=498656712 instance=ExtResource("5_ygvo3")]
-transform = Transform3D(-0.027184421, 0, -0.99963045, 0, 1, 0, 0.99963045, 0, -0.027184421, 3.4593582, 2.183187, 6.4741626)
+[node name="carriage_body" type="RigidBody3D" parent="." unique_id=815795375]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.05805105, 0.8529252)
+collision_layer = 2
+collision_mask = 2
+mass = 45.0
+physics_material_override = SubResource("PhysicsMaterial_ryygl")
+can_sleep = false
+continuous_cd = true
 
-[node name="cement_bag7" parent="pallets" unique_id=1164421414 instance=ExtResource("5_ygvo3")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 3.4593582, 2.352839, 6.983441)
+[node name="carriage_mesh" parent="carriage_body" unique_id=1680499728 instance=ExtResource("4_32q5h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.063405514)
 
-[node name="cement_bag8" parent="pallets" unique_id=476088107 instance=ExtResource("5_ygvo3")]
-transform = Transform3D(-0.027184421, 0, -0.99963045, 0, 1, 0, 0.99963045, 0, -0.027184421, 3.4593582, 2.352839, 6.4741626)
+[node name="coll_carriage" type="CollisionShape3D" parent="carriage_body" unique_id=1206881159]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3981037, 0.26405263)
+shape = SubResource("BoxShape3D_lexek")
+debug_color = Color(0.9974175, 0, 0.17626175, 0.41960785)
 
-[node name="pallet16" parent="pallets" unique_id=1096969873 instance=ExtResource("4_syp4r")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 6.5838223, 1.6307523, 6.7124095)
+[node name="cam_target" type="Marker3D" parent="carriage_body" unique_id=1275762858]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1303711, 1.1875921)
 
-[node name="pallet17" parent="pallets" unique_id=502673638 instance=ExtResource("4_syp4r")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 5.665885, 1.6307523, 6.7124095)
+[node name="fork_l_body" type="RigidBody3D" parent="." unique_id=1849089295]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2, -0.05805105, 0.8538488)
+mass = 30.0
+physics_material_override = SubResource("PhysicsMaterial_v6tai")
+center_of_mass_mode = 1
+can_sleep = false
+continuous_cd = true
 
-[node name="pallet18" parent="pallets" unique_id=466760089 instance=ExtResource("4_syp4r")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 4.6954947, 1.6307523, 6.7124095)
+[node name="fork_l_coll" type="CollisionShape3D" parent="fork_l_body" unique_id=171380691]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.04121323, 0.9916544)
+shape = SubResource("BoxShape3D_r8te8")
+debug_color = Color(0.639403, 0.5325897, 0, 0.83137256)
 
-[node name="cement_bag9" parent="pallets" unique_id=1438111670 instance=ExtResource("5_ygvo3")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 6.6222305, 1.7831872, 6.983441)
+[node name="fork_mesh" parent="fork_l_body" unique_id=1599815123 instance=ExtResource("5_x3x2s")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.34604788, 0.028, 0.068359375)
 
-[node name="cement_bag10" parent="pallets" unique_id=239743134 instance=ExtResource("5_ygvo3")]
-transform = Transform3D(-0.027184421, 0, -0.99963045, 0, 1, 0, 0.99963045, 0, -0.027184421, 6.6222305, 1.7831872, 6.4741626)
+[node name="fork_r_body" type="RigidBody3D" parent="." unique_id=1816431836]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2, -0.05805105, 0.8538488)
+mass = 30.0
+physics_material_override = SubResource("PhysicsMaterial_v6tai")
+center_of_mass_mode = 1
+can_sleep = false
+continuous_cd = true
 
-[node name="cement_bag11" parent="pallets" unique_id=521571029 instance=ExtResource("5_ygvo3")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 6.6222305, 1.9528393, 6.983441)
+[node name="fork_r_coll" type="CollisionShape3D" parent="fork_r_body" unique_id=651667797]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.04121323, 0.9881494)
+shape = SubResource("BoxShape3D_xoi5w")
+debug_color = Color(0.639403, 0.5325897, 0, 0.83137256)
 
-[node name="cement_bag12" parent="pallets" unique_id=2043026847 instance=ExtResource("5_ygvo3")]
-transform = Transform3D(-0.027184421, 0, -0.99963045, 0, 1, 0, 0.99963045, 0, -0.027184421, 6.6222305, 1.9528393, 6.4741626)
+[node name="fork_mesh" parent="fork_r_body" unique_id=304025479 instance=ExtResource("5_x3x2s")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.34694678, 0.028, 0.068359375)
 
-[node name="pallet19" parent="pallets" unique_id=1028324326 instance=ExtResource("4_syp4r")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 6.5838223, 3.2332306, 6.7124095)
+[node name="joint_mast" type="Generic6DOFJoint3D" parent="." unique_id=462628112]
+unique_name_in_owner = true
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 0.08323163, 0.92283607)
+node_a = NodePath("../vehicle_body")
+node_b = NodePath("../mast_body")
+angular_limit_x/upper_angle = 0.04363323
+angular_limit_x/lower_angle = -0.1134464
+angular_motor_x/enabled = true
+angular_motor_x/force_limit = 9000.0
 
-[node name="pallet20" parent="pallets" unique_id=1596369506 instance=ExtResource("4_syp4r")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 5.665885, 3.2332306, 6.7124095)
+[node name="joint_carriage" type="Generic6DOFJoint3D" parent="." unique_id=1180064423]
+unique_name_in_owner = true
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0, 0, 1.026)
+node_a = NodePath("../mast_body")
+node_b = NodePath("../carriage_body")
+linear_limit_x/upper_distance = 3.5
+linear_motor_x/enabled = true
 
-[node name="pallet21" parent="pallets" unique_id=1586129867 instance=ExtResource("4_syp4r")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 4.6954947, 3.2332306, 6.7124095)
+[node name="joint_fork_l" type="Generic6DOFJoint3D" parent="." unique_id=1963313065]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2, 0, 1.026)
+node_a = NodePath("../carriage_body")
+node_b = NodePath("../fork_l_body")
+linear_motor_x/enabled = true
 
-[node name="cement_bag13" parent="pallets" unique_id=235199873 instance=ExtResource("5_ygvo3")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 6.6222305, 3.3856654, 6.983441)
-
-[node name="cement_bag14" parent="pallets" unique_id=2144797971 instance=ExtResource("5_ygvo3")]
-transform = Transform3D(-0.027184421, 0, -0.99963045, 0, 1, 0, 0.99963045, 0, -0.027184421, 6.6222305, 3.3856654, 6.4741626)
-
-[node name="cement_bag15" parent="pallets" unique_id=95039799 instance=ExtResource("5_ygvo3")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 6.6222305, 3.5553174, 6.983441)
-
-[node name="cement_bag16" parent="pallets" unique_id=2049392643 instance=ExtResource("5_ygvo3")]
-transform = Transform3D(-0.027184421, 0, -0.99963045, 0, 1, 0, 0.99963045, 0, -0.027184421, 6.6222305, 3.5553174, 6.4741626)
-
-[node name="load_blackwrap" parent="pallets" unique_id=74449678 instance=ExtResource("6_n06h1")]
-transform = Transform3D(0.70710677, 0, -0.70710677, 0, 1, 0, 0.70710677, 0, 0.70710677, 5.6361885, 9.536743e-07, 2.6909916)
-
-[node name="load_blackwrap2" parent="pallets" unique_id=1863815352 instance=ExtResource("6_n06h1")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 4.6954947, 3.2332306, 6.7124095)
-
-[node name="load_blackwrap3" parent="pallets" unique_id=1795229441 instance=ExtResource("6_n06h1")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 5.665885, 3.2332306, 6.7124095)
-
-[node name="GUI" parent="." unique_id=1226663711 instance=ExtResource("7_tixgj")]
-
-[node name="shelf" parent="." unique_id=1220127838 instance=ExtResource("8_4slcw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.15067482, 0.050305963, 6.240678)
-
-[node name="shelf2" parent="." unique_id=1853011107 instance=ExtResource("8_4slcw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.050305963, -5.7515297)
-
-[node name="shelf7" parent="." unique_id=1969739886 instance=ExtResource("8_4slcw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 0.050305963, -5.7515297)
-
-[node name="shelf8" parent="." unique_id=2096956335 instance=ExtResource("8_4slcw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, 0.050305963, -5.7515297)
-
-[node name="shelf3" parent="." unique_id=39173459 instance=ExtResource("8_4slcw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.050305963, 12.605203)
-
-[node name="shelf4" parent="." unique_id=677464822 instance=ExtResource("8_4slcw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 0.050305963, 12.605203)
-
-[node name="shelf5" parent="." unique_id=2064369241 instance=ExtResource("8_4slcw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, 0.050305963, 12.605203)
-
-[node name="shelf6" parent="." unique_id=1412810055 instance=ExtResource("8_4slcw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, 0.050305963, 6.305203)
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=457073294]
-environment = SubResource("Environment_64wi0")
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="WorldEnvironment" unique_id=1054412164]
-transform = Transform3D(-0.03141076, -0.5545706, 0.83154356, 0, 0.8319541, 0.55484444, -0.99950653, 0.017428087, -0.026132312, 0, 0, 0)
+[node name="joint_fork_r" type="Generic6DOFJoint3D" parent="." unique_id=678387032]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2, 0, 1.026)
+node_a = NodePath("../carriage_body")
+node_b = NodePath("../fork_r_body")
+linear_motor_x/enabled = true
