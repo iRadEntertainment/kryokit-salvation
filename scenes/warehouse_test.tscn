@@ -1,12 +1,12 @@
 [gd_scene format=3 uid="uid://bn4m8aiq6k0hj"]
 
-[ext_resource type="PackedScene" uid="uid://1wtsvwns84xg" path="res://assets/glbs/Warehouse/Floor.glb" id="1_l5mf1"]
-[ext_resource type="PackedScene" uid="uid://b0nmnc3nqyunu" path="res://assets/glbs/Warehouse/wall.glb" id="2_2lfai"]
-[ext_resource type="PackedScene" uid="uid://cifsdrd1e3a78" path="res://assets/glbs/Warehouse/wall_corner.glb" id="3_f1bko"]
-[ext_resource type="PackedScene" uid="uid://bax65j2ewudkt" path="res://assets/glbs/Warehouse/Pillar.glb" id="3_qnbff"]
-[ext_resource type="PackedScene" uid="uid://dpnefjtqisswu" path="res://assets/glbs/Warehouse/roof_frame.glb" id="4_qnbff"]
-[ext_resource type="PackedScene" uid="uid://c1t1pq0n2rpv5" path="res://assets/glbs/Warehouse/roof_corrugated.glb" id="5_13dtl"]
-[ext_resource type="PackedScene" uid="uid://cofxnpkuw0cl4" path="res://assets/glbs/Warehouse/truss_straight.glb" id="6_tgn7q"]
+[ext_resource type="PackedScene" uid="uid://1wtsvwns84xg" path="res://assets/glbs/warehouse/regular/Floor.glb" id="1_l5mf1"]
+[ext_resource type="PackedScene" uid="uid://b0nmnc3nqyunu" path="res://assets/glbs/warehouse/regular/wall.glb" id="2_2lfai"]
+[ext_resource type="PackedScene" uid="uid://cifsdrd1e3a78" path="res://assets/glbs/warehouse/regular/wall_corner.glb" id="3_f1bko"]
+[ext_resource type="PackedScene" uid="uid://bax65j2ewudkt" path="res://assets/glbs/warehouse/regular/Pillar.glb" id="3_qnbff"]
+[ext_resource type="PackedScene" uid="uid://dpnefjtqisswu" path="res://assets/glbs/warehouse/regular/roof_frame.glb" id="4_qnbff"]
+[ext_resource type="PackedScene" uid="uid://c1t1pq0n2rpv5" path="res://assets/glbs/warehouse/regular/roof_corrugated.glb" id="5_13dtl"]
+[ext_resource type="PackedScene" uid="uid://cofxnpkuw0cl4" path="res://assets/glbs/warehouse/regular/truss_straight.glb" id="6_tgn7q"]
 
 [node name="WarehouseTest" type="Node3D" unique_id=61947791]
 

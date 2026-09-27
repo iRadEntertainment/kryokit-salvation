@@ -1,0 +1,594 @@
+[gd_scene format=3 uid="uid://bn3gntsl510ao"]
+
+[ext_resource type="PackedScene" uid="uid://bdp58nsqupkid" path="res://assets/glbs/warehouse/refrigerated/refrigerated_floor.glb" id="1_buhk2"]
+[ext_resource type="PackedScene" uid="uid://dvyrqc3phevvx" path="res://assets/glbs/warehouse/refrigerated/refrigerated_wall.glb" id="2_8p85l"]
+[ext_resource type="PackedScene" uid="uid://dlyayug82m5ux" path="res://assets/glbs/warehouse/refrigerated/refrigerated_doorframe.glb" id="3_8p85l"]
+[ext_resource type="PackedScene" uid="uid://ctw07nk0o84ue" path="res://assets/glbs/warehouse/refrigerated/refrigerated_roof_frame.glb" id="4_gutbd"]
+[ext_resource type="PackedScene" uid="uid://c1t1pq0n2rpv5" path="res://assets/glbs/warehouse/regular/roof_corrugated.glb" id="5_5wh4k"]
+
+[node name="Warehouse_Refrigirated_Test" type="Node3D" unique_id=100941699]
+
+[node name="FLOOR" type="Node3D" parent="." unique_id=165731230]
+
+[node name="refrigerated_floor" parent="FLOOR" unique_id=826268244 instance=ExtResource("1_buhk2")]
+
+[node name="refrigerated_floor2" parent="FLOOR" unique_id=1753356 instance=ExtResource("1_buhk2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 0)
+
+[node name="refrigerated_floor3" parent="FLOOR" unique_id=267815830 instance=ExtResource("1_buhk2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 0)
+
+[node name="refrigerated_floor4" parent="FLOOR" unique_id=1330127789 instance=ExtResource("1_buhk2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 0)
+
+[node name="refrigerated_floor5" parent="FLOOR" unique_id=720227822 instance=ExtResource("1_buhk2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, 0)
+
+[node name="refrigerated_floor6" parent="FLOOR" unique_id=566102978 instance=ExtResource("1_buhk2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 0)
+
+[node name="refrigerated_floor7" parent="FLOOR" unique_id=551332726 instance=ExtResource("1_buhk2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, 0)
+
+[node name="refrigerated_floor8" parent="FLOOR" unique_id=703430177 instance=ExtResource("1_buhk2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28, 0, 0)
+
+[node name="refrigerated_floor9" parent="FLOOR" unique_id=1520593289 instance=ExtResource("1_buhk2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32, 0, 0)
+
+[node name="refrigerated_floor10" parent="FLOOR" unique_id=1451554102 instance=ExtResource("1_buhk2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36, 0, 0)
+
+[node name="refrigerated_floor11" parent="FLOOR" unique_id=121462162 instance=ExtResource("1_buhk2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4)
+
+[node name="refrigerated_floor12" parent="FLOOR" unique_id=1245734709 instance=ExtResource("1_buhk2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 4)
+
+[node name="refrigerated_floor13" parent="FLOOR" unique_id=1128490417 instance=ExtResource("1_buhk2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 4)
+
+[node name="refrigerated_floor14" parent="FLOOR" unique_id=985900263 instance=ExtResource("1_buhk2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 4)
+
+[node name="refrigerated_floor15" parent="FLOOR" unique_id=1740128044 instance=ExtResource("1_buhk2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, 4)
+
+[node name="refrigerated_floor16" parent="FLOOR" unique_id=568641322 instance=ExtResource("1_buhk2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 4)
+
+[node name="refrigerated_floor17" parent="FLOOR" unique_id=827360459 instance=ExtResource("1_buhk2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, 4)
+
+[node name="refrigerated_floor18" parent="FLOOR" unique_id=431975821 instance=ExtResource("1_buhk2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28, 0, 4)
+
+[node name="refrigerated_floor19" parent="FLOOR" unique_id=1012568855 instance=ExtResource("1_buhk2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32, 0, 4)
+
+[node name="refrigerated_floor20" parent="FLOOR" unique_id=609529116 instance=ExtResource("1_buhk2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36, 0, 4)
+
+[node name="refrigerated_floor21" parent="FLOOR" unique_id=1311820383 instance=ExtResource("1_buhk2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8)
+
+[node name="refrigerated_floor22" parent="FLOOR" unique_id=1108902701 instance=ExtResource("1_buhk2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 8)
+
+[node name="refrigerated_floor23" parent="FLOOR" unique_id=1486518507 instance=ExtResource("1_buhk2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 8)
+
+[node name="refrigerated_floor24" parent="FLOOR" unique_id=1636928978 instance=ExtResource("1_buhk2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 8)
+
+[node name="refrigerated_floor25" parent="FLOOR" unique_id=2013022326 instance=ExtResource("1_buhk2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, 8)
+
+[node name="refrigerated_floor26" parent="FLOOR" unique_id=474297173 instance=ExtResource("1_buhk2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 8)
+
+[node name="refrigerated_floor27" parent="FLOOR" unique_id=1977243154 instance=ExtResource("1_buhk2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, 8)
+
+[node name="refrigerated_floor28" parent="FLOOR" unique_id=1311859725 instance=ExtResource("1_buhk2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28, 0, 8)
+
+[node name="refrigerated_floor29" parent="FLOOR" unique_id=171959704 instance=ExtResource("1_buhk2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32, 0, 8)
+
+[node name="refrigerated_floor30" parent="FLOOR" unique_id=1025102354 instance=ExtResource("1_buhk2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36, 0, 8)
+
+[node name="refrigerated_floor31" parent="FLOOR" unique_id=287310425 instance=ExtResource("1_buhk2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 12)
+
+[node name="refrigerated_floor32" parent="FLOOR" unique_id=1769746794 instance=ExtResource("1_buhk2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 12)
+
+[node name="refrigerated_floor33" parent="FLOOR" unique_id=2065871380 instance=ExtResource("1_buhk2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 12)
+
+[node name="refrigerated_floor34" parent="FLOOR" unique_id=98394345 instance=ExtResource("1_buhk2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 12)
+
+[node name="refrigerated_floor35" parent="FLOOR" unique_id=1985678100 instance=ExtResource("1_buhk2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, 12)
+
+[node name="refrigerated_floor36" parent="FLOOR" unique_id=2076303667 instance=ExtResource("1_buhk2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 12)
+
+[node name="refrigerated_floor37" parent="FLOOR" unique_id=784220157 instance=ExtResource("1_buhk2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, 12)
+
+[node name="refrigerated_floor38" parent="FLOOR" unique_id=951169936 instance=ExtResource("1_buhk2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28, 0, 12)
+
+[node name="refrigerated_floor39" parent="FLOOR" unique_id=1061031091 instance=ExtResource("1_buhk2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32, 0, 12)
+
+[node name="refrigerated_floor40" parent="FLOOR" unique_id=1172997652 instance=ExtResource("1_buhk2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36, 0, 12)
+
+[node name="refrigerated_floor41" parent="FLOOR" unique_id=2072185903 instance=ExtResource("1_buhk2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 16)
+
+[node name="refrigerated_floor42" parent="FLOOR" unique_id=804076406 instance=ExtResource("1_buhk2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 16)
+
+[node name="refrigerated_floor43" parent="FLOOR" unique_id=268383248 instance=ExtResource("1_buhk2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 16)
+
+[node name="refrigerated_floor44" parent="FLOOR" unique_id=183381189 instance=ExtResource("1_buhk2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 16)
+
+[node name="refrigerated_floor45" parent="FLOOR" unique_id=1322501587 instance=ExtResource("1_buhk2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, 16)
+
+[node name="refrigerated_floor46" parent="FLOOR" unique_id=500057334 instance=ExtResource("1_buhk2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 16)
+
+[node name="refrigerated_floor47" parent="FLOOR" unique_id=1696575608 instance=ExtResource("1_buhk2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, 16)
+
+[node name="refrigerated_floor48" parent="FLOOR" unique_id=1011381792 instance=ExtResource("1_buhk2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28, 0, 16)
+
+[node name="refrigerated_floor49" parent="FLOOR" unique_id=1447297042 instance=ExtResource("1_buhk2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32, 0, 16)
+
+[node name="refrigerated_floor50" parent="FLOOR" unique_id=2051046922 instance=ExtResource("1_buhk2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36, 0, 16)
+
+[node name="WALLS" type="Node3D" parent="." unique_id=670354735]
+
+[node name="refrigerated_wall" parent="WALLS" unique_id=965194204 instance=ExtResource("2_8p85l")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 4, 0, -4)
+
+[node name="refrigerated_wall25" parent="WALLS" unique_id=1810287573 instance=ExtResource("2_8p85l")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, -4)
+
+[node name="refrigerated_wall6" parent="WALLS" unique_id=122603614 instance=ExtResource("2_8p85l")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 8, 0, -4)
+
+[node name="refrigerated_wall7" parent="WALLS" unique_id=980936646 instance=ExtResource("2_8p85l")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 12, 0, -4)
+
+[node name="refrigerated_wall8" parent="WALLS" unique_id=1902800137 instance=ExtResource("2_8p85l")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 16, 0, -4)
+
+[node name="refrigerated_wall9" parent="WALLS" unique_id=2133640174 instance=ExtResource("2_8p85l")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 20, 0, -4)
+
+[node name="refrigerated_wall10" parent="WALLS" unique_id=1445951114 instance=ExtResource("2_8p85l")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 24, 0, -4)
+
+[node name="refrigerated_wall11" parent="WALLS" unique_id=1330715957 instance=ExtResource("2_8p85l")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 28, 0, -4)
+
+[node name="refrigerated_wall12" parent="WALLS" unique_id=1974044370 instance=ExtResource("2_8p85l")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 32, 0, -4)
+
+[node name="refrigerated_wall24" parent="WALLS" unique_id=1812689232 instance=ExtResource("2_8p85l")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 36, 0, -4)
+
+[node name="refrigerated_wall13" parent="WALLS" unique_id=1540856548 instance=ExtResource("2_8p85l")]
+transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, 32, 0, 20.000002)
+
+[node name="refrigerated_wall21" parent="WALLS" unique_id=1712871109 instance=ExtResource("2_8p85l")]
+transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, 36, 0, 20.000002)
+
+[node name="refrigerated_wall14" parent="WALLS" unique_id=831583176 instance=ExtResource("2_8p85l")]
+transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, 28, 0, 20)
+
+[node name="refrigerated_wall15" parent="WALLS" unique_id=14442231 instance=ExtResource("2_8p85l")]
+transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, 24, 0, 20)
+
+[node name="refrigerated_wall16" parent="WALLS" unique_id=1140268322 instance=ExtResource("2_8p85l")]
+transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, 20, 0, 20)
+
+[node name="refrigerated_wall17" parent="WALLS" unique_id=338616450 instance=ExtResource("2_8p85l")]
+transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, 16, 0, 20)
+
+[node name="refrigerated_wall18" parent="WALLS" unique_id=1049205189 instance=ExtResource("2_8p85l")]
+transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, 12, 0, 20)
+
+[node name="refrigerated_wall19" parent="WALLS" unique_id=1729730698 instance=ExtResource("2_8p85l")]
+transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, 8, 0, 20)
+
+[node name="refrigerated_wall20" parent="WALLS" unique_id=1641747424 instance=ExtResource("2_8p85l")]
+transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, 4, 0, 20)
+
+[node name="refrigerated_wall28" parent="WALLS" unique_id=792334528 instance=ExtResource("2_8p85l")]
+transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, 0, 0, 20)
+
+[node name="refrigerated_wall5" parent="WALLS" unique_id=633206907 instance=ExtResource("2_8p85l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 4)
+
+[node name="refrigerated_wall26" parent="WALLS" unique_id=1999602766 instance=ExtResource("2_8p85l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 0)
+
+[node name="refrigerated_wall2" parent="WALLS" unique_id=676329149 instance=ExtResource("2_8p85l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 12)
+
+[node name="refrigerated_wall27" parent="WALLS" unique_id=632018282 instance=ExtResource("2_8p85l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 16)
+
+[node name="refrigerated_wall3" parent="WALLS" unique_id=129281737 instance=ExtResource("2_8p85l")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 40, 0, 12)
+
+[node name="refrigerated_wall22" parent="WALLS" unique_id=1423269404 instance=ExtResource("2_8p85l")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 40, 0, 16)
+
+[node name="refrigerated_wall4" parent="WALLS" unique_id=675990557 instance=ExtResource("2_8p85l")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 40, 0, 4)
+
+[node name="refrigerated_wall23" parent="WALLS" unique_id=705632266 instance=ExtResource("2_8p85l")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 40, 0, 0)
+
+[node name="refrigerated_wall29" parent="WALLS" unique_id=1957445957 instance=ExtResource("2_8p85l")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 4, 4, -4)
+
+[node name="refrigerated_wall30" parent="WALLS" unique_id=2013883562 instance=ExtResource("2_8p85l")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 4, -4)
+
+[node name="refrigerated_wall31" parent="WALLS" unique_id=268921396 instance=ExtResource("2_8p85l")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 8, 4, -4)
+
+[node name="refrigerated_wall32" parent="WALLS" unique_id=1459157624 instance=ExtResource("2_8p85l")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 12, 4, -4)
+
+[node name="refrigerated_wall33" parent="WALLS" unique_id=775480770 instance=ExtResource("2_8p85l")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 16, 4, -4)
+
+[node name="refrigerated_wall34" parent="WALLS" unique_id=1564276301 instance=ExtResource("2_8p85l")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 20, 4, -4)
+
+[node name="refrigerated_wall35" parent="WALLS" unique_id=1801469415 instance=ExtResource("2_8p85l")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 24, 4, -4)
+
+[node name="refrigerated_wall36" parent="WALLS" unique_id=1472252659 instance=ExtResource("2_8p85l")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 28, 4, -4)
+
+[node name="refrigerated_wall37" parent="WALLS" unique_id=118527797 instance=ExtResource("2_8p85l")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 32, 4, -4)
+
+[node name="refrigerated_wall38" parent="WALLS" unique_id=1786237718 instance=ExtResource("2_8p85l")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 36, 4, -4)
+
+[node name="refrigerated_wall39" parent="WALLS" unique_id=1655269138 instance=ExtResource("2_8p85l")]
+transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, 32, 4, 20.000002)
+
+[node name="refrigerated_wall40" parent="WALLS" unique_id=1187694017 instance=ExtResource("2_8p85l")]
+transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, 36, 4, 20.000002)
+
+[node name="refrigerated_wall41" parent="WALLS" unique_id=1439165403 instance=ExtResource("2_8p85l")]
+transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, 28, 4, 20)
+
+[node name="refrigerated_wall42" parent="WALLS" unique_id=484950132 instance=ExtResource("2_8p85l")]
+transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, 24, 4, 20)
+
+[node name="refrigerated_wall43" parent="WALLS" unique_id=2040535985 instance=ExtResource("2_8p85l")]
+transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, 20, 4, 20)
+
+[node name="refrigerated_wall44" parent="WALLS" unique_id=1602432293 instance=ExtResource("2_8p85l")]
+transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, 16, 4, 20)
+
+[node name="refrigerated_wall45" parent="WALLS" unique_id=168301296 instance=ExtResource("2_8p85l")]
+transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, 12, 4, 20)
+
+[node name="refrigerated_wall46" parent="WALLS" unique_id=980013420 instance=ExtResource("2_8p85l")]
+transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, 8, 4, 20)
+
+[node name="refrigerated_wall47" parent="WALLS" unique_id=1150410909 instance=ExtResource("2_8p85l")]
+transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, 4, 4, 20)
+
+[node name="refrigerated_wall48" parent="WALLS" unique_id=1390455402 instance=ExtResource("2_8p85l")]
+transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, 0, 4, 20)
+
+[node name="refrigerated_wall49" parent="WALLS" unique_id=1156190703 instance=ExtResource("2_8p85l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 4, 4)
+
+[node name="refrigerated_wall50" parent="WALLS" unique_id=1099146180 instance=ExtResource("2_8p85l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 4, 0)
+
+[node name="refrigerated_wall51" parent="WALLS" unique_id=603320948 instance=ExtResource("2_8p85l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 4, 12)
+
+[node name="refrigerated_wall52" parent="WALLS" unique_id=142424360 instance=ExtResource("2_8p85l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 4, 16)
+
+[node name="refrigerated_wall53" parent="WALLS" unique_id=688943588 instance=ExtResource("2_8p85l")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 40, 4, 12)
+
+[node name="refrigerated_wall54" parent="WALLS" unique_id=539492971 instance=ExtResource("2_8p85l")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 40, 4, 16)
+
+[node name="refrigerated_wall55" parent="WALLS" unique_id=131010337 instance=ExtResource("2_8p85l")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 40, 4, 4)
+
+[node name="refrigerated_wall57" parent="WALLS" unique_id=976626794 instance=ExtResource("2_8p85l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 4, 8)
+
+[node name="refrigerated_wall58" parent="WALLS" unique_id=475399669 instance=ExtResource("2_8p85l")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 40, 4, 8)
+
+[node name="refrigerated_wall56" parent="WALLS" unique_id=1374704500 instance=ExtResource("2_8p85l")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 40, 4, 0)
+
+[node name="refrigerated_doorframe" parent="WALLS" unique_id=1563679975 instance=ExtResource("3_8p85l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 8)
+
+[node name="refrigerated_doorframe2" parent="WALLS" unique_id=877367278 instance=ExtResource("3_8p85l")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 40, 0, 8)
+
+[node name="ROOF" type="Node3D" parent="." unique_id=1030728613]
+
+[node name="refrigerated_roof_frame" parent="ROOF" unique_id=1386809803 instance=ExtResource("4_gutbd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0)
+
+[node name="roof_corrugated" parent="ROOF/refrigerated_roof_frame" unique_id=1607303543 instance=ExtResource("5_5wh4k")]
+
+[node name="refrigerated_roof_frame2" parent="ROOF" unique_id=1708443556 instance=ExtResource("4_gutbd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 4, 0)
+
+[node name="roof_corrugated" parent="ROOF/refrigerated_roof_frame2" unique_id=848109361 instance=ExtResource("5_5wh4k")]
+
+[node name="refrigerated_roof_frame3" parent="ROOF" unique_id=987331540 instance=ExtResource("4_gutbd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 4, 0)
+
+[node name="roof_corrugated" parent="ROOF/refrigerated_roof_frame3" unique_id=1225361482 instance=ExtResource("5_5wh4k")]
+
+[node name="refrigerated_roof_frame4" parent="ROOF" unique_id=1747350937 instance=ExtResource("4_gutbd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 4, 0)
+
+[node name="roof_corrugated" parent="ROOF/refrigerated_roof_frame4" unique_id=689192456 instance=ExtResource("5_5wh4k")]
+
+[node name="refrigerated_roof_frame5" parent="ROOF" unique_id=691230319 instance=ExtResource("4_gutbd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 4, 0)
+
+[node name="roof_corrugated" parent="ROOF/refrigerated_roof_frame5" unique_id=576355344 instance=ExtResource("5_5wh4k")]
+
+[node name="refrigerated_roof_frame6" parent="ROOF" unique_id=225432043 instance=ExtResource("4_gutbd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 4, 0)
+
+[node name="roof_corrugated" parent="ROOF/refrigerated_roof_frame6" unique_id=1979539015 instance=ExtResource("5_5wh4k")]
+
+[node name="refrigerated_roof_frame7" parent="ROOF" unique_id=1060123083 instance=ExtResource("4_gutbd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 4, 0)
+
+[node name="roof_corrugated" parent="ROOF/refrigerated_roof_frame7" unique_id=1356186928 instance=ExtResource("5_5wh4k")]
+
+[node name="refrigerated_roof_frame8" parent="ROOF" unique_id=1515592768 instance=ExtResource("4_gutbd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28, 4, 0)
+
+[node name="roof_corrugated" parent="ROOF/refrigerated_roof_frame8" unique_id=2126348995 instance=ExtResource("5_5wh4k")]
+
+[node name="refrigerated_roof_frame9" parent="ROOF" unique_id=973813269 instance=ExtResource("4_gutbd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32, 4, 0)
+
+[node name="roof_corrugated" parent="ROOF/refrigerated_roof_frame9" unique_id=2130617627 instance=ExtResource("5_5wh4k")]
+
+[node name="refrigerated_roof_frame10" parent="ROOF" unique_id=143659828 instance=ExtResource("4_gutbd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36, 4, 0)
+
+[node name="roof_corrugated" parent="ROOF/refrigerated_roof_frame10" unique_id=2007983100 instance=ExtResource("5_5wh4k")]
+
+[node name="refrigerated_roof_frame11" parent="ROOF" unique_id=2041203085 instance=ExtResource("4_gutbd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 4)
+
+[node name="roof_corrugated" parent="ROOF/refrigerated_roof_frame11" unique_id=1199512344 instance=ExtResource("5_5wh4k")]
+
+[node name="refrigerated_roof_frame12" parent="ROOF" unique_id=631920617 instance=ExtResource("4_gutbd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 4, 4)
+
+[node name="roof_corrugated" parent="ROOF/refrigerated_roof_frame12" unique_id=1364573896 instance=ExtResource("5_5wh4k")]
+
+[node name="refrigerated_roof_frame13" parent="ROOF" unique_id=785186679 instance=ExtResource("4_gutbd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 4, 4)
+
+[node name="roof_corrugated" parent="ROOF/refrigerated_roof_frame13" unique_id=1648074490 instance=ExtResource("5_5wh4k")]
+
+[node name="refrigerated_roof_frame14" parent="ROOF" unique_id=420075000 instance=ExtResource("4_gutbd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 4, 4)
+
+[node name="roof_corrugated" parent="ROOF/refrigerated_roof_frame14" unique_id=2031389514 instance=ExtResource("5_5wh4k")]
+
+[node name="refrigerated_roof_frame15" parent="ROOF" unique_id=749035598 instance=ExtResource("4_gutbd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 4, 4)
+
+[node name="roof_corrugated" parent="ROOF/refrigerated_roof_frame15" unique_id=839840333 instance=ExtResource("5_5wh4k")]
+
+[node name="refrigerated_roof_frame16" parent="ROOF" unique_id=418261281 instance=ExtResource("4_gutbd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 4, 4)
+
+[node name="roof_corrugated" parent="ROOF/refrigerated_roof_frame16" unique_id=75357272 instance=ExtResource("5_5wh4k")]
+
+[node name="refrigerated_roof_frame17" parent="ROOF" unique_id=2050160605 instance=ExtResource("4_gutbd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 4, 4)
+
+[node name="roof_corrugated" parent="ROOF/refrigerated_roof_frame17" unique_id=1659205161 instance=ExtResource("5_5wh4k")]
+
+[node name="refrigerated_roof_frame18" parent="ROOF" unique_id=587980311 instance=ExtResource("4_gutbd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28, 4, 4)
+
+[node name="roof_corrugated" parent="ROOF/refrigerated_roof_frame18" unique_id=247902072 instance=ExtResource("5_5wh4k")]
+
+[node name="refrigerated_roof_frame19" parent="ROOF" unique_id=853431645 instance=ExtResource("4_gutbd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32, 4, 4)
+
+[node name="roof_corrugated" parent="ROOF/refrigerated_roof_frame19" unique_id=28053073 instance=ExtResource("5_5wh4k")]
+
+[node name="refrigerated_roof_frame20" parent="ROOF" unique_id=1477342527 instance=ExtResource("4_gutbd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36, 4, 4)
+
+[node name="roof_corrugated" parent="ROOF/refrigerated_roof_frame20" unique_id=398122901 instance=ExtResource("5_5wh4k")]
+
+[node name="refrigerated_roof_frame21" parent="ROOF" unique_id=2110275310 instance=ExtResource("4_gutbd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 8)
+
+[node name="roof_corrugated" parent="ROOF/refrigerated_roof_frame21" unique_id=1269864104 instance=ExtResource("5_5wh4k")]
+
+[node name="refrigerated_roof_frame22" parent="ROOF" unique_id=40369935 instance=ExtResource("4_gutbd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 4, 8)
+
+[node name="roof_corrugated" parent="ROOF/refrigerated_roof_frame22" unique_id=655867614 instance=ExtResource("5_5wh4k")]
+
+[node name="refrigerated_roof_frame23" parent="ROOF" unique_id=649316372 instance=ExtResource("4_gutbd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 4, 8)
+
+[node name="roof_corrugated" parent="ROOF/refrigerated_roof_frame23" unique_id=1598206304 instance=ExtResource("5_5wh4k")]
+
+[node name="refrigerated_roof_frame24" parent="ROOF" unique_id=1187193776 instance=ExtResource("4_gutbd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 4, 8)
+
+[node name="roof_corrugated" parent="ROOF/refrigerated_roof_frame24" unique_id=1145829364 instance=ExtResource("5_5wh4k")]
+
+[node name="refrigerated_roof_frame25" parent="ROOF" unique_id=1486891074 instance=ExtResource("4_gutbd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 4, 8)
+
+[node name="roof_corrugated" parent="ROOF/refrigerated_roof_frame25" unique_id=1355878843 instance=ExtResource("5_5wh4k")]
+
+[node name="refrigerated_roof_frame26" parent="ROOF" unique_id=1410992176 instance=ExtResource("4_gutbd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 4, 8)
+
+[node name="roof_corrugated" parent="ROOF/refrigerated_roof_frame26" unique_id=722782799 instance=ExtResource("5_5wh4k")]
+
+[node name="refrigerated_roof_frame27" parent="ROOF" unique_id=487314703 instance=ExtResource("4_gutbd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 4, 8)
+
+[node name="roof_corrugated" parent="ROOF/refrigerated_roof_frame27" unique_id=1151272936 instance=ExtResource("5_5wh4k")]
+
+[node name="refrigerated_roof_frame28" parent="ROOF" unique_id=1682925628 instance=ExtResource("4_gutbd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28, 4, 8)
+
+[node name="roof_corrugated" parent="ROOF/refrigerated_roof_frame28" unique_id=652899509 instance=ExtResource("5_5wh4k")]
+
+[node name="refrigerated_roof_frame29" parent="ROOF" unique_id=528987673 instance=ExtResource("4_gutbd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32, 4, 8)
+
+[node name="roof_corrugated" parent="ROOF/refrigerated_roof_frame29" unique_id=1673593201 instance=ExtResource("5_5wh4k")]
+
+[node name="refrigerated_roof_frame30" parent="ROOF" unique_id=1559826012 instance=ExtResource("4_gutbd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36, 4, 8)
+
+[node name="roof_corrugated" parent="ROOF/refrigerated_roof_frame30" unique_id=1543110394 instance=ExtResource("5_5wh4k")]
+
+[node name="refrigerated_roof_frame31" parent="ROOF" unique_id=215083194 instance=ExtResource("4_gutbd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 12)
+
+[node name="roof_corrugated" parent="ROOF/refrigerated_roof_frame31" unique_id=272216972 instance=ExtResource("5_5wh4k")]
+
+[node name="refrigerated_roof_frame32" parent="ROOF" unique_id=194756897 instance=ExtResource("4_gutbd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 4, 12)
+
+[node name="roof_corrugated" parent="ROOF/refrigerated_roof_frame32" unique_id=1645161759 instance=ExtResource("5_5wh4k")]
+
+[node name="refrigerated_roof_frame33" parent="ROOF" unique_id=2011919760 instance=ExtResource("4_gutbd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 4, 12)
+
+[node name="roof_corrugated" parent="ROOF/refrigerated_roof_frame33" unique_id=472547132 instance=ExtResource("5_5wh4k")]
+
+[node name="refrigerated_roof_frame34" parent="ROOF" unique_id=1904104682 instance=ExtResource("4_gutbd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 4, 12)
+
+[node name="roof_corrugated" parent="ROOF/refrigerated_roof_frame34" unique_id=1726830801 instance=ExtResource("5_5wh4k")]
+
+[node name="refrigerated_roof_frame35" parent="ROOF" unique_id=677566916 instance=ExtResource("4_gutbd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 4, 12)
+
+[node name="roof_corrugated" parent="ROOF/refrigerated_roof_frame35" unique_id=1528869540 instance=ExtResource("5_5wh4k")]
+
+[node name="refrigerated_roof_frame36" parent="ROOF" unique_id=554237707 instance=ExtResource("4_gutbd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 4, 12)
+
+[node name="roof_corrugated" parent="ROOF/refrigerated_roof_frame36" unique_id=1636825999 instance=ExtResource("5_5wh4k")]
+
+[node name="refrigerated_roof_frame37" parent="ROOF" unique_id=731378795 instance=ExtResource("4_gutbd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 4, 12)
+
+[node name="roof_corrugated" parent="ROOF/refrigerated_roof_frame37" unique_id=1459161007 instance=ExtResource("5_5wh4k")]
+
+[node name="refrigerated_roof_frame38" parent="ROOF" unique_id=1580013611 instance=ExtResource("4_gutbd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28, 4, 12)
+
+[node name="roof_corrugated" parent="ROOF/refrigerated_roof_frame38" unique_id=454143873 instance=ExtResource("5_5wh4k")]
+
+[node name="refrigerated_roof_frame39" parent="ROOF" unique_id=641686039 instance=ExtResource("4_gutbd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32, 4, 12)
+
+[node name="roof_corrugated" parent="ROOF/refrigerated_roof_frame39" unique_id=346545353 instance=ExtResource("5_5wh4k")]
+
+[node name="refrigerated_roof_frame40" parent="ROOF" unique_id=2108257623 instance=ExtResource("4_gutbd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36, 4, 12)
+
+[node name="roof_corrugated" parent="ROOF/refrigerated_roof_frame40" unique_id=939019604 instance=ExtResource("5_5wh4k")]
+
+[node name="refrigerated_roof_frame41" parent="ROOF" unique_id=78506851 instance=ExtResource("4_gutbd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 16)
+
+[node name="roof_corrugated" parent="ROOF/refrigerated_roof_frame41" unique_id=1956023294 instance=ExtResource("5_5wh4k")]
+
+[node name="refrigerated_roof_frame42" parent="ROOF" unique_id=856894285 instance=ExtResource("4_gutbd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 4, 16)
+
+[node name="roof_corrugated" parent="ROOF/refrigerated_roof_frame42" unique_id=954857372 instance=ExtResource("5_5wh4k")]
+
+[node name="refrigerated_roof_frame43" parent="ROOF" unique_id=1487409086 instance=ExtResource("4_gutbd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 4, 16)
+
+[node name="roof_corrugated" parent="ROOF/refrigerated_roof_frame43" unique_id=284147424 instance=ExtResource("5_5wh4k")]
+
+[node name="refrigerated_roof_frame44" parent="ROOF" unique_id=1912430032 instance=ExtResource("4_gutbd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 4, 16)
+
+[node name="roof_corrugated" parent="ROOF/refrigerated_roof_frame44" unique_id=925530207 instance=ExtResource("5_5wh4k")]
+
+[node name="refrigerated_roof_frame45" parent="ROOF" unique_id=689733001 instance=ExtResource("4_gutbd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 4, 16)
+
+[node name="roof_corrugated" parent="ROOF/refrigerated_roof_frame45" unique_id=1544979527 instance=ExtResource("5_5wh4k")]
+
+[node name="refrigerated_roof_frame46" parent="ROOF" unique_id=159999926 instance=ExtResource("4_gutbd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 4, 16)
+
+[node name="roof_corrugated" parent="ROOF/refrigerated_roof_frame46" unique_id=1686934407 instance=ExtResource("5_5wh4k")]
+
+[node name="refrigerated_roof_frame47" parent="ROOF" unique_id=450023187 instance=ExtResource("4_gutbd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 4, 16)
+
+[node name="roof_corrugated" parent="ROOF/refrigerated_roof_frame47" unique_id=1238603046 instance=ExtResource("5_5wh4k")]
+
+[node name="refrigerated_roof_frame48" parent="ROOF" unique_id=321690398 instance=ExtResource("4_gutbd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28, 4, 16)
+
+[node name="roof_corrugated" parent="ROOF/refrigerated_roof_frame48" unique_id=526693986 instance=ExtResource("5_5wh4k")]
+
+[node name="refrigerated_roof_frame49" parent="ROOF" unique_id=599359497 instance=ExtResource("4_gutbd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32, 4, 16)
+
+[node name="roof_corrugated" parent="ROOF/refrigerated_roof_frame49" unique_id=1956344539 instance=ExtResource("5_5wh4k")]
+
+[node name="refrigerated_roof_frame50" parent="ROOF" unique_id=1193114698 instance=ExtResource("4_gutbd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36, 4, 16)
+
+[node name="roof_corrugated" parent="ROOF/refrigerated_roof_frame50" unique_id=595821102 instance=ExtResource("5_5wh4k")]

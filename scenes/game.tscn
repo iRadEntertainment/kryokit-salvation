@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://dnqg04fl6j6" path="res://instances/load_blackwrap.tscn" id="6_0tnpc"]
 [ext_resource type="PackedScene" uid="uid://biro1v6rgmrre" path="res://instances/GUI/gui.tscn" id="6_p57ef"]
 [ext_resource type="PackedScene" uid="uid://c1sb5rpp2v40s" path="res://instances/shelf.tscn" id="7_u5sy4"]
+[ext_resource type="PackedScene" uid="uid://bn3gntsl510ao" path="res://scenes/warehouse_refrigirated_test.tscn" id="7_vtaks"]
 [ext_resource type="PackedScene" uid="uid://bn4m8aiq6k0hj" path="res://scenes/warehouse_test.tscn" id="8_gee14"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_v6tai"]
@@ -194,6 +195,9 @@ transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 4.69
 [node name="load_blackwrap3" parent="pallets" unique_id=180303127 instance=ExtResource("6_0tnpc")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 5.665885, 3.2332306, 6.7124095)
 
+[node name="Warehouse_Refrigirated_Test" parent="pallets" unique_id=100941699 instance=ExtResource("7_vtaks")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18, 0.01, -26)
+
 [node name="GUI" parent="." unique_id=1226663711 instance=ExtResource("6_p57ef")]
 
 [node name="shelf" parent="." unique_id=842112793 instance=ExtResource("7_u5sy4")]
@@ -221,4 +225,4 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, 0.050305963, 12.605203)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, 0.050305963, 6.305203)
 
 [node name="WarehouseTest" parent="." unique_id=61947791 instance=ExtResource("8_gee14")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 25.214485, 0.047605515, 11.927689)
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 25.214, 0.01, 11.928)
