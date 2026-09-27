@@ -1,0 +1,235 @@
+[gd_scene format=3 uid="uid://7qy1gdrqjig6"]
+
+[ext_resource type="Script" uid="uid://dnidtpkq32g0c" path="res://scenes/game.gd" id="1_i4ecs"]
+[ext_resource type="PackedScene" uid="uid://bn4m8aiq6k0hj" path="res://scenes/warehouse_test.tscn" id="2_uskmj"]
+[ext_resource type="PackedScene" uid="uid://bn3gntsl510ao" path="res://scenes/warehouse_refrigirated_test.tscn" id="3_wn1qc"]
+[ext_resource type="PackedScene" uid="uid://blseo38kk11bo" path="res://instances/forklift.tscn" id="4_veqv3"]
+[ext_resource type="PackedScene" uid="uid://xu0r8ac28h4g" path="res://instances/pallet.tscn" id="5_qqd3o"]
+[ext_resource type="PackedScene" uid="uid://7clljett1r8u" path="res://instances/cement_bag.tscn" id="6_4e0g4"]
+[ext_resource type="PackedScene" uid="uid://dnqg04fl6j6" path="res://instances/load_blackwrap.tscn" id="7_y6ijl"]
+[ext_resource type="PackedScene" uid="uid://biro1v6rgmrre" path="res://instances/GUI/gui.tscn" id="8_bc4ie"]
+[ext_resource type="PackedScene" uid="uid://c1sb5rpp2v40s" path="res://instances/shelf.tscn" id="9_xg03u"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_663hl"]
+rough = true
+absorbent = true
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_k6dd2"]
+
+[sub_resource type="Gradient" id="Gradient_tie64"]
+offsets = PackedFloat32Array(0, 0.75357145, 1)
+colors = PackedColorArray(0.02450536, 0.030421074, 0.123906486, 1, 0.13483018, 0.22499788, 0.45520014, 1, 0, 0.696819, 0.69988126, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_dlrnw"]
+noise_type = 2
+frequency = 0.2946
+fractal_type = 0
+cellular_return_type = 0
+domain_warp_type = 2
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_0tnpc"]
+width = 2048
+height = 2048
+generate_mipmaps = false
+noise = SubResource("FastNoiseLite_dlrnw")
+color_ramp = SubResource("Gradient_tie64")
+normalize = false
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8284g"]
+albedo_texture = SubResource("NoiseTexture2D_0tnpc")
+
+[sub_resource type="QuadMesh" id="QuadMesh_1ncja"]
+size = Vector2(300, 300)
+
+[sub_resource type="Environment" id="Environment_64wi0"]
+background_mode = 4
+sdfgi_enabled = true
+
+[node name="Game" type="Node3D" unique_id=1497330775]
+script = ExtResource("1_i4ecs")
+metadata/_custom_type_script = "uid://dnidtpkq32g0c"
+
+[node name="moon" type="DirectionalLight3D" parent="." unique_id=252260589]
+transform = Transform3D(-0.8275823, -0.16980088, -0.535047, -0.5000933, 0.6559697, 0.5653411, 0.2549792, 0.7354397, -0.62778515, 0, 0, 0)
+shadow_enabled = true
+shadow_bias = 0.01
+shadow_normal_bias = 1.55
+shadow_opacity = 0.8
+shadow_blur = 0.3
+
+[node name="WarehouseTest" parent="." unique_id=61947791 instance=ExtResource("2_uskmj")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 25.023, 0, 12)
+
+[node name="Warehouse_Refrigirated_Test" parent="." unique_id=100941699 instance=ExtResource("3_wn1qc")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 73, 0, 12)
+
+[node name="floor" type="StaticBody3D" parent="." unique_id=1421173993]
+physics_material_override = SubResource("PhysicsMaterial_663hl")
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="floor" unique_id=1477452762]
+shape = SubResource("WorldBoundaryShape3D_k6dd2")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="floor" unique_id=2052326251]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0)
+visible = false
+material_override = SubResource("StandardMaterial3D_8284g")
+mesh = SubResource("QuadMesh_1ncja")
+
+[node name="forklift" parent="." unique_id=983298835 instance=ExtResource("4_veqv3")]
+
+[node name="pallets" type="Node3D" parent="." unique_id=1279357182]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0.1424138, 0)
+
+[node name="pallet" parent="pallets" unique_id=143866765 instance=ExtResource("5_qqd3o")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 5.251619, 0, 9.874026)
+
+[node name="pallet2" parent="pallets" unique_id=366049864 instance=ExtResource("5_qqd3o")]
+transform = Transform3D(0.70710677, 0, -0.70710677, 0, 1, 0, 0.70710677, 0, 0.70710677, 5.6361885, 9.536743e-07, 2.6909916)
+
+[node name="pallet8" parent="pallets" unique_id=1322783570 instance=ExtResource("5_qqd3o")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -3.4377666, 0, 8.950741)
+
+[node name="pallet9" parent="pallets" unique_id=1628340947 instance=ExtResource("5_qqd3o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.613396, 2.3841858e-07, -3.7137964)
+
+[node name="pallet10" parent="pallets" unique_id=1818545164 instance=ExtResource("5_qqd3o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.6044035, 0, 10.463965)
+
+[node name="pallet3" parent="pallets" unique_id=1016000199 instance=ExtResource("5_qqd3o")]
+transform = Transform3D(-0.33013636, 0, 0.94393325, 0, 1, 0, -0.94393325, 0, -0.33013636, -9.177868, 2.3841858e-07, -3.841242)
+
+[node name="pallet4" parent="pallets" unique_id=931817998 instance=ExtResource("5_qqd3o")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.6598897, 0, -3.7377644)
+
+[node name="pallet5" parent="pallets" unique_id=1593110529 instance=ExtResource("5_qqd3o")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 3.4209497, 0, 6.7124095)
+
+[node name="pallet11" parent="pallets" unique_id=1320549125 instance=ExtResource("5_qqd3o")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 2.503013, 0, 6.7124095)
+
+[node name="pallet12" parent="pallets" unique_id=492521991 instance=ExtResource("5_qqd3o")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 1.5326221, 0, 6.7124095)
+
+[node name="pallet6" parent="pallets" unique_id=1472462610 instance=ExtResource("5_qqd3o")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -6.2024994, 0, 4.9297767)
+
+[node name="pallet7" parent="pallets" unique_id=1749422111 instance=ExtResource("5_qqd3o")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 10.757503, 0, 4.610453)
+
+[node name="cement_bag" parent="pallets" unique_id=1017875473 instance=ExtResource("6_4e0g4")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 3.4593582, 0.19471058, 6.983441)
+
+[node name="cement_bag2" parent="pallets" unique_id=597842006 instance=ExtResource("6_4e0g4")]
+transform = Transform3D(-0.027184421, 0, -0.99963045, 0, 1, 0, 0.99963045, 0, -0.027184421, 3.4593582, 0.19471058, 6.4741626)
+
+[node name="cement_bag3" parent="pallets" unique_id=542071544 instance=ExtResource("6_4e0g4")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 3.4593582, 0.36436284, 6.983441)
+
+[node name="cement_bag4" parent="pallets" unique_id=2005871517 instance=ExtResource("6_4e0g4")]
+transform = Transform3D(-0.027184421, 0, -0.99963045, 0, 1, 0, 0.99963045, 0, -0.027184421, 3.4593582, 0.36436284, 6.4741626)
+
+[node name="pallet13" parent="pallets" unique_id=1354268859 instance=ExtResource("5_qqd3o")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 3.4209497, 2.0307522, 6.7124095)
+
+[node name="pallet14" parent="pallets" unique_id=283637109 instance=ExtResource("5_qqd3o")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 2.503013, 2.0307522, 6.7124095)
+
+[node name="pallet15" parent="pallets" unique_id=539135879 instance=ExtResource("5_qqd3o")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 1.5326221, 2.0307522, 6.7124095)
+
+[node name="cement_bag5" parent="pallets" unique_id=1362479946 instance=ExtResource("6_4e0g4")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 3.4593582, 2.183187, 6.983441)
+
+[node name="cement_bag6" parent="pallets" unique_id=498656712 instance=ExtResource("6_4e0g4")]
+transform = Transform3D(-0.027184421, 0, -0.99963045, 0, 1, 0, 0.99963045, 0, -0.027184421, 3.4593582, 2.183187, 6.4741626)
+
+[node name="cement_bag7" parent="pallets" unique_id=1164421414 instance=ExtResource("6_4e0g4")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 3.4593582, 2.352839, 6.983441)
+
+[node name="cement_bag8" parent="pallets" unique_id=476088107 instance=ExtResource("6_4e0g4")]
+transform = Transform3D(-0.027184421, 0, -0.99963045, 0, 1, 0, 0.99963045, 0, -0.027184421, 3.4593582, 2.352839, 6.4741626)
+
+[node name="pallet16" parent="pallets" unique_id=1096969873 instance=ExtResource("5_qqd3o")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 6.5838223, 1.6307523, 6.7124095)
+
+[node name="pallet17" parent="pallets" unique_id=502673638 instance=ExtResource("5_qqd3o")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 5.665885, 1.6307523, 6.7124095)
+
+[node name="pallet18" parent="pallets" unique_id=466760089 instance=ExtResource("5_qqd3o")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 4.6954947, 1.6307523, 6.7124095)
+
+[node name="cement_bag9" parent="pallets" unique_id=1438111670 instance=ExtResource("6_4e0g4")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 6.6222305, 1.7831872, 6.983441)
+
+[node name="cement_bag10" parent="pallets" unique_id=239743134 instance=ExtResource("6_4e0g4")]
+transform = Transform3D(-0.027184421, 0, -0.99963045, 0, 1, 0, 0.99963045, 0, -0.027184421, 6.6222305, 1.7831872, 6.4741626)
+
+[node name="cement_bag11" parent="pallets" unique_id=521571029 instance=ExtResource("6_4e0g4")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 6.6222305, 1.9528393, 6.983441)
+
+[node name="cement_bag12" parent="pallets" unique_id=2043026847 instance=ExtResource("6_4e0g4")]
+transform = Transform3D(-0.027184421, 0, -0.99963045, 0, 1, 0, 0.99963045, 0, -0.027184421, 6.6222305, 1.9528393, 6.4741626)
+
+[node name="pallet19" parent="pallets" unique_id=1028324326 instance=ExtResource("5_qqd3o")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 6.5838223, 3.2332306, 6.7124095)
+
+[node name="pallet20" parent="pallets" unique_id=1596369506 instance=ExtResource("5_qqd3o")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 5.665885, 3.2332306, 6.7124095)
+
+[node name="pallet21" parent="pallets" unique_id=1586129867 instance=ExtResource("5_qqd3o")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 4.6954947, 3.2332306, 6.7124095)
+
+[node name="cement_bag13" parent="pallets" unique_id=235199873 instance=ExtResource("6_4e0g4")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 6.6222305, 3.3856654, 6.983441)
+
+[node name="cement_bag14" parent="pallets" unique_id=2144797971 instance=ExtResource("6_4e0g4")]
+transform = Transform3D(-0.027184421, 0, -0.99963045, 0, 1, 0, 0.99963045, 0, -0.027184421, 6.6222305, 3.3856654, 6.4741626)
+
+[node name="cement_bag15" parent="pallets" unique_id=95039799 instance=ExtResource("6_4e0g4")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 6.6222305, 3.5553174, 6.983441)
+
+[node name="cement_bag16" parent="pallets" unique_id=2049392643 instance=ExtResource("6_4e0g4")]
+transform = Transform3D(-0.027184421, 0, -0.99963045, 0, 1, 0, 0.99963045, 0, -0.027184421, 6.6222305, 3.5553174, 6.4741626)
+
+[node name="load_blackwrap" parent="pallets" unique_id=74449678 instance=ExtResource("7_y6ijl")]
+transform = Transform3D(0.70710677, 0, -0.70710677, 0, 1, 0, 0.70710677, 0, 0.70710677, 5.6361885, 9.536743e-07, 2.6909916)
+
+[node name="load_blackwrap2" parent="pallets" unique_id=1863815352 instance=ExtResource("7_y6ijl")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 4.6954947, 3.2332306, 6.7124095)
+
+[node name="load_blackwrap3" parent="pallets" unique_id=1795229441 instance=ExtResource("7_y6ijl")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 5.665885, 3.2332306, 6.7124095)
+
+[node name="GUI" parent="." unique_id=1226663711 instance=ExtResource("8_bc4ie")]
+
+[node name="shelf" parent="." unique_id=1220127838 instance=ExtResource("9_xg03u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.15067482, 0.050305963, 6.240678)
+
+[node name="shelf2" parent="." unique_id=1853011107 instance=ExtResource("9_xg03u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.050305963, -5.7515297)
+
+[node name="shelf7" parent="." unique_id=1969739886 instance=ExtResource("9_xg03u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 0.050305963, -5.7515297)
+
+[node name="shelf8" parent="." unique_id=2096956335 instance=ExtResource("9_xg03u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, 0.050305963, -5.7515297)
+
+[node name="shelf3" parent="." unique_id=39173459 instance=ExtResource("9_xg03u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.050305963, 12.605203)
+
+[node name="shelf4" parent="." unique_id=677464822 instance=ExtResource("9_xg03u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 0.050305963, 12.605203)
+
+[node name="shelf5" parent="." unique_id=2064369241 instance=ExtResource("9_xg03u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, 0.050305963, 12.605203)
+
+[node name="shelf6" parent="." unique_id=1412810055 instance=ExtResource("9_xg03u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, 0.050305963, 6.305203)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=457073294]
+environment = SubResource("Environment_64wi0")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="WorldEnvironment" unique_id=1054412164]
+transform = Transform3D(-0.03141076, -0.5545706, 0.83154356, 0, 0.8319541, 0.55484444, -0.99950653, 0.017428087, -0.026132312, 0, 0, 0)

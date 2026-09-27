@@ -65,6 +65,11 @@ center_of_mass = Vector3(0, 0.5, -0.5)
 engine_force = 800.0
 steering = 3.1415927
 
+[node name="Camera3D" type="Camera3D" parent="vehicle_body" unique_id=314452289 node_paths=PackedStringArray("target")]
+transform = Transform3D(-1, 5.440307e-08, -6.843283e-08, 0, 0.7827802, 0.6222984, 8.74228e-08, 0.6222984, -0.7827802, 0, 2.3947394, -1.5647922)
+script = ExtResource("6_v6tai")
+target = NodePath("../../carriage_body/cam_target")
+
 [node name="body" parent="vehicle_body" unique_id=661026329 instance=ExtResource("2_r8te8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.09, 0.72)
 
@@ -169,11 +174,6 @@ damping_relaxation = 60.8
 [node name="load_wheel_L" parent="vehicle_body/wheel_front_l" unique_id=611269869 instance=ExtResource("4_ri2lj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4402243, -0.30851865, 0)
 
-[node name="Camera3D" type="Camera3D" parent="vehicle_body" unique_id=314452289 node_paths=PackedStringArray("target")]
-transform = Transform3D(-1, 5.440307e-08, -6.843283e-08, 0, 0.7827802, 0.6222984, 8.74228e-08, 0.6222984, -0.7827802, 0, 2.3947394, -1.5647922)
-script = ExtResource("6_v6tai")
-target = NodePath("../../carriage_body/cam_target")
-
 [node name="IDW_Rotating_Spotlight3D" type="SpotLight3D" parent="vehicle_body" unique_id=1382821880]
 process_mode = 3
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.27493212, 2.6320844, -0.6610342)
@@ -181,9 +181,9 @@ light_color = Color(1, 0.51950234, 0.23511073, 1)
 light_energy = 2.0
 light_volumetric_fog_energy = 5.0
 light_specular = 1.1
-spot_range = 30.0
+spot_range = 50.0
 spot_attenuation = 1.25
-spot_angle = 20.0
+spot_angle = 50.0
 script = ExtResource("5_xomti")
 blink_enabled = false
 rotation_speed = 720.0
@@ -243,7 +243,7 @@ shape = SubResource("BoxShape3D_lexek")
 debug_color = Color(0.9974175, 0, 0.17626175, 0.41960785)
 
 [node name="cam_target" type="Marker3D" parent="carriage_body" unique_id=1275762858]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1303711, 1.2201538)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1303711, 1.1875921)
 
 [node name="fork_l_body" type="RigidBody3D" parent="." unique_id=1849089295]
 unique_name_in_owner = true
