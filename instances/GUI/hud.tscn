@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://itto84w3rq5s" path="res://instances/GUI/hud.gd" id="1_22wxp"]
 [ext_resource type="Texture2D" uid="uid://cclbnt0k328nb" path="res://UI/hud/drive-wheel.svg" id="2_qw6lo"]
 [ext_resource type="Texture2D" uid="uid://bsx6l2vwiqf7r" path="res://UI/hud/wheel_indicator.svg" id="3_fx2am"]
+[ext_resource type="PackedScene" uid="uid://dbbno2pug74uj" path="res://instances/GUI/event_action_letter.tscn" id="4_hbaeo"]
 [ext_resource type="Texture2D" uid="uid://cm1ssacx11n2y" path="res://UI/hud/truck-ico.svg" id="4_q8bvl"]
 [ext_resource type="Texture2D" uid="uid://fo1divmww20i" path="res://UI/hud/fork-ico.svg" id="5_hbaeo"]
 [ext_resource type="Texture2D" uid="uid://dm5crq07hp352" path="res://UI/hud/wheel_ico.svg" id="6_gonos"]
@@ -49,6 +50,22 @@ offset_bottom = -12.0
 grow_horizontal = 0
 grow_vertical = 0
 theme_type_variation = &"PanelTransparent"
+
+[node name="forw" parent="controls" unique_id=1894574714 instance=ExtResource("4_hbaeo")]
+layout_mode = 0
+offset_left = 171.0
+offset_top = 30.0
+offset_right = 203.0
+offset_bottom = 62.0
+action = &"forward"
+
+[node name="back" parent="controls" unique_id=357456780 instance=ExtResource("4_hbaeo")]
+layout_mode = 0
+offset_left = 171.0
+offset_top = 122.0
+offset_right = 203.0
+offset_bottom = 154.0
+action = &"back"
 
 [node name="hb_forklift_controls" type="HBoxContainer" parent="controls" unique_id=799991730]
 layout_mode = 1
@@ -163,3 +180,43 @@ offset_transform_enabled = true
 texture = ExtResource("6_gonos")
 expand_mode = 1
 stretch_mode = 5
+
+[node name="shift_l" parent="controls/truck" unique_id=1157618066 instance=ExtResource("4_hbaeo")]
+layout_mode = 0
+offset_left = -28.0
+offset_top = -67.0
+offset_right = 4.0
+offset_bottom = -35.0
+action = &"shift_fork_left"
+
+[node name="shift_r" parent="controls/truck" unique_id=798494849 instance=ExtResource("4_hbaeo")]
+layout_mode = 0
+offset_left = 55.0
+offset_top = -67.0
+offset_right = 87.0
+offset_bottom = -35.0
+action = &"shift_fork_right"
+
+[node name="widen" parent="controls/truck" unique_id=1896378197 instance=ExtResource("4_hbaeo")]
+layout_mode = 0
+offset_left = 55.0
+offset_top = -33.0
+offset_right = 87.0
+offset_bottom = -1.0
+action = &"widen_fork"
+
+[node name="shrink" parent="controls/truck" unique_id=1703094861 instance=ExtResource("4_hbaeo")]
+layout_mode = 0
+offset_left = -28.0
+offset_top = -33.0
+offset_right = 4.0
+offset_bottom = -1.0
+action = &"shrink_fork"
+
+[node name="reset" parent="controls/truck" unique_id=1537205773 instance=ExtResource("4_hbaeo")]
+layout_mode = 0
+offset_left = 61.0
+offset_top = 39.0
+offset_right = 93.0
+offset_bottom = 71.0
+action = &"reset_truck"
