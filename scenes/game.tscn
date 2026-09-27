@@ -49,8 +49,11 @@ environment = ExtResource("2_p57ef")
 
 [node name="moon" type="DirectionalLight3D" parent="." unique_id=41652714]
 transform = Transform3D(-0.8275823, -0.16980088, -0.535047, -0.5000933, 0.6559697, 0.5653411, 0.2549792, 0.7354397, -0.62778515, 0, 0, 0)
-light_energy = 0.5
 shadow_enabled = true
+shadow_bias = 0.01
+shadow_normal_bias = 1.55
+shadow_opacity = 0.8
+shadow_blur = 0.3
 
 [node name="floor" type="StaticBody3D" parent="." unique_id=127749720]
 physics_material_override = SubResource("PhysicsMaterial_v6tai")
