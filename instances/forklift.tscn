@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://fplixeadvfo6" path="res://assets/glbs/body.glb" id="2_r8te8"]
 [ext_resource type="PackedScene" uid="uid://dd1m85b0evov" path="res://assets/glbs/thrust_wheel.glb" id="2_ryygl"]
 [ext_resource type="PackedScene" uid="uid://bk7uhy3mf20jf" path="res://assets/glbs/load_wheel_R.glb" id="2_xn44t"]
-[ext_resource type="Texture2D" uid="uid://ifm7cjs0k1ec" path="res://assets/decals/KryoKitincLogo copy.png" id="3_syp4r"]
+[ext_resource type="Texture2D" uid="uid://dfak6apgtachb" path="res://assets/decals/KryoKitincLogo copy.png" id="3_syp4r"]
 [ext_resource type="PackedScene" uid="uid://b1c2j566p32pb" path="res://assets/glbs/carriage.glb" id="4_32q5h"]
 [ext_resource type="PackedScene" uid="uid://c1bayfbp7p518" path="res://assets/glbs/load_wheel_L.glb" id="4_ri2lj"]
 [ext_resource type="PackedScene" uid="uid://divu04mo3x1vn" path="res://assets/glbs/fork.glb" id="5_x3x2s"]
@@ -12,7 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://ci07wfnk1n4hu" path="res://assets/glbs/mast.glb" id="6_c51dl"]
 [ext_resource type="Script" uid="uid://bewj0dep4bhip" path="res://instances/cam.gd" id="6_v6tai"]
 [ext_resource type="PackedScene" uid="uid://dm35x7ohux76s" path="res://assets/glbs/mast_2.glb" id="9_bwns0"]
-[ext_resource type="PackedScene" uid="uid://be7did8mam7pe" path="res://assets/glbs/mast_3.glb" id="10_ygvo3"]
+[ext_resource type="PackedScene" uid="uid://crby8705xrn1x" path="res://assets/glbs/mast_3.glb" id="10_ygvo3"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_mdew2"]
 viewport_path = NodePath("vehicle_body/monitor/sv_screen")

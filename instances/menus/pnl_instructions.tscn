@@ -46,9 +46,11 @@ custom_minimum_size = Vector2(300, 200)
 layout_mode = 2
 size_flags_vertical = 4
 bbcode_enabled = true
-text = "Driving a forklift is a complicated matter. Make sure you or your company have a  good insurance that covers for health and damage.
+text = "Driving a forklift is a complicated matter. have you got your licence?
 
-There is lot to think about at any give moment and you will most certainly make mistakes. Just avoid the catastrofic ones."
+You better make sure your company has good insurance! We dont accept any liability for any injuries and you better pay for any damages!
+
+There is lot to think about at any give moment and you will most certainly make mistakes. Just avoid the catastrofic ones... OK?!"
 fit_content = true
 scroll_active = false
 
@@ -58,7 +60,7 @@ layout_mode = 2
 size_flags_vertical = 4
 bbcode_enabled = true
 text = "[b]Drive[/b]
-The drive wheel is actually on the back, while the two front wheels will be your turning pivot. Keep that in mind when you have to align your truck to the pallets and the fork is going to swing left and right."
+Unlike a car the drive wheel is actually on the back, while the two front wheels will be your turning pivot. Keep that in mind when you have to align your truck to the pallets and the fork is going to swing left and right."
 fit_content = true
 scroll_active = false
 
@@ -68,12 +70,12 @@ layout_mode = 2
 [node name="btn_ok" type="Button" parent="vb/hb_bottom" unique_id=330719681]
 layout_mode = 2
 size_flags_horizontal = 3
-text = "Ok got it!"
+text = "I have a Licence! "
 
 [node name="btn_didnt_get_it" type="Button" parent="vb/hb_bottom" unique_id=271477159]
 layout_mode = 2
 size_flags_horizontal = 3
-text = "I didn't get it, but ok!"
+text = "I have NO insurance!"
 
 [node name="btn_wtf" type="Button" parent="vb/hb_bottom" unique_id=1263919786]
 layout_mode = 2

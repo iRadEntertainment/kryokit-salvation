@@ -11,6 +11,8 @@
 [ext_resource type="PackedScene" uid="uid://xxt0kld8oboc" path="res://assets/glbs/warehouse/regular/gardrail_Straight.glb" id="9_13dtl"]
 [ext_resource type="PackedScene" uid="uid://dlyayug82m5ux" path="res://assets/glbs/warehouse/refrigerated/refrigerated_doorframe.glb" id="9_qnbff"]
 [ext_resource type="PackedScene" uid="uid://flht3yypd4kx" path="res://assets/glbs/warehouse/regular/Delivery_Doorframe.glb" id="11_tgn7q"]
+[ext_resource type="Texture2D" uid="uid://deck4mlnqgrs5" path="res://assets/materials/Bay1.png" id="12_xt0mp"]
+[ext_resource type="Texture2D" uid="uid://7ywdo8e4fjdo" path="res://assets/materials/Bay3.png" id="13_5k0yh"]
 
 [node name="WarehouseTest" type="Node3D" unique_id=61947791]
 
@@ -1055,5 +1057,15 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -8, 
 [node name="Delivery_Doorframe" parent="." unique_id=1709261854 instance=ExtResource("11_tgn7q")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -4, 0, 48)
 
+[node name="Decal" type="Decal" parent="Delivery_Doorframe" unique_id=672976486]
+transform = Transform3D(4.3711392e-08, 1, -4.3711385e-08, 8.742278e-08, -4.371139e-08, -1, -1, 4.371139e-08, -8.742278e-08, 2.1365929, 2.2, 0)
+size = Vector3(2.343, 0.192, 0.763)
+texture_albedo = ExtResource("12_xt0mp")
+
 [node name="Delivery_Doorframe2" parent="." unique_id=94313910 instance=ExtResource("11_tgn7q")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -12, 0, 48)
+
+[node name="Decal" type="Decal" parent="Delivery_Doorframe2" unique_id=1405688017]
+transform = Transform3D(4.3711392e-08, 1, -4.3711385e-08, 8.742278e-08, -4.371139e-08, -1, -1, 4.371139e-08, -8.742278e-08, 2.1365929, 2.2, 0)
+size = Vector3(2.343, 0.192, 0.763)
+texture_albedo = ExtResource("13_5k0yh")

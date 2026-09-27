@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://dnidtpkq32g0c" path="res://scenes/game.gd" id="1_lbhrr"]
 [ext_resource type="PackedScene" uid="uid://blseo38kk11bo" path="res://instances/forklift.tscn" id="2_iywne"]
-[ext_resource type="Environment" uid="uid://bl1fub2kdtprp" path="res://scenes/game_data/game_environment.tres" id="2_p57ef"]
 [ext_resource type="PackedScene" uid="uid://xu0r8ac28h4g" path="res://instances/pallet.tscn" id="3_p57ef"]
 [ext_resource type="PackedScene" uid="uid://7clljett1r8u" path="res://instances/cement_bag.tscn" id="4_u5sy4"]
 [ext_resource type="PackedScene" uid="uid://dnqg04fl6j6" path="res://instances/load_blackwrap.tscn" id="6_0tnpc"]
@@ -10,6 +9,24 @@
 [ext_resource type="PackedScene" uid="uid://c1sb5rpp2v40s" path="res://instances/shelf.tscn" id="7_u5sy4"]
 [ext_resource type="PackedScene" uid="uid://bn3gntsl510ao" path="res://scenes/warehouse_refrigirated_test.tscn" id="7_vtaks"]
 [ext_resource type="PackedScene" uid="uid://bn4m8aiq6k0hj" path="res://scenes/warehouse_test.tscn" id="8_gee14"]
+
+[sub_resource type="Environment" id="Environment_2mys3"]
+background_mode = 4
+tonemap_mode = 2
+ssao_enabled = true
+ssao_radius = 0.1
+ssao_intensity = 5.72
+sdfgi_enabled = true
+sdfgi_use_occlusion = true
+sdfgi_bounce_feedback = 0.3
+sdfgi_cascades = 5
+sdfgi_energy = 0.5
+glow_enabled = true
+glow_bloom = 0.25
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.01
+adjustment_enabled = true
+adjustment_saturation = 1.1
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_v6tai"]
 rough = true
@@ -46,7 +63,7 @@ size = Vector2(300, 300)
 script = ExtResource("1_lbhrr")
 
 [node name="game_env" type="WorldEnvironment" parent="." unique_id=1576902409]
-environment = ExtResource("2_p57ef")
+environment = SubResource("Environment_2mys3")
 
 [node name="moon" type="DirectionalLight3D" parent="." unique_id=41652714]
 transform = Transform3D(-0.8275823, -0.16980088, -0.535047, -0.5000933, 0.6559697, 0.5653411, 0.2549792, 0.7354397, -0.62778515, 0, 0, 0)

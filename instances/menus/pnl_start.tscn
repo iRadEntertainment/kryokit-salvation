@@ -29,9 +29,13 @@ size_flags_vertical = 3
 bbcode_enabled = true
 text = "You are [b]Mr. Coppetta[/b], a forklift operator at Kryokit_ Inc.
 
-It's the last night shift of a long week. The collegues from the previous shift are [b]mr. Whoman[/b] and [b]mr. Ropetto[/b]. The first handed over his resignations just last week, and [i]he doesn't seem to care much anymore[/i]. The second is [i]the new guy[/i]. You wonder what was going on in the head of the manager when he accepted the shifts, let's hope they didn't leave a mess.
+It's friday night baby! and the end of a long week. My collegues  [b]mr. Whoman[/b] and [b]mr. Ropetto[/b], What a pair of clowns!
 
-When you arrive to the premises, there is just one car in the parking lot. [shake]There should be more.[/shake]
+Whoman first handed over his resignation just last week!,  [i]he didnt really care anymore, so... whatever![/i]. 
+Ropetto is [i]this new guy[/i]. I wonder what was going on in the  manager head when he accepted employed him!
+Anyway its my turn to work the last nightshift of the week! i hope these clowns didnt leave a mess!
+
+When i get there, i only see one car in the parking lot. [shake]There should be more.[/shake]
 It also looks like there is [b][shake]no power[/shake][/b] in one of the warehouses: that's the pharma department. Maybe the generators to keep it refrigerated are holding, but the [b][shake]lights are flickering[/shake][/b]. Not a good sign.
 
 You know... [i][b]it's not going to be an easy shift[b][i].
@@ -43,18 +47,19 @@ layout_mode = 2
 
 [node name="hb_labels" type="HBoxContainer" parent="vb" unique_id=250302454]
 layout_mode = 2
+theme_override_constants/separation = 0
 
 [node name="lb1" type="Label" parent="vb/hb_labels" unique_id=1433270965]
 layout_mode = 2
 size_flags_horizontal = 3
-text = "I need a certificate first!"
+text = "I need a licence!"
 horizontal_alignment = 1
 autowrap_mode = 3
 
 [node name="lb2" type="Label" parent="vb/hb_labels" unique_id=286432445]
 layout_mode = 2
 size_flags_horizontal = 3
-text = "Forklifts are the easiest thing in the world"
+text = "Give me the keys!"
 horizontal_alignment = 1
 autowrap_mode = 3
 
@@ -65,13 +70,13 @@ layout_mode = 2
 layout_mode = 2
 size_flags_horizontal = 3
 text = "LEARN HOW TO DRIVE
-tutorial"
+- Tutorial -"
 
 [node name="btn_start" type="Button" parent="vb/hb_bottom" unique_id=894693022]
 layout_mode = 2
 size_flags_horizontal = 3
-text = "LET'S GET THIS BREAD
-start shift"
+text = "BEEP BEEP!
+- Start Shift -"
 
 [connection signal="pressed" from="vb/hb_bottom/btn_tutorial" to="." method="_on_btn_tutorial_pressed"]
 [connection signal="pressed" from="vb/hb_bottom/btn_start" to="." method="_on_btn_start_pressed"]
