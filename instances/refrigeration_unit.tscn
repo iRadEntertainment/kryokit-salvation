@@ -5,9 +5,17 @@
 [ext_resource type="PackedScene" uid="uid://cdxeyc5rxhnir" path="res://assets/glbs/warehouse/refrigerated/refrigeration_unit_fan.glb" id="2_wcrp0"]
 [ext_resource type="Texture2D" uid="uid://eoruaxf2nec0" path="res://assets/materials/smoke_spritesheet.png" id="4_64n5i"]
 
-[sub_resource type="Curve" id="Curve_jcyv7"]
-_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.14736843, 1), 0.0, 0.0, 0, 0, Vector2(0.97894734, 0), 0.0, 0.0, 0, 0]
+[sub_resource type="Curve" id="Curve_64n5i"]
+_limits = [0.0, 5.0, 0.0, 1.0]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.19649123, 4.439253), 0.0, 0.0, 0, 0, Vector2(0.99649113, 0.046729088), 0.0, 0.0, 0, 0]
 point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_wpgx1"]
+curve = SubResource("Curve_64n5i")
+
+[sub_resource type="Curve" id="Curve_jcyv7"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.18596493, 0.62616813), 0.0, 0.0, 0, 0, Vector2(0.39298248, 0.35514015), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 4
 
 [sub_resource type="CurveTexture" id="CurveTexture_elkjj"]
 curve = SubResource("Curve_jcyv7")
@@ -18,14 +26,23 @@ angle_min = 1.0728835e-05
 angle_max = 1.0728835e-05
 direction = Vector3(0, -1, 0)
 spread = 0.0
-gravity = Vector3(0, -0.165, 0)
+radial_velocity_min = -1.0000223
+radial_velocity_max = -2.2351742e-05
+gravity = Vector3(0, -1.005, 0)
 linear_accel_min = -2.2351742e-06
 linear_accel_max = 0.99999774
 scale_min = 0.099999994
 scale_max = 3.0
 scale_curve = SubResource("CurveTexture_elkjj")
-anim_speed_min = 1.5
-anim_speed_max = 1.5
+anim_speed_min = 0.19999999
+anim_speed_max = 0.5
+anim_speed_curve = SubResource("CurveTexture_wpgx1")
+turbulence_enabled = true
+turbulence_noise_strength = 0.1
+turbulence_noise_scale = 0.1
+turbulence_noise_speed_random = 0.1
+turbulence_influence_min = 0.010000001
+turbulence_influence_max = 0.010000001
 
 [sub_resource type="AnimatedTexture" id="AnimatedTexture_eafoc"]
 frames = 9
@@ -57,30 +74,30 @@ material = SubResource("StandardMaterial3D_hcbae")
 [node name="refrigeration_unit" unique_id=1671265384 instance=ExtResource("1_q1okw")]
 
 [node name="Marker_Fan1" parent="." index="4" unique_id=1976152244]
-transform = Transform3D(1, 0, 0, 0, 0.118186116, -0.99299145, 0, 0.99299145, 0.118186116, 1.506828, 3.6020002, -0.3999994)
+transform = Transform3D(1, 0, 0, 0, -0.9173499, -0.39808175, 0, 0.39808175, -0.9173499, 1.506828, 3.6020002, -0.3999994)
 script = ExtResource("2_64n5i")
 
 [node name="refrigeration_unit_fan" parent="Marker_Fan1" index="0" unique_id=931769347 instance=ExtResource("2_wcrp0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.507, -3.602, -0.4)
 
 [node name="Marker_Fan2" parent="." index="5" unique_id=1931086294]
-transform = Transform3D(1, 0, 0, 0, 0.8891683, -0.45758027, 0, 0.45758027, 0.8891683, 1.509485, 3.602, 0)
+transform = Transform3D(1, 0, 0, 0, -0.18567829, -0.9826106, 0, 0.9826106, -0.18567829, 1.509485, 3.602, 0)
 script = ExtResource("2_64n5i")
 
 [node name="refrigeration_unit_fan" parent="Marker_Fan2" index="0" unique_id=2006479682 instance=ExtResource("2_wcrp0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.507, -3.602, -0.4)
 
 [node name="Marker_Fan3" parent="." index="6" unique_id=235771025]
-transform = Transform3D(1, 0, 0, 0, 0.100514464, 0.9949356, 0, -0.9949356, 0.100514464, 1.5094851, 3.602, 0.4000001)
+transform = Transform3D(1, 0, 0, 0, 0.98242587, 0.18665288, 0, -0.18665288, 0.98242587, 1.5094851, 3.602, 0.4000001)
 script = ExtResource("2_64n5i")
 
 [node name="refrigeration_unit_fan" parent="Marker_Fan3" index="0" unique_id=801570315 instance=ExtResource("2_wcrp0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.507, -3.602, -0.4)
 
 [node name="GPUParticles3D4" type="GPUParticles3D" parent="." index="7" unique_id=1124453787]
-transform = Transform3D(1, 0, 0, 0, -0.9881897, -0.1532354, 0, 0.1532354, -0.9881897, 1.3382204, 3.2628806, 0)
-amount = 4
-lifetime = 2.25
+transform = Transform3D(1, 0, 0, 0, -0.9881897, -0.1532354, 0, 0.1532354, -0.9881897, 1.3921582, 3.09732, 0)
+amount = 10
+lifetime = 3.0
 use_fixed_seed = true
 seed = 1
 fixed_fps = 60
