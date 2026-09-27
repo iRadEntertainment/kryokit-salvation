@@ -2,30 +2,25 @@
 
 [ext_resource type="Script" uid="uid://1peor35w8umw" path="res://scenes/main_menu.gd" id="1_wu84c"]
 [ext_resource type="PackedScene" uid="uid://d1vxrs25il0vk" path="res://scenes/intro_3d.tscn" id="2_8ln24"]
-[ext_resource type="Texture2D" uid="uid://eaayxbbjpfm5" path="res://UI/logos/icon_irad.png" id="2_wu84c"]
-[ext_resource type="Texture2D" uid="uid://bdniatwpfr0x7" path="res://UI/logos/jern-jam-2026.png" id="3_8ln24"]
-[ext_resource type="FontFile" uid="uid://cktb4nw6e8j8c" path="res://UI/fonts/MuseoModerno/static/MuseoModerno-Bold.ttf" id="5_flqon"]
-[ext_resource type="Texture2D" uid="uid://b66lebuyevr3c" path="res://UI/logos/IDW logo.png" id="5_lgwnu"]
+[ext_resource type="Shader" uid="uid://knujgih4rdxu" path="res://assets/shaders/screen_blur.gdshader" id="3_5dd4i"]
 [ext_resource type="PackedScene" uid="uid://d1i06xdp8lji2" path="res://instances/menus/pnl_start.tscn" id="5_rcqid"]
 [ext_resource type="PackedScene" uid="uid://baeta3affchh4" path="res://instances/menus/pnl_instructions.tscn" id="6_1ajci"]
-[ext_resource type="Texture2D" uid="uid://7l3v0vadutam" path="res://UI/logos/krikit_logo.png" id="6_oa1go"]
-[ext_resource type="FontFile" uid="uid://di3e1hewt1hnf" path="res://UI/fonts/MuseoModerno/static/MuseoModerno-MediumItalic.ttf" id="6_rcqid"]
-[ext_resource type="Texture2D" uid="uid://vgdsdawmoi1h" path="res://UI/logos/pgorley_face.jpg" id="7_tbmy8"]
+[ext_resource type="PackedScene" uid="uid://bpqkgbfxicwbb" path="res://instances/menus/pnl_settings.tscn" id="6_jk1qb"]
+[ext_resource type="PackedScene" uid="uid://bbbtx3bxxqk3j" path="res://instances/menus/pnl_credits.tscn" id="7_tbmy8"]
 [ext_resource type="Texture2D" uid="uid://tpeor1upsawm" path="res://UI/logos/Kryokit.svg" id="8_jk1qb"]
 [ext_resource type="Texture2D" uid="uid://cyqpdn8gyj118" path="res://UI/logos/salvation.svg" id="9_5dd4i"]
 [ext_resource type="Texture2D" uid="uid://nmmt4q2lbybs" path="res://UI/theme/color palette.png" id="10_5dd4i"]
 
+[sub_resource type="ButtonGroup" id="ButtonGroup_5dd4i"]
+allow_unpress = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_lgwnu"]
+shader = ExtResource("3_5dd4i")
+shader_parameter/blur = 1.5
+
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lexek"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8mt0l"]
-content_margin_left = 24.0
-content_margin_top = 4.0
-content_margin_right = 24.0
-content_margin_bottom = 4.0
-bg_color = Color(0.007843138, 0.21568628, 0.3137255, 1)
-
-[sub_resource type="LabelSettings" id="LabelSettings_8mt0l"]
-font = ExtResource("6_rcqid")
+[sub_resource type="ButtonGroup" id="ButtonGroup_flqon"]
 
 [node name="main_menu" type="Control" unique_id=940865601]
 layout_mode = 3
@@ -35,6 +30,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_wu84c")
+tab_button_group = SubResource("ButtonGroup_5dd4i")
 metadata/_edit_lock_ = true
 
 [node name="bg_color" type="ColorRect" parent="." unique_id=999623212]
@@ -65,6 +61,15 @@ size_2d_override_stretch = true
 render_target_update_mode = 4
 
 [node name="intro_3d" parent="sv_bg/SubViewport" unique_id=1815666335 instance=ExtResource("2_8ln24")]
+
+[node name="bg_blur" type="ColorRect" parent="." unique_id=2029625493]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_lgwnu")
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="vb_main" type="VBoxContainer" parent="." unique_id=1263080890]
 layout_mode = 1
@@ -124,26 +129,39 @@ alignment = 1
 
 [node name="btn_start" type="Button" parent="vb_main/top/margin/hb/vb_left/buttons" unique_id=224013207]
 layout_mode = 2
+size_flags_horizontal = 0
+mouse_default_cursor_shape = 2
 theme_type_variation = &"TitleButton"
+toggle_mode = true
+button_group = SubResource("ButtonGroup_5dd4i")
 text = "Start"
 alignment = 0
 
 [node name="btn_instructions" type="Button" parent="vb_main/top/margin/hb/vb_left/buttons" unique_id=666175732]
 layout_mode = 2
+size_flags_horizontal = 0
+mouse_default_cursor_shape = 2
 theme_type_variation = &"TitleButton"
+toggle_mode = true
+button_group = SubResource("ButtonGroup_5dd4i")
 text = "Instructions"
 alignment = 0
 
 [node name="btn_setting" type="Button" parent="vb_main/top/margin/hb/vb_left/buttons" unique_id=920973542]
 layout_mode = 2
+size_flags_horizontal = 0
+mouse_default_cursor_shape = 2
 theme_type_variation = &"TitleButton"
-disabled = true
+toggle_mode = true
+button_group = SubResource("ButtonGroup_5dd4i")
 text = "Settings"
 alignment = 0
 
 [node name="btn_quit" type="Button" parent="vb_main/top/margin/hb/vb_left/buttons" unique_id=122946659]
 unique_name_in_owner = true
 layout_mode = 2
+size_flags_horizontal = 0
+mouse_default_cursor_shape = 2
 theme_type_variation = &"TitleButton"
 text = "Quit"
 alignment = 0
@@ -152,7 +170,6 @@ alignment = 0
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
-size_flags_vertical = 8
 current_tab = 0
 tabs_visible = false
 
@@ -163,122 +180,19 @@ layout_mode = 2
 visible = false
 layout_mode = 2
 
-[node name="bot" type="PanelContainer" parent="vb_main" unique_id=34061621]
+[node name="pnl_settings" parent="vb_main/top/margin/hb/tabs" unique_id=666623303 instance=ExtResource("6_jk1qb")]
+visible = false
 layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_8mt0l")
+tabs_btn_group = SubResource("ButtonGroup_flqon")
+metadata/_tab_index = 2
 
-[node name="hb_credits" type="HBoxContainer" parent="vb_main/bot" unique_id=1311035237]
-custom_minimum_size = Vector2(500, 0)
+[node name="pnl_credits" parent="vb_main" unique_id=1424696912 instance=ExtResource("7_tbmy8")]
 layout_mode = 2
-size_flags_vertical = 10
-
-[node name="lb_credits" type="Label" parent="vb_main/bot/hb_credits" unique_id=1073038537]
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_fonts/font = ExtResource("5_flqon")
-theme_override_font_sizes/font_size = 28
-text = "Credits"
-vertical_alignment = 1
-
-[node name="lb_a_game_by" type="Label" parent="vb_main/bot/hb_credits" unique_id=826785292]
-layout_mode = 2
-text = "a game by"
-label_settings = SubResource("LabelSettings_8mt0l")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="logo_irad" type="TextureRect" parent="vb_main/bot/hb_credits" unique_id=203159304]
-custom_minimum_size = Vector2(40, 40)
-layout_mode = 2
-size_flags_vertical = 6
-texture = ExtResource("2_wu84c")
-expand_mode = 1
-stretch_mode = 5
-
-[node name="lb_and_idw25" type="Label" parent="vb_main/bot/hb_credits" unique_id=304392934]
-layout_mode = 2
-text = "and "
-label_settings = SubResource("LabelSettings_8mt0l")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="logo_irad2" type="TextureRect" parent="vb_main/bot/hb_credits" unique_id=193944079]
-custom_minimum_size = Vector2(40, 40)
-layout_mode = 2
-size_flags_vertical = 6
-texture = ExtResource("5_lgwnu")
-expand_mode = 1
-stretch_mode = 5
-
-[node name="empty" type="Control" parent="vb_main/bot/hb_credits" unique_id=1227435649]
-custom_minimum_size = Vector2(50, 0)
-layout_mode = 2
-
-[node name="lb_for" type="Label" parent="vb_main/bot/hb_credits" unique_id=1905140913]
-layout_mode = 2
-text = "for"
-label_settings = SubResource("LabelSettings_8mt0l")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="logo_jam" type="TextureRect" parent="vb_main/bot/hb_credits" unique_id=2082992728]
-custom_minimum_size = Vector2(110, 40)
-layout_mode = 2
-texture = ExtResource("3_8ln24")
-expand_mode = 1
-stretch_mode = 5
-
-[node name="lb_2026" type="Label" parent="vb_main/bot/hb_credits" unique_id=2065982587]
-layout_mode = 2
-text = "2026"
-label_settings = SubResource("LabelSettings_8mt0l")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="empty2" type="Control" parent="vb_main/bot/hb_credits" unique_id=130685617]
-custom_minimum_size = Vector2(50, 0)
-layout_mode = 2
-
-[node name="lb_inspired_by" type="Label" parent="vb_main/bot/hb_credits" unique_id=1039218156]
-layout_mode = 2
-text = "inspired by
-the work of"
-label_settings = SubResource("LabelSettings_8mt0l")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="logo_krikit" type="TextureRect" parent="vb_main/bot/hb_credits" unique_id=282047621]
-custom_minimum_size = Vector2(40, 40)
-layout_mode = 2
-texture = ExtResource("6_oa1go")
-expand_mode = 1
-stretch_mode = 5
-
-[node name="empty3" type="Control" parent="vb_main/bot/hb_credits" unique_id=917533824]
-custom_minimum_size = Vector2(50, 0)
-layout_mode = 2
-
-[node name="lb_music_by" type="Label" parent="vb_main/bot/hb_credits" unique_id=1084448022]
-layout_mode = 2
-text = "music by
-Conduit"
-label_settings = SubResource("LabelSettings_8mt0l")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="logo_krikit2" type="TextureRect" parent="vb_main/bot/hb_credits" unique_id=1337291682]
-custom_minimum_size = Vector2(40, 40)
-layout_mode = 2
-texture = ExtResource("7_tbmy8")
-expand_mode = 1
-stretch_mode = 5
 
 [node name="ColorPalette" type="Sprite2D" parent="." unique_id=1353763631]
 position = Vector2(788, -100)
 texture = ExtResource("10_5dd4i")
 
-[connection signal="pressed" from="vb_main/top/margin/hb/vb_left/buttons/btn_start" to="." method="_on_btn_start_pressed"]
-[connection signal="pressed" from="vb_main/top/margin/hb/vb_left/buttons/btn_instructions" to="." method="_on_btn_instructions_pressed"]
-[connection signal="pressed" from="vb_main/top/margin/hb/vb_left/buttons/btn_setting" to="." method="_on_btn_setting_pressed"]
 [connection signal="pressed" from="vb_main/top/margin/hb/vb_left/buttons/btn_quit" to="." method="_on_btn_quit_pressed"]
 [connection signal="back_pressed" from="vb_main/top/margin/hb/tabs/pnl_instructions" to="." method="_on_pnl_instructions_back_pressed"]
+[connection signal="back_pressed" from="vb_main/top/margin/hb/tabs/pnl_settings" to="." method="_on_pnl_settings_back_pressed"]

@@ -1,0 +1,209 @@
+[gd_scene format=3 uid="uid://bbbtx3bxxqk3j"]
+
+[ext_resource type="FontFile" uid="uid://cktb4nw6e8j8c" path="res://UI/fonts/MuseoModerno/static/MuseoModerno-Bold.ttf" id="1_kv6r0"]
+[ext_resource type="Script" uid="uid://8fenl0nhoqej" path="res://instances/menus/pnl_credits.gd" id="1_y2og5"]
+[ext_resource type="FontFile" uid="uid://di3e1hewt1hnf" path="res://UI/fonts/MuseoModerno/static/MuseoModerno-MediumItalic.ttf" id="2_y2og5"]
+[ext_resource type="Texture2D" uid="uid://eaayxbbjpfm5" path="res://UI/logos/icon_irad.png" id="3_uvtmt"]
+[ext_resource type="Texture2D" uid="uid://b66lebuyevr3c" path="res://UI/logos/IDW logo.png" id="4_cpmhp"]
+[ext_resource type="Texture2D" uid="uid://bdniatwpfr0x7" path="res://UI/logos/jern-jam-2026.png" id="5_di4hs"]
+[ext_resource type="Texture2D" uid="uid://7l3v0vadutam" path="res://UI/logos/krikit_logo.png" id="6_4rmxw"]
+[ext_resource type="Texture2D" uid="uid://vgdsdawmoi1h" path="res://UI/logos/pgorley_face.jpg" id="7_xgr26"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8mt0l"]
+content_margin_left = 24.0
+content_margin_top = 4.0
+content_margin_right = 24.0
+content_margin_bottom = 4.0
+bg_color = Color(0.008407022, 0.21725863, 0.31498778, 0.7607843)
+
+[sub_resource type="LabelSettings" id="LabelSettings_8mt0l"]
+font = ExtResource("2_y2og5")
+
+[node name="pnl_credits" type="PanelContainer" unique_id=1424696912]
+theme_override_styles/panel = SubResource("StyleBoxFlat_8mt0l")
+script = ExtResource("1_y2og5")
+
+[node name="hb" type="HBoxContainer" parent="." unique_id=507357549]
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+size_flags_vertical = 10
+
+[node name="lb_credits" type="Label" parent="hb" unique_id=1783716042]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("1_kv6r0")
+theme_override_font_sizes/font_size = 28
+text = "Credits"
+vertical_alignment = 1
+
+[node name="lb_a_game_by" type="Label" parent="hb" unique_id=820044309]
+layout_mode = 2
+text = "a game by"
+label_settings = SubResource("LabelSettings_8mt0l")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="logo_irad" type="TextureRect" parent="hb" unique_id=921928296]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+size_flags_vertical = 6
+texture = ExtResource("3_uvtmt")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="btn_irad" type="Button" parent="hb/logo_irad" unique_id=1219965089]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_default_cursor_shape = 2
+flat = true
+
+[node name="lb_and_idw25" type="Label" parent="hb" unique_id=1943726784]
+layout_mode = 2
+text = "and "
+label_settings = SubResource("LabelSettings_8mt0l")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="logo_idw" type="TextureRect" parent="hb" unique_id=445825662]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+size_flags_vertical = 6
+texture = ExtResource("4_cpmhp")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="btn_idw" type="Button" parent="hb/logo_idw" unique_id=1048176801]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_default_cursor_shape = 2
+flat = true
+
+[node name="empty" type="Control" parent="hb" unique_id=441991660]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+
+[node name="lb_for" type="Label" parent="hb" unique_id=202161097]
+layout_mode = 2
+text = "for"
+label_settings = SubResource("LabelSettings_8mt0l")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="logo_jam" type="TextureRect" parent="hb" unique_id=120621219]
+custom_minimum_size = Vector2(110, 40)
+layout_mode = 2
+size_flags_vertical = 4
+texture = ExtResource("5_di4hs")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="btn_jernjam" type="Button" parent="hb/logo_jam" unique_id=837941643]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_default_cursor_shape = 2
+flat = true
+
+[node name="lb_2026" type="Label" parent="hb" unique_id=968340243]
+layout_mode = 2
+text = "2026"
+label_settings = SubResource("LabelSettings_8mt0l")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="empty2" type="Control" parent="hb" unique_id=1204841268]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+
+[node name="lb_inspired_by" type="Label" parent="hb" unique_id=1496770206]
+layout_mode = 2
+text = "inspired by
+the work of"
+label_settings = SubResource("LabelSettings_8mt0l")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="logo_krikit" type="TextureRect" parent="hb" unique_id=520450850]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+size_flags_vertical = 4
+texture = ExtResource("6_4rmxw")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="btn_krikit" type="Button" parent="hb/logo_krikit" unique_id=344036741]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_default_cursor_shape = 2
+flat = true
+
+[node name="logo_wishlist" type="TextureRect" parent="hb" unique_id=920549263]
+visible = false
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+size_flags_vertical = 4
+texture = ExtResource("6_4rmxw")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="btn_wishlist" type="Button" parent="hb/logo_wishlist" unique_id=1424919835]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_default_cursor_shape = 2
+flat = true
+
+[node name="empty3" type="Control" parent="hb" unique_id=1063448430]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+
+[node name="lb_music_by" type="Label" parent="hb" unique_id=2136044564]
+layout_mode = 2
+text = "music by
+Conduit"
+label_settings = SubResource("LabelSettings_8mt0l")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="logo_pg" type="TextureRect" parent="hb" unique_id=128654720]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+size_flags_vertical = 4
+texture = ExtResource("7_xgr26")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="btn_pgorley" type="Button" parent="hb/logo_pg" unique_id=1350996275]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_default_cursor_shape = 2
+flat = true
+
+[connection signal="pressed" from="hb/logo_irad/btn_irad" to="." method="_on_btn_irad_pressed"]
+[connection signal="pressed" from="hb/logo_idw/btn_idw" to="." method="_on_btn_idw_pressed"]
+[connection signal="pressed" from="hb/logo_jam/btn_jernjam" to="." method="_on_btn_jernjam_pressed"]
+[connection signal="pressed" from="hb/logo_krikit/btn_krikit" to="." method="_on_btn_krikit_pressed"]
+[connection signal="pressed" from="hb/logo_wishlist/btn_wishlist" to="." method="_on_btn_wishlist_pressed"]
+[connection signal="pressed" from="hb/logo_pg/btn_pgorley" to="." method="_on_btn_pgorley_pressed"]

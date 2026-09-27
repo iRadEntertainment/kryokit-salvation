@@ -1,6 +1,15 @@
 [gd_scene format=3 uid="uid://baqkc3uq8om3n"]
 
 [ext_resource type="Script" uid="uid://dft5lcyhgl8wt" path="res://instances/GUI/in_game_menu.gd" id="1_ruynh"]
+[ext_resource type="Shader" uid="uid://knujgih4rdxu" path="res://assets/shaders/screen_blur.gdshader" id="2_lv8ng"]
+[ext_resource type="PackedScene" uid="uid://bpqkgbfxicwbb" path="res://instances/menus/pnl_settings.tscn" id="2_nvyhx"]
+[ext_resource type="PackedScene" uid="uid://baeta3affchh4" path="res://instances/menus/pnl_instructions.tscn" id="4_y1cp5"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_lv8ng"]
+shader = ExtResource("2_lv8ng")
+shader_parameter/blur = 1.5
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_y1cp5"]
 
 [node name="in_game_menu" type="Control" unique_id=945941104]
 process_mode = 3
@@ -13,44 +22,85 @@ grow_vertical = 2
 script = ExtResource("1_ruynh")
 metadata/_edit_lock_ = true
 
-[node name="PanelContainer" type="PanelContainer" parent="." unique_id=755234665]
+[node name="bg_blur" type="ColorRect" parent="." unique_id=969586535]
+material = SubResource("ShaderMaterial_lv8ng")
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -241.0
-offset_top = -146.0
-offset_right = 241.0
-offset_bottom = 146.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer" unique_id=1698257352]
+[node name="pnl_pause" type="PanelContainer" parent="." unique_id=755234665]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 277.0
+offset_top = 174.0
+offset_right = -277.0
+offset_bottom = -174.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="pnl_pause" unique_id=1698257352]
 layout_mode = 2
 
-[node name="lb" type="Label" parent="PanelContainer/VBoxContainer" unique_id=753380795]
+[node name="lb" type="Label" parent="pnl_pause/VBoxContainer" unique_id=753380795]
 layout_mode = 2
-text = "Game paused"
+text = "Coffee break"
 horizontal_alignment = 1
 
-[node name="btn_continue" type="Button" parent="PanelContainer/VBoxContainer" unique_id=1874178441]
+[node name="btn_continue" type="Button" parent="pnl_pause/VBoxContainer" unique_id=1874178441]
 layout_mode = 2
 size_flags_vertical = 3
-text = "Continue"
+text = "Continue the shift"
 
-[node name="btn_settings" type="Button" parent="PanelContainer/VBoxContainer" unique_id=1641894270]
+[node name="btn_instructions" type="Button" parent="pnl_pause/VBoxContainer" unique_id=541954632]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Instructions"
+
+[node name="btn_settings" type="Button" parent="pnl_pause/VBoxContainer" unique_id=1641894270]
 layout_mode = 2
 size_flags_vertical = 3
 text = "Settings"
 
-[node name="btn_quit_to_title" type="Button" parent="PanelContainer/VBoxContainer" unique_id=974487538]
+[node name="btn_quit_to_title" type="Button" parent="pnl_pause/VBoxContainer" unique_id=974487538]
 layout_mode = 2
 size_flags_vertical = 3
-text = "Quit to title"
+text = "Quit the job to become
+a full-time indie game dev"
 
-[connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
-[connection signal="pressed" from="PanelContainer/VBoxContainer/btn_continue" to="." method="_on_btn_continue_pressed"]
-[connection signal="pressed" from="PanelContainer/VBoxContainer/btn_settings" to="." method="_on_btn_settings_pressed"]
-[connection signal="pressed" from="PanelContainer/VBoxContainer/btn_quit_to_title" to="." method="_on_btn_quit_to_title_pressed"]
+[node name="tabs" type="TabContainer" parent="." unique_id=1281988746]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 201.0
+offset_top = 94.0
+offset_right = -201.0
+offset_bottom = -94.0
+grow_horizontal = 2
+grow_vertical = 2
+current_tab = 0
+tabs_visible = false
+
+[node name="pnl_settings" parent="tabs" unique_id=666623303 instance=ExtResource("2_nvyhx")]
+layout_mode = 2
+tabs_btn_group = SubResource("ButtonGroup_y1cp5")
+metadata/_tab_index = 0
+
+[node name="pnl_instructions" parent="tabs" unique_id=1734069950 instance=ExtResource("4_y1cp5")]
+visible = false
+layout_mode = 2
+
+[connection signal="pressed" from="pnl_pause/VBoxContainer/btn_continue" to="." method="_on_btn_continue_pressed"]
+[connection signal="pressed" from="pnl_pause/VBoxContainer/btn_instructions" to="." method="_on_btn_instructions_pressed"]
+[connection signal="pressed" from="pnl_pause/VBoxContainer/btn_settings" to="." method="_on_btn_settings_pressed"]
+[connection signal="pressed" from="pnl_pause/VBoxContainer/btn_quit_to_title" to="." method="_on_btn_quit_to_title_pressed"]
+[connection signal="back_pressed" from="tabs/pnl_settings" to="." method="_on_pnl_settings_back_pressed"]
+[connection signal="back_pressed" from="tabs/pnl_instructions" to="." method="_on_pnl_instructions_back_pressed"]

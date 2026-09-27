@@ -1,0 +1,122 @@
+[gd_scene format=3 uid="uid://bpqkgbfxicwbb"]
+
+[ext_resource type="Script" uid="uid://d2hsr2o42lb18" path="res://instances/menus/pnl_settings.gd" id="1_61ska"]
+[ext_resource type="LabelSettings" uid="uid://bsqx4o12mbbs3" path="res://UI/styles/label_titles.tres" id="1_je5wo"]
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_qt5t1"]
+
+[node name="pnl_settings" type="PanelContainer" unique_id=666623303]
+offset_right = 754.0
+offset_bottom = 528.0
+script = ExtResource("1_61ska")
+tabs_btn_group = SubResource("ButtonGroup_qt5t1")
+metadata/_tab_index = 1
+
+[node name="vb" type="VBoxContainer" parent="." unique_id=1421982865]
+layout_mode = 2
+
+[node name="title" type="Label" parent="vb" unique_id=291932685]
+layout_mode = 2
+text = "Settings"
+label_settings = ExtResource("1_je5wo")
+horizontal_alignment = 1
+
+[node name="sep" type="HSeparator" parent="vb" unique_id=659415686]
+layout_mode = 2
+
+[node name="hb_tabs_buttons" type="HBoxContainer" parent="vb" unique_id=449977727]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="btn_audio" type="Button" parent="vb/hb_tabs_buttons" unique_id=2133164131]
+layout_mode = 2
+size_flags_horizontal = 3
+toggle_mode = true
+button_group = SubResource("ButtonGroup_qt5t1")
+text = "Audio"
+
+[node name="btn_video" type="Button" parent="vb/hb_tabs_buttons" unique_id=1192809033]
+layout_mode = 2
+size_flags_horizontal = 3
+toggle_mode = true
+button_group = SubResource("ButtonGroup_qt5t1")
+text = "Video"
+
+[node name="btn_game" type="Button" parent="vb/hb_tabs_buttons" unique_id=304368736]
+layout_mode = 2
+size_flags_horizontal = 3
+toggle_mode = true
+button_group = SubResource("ButtonGroup_qt5t1")
+text = "Game"
+
+[node name="scroll" type="ScrollContainer" parent="vb" unique_id=908912489]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="tabs" type="TabContainer" parent="vb/scroll" unique_id=64561504]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+current_tab = 0
+tabs_visible = false
+
+[node name="pnl_audio" type="PanelContainer" parent="vb/scroll/tabs" unique_id=1201373877]
+layout_mode = 2
+theme_type_variation = &"PanelOpaqueSquared"
+metadata/_tab_index = 0
+
+[node name="vb" type="VBoxContainer" parent="vb/scroll/tabs/pnl_audio" unique_id=2094887408]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="vb/scroll/tabs/pnl_audio/vb" unique_id=440183211]
+layout_mode = 2
+size_flags_vertical = 3
+text = "I didn't have time to implement the audio settings
+sorry"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="pnl_video" type="PanelContainer" parent="vb/scroll/tabs" unique_id=687365966]
+visible = false
+layout_mode = 2
+theme_type_variation = &"PanelOpaqueSquared"
+metadata/_tab_index = 1
+
+[node name="vb" type="VBoxContainer" parent="vb/scroll/tabs/pnl_video" unique_id=1566454137]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="vb/scroll/tabs/pnl_video/vb" unique_id=718368972]
+layout_mode = 2
+size_flags_vertical = 3
+text = "I didn't have time to implement the video settings
+sorry"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="pnl_gameplay" type="PanelContainer" parent="vb/scroll/tabs" unique_id=97034348]
+visible = false
+layout_mode = 2
+theme_type_variation = &"PanelOpaqueSquared"
+metadata/_tab_index = 2
+
+[node name="vb" type="VBoxContainer" parent="vb/scroll/tabs/pnl_gameplay" unique_id=1417062131]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="vb/scroll/tabs/pnl_gameplay/vb" unique_id=1833351023]
+layout_mode = 2
+size_flags_vertical = 3
+text = "I didn't have time to implement the gameplay settings
+sorry"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="hb_bottom" type="HBoxContainer" parent="vb" unique_id=71215561]
+layout_mode = 2
+
+[node name="btn_back" type="Button" parent="vb/hb_bottom" unique_id=1074389723]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "That's better"
+
+[connection signal="pressed" from="vb/hb_bottom/btn_back" to="." method="_on_btn_back_pressed"]

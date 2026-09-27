@@ -2,9 +2,13 @@
 
 [ext_resource type="Script" uid="uid://cv0257edumg0q" path="res://instances/menus/pnl_instructions.gd" id="1_3cq71"]
 [ext_resource type="LabelSettings" uid="uid://bsqx4o12mbbs3" path="res://UI/styles/label_titles.tres" id="1_lsjfp"]
+[ext_resource type="FontFile" uid="uid://kqucjaj3o5fw" path="res://UI/fonts/MuseoModerno/static/MuseoModerno-Italic.ttf" id="3_tkuc6"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_lv8ng"]
+font = ExtResource("3_tkuc6")
 
 [node name="pnl_instructions" type="PanelContainer" unique_id=1734069950]
-offset_right = 553.0
+offset_right = 743.0
 offset_bottom = 438.0
 script = ExtResource("1_3cq71")
 metadata/_tab_index = 1
@@ -21,6 +25,12 @@ horizontal_alignment = 1
 [node name="sep" type="HSeparator" parent="vb" unique_id=229507903]
 layout_mode = 2
 
+[node name="title2" type="Label" parent="vb" unique_id=1047097464]
+layout_mode = 2
+text = "Get your certificate TODAY!"
+label_settings = SubResource("LabelSettings_lv8ng")
+horizontal_alignment = 1
+
 [node name="scroll" type="ScrollContainer" parent="vb" unique_id=997210015]
 layout_mode = 2
 size_flags_vertical = 3
@@ -34,12 +44,23 @@ size_flags_vertical = 3
 [node name="lb_instruction1" type="RichTextLabel" parent="vb/scroll/vb" unique_id=536399632]
 custom_minimum_size = Vector2(300, 200)
 layout_mode = 2
-size_flags_vertical = 3
+size_flags_vertical = 4
 bbcode_enabled = true
-text = "Driving a forklift is a complicated matter. There are plenty of things to think about at any give moment. And you'll make mistakes.
-[b]Drive[/b]
-The drive wheel is actually on the back, while the two front wheels will be your turning pivot."
+text = "Driving a forklift is a complicated matter. Make sure you or your company have a  good insurance that covers for health and damage.
+
+There is lot to think about at any give moment and you will most certainly make mistakes. Just avoid the catastrofic ones."
 fit_content = true
+scroll_active = false
+
+[node name="lb_instruction2" type="RichTextLabel" parent="vb/scroll/vb" unique_id=365566730]
+custom_minimum_size = Vector2(300, 200)
+layout_mode = 2
+size_flags_vertical = 4
+bbcode_enabled = true
+text = "[b]Drive[/b]
+The drive wheel is actually on the back, while the two front wheels will be your turning pivot. Keep that in mind when you have to align your truck to the pallets and the fork is going to swing left and right."
+fit_content = true
+scroll_active = false
 
 [node name="hb_bottom" type="HBoxContainer" parent="vb" unique_id=950580421]
 layout_mode = 2
@@ -57,7 +78,7 @@ text = "I didn't get it, but ok!"
 [node name="btn_wtf" type="Button" parent="vb/hb_bottom" unique_id=1263919786]
 layout_mode = 2
 size_flags_horizontal = 3
-text = "wut?"
+text = "Wut?"
 
 [connection signal="pressed" from="vb/hb_bottom/btn_ok" to="." method="_on_btn_ok_pressed"]
 [connection signal="pressed" from="vb/hb_bottom/btn_didnt_get_it" to="." method="_on_btn_ok_pressed"]
