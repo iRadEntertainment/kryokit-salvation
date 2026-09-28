@@ -3,7 +3,6 @@
 [ext_resource type="Script" uid="uid://1peor35w8umw" path="res://scenes/main_menu.gd" id="1_wu84c"]
 [ext_resource type="PackedScene" uid="uid://d1vxrs25il0vk" path="res://scenes/intro_3d.tscn" id="2_8ln24"]
 [ext_resource type="Shader" uid="uid://knujgih4rdxu" path="res://assets/shaders/screen_blur.gdshader" id="3_5dd4i"]
-[ext_resource type="PackedScene" uid="uid://bssnydjohvcvp" path="res://scenes/trees.tscn" id="3_lgwnu"]
 [ext_resource type="PackedScene" uid="uid://d1i06xdp8lji2" path="res://instances/menus/pnl_start.tscn" id="5_rcqid"]
 [ext_resource type="PackedScene" uid="uid://baeta3affchh4" path="res://instances/menus/pnl_instructions.tscn" id="6_1ajci"]
 [ext_resource type="PackedScene" uid="uid://bpqkgbfxicwbb" path="res://instances/menus/pnl_settings.tscn" id="6_jk1qb"]
@@ -72,15 +71,6 @@ shadow_enabled = true
 spot_range = 16.862
 spot_angle = 70.57
 spot_angle_attenuation = 0.32987723
-
-[node name="Trees" parent="sv_bg/SubViewport" unique_id=1346160839 instance=ExtResource("3_lgwnu")]
-transform = Transform3D(-0.86602527, 0, -0.50000006, 0, 1, 0, 0.50000006, 0, -0.86602527, -20.099997, -0.3, -35.100002)
-
-[node name="Trees3" parent="sv_bg/SubViewport" unique_id=130731003 instance=ExtResource("3_lgwnu")]
-transform = Transform3D(1.7881393e-07, 0, -0.99999994, 0, 1, 0, 0.99999994, 0, 1.7881393e-07, -38.3, -0.3, -11.500002)
-
-[node name="Trees2" parent="sv_bg/SubViewport" unique_id=1917489273 instance=ExtResource("3_lgwnu")]
-transform = Transform3D(0.25881904, 0, 0.9659259, 0, 1, 0, -0.9659259, 0, 0.25881904, -15.999998, -0.40000004, -6.5999994)
 
 [node name="bg_blur" type="ColorRect" parent="." unique_id=2029625493]
 unique_name_in_owner = true

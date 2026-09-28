@@ -1,8 +1,9 @@
 [gd_scene format=3 uid="uid://d1vxrs25il0vk"]
 
-[ext_resource type="Environment" uid="uid://bl1fub2kdtprp" path="res://scenes/game_data/game_environment.tres" id="1_0bakh"]
+[ext_resource type="Environment" uid="uid://bl1fub2kdtprp" path="res://scenes/game_data/intro_environment.tres" id="1_0bakh"]
 [ext_resource type="PackedScene" uid="uid://blseo38kk11bo" path="res://instances/forklift.tscn" id="1_7m2fh"]
 [ext_resource type="PackedScene" uid="uid://6a0e1oacp8re" path="res://scenes/office_intro.tscn" id="3_slekq"]
+[ext_resource type="PackedScene" uid="uid://bssnydjohvcvp" path="res://scenes/trees.tscn" id="4_i45y4"]
 
 [sub_resource type="FogMaterial" id="FogMaterial_2mys3"]
 density = 0.05
@@ -10,10 +11,10 @@ albedo = Color(1, 0.95566666, 0.86, 1)
 
 [node name="intro_3d" type="Node3D" unique_id=1815666335]
 
-[node name="game_env" type="WorldEnvironment" parent="." unique_id=537664222]
+[node name="intro_env" type="WorldEnvironment" parent="." unique_id=537664222]
 environment = ExtResource("1_0bakh")
 
-[node name="SpotLight3D3" type="SpotLight3D" parent="game_env" unique_id=1355807710]
+[node name="SpotLight3D3" type="SpotLight3D" parent="intro_env" unique_id=1355807710]
 transform = Transform3D(-3.5806277e-08, 1, 6.878321e-08, 0.57357645, -3.5806266e-08, 0.81915206, 0.81915206, 6.878321e-08, -0.57357645, 15.118408, 13.115248, -24.629042)
 light_color = Color(0.8289612, 0.9811351, 0.99999994, 1)
 light_energy = 20.0
@@ -23,7 +24,7 @@ spot_range = 16.862
 spot_angle = 70.57
 spot_angle_attenuation = 0.32987723
 
-[node name="SpotLight3D5" type="SpotLight3D" parent="game_env" unique_id=1186853817]
+[node name="SpotLight3D5" type="SpotLight3D" parent="intro_env" unique_id=1186853817]
 transform = Transform3D(-3.5806277e-08, 1, 6.878321e-08, 0.57357645, -3.5806266e-08, 0.81915206, 0.81915206, 6.878321e-08, -0.57357645, 22.118406, 14.139442, -23.515028)
 light_color = Color(1, 0.7230816, 0.5322893, 1)
 light_energy = 20.0
@@ -33,7 +34,7 @@ spot_range = 16.862
 spot_angle = 70.57
 spot_angle_attenuation = 0.32987723
 
-[node name="SpotLight3D4" type="SpotLight3D" parent="game_env" unique_id=682853565]
+[node name="SpotLight3D4" type="SpotLight3D" parent="intro_env" unique_id=682853565]
 transform = Transform3D(-3.5806277e-08, 1, 6.878321e-08, 0.57357645, -3.5806266e-08, 0.81915206, 0.81915206, 6.878321e-08, -0.57357645, 7.118408, 9.838639, -22.334738)
 light_color = Color(0.8289612, 0.9811351, 0.99999994, 1)
 light_energy = 20.0
@@ -63,3 +64,12 @@ transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 6, 0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.631954, 7.4339542, -8.146902)
 size = Vector3(26.52649, 16.874878, 16.135498)
 material = SubResource("FogMaterial_2mys3")
+
+[node name="Trees" parent="." unique_id=1346160839 instance=ExtResource("4_i45y4")]
+transform = Transform3D(-0.86602527, 0, -0.50000006, 0, 1, 0, 0.50000006, 0, -0.86602527, -20.099997, -0.3, -35.100002)
+
+[node name="Trees3" parent="." unique_id=1524567935 instance=ExtResource("4_i45y4")]
+transform = Transform3D(1.7881393e-07, 0, -0.99999994, 0, 1, 0, 0.99999994, 0, 1.7881393e-07, -38.3, -0.3, -11.500002)
+
+[node name="Trees2" parent="." unique_id=1725927218 instance=ExtResource("4_i45y4")]
+transform = Transform3D(0.25881904, 0, 0.9659259, 0, 1, 0, -0.9659259, 0, 0.25881904, -15.999998, -0.40000004, -6.5999994)

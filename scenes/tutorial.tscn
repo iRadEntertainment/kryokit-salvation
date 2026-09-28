@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://k4dekefb6nc3"]
 
 [ext_resource type="Script" uid="uid://dnidtpkq32g0c" path="res://scenes/game.gd" id="1_gbqnl"]
-[ext_resource type="Environment" uid="uid://bl1fub2kdtprp" path="res://scenes/game_data/game_environment.tres" id="2_ckvwl"]
+[ext_resource type="Environment" uid="uid://bl1fub2kdtprp" path="res://scenes/game_data/intro_environment.tres" id="2_ckvwl"]
 [ext_resource type="PackedScene" uid="uid://blseo38kk11bo" path="res://instances/forklift.tscn" id="3_nlqja"]
 [ext_resource type="PackedScene" uid="uid://xu0r8ac28h4g" path="res://instances/pallet.tscn" id="4_0epgs"]
 [ext_resource type="PackedScene" uid="uid://7clljett1r8u" path="res://instances/cement_bag.tscn" id="5_g2equ"]
