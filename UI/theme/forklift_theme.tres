@@ -107,6 +107,22 @@ content_margin_top = 4.0
 content_margin_right = 4.0
 content_margin_bottom = 4.0
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f0xrx"]
+content_margin_left = 6.0
+content_margin_top = 2.0
+content_margin_right = 6.0
+content_margin_bottom = 2.0
+bg_color = Color(0.007843138, 0.21568628, 0.3137255, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.61960787, 0.7411765, 0.8784314, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qxet1"]
 bg_color = Color(0.007843138, 0.21568628, 0.3137255, 1)
 corner_radius_top_left = 8
@@ -174,6 +190,8 @@ TitleButton/styles/hover = SubResource("StyleBoxEmpty_8mt0l")
 TitleButton/styles/hover_pressed = SubResource("StyleBoxEmpty_8mt0l")
 TitleButton/styles/normal = SubResource("StyleBoxEmpty_8mt0l")
 TitleButton/styles/pressed = SubResource("StyleBoxEmpty_8mt0l")
+TooltipLabel/font_sizes/font_size = 12
+TooltipPanel/styles/panel = SubResource("StyleBoxFlat_f0xrx")
 VScrollBar/styles/grabber = SubResource("StyleBoxFlat_qxet1")
 VScrollBar/styles/grabber_highlight = SubResource("StyleBoxFlat_fsui8")
 VScrollBar/styles/grabber_pressed = SubResource("StyleBoxFlat_fsui8")
