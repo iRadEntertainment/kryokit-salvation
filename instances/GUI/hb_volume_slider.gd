@@ -2,7 +2,16 @@
 extends HBoxContainer
 
 
-@export var audio_bus: int = 0: set = _set_audio_bus
+@export var audio_bus: int = 0:
+	set(value):
+		audio_bus = value
+		if not is_node_ready(): await ready
+		lb_bus.text = _get_audio_bus_name()
+@export var custom_name: String:
+	set(value):
+		custom_name = value
+		if not is_node_ready(): await ready
+		lb_bus.text = _get_audio_bus_name()
 
 @onready var lb_bus: Label = $lb_bus
 @onready var sl_volume: HSlider = $sl_volume
@@ -34,10 +43,10 @@ func _validate_property(property: Dictionary) -> void:
 		property.hint_string = ",".join(names)
 
 
-func _set_audio_bus(bus_idx: int) -> void:
-	audio_bus = bus_idx
-	if not is_node_ready(): await ready
-	lb_bus.text = AudioServer.get_bus_name(audio_bus)
+func _get_audio_bus_name() -> String:
+	if custom_name:
+		return custom_name
+	return AudioServer.get_bus_name(audio_bus)
 
 
 func _on_sl_volume_value_changed(value: float) -> void:

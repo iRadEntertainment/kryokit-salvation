@@ -92,6 +92,11 @@ audio_bus = 2
 layout_mode = 2
 audio_bus = 3
 
+[node name="sl_bus4" parent="vb/scroll/tabs/pnl_audio/scroll/vb" unique_id=1911478678 instance=ExtResource("3_h2cav")]
+layout_mode = 2
+audio_bus = 4
+custom_name = "Engine"
+
 [node name="pnl_video" type="PanelContainer" parent="vb/scroll/tabs" unique_id=687365966]
 visible = false
 layout_mode = 2
