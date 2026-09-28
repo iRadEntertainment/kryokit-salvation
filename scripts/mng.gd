@@ -8,6 +8,13 @@ var gui: GUI
 var hud: HUD
 var forklift: Forklift
 
+const SETTINGS_PATH: String = "user://settings.txt"
+var settings: GameSettings
+
+
+func _ready() -> void:
+	settings = GameSettings.from_config_file(SETTINGS_PATH)
+	settings.apply_audio_bus_volumes()
 
 
 func go_to_title() -> void:
@@ -23,4 +30,5 @@ func go_to_tutorial() -> void:
 
 
 func quit_game() -> void:
+	settings.save()
 	get_tree().quit()

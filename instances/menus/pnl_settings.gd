@@ -19,4 +19,6 @@ func _on_tabs_btn_group_pressed(btn: Button) -> void:
 	tabs.current_tab = idx
 
 
-func _on_btn_back_pressed() -> void: back_pressed.emit()
+func _on_btn_back_pressed() -> void:
+	Mng.settings.save()
+	back_pressed.emit()
