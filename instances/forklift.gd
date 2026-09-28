@@ -58,6 +58,10 @@ class_name Forklift extends Node3D
 @onready var audio_loop: AudioStreamPlayer3D = %AudioLoop
 
 
+var PI_half: float = PI/2.0
+var PI_quarter: float = PI/4.0
+var settings: GameSettings:
+	get: return Mng.settings
 
 # movement
 var current_speed: float:
@@ -191,6 +195,7 @@ func _input(event: InputEvent) -> void:
 
 func _physics_process(delta: float) -> void:
 	_process_accellerations(delta)
+	_process_steering(delta)
 	_process_driving(delta)
 	_process_mast(delta)
 	_process_fork(delta)
@@ -212,7 +217,6 @@ func _process_accellerations(delta: float) -> void:
 	else:
 		_lift_acc = 0.0
 	
-	
 	if _shift_input:
 		_shift_acc = min(_shift_acc + delta * 0.7, abs(_shift_input))
 	else:
@@ -220,7 +224,7 @@ func _process_accellerations(delta: float) -> void:
 
 
 
-func _process_driving(delta: float) -> void:
+func _process_steering(delta: float) -> void:
 	# steering
 	target_steering += steer_input * steering_speed * steering_acc * delta
 	vehicle_body.steering = lerpf(
@@ -229,15 +233,21 @@ func _process_driving(delta: float) -> void:
 		15.0 * delta
 	)
 	
-	# drive
-	if Input.is_action_just_pressed(&"back") or \
-			Input.is_action_just_pressed(&"forward"):
+	# snap steering
+	if Input.is_action_just_released(&"steer_left") or \
+			Input.is_action_just_released(&"steer_right"):
+		if not _drive_input or settings.snap_while_drive:
+			_snap_target_steering()
+
+
+func _process_driving(delta: float) -> void:
+	# throttle direction
+	if Input.is_action_just_released(&"back") or \
+			Input.is_action_just_released(&"forward"):
 		_wrapped_steering = abs(wrapf(vehicle_body.steering, -PI, PI))
 		_throttle_dir = -1 if _wrapped_steering > PI/2 else 1
-		# snap steering
-		var increment: float = PI * 0.5 / pow(2, steering_snap_division)
-		target_steering = snappedf(target_steering, increment)
 	
+	# throttle input
 	if _drive_input:
 		_target_throttle = lerp(
 			_target_throttle,
@@ -263,7 +273,7 @@ func _process_driving(delta: float) -> void:
 	
 	vehicle_body.engine_force = lerpf(
 		vehicle_body.engine_force,
-		_target_throttle,
+		_target_throttle * settings.speed_mult,
 		5.0 * delta
 	)
 
@@ -508,6 +518,25 @@ func reset_truck() -> void:
 		Generic6DOFJoint3D.PARAM_LINEAR_MOTOR_TARGET_VELOCITY,
 		0.0
 	)
+
+
+func _snap_target_steering() -> void:
+	if settings.steering_snap == GameSettings.SteeringSnap.NONE:
+		return
+	var cardinal_snap: float = settings.steering_snap_cardinal_rad
+	var increment_snap: float = settings.steering_snap_increment_rad
+	
+	match settings.steering_snap:
+		GameSettings.SteeringSnap.FORWARD:
+			var steer_diff: float = absf(wrapf(target_steering, -PI_half, PI_half))
+			if steer_diff < cardinal_snap:
+				target_steering = snappedf(target_steering, PI)
+		GameSettings.SteeringSnap.CARDINAL:
+			var steer_diff: float = absf(wrapf(target_steering, -PI_quarter, PI_quarter))
+			if steer_diff < cardinal_snap:
+				target_steering = snappedf(target_steering, PI_half)
+		GameSettings.SteeringSnap.INCREMENTS:
+			target_steering = snappedf(target_steering, increment_snap)
 
 
 func get_lift_height() -> float:

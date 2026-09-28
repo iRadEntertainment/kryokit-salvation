@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://d2hsr2o42lb18" path="res://instances/menus/pnl_settings.gd" id="1_61ska"]
 [ext_resource type="LabelSettings" uid="uid://bsqx4o12mbbs3" path="res://UI/styles/label_titles.tres" id="1_je5wo"]
 [ext_resource type="PackedScene" uid="uid://c6y1e7bsgmymg" path="res://instances/GUI/hb_volume_slider.tscn" id="3_h2cav"]
+[ext_resource type="PackedScene" uid="uid://ca1eviugx3fh5" path="res://instances/menus/pnl_gameplay.tscn" id="4_qyvna"]
 
 [sub_resource type="ButtonGroup" id="ButtonGroup_qt5t1"]
 
@@ -59,10 +60,11 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-current_tab = 0
+current_tab = 1
 tabs_visible = false
 
 [node name="pnl_audio" type="PanelContainer" parent="vb/scroll/tabs" unique_id=1201373877]
+visible = false
 layout_mode = 2
 theme_type_variation = &"PanelOpaqueSquared"
 metadata/_tab_index = 0
@@ -98,7 +100,6 @@ audio_bus = 4
 custom_name = "Engine"
 
 [node name="pnl_video" type="PanelContainer" parent="vb/scroll/tabs" unique_id=687365966]
-visible = false
 layout_mode = 2
 theme_type_variation = &"PanelOpaqueSquared"
 metadata/_tab_index = 1
@@ -114,22 +115,9 @@ sorry"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="pnl_gameplay" type="PanelContainer" parent="vb/scroll/tabs" unique_id=97034348]
+[node name="pnl_gameplay" parent="vb/scroll/tabs" unique_id=1351256829 instance=ExtResource("4_qyvna")]
 visible = false
 layout_mode = 2
-theme_type_variation = &"PanelOpaqueSquared"
-metadata/_tab_index = 2
-
-[node name="vb" type="VBoxContainer" parent="vb/scroll/tabs/pnl_gameplay" unique_id=1417062131]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="vb/scroll/tabs/pnl_gameplay/vb" unique_id=1833351023]
-layout_mode = 2
-size_flags_vertical = 3
-text = "I didn't have time to implement the gameplay settings
-sorry"
-horizontal_alignment = 1
-vertical_alignment = 1
 
 [node name="hb_bottom" type="HBoxContainer" parent="vb" unique_id=71215561]
 layout_mode = 2

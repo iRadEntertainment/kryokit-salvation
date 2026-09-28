@@ -1,0 +1,147 @@
+[gd_scene format=3 uid="uid://ca1eviugx3fh5"]
+
+[ext_resource type="Script" uid="uid://bj6hkfjtdw81i" path="res://instances/menus/pnl_gameplay.gd" id="1_k3fui"]
+
+[node name="pnl_gameplay" type="PanelContainer" unique_id=1351256829]
+offset_right = 689.0
+offset_bottom = 279.0
+theme_type_variation = &"PanelOpaqueSquared"
+script = ExtResource("1_k3fui")
+metadata/_tab_index = 2
+
+[node name="scroll" type="ScrollContainer" parent="." unique_id=177963206]
+layout_mode = 2
+
+[node name="vb" type="VBoxContainer" parent="scroll" unique_id=1612837647]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 3
+alignment = 1
+
+[node name="hb_speed" type="HBoxContainer" parent="scroll/vb" unique_id=1138904523]
+layout_mode = 2
+
+[node name="lb" type="Label" parent="scroll/vb/hb_speed" unique_id=964995535]
+layout_mode = 2
+text = "Forklift speed"
+
+[node name="sl_speed" type="HSlider" parent="scroll/vb/hb_speed" unique_id=179219468]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+size_flags_vertical = 4
+max_value = 4.0
+value = 1.0
+tick_count = 4
+ticks_on_borders = true
+ticks_position = 2
+
+[node name="lb_speed" type="Label" parent="scroll/vb/hb_speed" unique_id=1106236175]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+text = "super fast"
+
+[node name="vb_snap" type="VBoxContainer" parent="scroll/vb" unique_id=1455864828]
+layout_mode = 2
+
+[node name="hb_snap" type="HBoxContainer" parent="scroll/vb/vb_snap" unique_id=1837068520]
+layout_mode = 2
+
+[node name="lb" type="Label" parent="scroll/vb/vb_snap/hb_snap" unique_id=1329730541]
+layout_mode = 2
+text = "Steering snap"
+
+[node name="opt_snap_type" type="OptionButton" parent="scroll/vb/vb_snap/hb_snap" unique_id=1514460267]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+selected = 3
+item_count = 4
+popup/item_0/text = "None"
+popup/item_0/id = 0
+popup/item_1/text = "Forward only"
+popup/item_1/id = 1
+popup/item_2/text = "Cardinal directions"
+popup/item_2/id = 2
+popup/item_3/text = "Increments"
+popup/item_3/id = 3
+
+[node name="hb_sub_snap" type="HBoxContainer" parent="scroll/vb/vb_snap" unique_id=1831820683]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="empty" type="Control" parent="scroll/vb/vb_snap/hb_sub_snap" unique_id=1575107502]
+custom_minimum_size = Vector2(60, 0)
+layout_mode = 2
+
+[node name="vb" type="VBoxContainer" parent="scroll/vb/vb_snap/hb_sub_snap" unique_id=321526042]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ck_snap_while_drive" type="CheckButton" parent="scroll/vb/vb_snap/hb_sub_snap/vb" unique_id=84771091]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Also while driving"
+flat = true
+
+[node name="hb_cardinal" type="HBoxContainer" parent="scroll/vb/vb_snap/hb_sub_snap/vb" unique_id=915566317]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="lb" type="Label" parent="scroll/vb/vb_snap/hb_sub_snap/vb/hb_cardinal" unique_id=236257536]
+custom_minimum_size = Vector2(96, 0)
+layout_mode = 2
+text = "within"
+
+[node name="sl_snap_card" type="HSlider" parent="scroll/vb/vb_snap/hb_sub_snap/vb/hb_cardinal" unique_id=359157830]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+min_value = 2.5
+max_value = 22.5
+step = 2.5
+value = 2.5
+tick_count = 9
+ticks_on_borders = true
+ticks_position = 2
+
+[node name="lb_snap_card" type="Label" parent="scroll/vb/vb_snap/hb_sub_snap/vb/hb_cardinal" unique_id=369690169]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(56, 0)
+layout_mode = 2
+text = "5.0°"
+horizontal_alignment = 2
+
+[node name="hb_increments" type="HBoxContainer" parent="scroll/vb/vb_snap/hb_sub_snap/vb" unique_id=1112317187]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="lb" type="Label" parent="scroll/vb/vb_snap/hb_sub_snap/vb/hb_increments" unique_id=1598691532]
+layout_mode = 2
+text = "increments"
+
+[node name="sl_snap_incr" type="HSlider" parent="scroll/vb/vb_snap/hb_sub_snap/vb/hb_increments" unique_id=867275700]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+min_value = 2.5
+max_value = 22.5
+step = 2.5
+value = 2.5
+tick_count = 9
+ticks_on_borders = true
+ticks_position = 2
+
+[node name="lb_snap_incr" type="Label" parent="scroll/vb/vb_snap/hb_sub_snap/vb/hb_increments" unique_id=1799969083]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(56, 0)
+layout_mode = 2
+text = "5°"
+horizontal_alignment = 2
