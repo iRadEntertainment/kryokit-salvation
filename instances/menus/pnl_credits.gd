@@ -2,7 +2,7 @@ extends PanelContainer
 
 
 const IRAD_TWITCH = "https://twitch.tv/iraddev"
-const IDW_YT = "https://www.youtube.com/iandwynn"
+const IDW_YT = "https://www.youtube.com/@iandwynn"
 const JERNJAM = "https://itch.io/jam/jern-jam-2026"
 const KRIKIT_TWITCH = "https://twitch.tv/krikit_"
 const KRIKIT_GAME = "https://s.team/a/4803210"
