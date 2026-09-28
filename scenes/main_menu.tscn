@@ -20,7 +20,7 @@ shader_parameter/blur = 1.5
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lexek"]
 
-[sub_resource type="ButtonGroup" id="ButtonGroup_flqon"]
+[sub_resource type="ButtonGroup" id="ButtonGroup_lgwnu"]
 
 [node name="main_menu" type="Control" unique_id=940865601]
 layout_mode = 3
@@ -170,10 +170,11 @@ alignment = 0
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
-current_tab = 0
+current_tab = 2
 tabs_visible = false
 
 [node name="pnl_start" parent="vb_main/top/margin/hb/tabs" unique_id=754080212 instance=ExtResource("5_rcqid")]
+visible = false
 layout_mode = 2
 
 [node name="pnl_instructions" parent="vb_main/top/margin/hb/tabs" unique_id=1734069950 instance=ExtResource("6_1ajci")]
@@ -181,9 +182,8 @@ visible = false
 layout_mode = 2
 
 [node name="pnl_settings" parent="vb_main/top/margin/hb/tabs" unique_id=666623303 instance=ExtResource("6_jk1qb")]
-visible = false
 layout_mode = 2
-tabs_btn_group = SubResource("ButtonGroup_flqon")
+tabs_btn_group = SubResource("ButtonGroup_lgwnu")
 metadata/_tab_index = 2
 
 [node name="pnl_credits" parent="vb_main" unique_id=1424696912 instance=ExtResource("7_tbmy8")]
