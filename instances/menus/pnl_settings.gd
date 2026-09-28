@@ -10,6 +10,7 @@ signal back_pressed
 
 
 func _ready() -> void:
+	tabs.current_tab = 0
 	tabs_btn_group.get_buttons()[tabs.current_tab].button_pressed = true
 	tabs_btn_group.pressed.connect(_on_tabs_btn_group_pressed)
 

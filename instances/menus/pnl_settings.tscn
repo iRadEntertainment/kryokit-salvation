@@ -2,7 +2,8 @@
 
 [ext_resource type="Script" uid="uid://d2hsr2o42lb18" path="res://instances/menus/pnl_settings.gd" id="1_61ska"]
 [ext_resource type="LabelSettings" uid="uid://bsqx4o12mbbs3" path="res://UI/styles/label_titles.tres" id="1_je5wo"]
-[ext_resource type="PackedScene" uid="uid://c6y1e7bsgmymg" path="res://instances/GUI/hb_volume_slider.tscn" id="3_h2cav"]
+[ext_resource type="PackedScene" uid="uid://dx2nv81fhxbsw" path="res://instances/menus/pnl_audio.tscn" id="3_qyvna"]
+[ext_resource type="PackedScene" uid="uid://mhv5gviytwar" path="res://instances/menus/pnl_video.tscn" id="4_caat3"]
 [ext_resource type="PackedScene" uid="uid://ca1eviugx3fh5" path="res://instances/menus/pnl_gameplay.tscn" id="4_qyvna"]
 
 [sub_resource type="ButtonGroup" id="ButtonGroup_qt5t1"]
@@ -38,6 +39,7 @@ button_group = SubResource("ButtonGroup_qt5t1")
 text = "Audio"
 
 [node name="btn_video" type="Button" parent="vb/hb_tabs_buttons" unique_id=1192809033]
+visible = false
 layout_mode = 2
 size_flags_horizontal = 3
 toggle_mode = true
@@ -60,60 +62,15 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-current_tab = 1
+current_tab = 0
 tabs_visible = false
 
-[node name="pnl_audio" type="PanelContainer" parent="vb/scroll/tabs" unique_id=1201373877]
+[node name="pnl_audio" parent="vb/scroll/tabs" unique_id=2102517541 instance=ExtResource("3_qyvna")]
+layout_mode = 2
+
+[node name="pnl_video" parent="vb/scroll/tabs" unique_id=810984923 instance=ExtResource("4_caat3")]
 visible = false
 layout_mode = 2
-theme_type_variation = &"PanelOpaqueSquared"
-metadata/_tab_index = 0
-
-[node name="scroll" type="ScrollContainer" parent="vb/scroll/tabs/pnl_audio" unique_id=1256906346]
-layout_mode = 2
-
-[node name="vb" type="VBoxContainer" parent="vb/scroll/tabs/pnl_audio/scroll" unique_id=2094887408]
-custom_minimum_size = Vector2(400, 0)
-layout_mode = 2
-size_flags_horizontal = 6
-size_flags_vertical = 3
-alignment = 1
-
-[node name="sl_bus0" parent="vb/scroll/tabs/pnl_audio/scroll/vb" unique_id=706445174 instance=ExtResource("3_h2cav")]
-layout_mode = 2
-
-[node name="sl_bus1" parent="vb/scroll/tabs/pnl_audio/scroll/vb" unique_id=898365839 instance=ExtResource("3_h2cav")]
-layout_mode = 2
-audio_bus = 1
-
-[node name="sl_bus2" parent="vb/scroll/tabs/pnl_audio/scroll/vb" unique_id=1250459873 instance=ExtResource("3_h2cav")]
-layout_mode = 2
-audio_bus = 2
-
-[node name="sl_bus3" parent="vb/scroll/tabs/pnl_audio/scroll/vb" unique_id=2066184167 instance=ExtResource("3_h2cav")]
-layout_mode = 2
-audio_bus = 3
-
-[node name="sl_bus4" parent="vb/scroll/tabs/pnl_audio/scroll/vb" unique_id=1911478678 instance=ExtResource("3_h2cav")]
-layout_mode = 2
-audio_bus = 4
-custom_name = "Engine"
-
-[node name="pnl_video" type="PanelContainer" parent="vb/scroll/tabs" unique_id=687365966]
-layout_mode = 2
-theme_type_variation = &"PanelOpaqueSquared"
-metadata/_tab_index = 1
-
-[node name="vb" type="VBoxContainer" parent="vb/scroll/tabs/pnl_video" unique_id=1566454137]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="vb/scroll/tabs/pnl_video/vb" unique_id=718368972]
-layout_mode = 2
-size_flags_vertical = 3
-text = "I didn't have time to implement the video settings
-sorry"
-horizontal_alignment = 1
-vertical_alignment = 1
 
 [node name="pnl_gameplay" parent="vb/scroll/tabs" unique_id=1351256829 instance=ExtResource("4_qyvna")]
 visible = false

@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://mhv5gviytwar"]
+
+[node name="pnl_video" type="PanelContainer" unique_id=810984923]
+theme_type_variation = &"PanelOpaqueSquared"
+metadata/_tab_index = 1
+
+[node name="vb" type="VBoxContainer" parent="." unique_id=2039357701]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="vb" unique_id=544765805]
+layout_mode = 2
+size_flags_vertical = 3
+text = "I didn't have time to implement the video settings
+sorry"
+horizontal_alignment = 1
+vertical_alignment = 1

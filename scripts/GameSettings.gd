@@ -23,14 +23,14 @@ const SPEED_MULT = {
 }
 
 # Global
-var file_path: String
+var file_path: String = Mng.SETTINGS_PATH
 
 # Audio
-var bus_volumes_linear: Array
+var bus_volumes_linear: Array = _get_audio_bus_linear_volumes()
 
 # Game
-var speed_mode: SpeedMode
-var steering_snap: SteeringSnap
+var speed_mode: SpeedMode = SpeedMode.MEDIUM
+var steering_snap: SteeringSnap = SteeringSnap.CARDINAL
 var steering_snap_cardinal_deg: float = 5.0:
 	set(value):
 		steering_snap_cardinal_deg = value
@@ -39,7 +39,7 @@ var steering_snap_increment_deg: float = 5.0:
 	set(value):
 		steering_snap_increment_deg = value
 		steering_snap_increment_rad = deg_to_rad(value)
-var snap_while_drive: bool
+var snap_while_drive: bool = true
 
 # getters
 var speed_mult: float:
@@ -53,7 +53,7 @@ var steering_snap_increment_rad: float #set by the increment in degrees
 func save() -> Error:
 	var config := ConfigFile.new()
 	# Global
-	config.set_value("Game", "file_path", file_path)
+	config.set_value("Global", "file_path", file_path)
 	# Audio
 	config.set_value("Audio", "bus_volumes_linear", _get_audio_bus_linear_volumes())
 	# Game
@@ -79,7 +79,7 @@ func apply_audio_bus_volumes() -> void:
 		AudioServer.set_bus_volume_linear(bus_idx, value)
 
 
-func _get_audio_bus_linear_volumes() -> Array:
+static func _get_audio_bus_linear_volumes() -> Array:
 	var volumes: Array = []
 	for bus_idx: int in AudioServer.bus_count:
 		volumes.append(AudioServer.get_bus_volume_linear(bus_idx))
@@ -92,6 +92,7 @@ static func from_config_file(settings_file_path: String) -> GameSettings:
 	
 	if not FileAccess.file_exists(settings_file_path):
 		push_warning("Cannot find %s. Returning new GameSettings" % settings_file_path)
+		new.bus_volumes_linear = _get_audio_bus_linear_volumes()
 		return new
 	
 	var config := ConfigFile.new()
@@ -101,10 +102,12 @@ static func from_config_file(settings_file_path: String) -> GameSettings:
 		return new
 	
 	new.bus_volumes_linear = config.get_value("Audio", "bus_volumes_linear", [])
+	if new.bus_volumes_linear.is_empty():
+		new.bus_volumes_linear = _get_audio_bus_linear_volumes()
 	new.speed_mode = config.get_value("Game", "speed_mode", SpeedMode.MEDIUM)
 	new.steering_snap = config.get_value("Game", "steering_snap", SteeringSnap.CARDINAL)
 	new.steering_snap_cardinal_deg = config.get_value("Game", "steering_snap_cardinal_deg", 5.0)
 	new.steering_snap_increment_deg = config.get_value("Game", "steering_snap_increment_deg", 5.0)
-	new.snap_while_drive = config.get_value("Game", "snap_while_drive", false)
+	new.snap_while_drive = config.get_value("Game", "snap_while_drive", true)
 	
 	return new
