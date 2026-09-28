@@ -2,7 +2,13 @@
 
 [sub_resource type="AudioEffectLowPassFilter" id="AudioEffectLowPassFilter_5vpbu"]
 resource_name = "LowPassFilter"
-cutoff_hz = 6500.0
+cutoff_hz = 8000.0
+db = 1
+
+[sub_resource type="AudioEffectCompressor" id="AudioEffectCompressor_5vpbu"]
+resource_name = "Compressor"
+threshold = -9.0
+ratio = 6.0
 
 [resource]
 bus/1/name = &"SFX"
@@ -31,3 +37,5 @@ bus/4/volume_db = -5.9342504
 bus/4/send = &"SFX"
 bus/4/effect/0/effect = SubResource("AudioEffectLowPassFilter_5vpbu")
 bus/4/effect/0/enabled = true
+bus/4/effect/1/effect = SubResource("AudioEffectCompressor_5vpbu")
+bus/4/effect/1/enabled = true
