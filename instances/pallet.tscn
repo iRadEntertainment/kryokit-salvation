@@ -26,7 +26,8 @@ size = Vector3(1.1943359, 0.015686035, 0.10211182)
 size = Vector3(1.1943359, 0.015686035, 0.14453125)
 
 [node name="pallet" type="RigidBody3D" unique_id=143866765]
-collision_mask = 3
+collision_layer = 4
+collision_mask = 7
 mass = 25.0
 physics_material_override = SubResource("PhysicsMaterial_v6tai")
 center_of_mass_mode = 1
