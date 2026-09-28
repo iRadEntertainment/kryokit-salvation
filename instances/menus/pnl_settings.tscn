@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://d2hsr2o42lb18" path="res://instances/menus/pnl_settings.gd" id="1_61ska"]
 [ext_resource type="LabelSettings" uid="uid://bsqx4o12mbbs3" path="res://UI/styles/label_titles.tres" id="1_je5wo"]
+[ext_resource type="PackedScene" uid="uid://c6y1e7bsgmymg" path="res://instances/GUI/hb_volume_slider.tscn" id="3_h2cav"]
 
 [sub_resource type="ButtonGroup" id="ButtonGroup_qt5t1"]
 
@@ -66,16 +67,30 @@ layout_mode = 2
 theme_type_variation = &"PanelOpaqueSquared"
 metadata/_tab_index = 0
 
-[node name="vb" type="VBoxContainer" parent="vb/scroll/tabs/pnl_audio" unique_id=2094887408]
+[node name="scroll" type="ScrollContainer" parent="vb/scroll/tabs/pnl_audio" unique_id=1256906346]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="vb/scroll/tabs/pnl_audio/vb" unique_id=440183211]
+[node name="vb" type="VBoxContainer" parent="vb/scroll/tabs/pnl_audio/scroll" unique_id=2094887408]
+custom_minimum_size = Vector2(400, 0)
 layout_mode = 2
+size_flags_horizontal = 6
 size_flags_vertical = 3
-text = "I didn't have time to implement the audio settings
-sorry"
-horizontal_alignment = 1
-vertical_alignment = 1
+alignment = 1
+
+[node name="sl_bus0" parent="vb/scroll/tabs/pnl_audio/scroll/vb" unique_id=706445174 instance=ExtResource("3_h2cav")]
+layout_mode = 2
+
+[node name="sl_bus1" parent="vb/scroll/tabs/pnl_audio/scroll/vb" unique_id=898365839 instance=ExtResource("3_h2cav")]
+layout_mode = 2
+audio_bus = 1
+
+[node name="sl_bus2" parent="vb/scroll/tabs/pnl_audio/scroll/vb" unique_id=1250459873 instance=ExtResource("3_h2cav")]
+layout_mode = 2
+audio_bus = 2
+
+[node name="sl_bus3" parent="vb/scroll/tabs/pnl_audio/scroll/vb" unique_id=2066184167 instance=ExtResource("3_h2cav")]
+layout_mode = 2
+audio_bus = 3
 
 [node name="pnl_video" type="PanelContainer" parent="vb/scroll/tabs" unique_id=687365966]
 visible = false

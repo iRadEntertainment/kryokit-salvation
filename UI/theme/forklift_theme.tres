@@ -92,6 +92,44 @@ content_margin_top = 1.0
 content_margin_bottom = 1.0
 texture = SubResource("GradientTexture1D_lexek")
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qyvna"]
+content_margin_top = 8.0
+content_margin_bottom = 8.0
+bg_color = Color(0.019607844, 0.68235296, 0.84313726, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.8001508, 0.8001509, 0.8001508, 0)
+corner_radius_top_left = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yxs77"]
+content_margin_top = 8.0
+content_margin_bottom = 8.0
+bg_color = Color(0.9764706, 0.6901961, 0.41960785, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.8001508, 0.8001509, 0.8001508, 0)
+corner_radius_top_left = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h2cav"]
+content_margin_top = 8.0
+content_margin_bottom = 8.0
+bg_color = Color(0.007843138, 0.21568628, 0.3137255, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.011764706, 0.46666667, 0.63529414, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1ajci"]
 content_margin_left = 8.0
 content_margin_top = 8.0
@@ -162,6 +200,9 @@ Button/styles/hover_pressed = SubResource("StyleBoxFlat_gsube")
 Button/styles/normal = SubResource("StyleBoxFlat_vdnjs")
 Button/styles/pressed = SubResource("StyleBoxFlat_m0ki8")
 HSeparator/styles/separator = SubResource("StyleBoxTexture_8mt0l")
+HSlider/styles/grabber_area = SubResource("StyleBoxFlat_qyvna")
+HSlider/styles/grabber_area_highlight = SubResource("StyleBoxFlat_yxs77")
+HSlider/styles/slider = SubResource("StyleBoxFlat_h2cav")
 PanelContainer/styles/panel = ExtResource("1_la74a")
 PanelOpaqueSquared/base_type = &"PanelContainer"
 PanelOpaqueSquared/styles/panel = SubResource("StyleBoxFlat_1ajci")

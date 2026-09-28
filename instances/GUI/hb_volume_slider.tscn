@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://c6y1e7bsgmymg"]
+
+[ext_resource type="Script" uid="uid://5yu0htq8e4d6" path="res://instances/GUI/hb_volume_slider.gd" id="1_wmqpl"]
+
+[node name="hb_volume_slider" type="HBoxContainer" unique_id=706445174]
+offset_right = 412.0
+offset_bottom = 30.0
+script = ExtResource("1_wmqpl")
+
+[node name="lb_bus" type="Label" parent="." unique_id=557529999]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+text = "Master"
+
+[node name="sl_volume" type="HSlider" parent="." unique_id=1847526374]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+max_value = 1.0
+step = 0.01
+
+[node name="lb_volume" type="Label" parent="." unique_id=162205202]
+custom_minimum_size = Vector2(60, 0)
+layout_mode = 2
+text = "100%"
+horizontal_alignment = 2
