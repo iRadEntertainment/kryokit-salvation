@@ -2,12 +2,17 @@
 
 [ext_resource type="Script" uid="uid://cm14qd6iri7xo" path="res://instances/shelf.gd" id="1_1t0n2"]
 
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ytwti"]
+friction = 0.37
+
 [node name="shelf" type="Node3D" unique_id=1220127838]
 script = ExtResource("1_1t0n2")
 bays_data = Array[Array]([[1.0, 2.0, 3.6, 5.2], [1.6, 3.2, 4.8], [1.6, 3.2, 4.8], [1.6, 3.2, 4.8]])
 
 [node name="static_body" type="StaticBody3D" parent="." unique_id=842112793]
 unique_name_in_owner = true
+collision_mask = 7
+physics_material_override = SubResource("PhysicsMaterial_ytwti")
 metadata/_edit_lock_ = true
 
 [node name="meshes" type="Node3D" parent="." unique_id=147040147]
