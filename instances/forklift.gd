@@ -324,7 +324,7 @@ func _process_audio(_delta: float) -> void:
 	
 	# Pitch mod (working)
 	if audio_loop.playing:
-		audio_loop.pitch_scale = clamp(0.8 + (moving_speed * 0.05), 0.8, 1.4)
+		audio_loop.pitch_scale = clamp(0.8 + (moving_speed * 0.05), 0.8, 1.2)
 	
 	_was_accelerating = is_accelerating
 
