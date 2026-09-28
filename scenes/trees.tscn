@@ -1,0 +1,221 @@
+[gd_scene format=3 uid="uid://bssnydjohvcvp"]
+
+[ext_resource type="Shader" uid="uid://cr1hsobsm6ybl" path="res://scenes/tree_sway_shader.gdshader" id="1_lvwx8"]
+[ext_resource type="Texture2D" uid="uid://db17x1vixofi5" path="res://assets/materials/pngtree-big-tree-on-transparent-background-ai-generative-png-image_14887826.png" id="2_v4a6f"]
+[ext_resource type="Texture2D" uid="uid://ovtp2qeogn48" path="res://assets/materials/green-bush-isolated-on-transparent-background-file-cut-out-ai-generated-png.png" id="3_5au81"]
+[ext_resource type="Texture2D" uid="uid://dlxbqna1qn5ue" path="res://assets/materials/pngtree-big-tree-on-transparent-background-png-image_15615350.png" id="3_cy38b"]
+[ext_resource type="Texture2D" uid="uid://cei0am2up22bo" path="res://assets/materials/purepng.com-tree-png-transparentnaturestylenaturalbeautifulgreen-541521125991uf5cl.png" id="4_5au81"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hcbae"]
+render_priority = 0
+shader = ExtResource("1_lvwx8")
+shader_parameter/albedo_texture = ExtResource("2_v4a6f")
+shader_parameter/alpha_scissor_threshold = 0.5
+shader_parameter/enable_billboard = true
+shader_parameter/wind_speed = 2.0
+shader_parameter/wind_strength = 0.15
+shader_parameter/wind_scale = 0.5
+
+[sub_resource type="QuadMesh" id="QuadMesh_64wi0"]
+material = SubResource("ShaderMaterial_hcbae")
+size = Vector2(4, 6)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2g2b4"]
+render_priority = 0
+shader = ExtResource("1_lvwx8")
+shader_parameter/albedo_texture = ExtResource("3_5au81")
+shader_parameter/alpha_scissor_threshold = 0.5
+shader_parameter/enable_billboard = true
+shader_parameter/wind_speed = 2.0
+shader_parameter/wind_strength = 0.15
+shader_parameter/wind_scale = 0.5
+
+[sub_resource type="QuadMesh" id="QuadMesh_00ci2"]
+material = SubResource("ShaderMaterial_2g2b4")
+size = Vector2(4, 2.437)
+
+[sub_resource type="Shader" id="Shader_2g2b4"]
+code = "shader_type spatial;
+render_mode specular_disabled, depth_draw_opaque, cull_disabled;
+
+// Texture & Material Uniforms
+uniform sampler2D albedo_texture : source_color, filter_linear_mipmap, repeat_disable;
+uniform float alpha_scissor_threshold : hint_range(0.0, 1.0) = 0.5;
+
+// Billboard Uniforms
+uniform bool enable_billboard = true;
+
+// Sway Uniforms
+uniform float wind_speed : hint_range(0.0, 10.0) = 2.0;
+uniform float wind_strength : hint_range(0.0, 2.0) = 0.15;
+uniform float wind_scale : hint_range(0.0, 5.0) = 0.5;
+
+void vertex() {
+	// 1. Y-Axis Billboard (Face the camera while remaining upright)
+	if (enable_billboard) {
+		MODELVIEW_MATRIX = VIEW_MATRIX * mat4(
+			vec4(normalize(cross(vec3(0.0, 1.0, 0.0), INV_VIEW_MATRIX[2].xyz)), 0.0),
+			vec4(0.0, 1.0, 0.0, 0.0),
+			vec4(normalize(cross(INV_VIEW_MATRIX[0].xyz, vec3(0.0, 1.0, 0.0))), 0.0),
+			MODEL_MATRIX[3]
+		);
+	}
+
+	// 2. Wind Sway Offset
+	// (1.0 - UV.y) ensures sway strength increases toward the top (UV.y = 0.0) 
+	// while keeping the roots stationary (UV.y = 1.0).
+	float height_factor = 1.0 - UV.y;
+	
+	// Add spatial variation using world position so trees don't sway perfectly in sync
+	float world_offset = (NODE_POSITION_WORLD.x + NODE_POSITION_WORLD.z) * wind_scale;
+	float wave = sin(TIME * wind_speed + world_offset);
+
+	VERTEX.x += wave * wind_strength * height_factor;
+}
+
+void fragment() {
+	vec4 tex = texture(albedo_texture, UV);
+	ALBEDO = tex.rgb;
+	
+	// Alpha scissor avoids transparency sorting issues for distant objects
+	ALPHA = tex.a;
+	ALPHA_SCISSOR_THRESHOLD = alpha_scissor_threshold;
+}"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_00ci2"]
+render_priority = 0
+shader = SubResource("Shader_2g2b4")
+shader_parameter/albedo_texture = ExtResource("3_cy38b")
+shader_parameter/alpha_scissor_threshold = 0.5
+shader_parameter/enable_billboard = true
+shader_parameter/wind_speed = 2.0
+shader_parameter/wind_strength = 0.15
+shader_parameter/wind_scale = 0.5
+
+[sub_resource type="QuadMesh" id="QuadMesh_72c8c"]
+material = SubResource("ShaderMaterial_00ci2")
+size = Vector2(4, 6)
+
+[sub_resource type="Shader" id="Shader_jyt8o"]
+code = "shader_type spatial;
+render_mode specular_disabled, depth_draw_opaque, cull_disabled;
+
+// Texture & Material Uniforms
+uniform sampler2D albedo_texture : source_color, filter_linear_mipmap, repeat_disable;
+uniform float alpha_scissor_threshold : hint_range(0.0, 1.0) = 0.5;
+
+// Billboard Uniforms
+uniform bool enable_billboard = true;
+
+// Sway Uniforms
+uniform float wind_speed : hint_range(0.0, 10.0) = 2.0;
+uniform float wind_strength : hint_range(0.0, 2.0) = 0.15;
+uniform float wind_scale : hint_range(0.0, 5.0) = 0.5;
+
+void vertex() {
+	// 1. Y-Axis Billboard (Face the camera while remaining upright)
+	if (enable_billboard) {
+		MODELVIEW_MATRIX = VIEW_MATRIX * mat4(
+			vec4(normalize(cross(vec3(0.0, 1.0, 0.0), INV_VIEW_MATRIX[2].xyz)), 0.0),
+			vec4(0.0, 1.0, 0.0, 0.0),
+			vec4(normalize(cross(INV_VIEW_MATRIX[0].xyz, vec3(0.0, 1.0, 0.0))), 0.0),
+			MODEL_MATRIX[3]
+		);
+	}
+
+	// 2. Wind Sway Offset
+	// (1.0 - UV.y) ensures sway strength increases toward the top (UV.y = 0.0) 
+	// while keeping the roots stationary (UV.y = 1.0).
+	float height_factor = 1.0 - UV.y;
+	
+	// Add spatial variation using world position so trees don't sway perfectly in sync
+	float world_offset = (NODE_POSITION_WORLD.x + NODE_POSITION_WORLD.z) * wind_scale;
+	float wave = sin(TIME * wind_speed + world_offset);
+
+	VERTEX.x += wave * wind_strength * height_factor;
+}
+
+void fragment() {
+	vec4 tex = texture(albedo_texture, UV);
+	ALBEDO = tex.rgb;
+	
+	// Alpha scissor avoids transparency sorting issues for distant objects
+	ALPHA = tex.a;
+	ALPHA_SCISSOR_THRESHOLD = alpha_scissor_threshold;
+}"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_y08jf"]
+render_priority = 0
+shader = SubResource("Shader_jyt8o")
+shader_parameter/albedo_texture = ExtResource("4_5au81")
+shader_parameter/alpha_scissor_threshold = 0.5
+shader_parameter/enable_billboard = true
+shader_parameter/wind_speed = 2.0
+shader_parameter/wind_strength = 0.15
+shader_parameter/wind_scale = 0.5
+
+[sub_resource type="QuadMesh" id="QuadMesh_kg8iu"]
+material = SubResource("ShaderMaterial_y08jf")
+size = Vector2(4, 6)
+
+[node name="Trees" type="Node3D" unique_id=1346160839]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=715578770]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+mesh = SubResource("QuadMesh_64wi0")
+
+[node name="MeshInstance3D14" type="MeshInstance3D" parent="." unique_id=1014172380]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.6000004, -1.3411045e-07, -15.6)
+mesh = SubResource("QuadMesh_00ci2")
+
+[node name="MeshInstance3D15" type="MeshInstance3D" parent="." unique_id=1996879012]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1999997, -1.3411045e-07, -9)
+mesh = SubResource("QuadMesh_00ci2")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=700850159]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 3, 1)
+mesh = SubResource("QuadMesh_64wi0")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="." unique_id=60020338]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 3, 2)
+mesh = SubResource("QuadMesh_64wi0")
+
+[node name="MeshInstance3D7" type="MeshInstance3D" parent="." unique_id=257105773]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 3, -2)
+mesh = SubResource("QuadMesh_72c8c")
+
+[node name="MeshInstance3D13" type="MeshInstance3D" parent="." unique_id=2019943849]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 3, -2)
+mesh = SubResource("QuadMesh_72c8c")
+
+[node name="MeshInstance3D8" type="MeshInstance3D" parent="." unique_id=629866270]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 3)
+mesh = SubResource("QuadMesh_72c8c")
+
+[node name="MeshInstance3D9" type="MeshInstance3D" parent="." unique_id=789546049]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 3, -4)
+mesh = SubResource("QuadMesh_72c8c")
+
+[node name="MeshInstance3D10" type="MeshInstance3D" parent="." unique_id=537557969]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 3, 2)
+mesh = SubResource("QuadMesh_72c8c")
+
+[node name="MeshInstance3D11" type="MeshInstance3D" parent="." unique_id=580321246]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 3, 3)
+mesh = SubResource("QuadMesh_72c8c")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="." unique_id=48478414]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 3, -8)
+mesh = SubResource("QuadMesh_64wi0")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="." unique_id=1324466233]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, -6)
+mesh = SubResource("QuadMesh_64wi0")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="." unique_id=436681624]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 3, -8)
+mesh = SubResource("QuadMesh_64wi0")
+
+[node name="MeshInstance3D12" type="MeshInstance3D" parent="." unique_id=546393251]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13, 3, 1)
+mesh = SubResource("QuadMesh_kg8iu")

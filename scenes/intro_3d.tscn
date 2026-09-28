@@ -2,39 +2,64 @@
 
 [ext_resource type="Environment" uid="uid://bl1fub2kdtprp" path="res://scenes/game_data/game_environment.tres" id="1_0bakh"]
 [ext_resource type="PackedScene" uid="uid://blseo38kk11bo" path="res://instances/forklift.tscn" id="1_7m2fh"]
-[ext_resource type="PackedScene" uid="uid://c7mpk34aet8yd" path="res://assets/glbs/kryokit_logo_model.glb" id="3_slekq"]
+[ext_resource type="PackedScene" uid="uid://6a0e1oacp8re" path="res://scenes/office_intro.tscn" id="3_slekq"]
+
+[sub_resource type="FogMaterial" id="FogMaterial_2mys3"]
+density = 0.05
+albedo = Color(1, 0.95566666, 0.86, 1)
 
 [node name="intro_3d" type="Node3D" unique_id=1815666335]
 
 [node name="game_env" type="WorldEnvironment" parent="." unique_id=537664222]
 environment = ExtResource("1_0bakh")
 
+[node name="SpotLight3D3" type="SpotLight3D" parent="game_env" unique_id=1355807710]
+transform = Transform3D(-3.5806277e-08, 1, 6.878321e-08, 0.57357645, -3.5806266e-08, 0.81915206, 0.81915206, 6.878321e-08, -0.57357645, 15.118408, 13.115248, -24.629042)
+light_color = Color(0.8289612, 0.9811351, 0.99999994, 1)
+light_energy = 20.0
+light_specular = 1.0
+shadow_enabled = true
+spot_range = 16.862
+spot_angle = 70.57
+spot_angle_attenuation = 0.32987723
+
+[node name="SpotLight3D5" type="SpotLight3D" parent="game_env" unique_id=1186853817]
+transform = Transform3D(-3.5806277e-08, 1, 6.878321e-08, 0.57357645, -3.5806266e-08, 0.81915206, 0.81915206, 6.878321e-08, -0.57357645, 22.118406, 14.139442, -23.515028)
+light_color = Color(1, 0.7230816, 0.5322893, 1)
+light_energy = 20.0
+light_specular = 1.0
+shadow_enabled = true
+spot_range = 16.862
+spot_angle = 70.57
+spot_angle_attenuation = 0.32987723
+
+[node name="SpotLight3D4" type="SpotLight3D" parent="game_env" unique_id=682853565]
+transform = Transform3D(-3.5806277e-08, 1, 6.878321e-08, 0.57357645, -3.5806266e-08, 0.81915206, 0.81915206, 6.878321e-08, -0.57357645, 7.118408, 9.838639, -22.334738)
+light_color = Color(0.8289612, 0.9811351, 0.99999994, 1)
+light_energy = 20.0
+light_specular = 1.0
+shadow_enabled = true
+spot_range = 16.862
+spot_angle = 70.57
+spot_angle_attenuation = 0.32987723
+
 [node name="moon" type="DirectionalLight3D" parent="." unique_id=1108716372]
-transform = Transform3D(-0.8275823, -0.16980097, -0.53504694, -0.5000933, 0.6559697, 0.56534106, 0.2549792, 0.7354398, -0.62778527, 0, 0, 0)
-light_energy = 0.5
+transform = Transform3D(-0.8451195, -0.17848589, -0.5039007, -0.48838323, 0.6410946, 0.5920132, 0.21738201, 0.74641854, -0.628971, 0, 0, 0)
+light_energy = 0.0
+light_volumetric_fog_energy = 5.0
 shadow_enabled = true
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=290308415]
-transform = Transform3D(0.9139394, 0.08781301, 0.39623696, 4.229901e-09, 0.976312, -0.2163678, -0.40585074, 0.19774705, 0.89228994, 1.3341458, 0.51169944, 3.1740077)
+transform = Transform3D(0.9659258, 0.056018695, 0.252684, 0, 0.976296, -0.21643962, -0.25881904, 0.20906462, 0.9430295, 1.3341458, 0.51169944, 3.1740077)
+fov = 82.1
 
 [node name="forklift" parent="." unique_id=983298835 instance=ExtResource("1_7m2fh")]
 process_mode = 4
 
-[node name="kryokit_logo_model" parent="." unique_id=86774259 instance=ExtResource("3_slekq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.1227555, 2.6028955, -4.954216)
+[node name="Office_Intro" parent="." unique_id=1113902176 instance=ExtResource("3_slekq")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 6, 0, -21)
 
-[node name="SpotLight3D" type="SpotLight3D" parent="kryokit_logo_model" unique_id=2014817583]
-transform = Transform3D(1, 0, 0, 0, 0.25881907, -0.9659258, 0, 0.9659258, 0.25881907, 0.9144907, -1.3594993, 0.45062923)
-light_energy = 6.433
-shadow_enabled = true
-spot_range = 3.192
-spot_angle = 59.92
-spot_angle_attenuation = 2.6390173
-
-[node name="SpotLight3D2" type="SpotLight3D" parent="kryokit_logo_model" unique_id=626497771]
-transform = Transform3D(1, 0, 0, 0, 0.25881907, -0.9659258, 0, 0.9659258, 0.25881907, -1.0831833, -1.3594993, 0.45062923)
-light_energy = 6.433
-shadow_enabled = true
-spot_range = 3.192
-spot_angle = 59.92
-spot_angle_attenuation = 2.6390173
+[node name="FogVolume" type="FogVolume" parent="." unique_id=1733229442]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.631954, 7.4339542, -8.146902)
+size = Vector3(26.52649, 16.874878, 16.135498)
+material = SubResource("FogMaterial_2mys3")
