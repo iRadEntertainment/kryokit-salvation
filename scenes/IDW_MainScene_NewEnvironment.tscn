@@ -257,6 +257,8 @@ transform = Transform3D(-0.03141076, -0.5545706, 0.83154356, 0, 0.8319541, 0.554
 [node name="worldcollision" type="Node3D" parent="." unique_id=802508659]
 
 [node name="StaticBody3D" type="StaticBody3D" parent="worldcollision" unique_id=114980228]
+collision_layer = 3145729
+collision_mask = 3145729
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="worldcollision/StaticBody3D" unique_id=922403377]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23, 3.8781738, -7.7984447)
