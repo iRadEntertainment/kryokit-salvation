@@ -2,12 +2,23 @@
 
 [ext_resource type="Script" uid="uid://cx1lxbf8pfbit" path="res://scripts/aud.gd" id="1_ff6y4"]
 [ext_resource type="AudioStream" uid="uid://bda0xolo30ww7" path="res://assets/audio/mus_Conduit-Rocket-Mobilization.mp3" id="2_bs1vv"]
+[ext_resource type="AudioStream" uid="uid://df5kdao5674vf" path="res://assets/audio/ui_btn_click.ogg" id="3_nj0os"]
+[ext_resource type="AudioStream" uid="uid://c2b2rmdqf8yky" path="res://assets/audio/ui_btn_hover.ogg" id="3_rn8fe"]
 
 [node name="aud" type="Node" unique_id=323846087]
 script = ExtResource("1_ff6y4")
 
 [node name="mus_title" type="AudioStreamPlayer" parent="." unique_id=2020687057]
-unique_name_in_owner = true
 stream = ExtResource("2_bs1vv")
 volume_db = -24.0
+bus = &"Music"
 parameters/looping = true
+
+[node name="ui_btn_click" type="AudioStreamPlayer" parent="." unique_id=1405625759]
+stream = ExtResource("3_nj0os")
+volume_db = -6.0
+bus = &"UI"
+
+[node name="ui_btn_hover" type="AudioStreamPlayer" parent="." unique_id=596541962]
+stream = ExtResource("3_rn8fe")
+bus = &"UI"
