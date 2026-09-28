@@ -88,6 +88,26 @@ transform = Transform3D(-0.6872434, 5.9604645e-08, -3.0040376e-08, 3.0040358e-08
 size = Vector3(0.5, 0.12646484, 0.262)
 texture_albedo = ExtResource("3_syp4r")
 
+[node name="audio" type="Node3D" parent="vehicle_body/body" unique_id=1625408158]
+
+[node name="AudioAccel" type="AudioStreamPlayer3D" parent="vehicle_body/body/audio" unique_id=1304472583]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.09, -0.72)
+stream = ExtResource("14_4slcw")
+bus = &"SFX"
+
+[node name="AudioDecel" type="AudioStreamPlayer3D" parent="vehicle_body/body/audio" unique_id=602683570]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.09, -0.72)
+stream = ExtResource("15_qkf0m")
+bus = &"SFX"
+
+[node name="AudioLoop" type="AudioStreamPlayer3D" parent="vehicle_body/body/audio" unique_id=277032601]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.09, -0.72)
+stream = ExtResource("16_tprdc")
+bus = &"SFX"
+
 [node name="monitor" type="MeshInstance3D" parent="vehicle_body" unique_id=150643878]
 transform = Transform3D(-1, 0, -8.742278e-08, -6.181724e-08, 0.70710677, 0.70710677, 6.181724e-08, 0.70710677, -0.70710677, 0, 1.7686391, 0.26978076)
 visible = false
@@ -315,15 +335,3 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2, 0, 1.026)
 node_a = NodePath("../carriage_body")
 node_b = NodePath("../fork_r_body")
 linear_motor_x/enabled = true
-
-[node name="AudioAccel" type="AudioStreamPlayer3D" parent="." unique_id=1304472583]
-unique_name_in_owner = true
-stream = ExtResource("14_4slcw")
-
-[node name="AudioDecel" type="AudioStreamPlayer3D" parent="." unique_id=602683570]
-unique_name_in_owner = true
-stream = ExtResource("15_qkf0m")
-
-[node name="AudioLoop" type="AudioStreamPlayer3D" parent="." unique_id=277032601]
-unique_name_in_owner = true
-stream = ExtResource("16_tprdc")

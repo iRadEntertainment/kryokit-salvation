@@ -42,7 +42,6 @@ albedo_texture = SubResource("NoiseTexture2D_0tnpc")
 size = Vector2(300, 300)
 
 [sub_resource type="Environment" id="Environment_64wi0"]
-background_mode = 4
 sdfgi_enabled = true
 
 [node name="Game" type="Node3D" unique_id=1497330775]
@@ -58,7 +57,7 @@ shadow_opacity = 0.8
 shadow_blur = 0.3
 
 [node name="WarehouseTest" parent="." unique_id=61947791 instance=ExtResource("2_uskmj")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 25.023, 0, 12)
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 17.023, 0, 12)
 
 [node name="Warehouse_Refrigirated_Test" parent="." unique_id=100941699 instance=ExtResource("3_wn1qc")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 73, 0, 12)
@@ -218,9 +217,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, 0.050305963, -5.7515297)
 
 [node name="shelf3" parent="." unique_id=39173459 instance=ExtResource("9_xg03u")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.050305963, 12.605203)
-
-[node name="shelf4" parent="." unique_id=677464822 instance=ExtResource("9_xg03u")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 0.050305963, 12.605203)
 
 [node name="shelf5" parent="." unique_id=2064369241 instance=ExtResource("9_xg03u")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, 0.050305963, 12.605203)

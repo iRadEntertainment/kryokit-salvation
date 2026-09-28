@@ -276,18 +276,20 @@ func _process_audio(_delta: float) -> void:
 
 
 #Release
-	if _was_accelerating and not is_accelerating and moving_speed > 0.5:
-		audio_accel.stop()
-		audio_loop.stop()
-		
-		audio_decel.play()
+	if _was_accelerating and not is_accelerating and moving_speed > 0.1:
+			audio_accel.stop()
+			audio_loop.stop()
+			audio_decel.volume_db = 0.0 # dirty hack to make sure volume is max
+			
+			audio_decel.play()
 	
 #Accelerate
 	if is_accelerating and not _was_accelerating:
-		audio_decel.stop()
-		audio_loop.stop()
-	
-		audio_accel.play()
+			audio_decel.stop()
+			audio_loop.stop()
+			audio_accel.volume_db = 0.0# dirty hack to make sure volume is max
+			
+			audio_accel.play()
 	
 
 # 		Crossfade ( I cannot seem to get this crossfading working between accelerate - loop - decelerate, 
@@ -295,23 +297,25 @@ func _process_audio(_delta: float) -> void:
 	
 	
 	if audio_accel.playing and audio_accel.stream:
-		var stream_length := audio_accel.stream.get_length()
-		var current_pos := audio_accel.get_playback_position()
-		var blend_duration: float = 1.0
-		if stream_length > blend_duration and current_pos >= (stream_length - blend_duration):
-			if not audio_loop.playing:
-				audio_loop.volume_db = 0.0
-				audio_loop.play()
+			var stream_length := audio_accel.stream.get_length()
+			var current_pos := audio_accel.get_playback_position()
+			
+			# Start blending 0.2 seconds before the acceleration clip ends
+			var blend_duration: float = 0.2
+			if stream_length > blend_duration and current_pos >= (stream_length - blend_duration):
+				if not audio_loop.playing:
+					audio_loop.volume_db = 0.0
+					audio_loop.play()
+				
+				# Crossfade 
+				var progress := (current_pos - (stream_length - blend_duration)) / blend_duration
+				audio_accel.volume_db = linear_to_db(clamp(1.0 - progress, 0.0, 1.0))
+				audio_loop.volume_db = linear_to_db(clamp(progress, 0.0, 1.0))
 
-#crossfade
-			var progress := (current_pos - (stream_length - blend_duration)) / blend_duration
-			audio_accel.volume_db = linear_to_db(clamp(1.0 - progress, 0.0, 1.0))
-			audio_loop.volume_db = linear_to_db(clamp(progress, 0.0, 1.0))
-	
 	elif is_accelerating and not audio_accel.playing and not audio_loop.playing:
 		audio_loop.volume_db = 0.0
 		audio_loop.play()
-
+		
 	# stop sounds when stopped
 	if moving_speed < 0.1 and not is_accelerating:
 		audio_accel.stop()

@@ -287,6 +287,48 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 0, 0)
 [node name="Floor87" parent="FLOOR" unique_id=953707895 instance=ExtResource("1_l5mf1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 0, -4)
 
+[node name="Floor104" parent="FLOOR" unique_id=536119905 instance=ExtResource("1_l5mf1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -8)
+
+[node name="Floor105" parent="FLOOR" unique_id=1205619264 instance=ExtResource("1_l5mf1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, -8)
+
+[node name="Floor106" parent="FLOOR" unique_id=497830605 instance=ExtResource("1_l5mf1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, -8)
+
+[node name="Floor107" parent="FLOOR" unique_id=815981373 instance=ExtResource("1_l5mf1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, -8)
+
+[node name="Floor108" parent="FLOOR" unique_id=1114301147 instance=ExtResource("1_l5mf1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 0, -8)
+
+[node name="Floor109" parent="FLOOR" unique_id=247621794 instance=ExtResource("1_l5mf1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, -8)
+
+[node name="Floor110" parent="FLOOR" unique_id=1179560914 instance=ExtResource("1_l5mf1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 0, -8)
+
+[node name="Floor111" parent="FLOOR" unique_id=1366096877 instance=ExtResource("1_l5mf1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -12)
+
+[node name="Floor112" parent="FLOOR" unique_id=1341021434 instance=ExtResource("1_l5mf1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, -12)
+
+[node name="Floor113" parent="FLOOR" unique_id=1064848761 instance=ExtResource("1_l5mf1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, -12)
+
+[node name="Floor114" parent="FLOOR" unique_id=415213846 instance=ExtResource("1_l5mf1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, -12)
+
+[node name="Floor115" parent="FLOOR" unique_id=877309340 instance=ExtResource("1_l5mf1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 0, -12)
+
+[node name="Floor116" parent="FLOOR" unique_id=673419307 instance=ExtResource("1_l5mf1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, -12)
+
+[node name="Floor117" parent="FLOOR" unique_id=689415281 instance=ExtResource("1_l5mf1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 0, -12)
+
 [node name="Floor88" parent="FLOOR" unique_id=1859447222 instance=ExtResource("1_l5mf1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 0, 4)
 
@@ -577,6 +619,42 @@ transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, -7.9
 [node name="wall45" parent="WALL" unique_id=1710551806 instance=ExtResource("2_2lfai")]
 transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, -3.999998, 0, 0)
 
+[node name="wall47" parent="WALL" unique_id=1279407899 instance=ExtResource("2_2lfai")]
+transform = Transform3D(-1, 0, 8.742277e-08, 0, 1, 0, -8.742277e-08, 0, -1, 4.000002, 0, -4)
+
+[node name="wall48" parent="WALL" unique_id=1629734787 instance=ExtResource("2_2lfai")]
+transform = Transform3D(-1, 0, 8.742277e-08, 0, 1, 0, -8.742277e-08, 0, -1, 4.000002, 4, -4)
+
+[node name="wall51" parent="WALL" unique_id=1689917707 instance=ExtResource("2_2lfai")]
+transform = Transform3D(-1, 0, 8.742277e-08, 0, 1, 0, -8.742277e-08, 0, -1, 4.000002, 0, -8)
+
+[node name="wall53" parent="WALL" unique_id=507233097 instance=ExtResource("2_2lfai")]
+transform = Transform3D(-1, 0, 8.742277e-08, 0, 1, 0, -8.742277e-08, 0, -1, 4.000002, 4, -8)
+
+[node name="wall54" parent="WALL" unique_id=1115259905 instance=ExtResource("2_2lfai")]
+transform = Transform3D(-1, 0, 8.742277e-08, 0, 1, 0, -8.742277e-08, 0, -1, 4.000002, 0, -12)
+
+[node name="wall55" parent="WALL" unique_id=1886670506 instance=ExtResource("2_2lfai")]
+transform = Transform3D(-1, 0, 8.742277e-08, 0, 1, 0, -8.742277e-08, 0, -1, 4.000002, 4, -12)
+
+[node name="wall56" parent="WALL" unique_id=1270541923 instance=ExtResource("2_2lfai")]
+transform = Transform3D(1, 0, 7.1054274e-15, 0, 1, 0, -7.1054274e-15, 0, 1, -19.999998, 0, -12)
+
+[node name="wall57" parent="WALL" unique_id=1914107028 instance=ExtResource("2_2lfai")]
+transform = Transform3D(1, 0, 7.1054274e-15, 0, 1, 0, -7.1054274e-15, 0, 1, -19.999998, 4, -12)
+
+[node name="wall58" parent="WALL" unique_id=1626699698 instance=ExtResource("2_2lfai")]
+transform = Transform3D(1, 0, 7.1054274e-15, 0, 1, 0, -7.1054274e-15, 0, 1, -19.999998, 0, -8)
+
+[node name="wall59" parent="WALL" unique_id=183253956 instance=ExtResource("2_2lfai")]
+transform = Transform3D(1, 0, 7.1054274e-15, 0, 1, 0, -7.1054274e-15, 0, 1, -19.999998, 4, -8)
+
+[node name="wall60" parent="WALL" unique_id=983239445 instance=ExtResource("2_2lfai")]
+transform = Transform3D(1, 0, 7.1054274e-15, 0, 1, 0, -7.1054274e-15, 0, 1, -19.999998, 0, -4)
+
+[node name="wall61" parent="WALL" unique_id=909427311 instance=ExtResource("2_2lfai")]
+transform = Transform3D(1, 0, 7.1054274e-15, 0, 1, 0, -7.1054274e-15, 0, 1, -19.999998, 4, -4)
+
 [node name="wall46" parent="WALL" unique_id=942347295 instance=ExtResource("2_2lfai")]
 transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, -3.999998, 4, 0)
 
@@ -632,6 +710,75 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0)
 
 [node name="truss_straight" parent="ROOF/roof_frame2/roof_corrugated" unique_id=142570665 instance=ExtResource("6_tgn7q")]
 
+[node name="roof_corrugated2" parent="ROOF/roof_frame2" unique_id=1485576167 instance=ExtResource("5_13dtl")]
+transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, 4.7683716e-07, 0, -8)
+
+[node name="truss_straight" parent="ROOF/roof_frame2/roof_corrugated2" unique_id=1555911433 instance=ExtResource("6_tgn7q")]
+
+[node name="roof_corrugated5" parent="ROOF/roof_frame2" unique_id=1646903462 instance=ExtResource("5_13dtl")]
+transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, 4.7683716e-07, 0, -4)
+
+[node name="truss_straight" parent="ROOF/roof_frame2/roof_corrugated5" unique_id=216067460 instance=ExtResource("6_tgn7q")]
+
+[node name="roof_corrugated3" parent="ROOF/roof_frame2" unique_id=1875031208 instance=ExtResource("5_13dtl")]
+transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, 0, 0, -12)
+
+[node name="truss_straight" parent="ROOF/roof_frame2/roof_corrugated3" unique_id=1254682463 instance=ExtResource("6_tgn7q")]
+
+[node name="roof_corrugated6" parent="ROOF/roof_frame2" unique_id=365967644 instance=ExtResource("5_13dtl")]
+transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, -3.9999995, 0, -8)
+
+[node name="truss_straight" parent="ROOF/roof_frame2/roof_corrugated6" unique_id=17534576 instance=ExtResource("6_tgn7q")]
+
+[node name="roof_corrugated7" parent="ROOF/roof_frame2" unique_id=1683407000 instance=ExtResource("5_13dtl")]
+transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, -3.9999995, 0, -4)
+
+[node name="truss_straight" parent="ROOF/roof_frame2/roof_corrugated7" unique_id=1007683743 instance=ExtResource("6_tgn7q")]
+
+[node name="roof_corrugated18" parent="ROOF/roof_frame2" unique_id=1727214580 instance=ExtResource("5_13dtl")]
+transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, -7.9999995, 0, -4)
+
+[node name="roof_corrugated19" parent="ROOF/roof_frame2" unique_id=291428240 instance=ExtResource("5_13dtl")]
+transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, -7.9999995, 0, -8)
+
+[node name="roof_corrugated20" parent="ROOF/roof_frame2" unique_id=451513692 instance=ExtResource("5_13dtl")]
+transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, -7.9999995, 0, -12)
+
+[node name="roof_corrugated8" parent="ROOF/roof_frame2" unique_id=506658498 instance=ExtResource("5_13dtl")]
+transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, -4, 0, -12)
+
+[node name="truss_straight" parent="ROOF/roof_frame2/roof_corrugated8" unique_id=664599611 instance=ExtResource("6_tgn7q")]
+
+[node name="roof_corrugated10" parent="ROOF/roof_frame2" unique_id=677002861 instance=ExtResource("5_13dtl")]
+transform = Transform3D(-2.1855693e-07, 0, 1, 0, 1, 0, -1, 0, -2.1855693e-07, -16, 0, -12)
+
+[node name="truss_straight" parent="ROOF/roof_frame2/roof_corrugated10" unique_id=842348003 instance=ExtResource("6_tgn7q")]
+
+[node name="roof_corrugated12" parent="ROOF/roof_frame2" unique_id=26807804 instance=ExtResource("5_13dtl")]
+transform = Transform3D(-2.1855693e-07, 0, 1, 0, 1, 0, -1, 0, -2.1855693e-07, -16, 0, -8)
+
+[node name="truss_straight" parent="ROOF/roof_frame2/roof_corrugated12" unique_id=1988206727 instance=ExtResource("6_tgn7q")]
+
+[node name="roof_corrugated13" parent="ROOF/roof_frame2" unique_id=1716847881 instance=ExtResource("5_13dtl")]
+transform = Transform3D(-2.1855693e-07, 0, 1, 0, 1, 0, -1, 0, -2.1855693e-07, -15.999998, 0, -4)
+
+[node name="truss_straight" parent="ROOF/roof_frame2/roof_corrugated13" unique_id=1296515198 instance=ExtResource("6_tgn7q")]
+
+[node name="roof_corrugated14" parent="ROOF/roof_frame2" unique_id=2110094156 instance=ExtResource("5_13dtl")]
+transform = Transform3D(-2.1855693e-07, 0, 1, 0, 1, 0, -1, 0, -2.1855693e-07, -12.000001, 0, -12)
+
+[node name="truss_straight" parent="ROOF/roof_frame2/roof_corrugated14" unique_id=2065977584 instance=ExtResource("6_tgn7q")]
+
+[node name="roof_corrugated16" parent="ROOF/roof_frame2" unique_id=1294678452 instance=ExtResource("5_13dtl")]
+transform = Transform3D(-2.1855693e-07, 0, 1, 0, 1, 0, -1, 0, -2.1855693e-07, -12, 0, -8)
+
+[node name="truss_straight" parent="ROOF/roof_frame2/roof_corrugated16" unique_id=492561143 instance=ExtResource("6_tgn7q")]
+
+[node name="roof_corrugated17" parent="ROOF/roof_frame2" unique_id=1464142324 instance=ExtResource("5_13dtl")]
+transform = Transform3D(-2.1855693e-07, 0, 1, 0, 1, 0, -1, 0, -2.1855693e-07, -11.999998, 0, -4)
+
+[node name="truss_straight" parent="ROOF/roof_frame2/roof_corrugated17" unique_id=702999416 instance=ExtResource("6_tgn7q")]
+
 [node name="roof_frame3" parent="ROOF" unique_id=356951299 instance=ExtResource("4_qnbff")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 4, 0)
 
@@ -651,6 +798,18 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.3999996, -4, -4)
 
 [node name="gardrail_Straight2" parent="ROOF/roof_frame4/roof_corrugated" unique_id=548092699 instance=ExtResource("9_13dtl")]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 4.4000006, -4, -4)
+
+[node name="gardrail_Straight3" parent="ROOF/roof_frame4/roof_corrugated" unique_id=1138029055 instance=ExtResource("9_13dtl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.3999996, -4, -8)
+
+[node name="gardrail_Straight4" parent="ROOF/roof_frame4/roof_corrugated" unique_id=1059564452 instance=ExtResource("9_13dtl")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 4.4000006, -4, -8)
+
+[node name="gardrail_Straight5" parent="ROOF/roof_frame4/roof_corrugated" unique_id=1688904156 instance=ExtResource("9_13dtl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.3999996, -4, -12)
+
+[node name="gardrail_Straight6" parent="ROOF/roof_frame4/roof_corrugated" unique_id=1976020753 instance=ExtResource("9_13dtl")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 4.4000006, -4, -12)
 
 [node name="roof_frame5" parent="ROOF" unique_id=1589610161 instance=ExtResource("4_qnbff")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 4, 0)
