@@ -1,5 +1,9 @@
 [gd_resource type="AudioBusLayout" format=3 uid="uid://cr1kg4urwvyq1"]
 
+[sub_resource type="AudioEffectLowPassFilter" id="AudioEffectLowPassFilter_5vpbu"]
+resource_name = "LowPassFilter"
+cutoff_hz = 6500.0
+
 [resource]
 bus/1/name = &"SFX"
 bus/1/solo = false
@@ -19,3 +23,11 @@ bus/3/mute = false
 bus/3/bypass_fx = false
 bus/3/volume_db = 0.0
 bus/3/send = &"Master"
+bus/4/name = &"Forklift"
+bus/4/solo = false
+bus/4/mute = false
+bus/4/bypass_fx = false
+bus/4/volume_db = -5.9342504
+bus/4/send = &"SFX"
+bus/4/effect/0/effect = SubResource("AudioEffectLowPassFilter_5vpbu")
+bus/4/effect/0/enabled = true

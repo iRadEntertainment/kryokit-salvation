@@ -11,6 +11,8 @@
 [ext_resource type="Script" uid="uid://bjanjit7rbf2y" path="res://scripts/forklift_rotating_spot_light_.gd" id="5_xomti"]
 [ext_resource type="PackedScene" uid="uid://ci07wfnk1n4hu" path="res://assets/glbs/mast.glb" id="6_c51dl"]
 [ext_resource type="Script" uid="uid://bewj0dep4bhip" path="res://instances/cam.gd" id="6_v6tai"]
+[ext_resource type="AudioStream" uid="uid://bacxq8hkf04cm" path="res://assets/audio/forklift_mast_clunk.wav" id="8_tprdc"]
+[ext_resource type="AudioStream" uid="uid://ddxxaq2236kgd" path="res://assets/audio/forklift_fork_loop.wav" id="9_30ch1"]
 [ext_resource type="PackedScene" uid="uid://dm35x7ohux76s" path="res://assets/glbs/mast_2.glb" id="9_bwns0"]
 [ext_resource type="PackedScene" uid="uid://crby8705xrn1x" path="res://assets/glbs/mast_3.glb" id="10_ygvo3"]
 [ext_resource type="AudioStream" uid="uid://xsa4dqgvprx4" path="res://assets/audio/forklift_accelerate.wav" id="14_4slcw"]
@@ -94,19 +96,41 @@ texture_albedo = ExtResource("3_syp4r")
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.09, -0.72)
 stream = ExtResource("14_4slcw")
-bus = &"SFX"
+max_db = -2.0
+pitch_scale = 1.1
+max_polyphony = 2
+bus = &"Forklift"
 
 [node name="AudioDecel" type="AudioStreamPlayer3D" parent="vehicle_body/body/audio" unique_id=602683570]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.09, -0.72)
 stream = ExtResource("15_qkf0m")
-bus = &"SFX"
+max_db = 0.0
+pitch_scale = 0.95
+max_polyphony = 2
+bus = &"Forklift"
 
 [node name="AudioLoop" type="AudioStreamPlayer3D" parent="vehicle_body/body/audio" unique_id=277032601]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.09, -0.72)
 stream = ExtResource("16_tprdc")
-bus = &"SFX"
+bus = &"Forklift"
+
+[node name="AudioMast_Extend" type="AudioStreamPlayer3D" parent="vehicle_body/body/audio" unique_id=890796869]
+bus = &"Forklift"
+
+[node name="AudioMast_Loop" type="AudioStreamPlayer3D" parent="vehicle_body/body/audio" unique_id=1939129160]
+bus = &"Forklift"
+
+[node name="AudioMast_Clunk" type="AudioStreamPlayer3D" parent="vehicle_body/body/audio" unique_id=717537861]
+stream = ExtResource("8_tprdc")
+max_db = -3.0
+bus = &"Forklift"
+
+[node name="AudioFork_Loop" type="AudioStreamPlayer3D" parent="vehicle_body/body/audio" unique_id=1777231315]
+stream = ExtResource("9_30ch1")
+max_db = -3.0
+bus = &"Forklift"
 
 [node name="monitor" type="MeshInstance3D" parent="vehicle_body" unique_id=150643878]
 transform = Transform3D(-1, 0, -8.742278e-08, -6.181724e-08, 0.70710677, 0.70710677, 6.181724e-08, 0.70710677, -0.70710677, 0, 1.7686391, 0.26978076)
