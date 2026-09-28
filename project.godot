@@ -126,9 +126,8 @@ reset_truck={
 [layer_names]
 
 3d_physics/layer_1="world"
-3d_physics/layer_2="pallets"
-3d_physics/layer_21="Mast_2"
-3d_physics/layer_22="Mast_1"
+3d_physics/layer_2="forklift"
+3d_physics/layer_3="pallets"
 
 [physics]
 

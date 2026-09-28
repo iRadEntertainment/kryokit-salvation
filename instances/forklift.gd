@@ -5,28 +5,25 @@ class_name Forklift extends Node3D
 @export var reset_raise: float = 0.20 #m from the horizontal plane
 
 @export_group("Drive")
-@export var throttle_max_power: float = 1500.0
+@export var throttle_max_power: float = 3000.0
 @export var brake_max_force: float = 50.0
 @export var brake_min_force: float = 5.5
 @export_range(0.1, 5.0, 0.01) var steering_speed: float = 1.8
 @export_range(1, 5, 1) var steering_snap_division: int = 3
 
-var _was_accelerating: bool = false
-
-
 @export_group("Mast")
 @export var mast_tilt_speed: float = 0.15 #degrees/s
 @export var mast_tilt_max: float = 2.5 #degrees
-@export var mast_tilt_min: float = -6.5 #degrees
+@export var mast_tilt_min: float = -4.5 #degrees
 
 @export_group("Lift")
-@export var lift_min_height: float = -0.15 #m
-@export var lift_max_height: float = 3.5 #m
+@export var lift_min_height: float = -0.03 #m
+@export var lift_max_height: float = 5.40 #m
 @export var lift_max_speed: float = 0.45 #m/s
 @export var lift_max_force: float = 5000.0 # N, initial test value
 
 @export_group("Fork")
-@export var fork_max_width: float = 0.8 #m between fork centers
+@export var fork_max_width: float = 0.75 #m between fork centers
 @export var fork_min_width: float = 0.25 #m between fork centers
 @export var fork_shift_speed: float = 0.20 #m/s
 @export var fork_widen_speed: float = 0.10 #m/s
@@ -45,6 +42,7 @@ var _was_accelerating: bool = false
 
 @onready var mast_1: Node3D = %mast_1
 @onready var mast_2: Node3D = %mast_2
+@onready var mast_coll_extension: CollisionShape3D = %mast_coll_extension
 
 
 @onready var joint_mast: Generic6DOFJoint3D = %joint_mast
@@ -64,13 +62,13 @@ var _was_accelerating: bool = false
 # movement
 var current_speed: float:
 	get: return vehicle_body.linear_velocity.length_squared()
-
 var target_steering: float = 0.0
 var _target_throttle: float = 0.0
 var _wrapped_steering: float = 1
 var _throttle_dir: int = 1
 
-# mast and fork
+
+# mast and fork getters
 var lift_height: float: get = get_lift_height
 var mast_tilt_degree: float: get = get_mast_tilt_degree
 var fork_l_position: float:
@@ -102,6 +100,11 @@ var _widen_input: float:
 	get: return Input.get_axis(&"shrink_fork", &"widen_fork")
 
 
+# States
+var _was_accelerating: bool = false
+var _mast_coll_extension_start_y_pos: float
+
+
 func _init() -> void:
 	Mng.forklift = self
 
@@ -110,10 +113,7 @@ func _ready() -> void:
 	_setup_lift()
 	_setup_tilt()
 	_setup_fork()
-	fork_shift = 0.0
-	fork_width = 0.4
-	
-	
+
 
 func _on_audio_accel_finished() -> void:
 	# Once the ramp-up sound finishes, switch to the continuous loop if still moving/accelerating
@@ -122,7 +122,9 @@ func _on_audio_accel_finished() -> void:
 		if not audio_loop.playing:
 			audio_loop.play()
 
+
 func _setup_lift() -> void:
+	_mast_coll_extension_start_y_pos = mast_coll_extension.position.y
 	joint_carriage.set_param_x(
 		Generic6DOFJoint3D.PARAM_LINEAR_LOWER_LIMIT,
 		lift_min_height
@@ -192,7 +194,6 @@ func _physics_process(delta: float) -> void:
 	_process_driving(delta)
 	_process_mast(delta)
 	_process_fork(delta)
-	_process_audio(delta)
 
 
 func _process_accellerations(delta: float) -> void:
@@ -267,69 +268,6 @@ func _process_driving(delta: float) -> void:
 	)
 
 
-
-func _process_audio(_delta: float) -> void:
-	var is_accelerating: bool = abs(_drive_input) > 0.01
-	var moving_speed: float = vehicle_body.linear_velocity.length()
-
-
-
-
-#Release
-	if _was_accelerating and not is_accelerating and moving_speed > 0.1:
-			audio_accel.stop()
-			audio_loop.stop()
-			audio_decel.volume_db = 0.0 # dirty hack to make sure volume is max
-			
-			audio_decel.play()
-	
-#Accelerate
-	if is_accelerating and not _was_accelerating:
-			audio_decel.stop()
-			audio_loop.stop()
-			audio_accel.volume_db = 0.0# dirty hack to make sure volume is max
-			
-			audio_accel.play()
-	
-
-# 		Crossfade ( I cannot seem to get this crossfading working between accelerate - loop - decelerate, 
-# 		try cutting off the accelerate off at the end and decelerate so they hit dont fade out)
-	
-	
-	if audio_accel.playing and audio_accel.stream:
-			var stream_length := audio_accel.stream.get_length()
-			var current_pos := audio_accel.get_playback_position()
-			
-			# Start blending 0.2 seconds before the acceleration clip ends
-			var blend_duration: float = 0.2
-			if stream_length > blend_duration and current_pos >= (stream_length - blend_duration):
-				if not audio_loop.playing:
-					audio_loop.volume_db = 0.0
-					audio_loop.play()
-				
-				# Crossfade 
-				var progress := (current_pos - (stream_length - blend_duration)) / blend_duration
-				audio_accel.volume_db = linear_to_db(clamp(1.0 - progress, 0.0, 1.0))
-				audio_loop.volume_db = linear_to_db(clamp(progress, 0.0, 1.0))
-
-	elif is_accelerating and not audio_accel.playing and not audio_loop.playing:
-		audio_loop.volume_db = 0.0
-		audio_loop.play()
-		
-	# stop sounds when stopped
-	if moving_speed < 0.1 and not is_accelerating:
-		audio_accel.stop()
-		audio_loop.stop()
-		audio_decel.stop()
-	
-	# Pitch mod (working)
-	if audio_loop.playing:
-		audio_loop.pitch_scale = clamp(0.8 + (moving_speed * 0.05), 0.8, 1.2)
-	
-	_was_accelerating = is_accelerating
-
-
-
 func _process_mast(_delta: float) -> void:
 	# mast tilt
 	var tilt_velocity: float = _tilt_input * mast_tilt_speed * _tilt_acc
@@ -385,12 +323,71 @@ func _process_fork(delta: float) -> void:
 
 
 func _process(delta: float) -> void:
+	_process_audio(delta)
 	_process_mast_extension()
 	_process_thrust_wheel_visuals(delta)
 	
 	var info: String = "wrapped_steering: %.3f" % [rad_to_deg(_wrapped_steering)]
 	info += "\n Forward Verse: %d" % _throttle_dir
 	text_nfo.text = info
+
+
+func _process_audio(_delta: float) -> void:
+	var is_accelerating: bool = abs(_drive_input) > 0.01
+	var moving_speed: float = vehicle_body.linear_velocity.length()
+	
+	#Release
+	if _was_accelerating and not is_accelerating and moving_speed > 0.1:
+			audio_accel.stop()
+			audio_loop.stop()
+			audio_decel.volume_db = 0.0 # dirty hack to make sure volume is max
+			
+			audio_decel.play()
+	
+	#Accelerate
+	if is_accelerating and not _was_accelerating:
+			audio_decel.stop()
+			audio_loop.stop()
+			audio_accel.volume_db = 0.0# dirty hack to make sure volume is max
+			
+			audio_accel.play()
+	
+
+# 		Crossfade ( I cannot seem to get this crossfading working between accelerate - loop - decelerate, 
+# 		try cutting off the accelerate off at the end and decelerate so they hit dont fade out)
+	
+	
+	if audio_accel.playing and audio_accel.stream:
+			var stream_length := audio_accel.stream.get_length()
+			var current_pos := audio_accel.get_playback_position()
+			
+			# Start blending 0.2 seconds before the acceleration clip ends
+			var blend_duration: float = 0.2
+			if stream_length > blend_duration and current_pos >= (stream_length - blend_duration):
+				if not audio_loop.playing:
+					audio_loop.volume_db = 0.0
+					audio_loop.play()
+				
+				# Crossfade 
+				var progress := (current_pos - (stream_length - blend_duration)) / blend_duration
+				audio_accel.volume_db = linear_to_db(clamp(1.0 - progress, 0.0, 1.0))
+				audio_loop.volume_db = linear_to_db(clamp(progress, 0.0, 1.0))
+
+	elif is_accelerating and not audio_accel.playing and not audio_loop.playing:
+		audio_loop.volume_db = 0.0
+		audio_loop.play()
+		
+	# stop sounds when stopped
+	if moving_speed < 0.1 and not is_accelerating:
+		audio_accel.stop()
+		audio_loop.stop()
+		audio_decel.stop()
+	
+	# Pitch mod (working)
+	if audio_loop.playing:
+		audio_loop.pitch_scale = clamp(0.8 + (moving_speed * 0.05), 0.8, 1.2)
+	
+	_was_accelerating = is_accelerating
 
 
 func _process_mast_extension() -> void:
@@ -400,6 +397,7 @@ func _process_mast_extension() -> void:
 	var extension_offset2: float = minf(extension_offset1, MAX_EXTENSION_1)
 	mast_1.position.y = extension_offset1
 	mast_2.position.y = extension_offset2
+	mast_coll_extension.position.y = _mast_coll_extension_start_y_pos + extension_offset1
 
 
 func _process_thrust_wheel_visuals(delta: float) -> void:
