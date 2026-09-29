@@ -115,6 +115,7 @@ var _target_width: float
 
 # States
 var _mast_coll_extension_start_y_pos: float
+var _engine_audio_volume: float = 0.0
 
 
 func _init() -> void:
@@ -380,7 +381,6 @@ func _process(delta: float) -> void:
 	text_nfo.text = info
 
 
-var _engine_audio_volume: float = 0.0
 func _process_audio(delta: float) -> void:
 	var is_accelerating: bool = _drive_input != 0.0
 	var moving_speed: float = vehicle_body.linear_velocity.length()
@@ -398,8 +398,7 @@ func _process_audio(delta: float) -> void:
 		sfx_engine_loop.volume_db = linear_to_db(maxf(_engine_audio_volume, 0.0001))
 		sfx_engine_loop.pitch_scale = remap(moving_speed, 0.1, 6.0, 0.6, 1.0)
 		sfx_engine_loop.pitch_scale = min(sfx_engine_loop.pitch_scale, 1.0)
-
-	# fully faded out: stop playback
+	
 	if not is_accelerating \
 			and moving_speed < 0.1 \
 			and sfx_engine_loop.playing:

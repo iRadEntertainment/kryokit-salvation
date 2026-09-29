@@ -1,0 +1,19 @@
+[gd_resource type="Environment" format=3 uid="uid://dihu5qtbnrl4j"]
+
+[resource]
+background_energy_multiplier = 0.0
+ambient_light_source = 2
+ambient_light_color = Color(0.011764706, 0.12941177, 0.1882353, 1)
+tonemap_mode = 2
+ssao_radius = 0.1
+ssao_intensity = 5.72
+sdfgi_use_occlusion = true
+sdfgi_bounce_feedback = 0.3
+sdfgi_cascades = 5
+sdfgi_energy = 0.5
+glow_enabled = true
+glow_bloom = 0.25
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.01
+adjustment_enabled = true
+adjustment_saturation = 1.1
