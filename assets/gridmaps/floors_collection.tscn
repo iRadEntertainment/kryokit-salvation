@@ -1,0 +1,64 @@
+[gd_scene format=3 uid="uid://c2biyi8a86fy6"]
+
+[ext_resource type="PackedScene" uid="uid://bdp58nsqupkid" path="res://assets/glbs/warehouse/refrigerated/refrigerated_floor.glb" id="2_8wn02"]
+[ext_resource type="PackedScene" uid="uid://ctw07nk0o84ue" path="res://assets/glbs/warehouse/refrigerated/refrigerated_roof_frame.glb" id="4_o457u"]
+[ext_resource type="PackedScene" uid="uid://1wtsvwns84xg" path="res://assets/glbs/warehouse/regular/Floor.glb" id="10_hbd72"]
+[ext_resource type="PackedScene" uid="uid://c1t1pq0n2rpv5" path="res://assets/glbs/warehouse/regular/roof_corrugated.glb" id="13_d47p5"]
+[ext_resource type="PackedScene" uid="uid://dpnefjtqisswu" path="res://assets/glbs/warehouse/regular/roof_frame.glb" id="14_na6m5"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_e5shq"]
+size = Vector3(4, 0.3, 4)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_tumff"]
+size = Vector3(4, 0.1, 4)
+
+[node name="floors_collection" type="Node3D" unique_id=184957863]
+
+[node name="refrigerated_floor" parent="." unique_id=88293510 instance=ExtResource("2_8wn02")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="refrigerated_floor/Refrigerated_Floor" parent_id_path=PackedInt32Array(88293510, 1198412349) index="0" unique_id=583620727]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="refrigerated_floor/Refrigerated_Floor/StaticBody3D" unique_id=1146610874]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.15, 0)
+shape = SubResource("BoxShape3D_e5shq")
+
+[node name="refrigerated_roof_frame" parent="." unique_id=290351610 instance=ExtResource("4_o457u")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="refrigerated_roof_frame/RefrigeratedRoofFrame" parent_id_path=PackedInt32Array(290351610, 878243496) index="0" unique_id=614467222]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="refrigerated_roof_frame/RefrigeratedRoofFrame/StaticBody3D" unique_id=1695795428]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.05, 0)
+shape = SubResource("BoxShape3D_tumff")
+
+[node name="Floor2" parent="." unique_id=1548679048 instance=ExtResource("10_hbd72")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Floor2/Floor" parent_id_path=PackedInt32Array(1548679048, 1441289147) index="0" unique_id=1824946044]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor2/Floor/StaticBody3D" unique_id=1720816417]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.15, 0)
+shape = SubResource("BoxShape3D_e5shq")
+
+[node name="roof_corrugated" parent="." unique_id=1391891865 instance=ExtResource("13_d47p5")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="roof_corrugated/Roof_Corrugated" parent_id_path=PackedInt32Array(1391891865, 1932507650) index="0" unique_id=1070105921]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="roof_corrugated/Roof_Corrugated/StaticBody3D" unique_id=327231239]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2, 0)
+shape = SubResource("BoxShape3D_tumff")
+
+[node name="roof_frame" parent="." unique_id=307173768 instance=ExtResource("14_na6m5")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="roof_frame/RoofFrame_Single" parent_id_path=PackedInt32Array(307173768, 1808638423) index="0" unique_id=32692755]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="roof_frame/RoofFrame_Single/StaticBody3D" unique_id=2113350449]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.05, 0)
+shape = SubResource("BoxShape3D_tumff")
+
+[editable path="refrigerated_floor"]
+[editable path="refrigerated_roof_frame"]
+[editable path="Floor2"]
+[editable path="roof_corrugated"]
+[editable path="roof_frame"]
