@@ -62,16 +62,6 @@ render_target_update_mode = 4
 
 [node name="intro_3d" parent="sv_bg/SubViewport" unique_id=1815666335 instance=ExtResource("2_8ln24")]
 
-[node name="SpotLight3D3" type="SpotLight3D" parent="sv_bg/SubViewport/intro_3d" unique_id=967175708]
-transform = Transform3D(0.21201213, 0.9659258, -0.14845245, 0.57357645, -3.5806266e-08, 0.81915206, 0.7912401, -0.25881898, -0.5540323, -24.881592, 13.115248, -24.629042)
-light_color = Color(0.8289612, 0.9811351, 0.99999994, 1)
-light_energy = 2000.0
-light_specular = 1.0
-shadow_enabled = true
-spot_range = 16.862
-spot_angle = 70.57
-spot_angle_attenuation = 0.32987723
-
 [node name="bg_blur" type="ColorRect" parent="." unique_id=2029625493]
 unique_name_in_owner = true
 material = SubResource("ShaderMaterial_lgwnu")

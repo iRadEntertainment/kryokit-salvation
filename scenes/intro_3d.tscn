@@ -5,6 +5,69 @@
 [ext_resource type="PackedScene" uid="uid://6a0e1oacp8re" path="res://scenes/office_intro.tscn" id="3_slekq"]
 [ext_resource type="PackedScene" uid="uid://bssnydjohvcvp" path="res://scenes/trees.tscn" id="4_i45y4"]
 
+[sub_resource type="Animation" id="Animation_i45y4"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_gyen7"]
+resource_name = "camera_sway"
+length = 7.0
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(1.5, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0.097174644, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0.030114936, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4s4cm"]
+_data = {
+&"RESET": SubResource("Animation_i45y4"),
+&"camera_sway": SubResource("Animation_gyen7")
+}
+
 [sub_resource type="FogMaterial" id="FogMaterial_2mys3"]
 density = 0.05
 albedo = Color(1, 0.95566666, 0.86, 1)
@@ -46,19 +109,27 @@ spot_angle_attenuation = 0.32987723
 
 [node name="moon" type="DirectionalLight3D" parent="." unique_id=1108716372]
 transform = Transform3D(-0.8451195, -0.17848589, -0.5039007, -0.48838323, 0.6410946, 0.5920132, 0.21738201, 0.74641854, -0.628971, 0, 0, 0)
-light_energy = 0.0
+light_energy = 0.01
 light_volumetric_fog_energy = 5.0
 shadow_enabled = true
 
-[node name="Camera3D" type="Camera3D" parent="." unique_id=290308415]
-transform = Transform3D(0.9659258, 0.056018695, 0.252684, 0, 0.976296, -0.21643962, -0.25881904, 0.20906462, 0.9430295, 1.3341458, 0.51169944, 3.1740077)
+[node name="camera_pivot" type="Marker3D" parent="." unique_id=2062915977]
+transform = Transform3D(1.0000001, 0, 0, 0, 0.9999998, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="Camera3D" type="Camera3D" parent="camera_pivot" unique_id=290308415]
+transform = Transform3D(0.9659258, 0.056018706, 0.252684, 0, 0.976296, -0.21643962, -0.25881907, 0.20906462, 0.94302946, 1.3341459, 0.51169944, 3.174008)
 fov = 82.1
+
+[node name="anim" type="AnimationPlayer" parent="camera_pivot" unique_id=1502085576]
+libraries/ = SubResource("AnimationLibrary_4s4cm")
+autoplay = &"camera_sway"
 
 [node name="forklift" parent="." unique_id=983298835 instance=ExtResource("1_7m2fh")]
 process_mode = 4
+transform = Transform3D(0.7071069, 0, -0.7071066, 0, 1, 0, 0.7071066, 0, 0.7071069, 2.245696, 0, 0)
 
 [node name="Office_Intro" parent="." unique_id=1113902176 instance=ExtResource("3_slekq")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 6, 0, -21)
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.24332428, 0, -13.176103)
 
 [node name="FogVolume" type="FogVolume" parent="." unique_id=1733229442]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.631954, 7.4339542, -8.146902)
@@ -73,3 +144,23 @@ transform = Transform3D(1.7881393e-07, 0, -0.99999994, 0, 1, 0, 0.99999994, 0, 1
 
 [node name="Trees2" parent="." unique_id=1725927218 instance=ExtResource("4_i45y4")]
 transform = Transform3D(0.25881904, 0, 0.9659259, 0, 1, 0, -0.9659259, 0, 0.25881904, -15.999998, -0.40000004, -6.5999994)
+
+[node name="SpotLight3D3" type="SpotLight3D" parent="." unique_id=964428587]
+transform = Transform3D(0.21201213, 0.9659258, -0.14845245, 0.57357645, -3.5806266e-08, 0.81915206, 0.7912401, -0.25881898, -0.5540323, -24.881592, 13.115248, -24.629042)
+light_color = Color(0.8289612, 0.9811351, 0.99999994, 1)
+light_energy = 16.0
+light_volumetric_fog_energy = 6.0
+shadow_enabled = true
+spot_range = 16.862
+spot_angle = 70.57
+spot_angle_attenuation = 0.32987723
+
+[node name="SpotLight3D4" type="SpotLight3D" parent="." unique_id=282225130]
+transform = Transform3D(0.43678352, 0.870395, -0.22722857, -0.8144654, 0.48988256, 0.31090367, 0.38192433, 0.04927224, 0.9228793, 1.3313236, 4.1520762, 4.7566614)
+light_color = Color(0.8289612, 0.9811351, 0.99999994, 1)
+light_energy = 2.867
+light_volumetric_fog_energy = 3.0
+shadow_enabled = true
+spot_range = 9.636798
+spot_angle = 41.922497
+spot_angle_attenuation = 0.32987723
