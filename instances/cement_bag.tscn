@@ -3,13 +3,12 @@
 [ext_resource type="PackedScene" uid="uid://x8jofwjxb3dl" path="res://assets/glbs/cement_bag_1k.glb" id="1_5g2d5"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_lexek"]
-rough = true
-absorbent = true
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_8mt0l"]
 size = Vector3(0.43554688, 0.1665039, 0.67871094)
 
 [node name="cement_bag" type="RigidBody3D" unique_id=1017875473]
+collision_mask = 15
 mass = 20.0
 physics_material_override = SubResource("PhysicsMaterial_lexek")
 linear_damp = 0.01

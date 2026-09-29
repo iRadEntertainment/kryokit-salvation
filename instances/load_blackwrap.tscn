@@ -3,17 +3,14 @@
 [ext_resource type="PackedScene" uid="uid://cwcqwq50cbb0s" path="res://assets/glbs/pallet_blackwrap.glb" id="1_vyhld"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_lexek"]
-rough = true
-absorbent = true
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_sgsvp"]
 size = Vector3(1.064209, 1.1367798, 0.74194336)
 
 [node name="load_blackwrap" type="RigidBody3D" unique_id=1017875473]
+collision_mask = 15
 mass = 100.0
 physics_material_override = SubResource("PhysicsMaterial_lexek")
-center_of_mass_mode = 1
-center_of_mass = Vector3(0, -0.1, 0)
 linear_damp = 1.0
 angular_damp = 1.0
 
