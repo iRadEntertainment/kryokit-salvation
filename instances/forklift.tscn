@@ -17,8 +17,6 @@
 [ext_resource type="AudioStream" uid="uid://ddxxaq2236kgd" path="res://assets/audio/forklift_fork_loop.wav" id="9_30ch1"]
 [ext_resource type="PackedScene" uid="uid://dm35x7ohux76s" path="res://assets/glbs/mast_2.glb" id="9_bwns0"]
 [ext_resource type="PackedScene" uid="uid://crby8705xrn1x" path="res://assets/glbs/mast_3.glb" id="10_ygvo3"]
-[ext_resource type="AudioStream" uid="uid://xsa4dqgvprx4" path="res://assets/audio/forklift_accelerate.wav" id="14_4slcw"]
-[ext_resource type="AudioStream" uid="uid://cdyoh6u5qcw02" path="res://assets/audio/forklift_deccelerate.wav" id="15_qkf0m"]
 [ext_resource type="AudioStream" uid="uid://5fuqpt3vnr2j" path="res://assets/audio/forklift_loop.wav" id="16_tprdc"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_8mt0l"]
@@ -59,6 +57,7 @@ size = Vector3(0.08, 0.04, 1.3)
 
 [node name="forklift" type="Node3D" unique_id=983298835]
 script = ExtResource("1_ddviu")
+lift_min_height = -0.15
 
 [node name="vehicle_body" type="VehicleBody3D" parent="." unique_id=1776535538]
 unique_name_in_owner = true
@@ -91,29 +90,7 @@ texture_albedo = ExtResource("3_syp4r")
 [node name="audio" type="Node3D" parent="vehicle_body" unique_id=1625408158]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.09, 0.72)
 
-[node name="AudioAccel" type="AudioStreamPlayer3D" parent="vehicle_body/audio" unique_id=1304472583]
-unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.09, -0.72)
-stream = ExtResource("14_4slcw")
-unit_size = 1.0
-max_db = -6.0
-pitch_scale = 1.2
-max_distance = 20.0
-max_polyphony = 2
-bus = &"Forklift"
-
-[node name="AudioDecel" type="AudioStreamPlayer3D" parent="vehicle_body/audio" unique_id=602683570]
-unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.09, -0.72)
-stream = ExtResource("15_qkf0m")
-unit_size = 1.0
-max_db = -6.0
-pitch_scale = 0.95
-max_distance = 20.0
-max_polyphony = 2
-bus = &"Forklift"
-
-[node name="AudioLoop" type="AudioStreamPlayer3D" parent="vehicle_body/audio" unique_id=277032601]
+[node name="sfx_engine_loop" type="AudioStreamPlayer3D" parent="vehicle_body/audio" unique_id=277032601]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.09, -0.72)
 stream = ExtResource("16_tprdc")
@@ -278,25 +255,25 @@ debug_color = Color(0, 0.65, 0.021666646, 1)
 
 [node name="SpotLight3D" type="SpotLight3D" parent="mast_body" unique_id=1872910030]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0.42999998, 1.9056296, 0.048130274)
-light_energy = 0.0
+visible = false
 spot_range = 11.907
 spot_angle = 70.0
 spot_angle_attenuation = 0.2871746
 
-[node name="mast_3" parent="mast_body" unique_id=1035341684 instance=ExtResource("6_c51dl")]
+[node name="mast_1" parent="mast_body" unique_id=1035341684 instance=ExtResource("6_c51dl")]
 unique_name_in_owner = true
 
 [node name="mast_2" parent="mast_body" unique_id=1228464593 instance=ExtResource("10_ygvo3")]
 unique_name_in_owner = true
 
-[node name="mast_1" parent="mast_body" unique_id=407813819 instance=ExtResource("9_bwns0")]
+[node name="mast_3" parent="mast_body" unique_id=407813819 instance=ExtResource("9_bwns0")]
 unique_name_in_owner = true
 
 [node name="carriage_body" type="RigidBody3D" parent="." unique_id=815795375]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.05805105, 0.8529252)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.853)
 collision_layer = 2
-collision_mask = 13
+collision_mask = 15
 mass = 45.0
 physics_material_override = SubResource("PhysicsMaterial_ryygl")
 can_sleep = false
@@ -318,9 +295,9 @@ update_scale = false
 
 [node name="fork_l_body" type="RigidBody3D" parent="." unique_id=1849089295]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.15, -0.058, 0.854)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.15, 0, 0.854)
 collision_layer = 2
-collision_mask = 13
+collision_mask = 15
 mass = 30.0
 physics_material_override = SubResource("PhysicsMaterial_v6tai")
 center_of_mass_mode = 1
@@ -338,9 +315,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.34604788, 0.028, 0.06835937
 
 [node name="fork_r_body" type="RigidBody3D" parent="." unique_id=1816431836]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15, -0.058, 0.854)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15, 0, 0.854)
 collision_layer = 2
-collision_mask = 13
+collision_mask = 15
 mass = 30.0
 physics_material_override = SubResource("PhysicsMaterial_v6tai")
 center_of_mass_mode = 1
@@ -406,7 +383,7 @@ spring_length = 3.0
 unique_name_in_owner = true
 
 [node name="pivot_fork" type="Node3D" parent="cam_targets" unique_id=720676420]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.072320044, 2.0405173)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1303711, 2.0405922)
 
 [node name="arm_fork" type="SpringArm3D" parent="cam_targets/pivot_fork" unique_id=1966658628]
 transform = Transform3D(1.1793229e-07, 0.5, -0.86602527, -3.2398027e-08, 0.8660252, 0.49999994, 0.9999999, -3.0908602e-08, 1.1833138e-07, 0, 0, 0)

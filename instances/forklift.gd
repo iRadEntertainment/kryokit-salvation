@@ -53,9 +53,7 @@ class_name Forklift extends Node3D
 @onready var text_nfo: TextEdit = %text_nfo
 
 #Audio
-@onready var audio_accel: AudioStreamPlayer3D = %AudioAccel
-@onready var audio_decel: AudioStreamPlayer3D = %AudioDecel
-@onready var audio_loop: AudioStreamPlayer3D = %AudioLoop
+@onready var sfx_engine_loop: AudioStreamPlayer3D = %sfx_engine_loop
 
 #Camera
 @onready var fork_focus: RemoteTransform3D = %fork_focus
@@ -80,6 +78,7 @@ var _throttle_dir: int = 1
 
 # mast and fork getters
 var lift_height: float: get = get_lift_height
+var mast_tilt: float: get = get_mast_tilt_rad
 var mast_tilt_degree: float: get = get_mast_tilt_degree
 var fork_l_position: float:
 	get: return carriage_body.to_local(fork_l_body.global_position).x
@@ -100,18 +99,21 @@ var steer_input: float:
 var _lift_acc: float
 var _lift_input: float:
 	get: return Input.get_axis(&"lower_fork", &"lift_fork")
+var _target_lift: float
 var _tilt_acc: float
 var _tilt_input: float:
 	get: return Input.get_axis(&"tilt_backward", &"tilt_forward")
+var _target_tilt: float
 var _shift_acc: float
 var _shift_input: float:
 	get: return Input.get_axis(&"shift_fork_right", &"shift_fork_left")
+var _target_shift: float
 var _widen_input: float:
 	get: return Input.get_axis(&"shrink_fork", &"widen_fork")
+var _target_width: float
 
 
 # States
-var _was_accelerating: bool = false
 var _mast_coll_extension_start_y_pos: float
 
 
@@ -129,8 +131,8 @@ func _on_audio_accel_finished() -> void:
 	# Once the ramp-up sound finishes, switch to the continuous loop if still moving/accelerating
 	var is_accelerating: bool = abs(_drive_input) > 0.01
 	if is_accelerating or vehicle_body.linear_velocity.length() > 0.5:
-		if not audio_loop.playing:
-			audio_loop.play()
+		if not sfx_engine_loop.playing:
+			sfx_engine_loop.play()
 
 
 func _setup_lift() -> void:
@@ -147,6 +149,7 @@ func _setup_lift() -> void:
 		Generic6DOFJoint3D.PARAM_LINEAR_MOTOR_FORCE_LIMIT,
 		lift_max_force
 	)
+	_target_lift = lift_min_height
 
 
 func _setup_tilt() -> void:
@@ -158,12 +161,16 @@ func _setup_tilt() -> void:
 		Generic6DOFJoint3D.PARAM_ANGULAR_UPPER_LIMIT,
 		deg_to_rad(mast_tilt_max)
 	)
+	_target_tilt = mast_tilt_max
 
 
 func _setup_fork() -> void:
 	var rail_half_width := fork_max_width * 0.5
 	var fork_l_x := carriage_body.to_local(fork_l_body.global_position).x
 	var fork_r_x := carriage_body.to_local(fork_r_body.global_position).x
+	
+	_target_shift = 0.0
+	_target_width = 0.35
 	
 	joint_fork_l.set_param_x(
 		Generic6DOFJoint3D.PARAM_LINEAR_LOWER_LIMIT,
@@ -204,6 +211,7 @@ func _physics_process(delta: float) -> void:
 	_process_steering(delta)
 	_process_driving(delta)
 	_process_mast(delta)
+	_process_lift(delta)
 	_process_fork(delta)
 
 
@@ -227,7 +235,6 @@ func _process_accellerations(delta: float) -> void:
 		_shift_acc = min(_shift_acc + delta * 0.7, abs(_shift_input))
 	else:
 		_shift_acc = 0.0
-
 
 
 func _process_steering(delta: float) -> void:
@@ -284,15 +291,38 @@ func _process_driving(delta: float) -> void:
 	)
 
 
-func _process_mast(_delta: float) -> void:
-	# mast tilt
-	var tilt_velocity: float = _tilt_input * mast_tilt_speed * _tilt_acc
+func _process_mast(delta: float) -> void:
+	_target_tilt += _tilt_input * mast_tilt_speed * _tilt_acc * delta
+	_target_tilt = clampf(
+		_target_tilt,
+		deg_to_rad(mast_tilt_min),
+		deg_to_rad(mast_tilt_max)
+	)
+	
+	var tilt_error: float = _target_tilt - mast_tilt
+	var tilt_velocity := clampf(
+		tilt_error * 5.0,
+		-mast_tilt_speed,
+		mast_tilt_speed
+	)
+
 	joint_mast.set_param_x(
 		Generic6DOFJoint3D.PARAM_ANGULAR_MOTOR_TARGET_VELOCITY,
 		tilt_velocity
 	)
-	# carriage lift
-	var lift_velocity: float = _lift_input * lift_max_speed * _lift_acc
+
+
+func _process_lift(delta: float) -> void:
+	_target_lift += _lift_input * lift_max_speed * _lift_acc * delta
+	_target_lift = clampf(_target_lift, lift_min_height, lift_max_height)
+	
+	var lift_error: float = _target_lift - lift_height
+	var lift_velocity := clampf(
+		lift_error * 5.0,
+		-lift_max_speed,
+		lift_max_speed
+	)
+	
 	joint_carriage.set_param_x(
 		Generic6DOFJoint3D.PARAM_LINEAR_MOTOR_TARGET_VELOCITY,
 		lift_velocity
@@ -300,8 +330,8 @@ func _process_mast(_delta: float) -> void:
 
 
 func _process_fork(delta: float) -> void:
-	var desired_shift: float = fork_shift
-	var desired_width: float = fork_width
+	var desired_shift: float = _target_shift
+	var desired_width: float = _target_width
 
 	# Shift both forks together.
 	if _shift_input:
@@ -312,6 +342,7 @@ func _process_fork(delta: float) -> void:
 			-available_shift,
 			available_shift
 		)
+		_target_shift = desired_shift
 
 	# Widen / shrink around the current pair center.
 	if _widen_input:
@@ -322,6 +353,7 @@ func _process_fork(delta: float) -> void:
 			fork_min_width,
 			available_width
 		)
+		_target_width = desired_width
 	
 	var desired_l: float = desired_shift - desired_width * 0.5
 	var desired_r: float = desired_shift + desired_width * 0.5
@@ -348,60 +380,87 @@ func _process(delta: float) -> void:
 	text_nfo.text = info
 
 
-func _process_audio(_delta: float) -> void:
-	var is_accelerating: bool = abs(_drive_input) > 0.01
+var _engine_audio_volume: float = 0.0
+func _process_audio(delta: float) -> void:
+	var is_accelerating: bool = _drive_input != 0.0
 	var moving_speed: float = vehicle_body.linear_velocity.length()
 	
-	#Release
-	if _was_accelerating and not is_accelerating and moving_speed > 0.1:
-			audio_accel.stop()
-			audio_loop.stop()
-			audio_decel.volume_db = 0.0 # dirty hack to make sure volume is max
-			
-			audio_decel.play()
-	
-	#Accelerate
-	if is_accelerating and not _was_accelerating:
-			audio_decel.stop()
-			audio_loop.stop()
-			audio_accel.volume_db = 0.0# dirty hack to make sure volume is max
-			
-			audio_accel.play()
-# 		Crossfade ( I cannot seem to get this crossfading working between accelerate - loop - decelerate, 
-# 		try cutting off the accelerate off at the end and decelerate so they hit dont fade out)
-	
-	
-	if audio_accel.playing and audio_accel.stream:
-			var stream_length := audio_accel.stream.get_length()
-			var current_pos := audio_accel.get_playback_position()
-			
-			# Start blending 0.2 seconds before the acceleration clip ends
-			var blend_duration: float = 0.2
-			if stream_length > blend_duration and current_pos >= (stream_length - blend_duration):
-				if not audio_loop.playing:
-					audio_loop.volume_db = 0.0
-					audio_loop.play()
-				
-				# Crossfade 
-				var progress := (current_pos - (stream_length - blend_duration)) / blend_duration
-				audio_accel.volume_db = linear_to_db(clamp(1.0 - progress, 0.0, 1.0))
-				audio_loop.volume_db = linear_to_db(clamp(progress, 0.0, 1.0))
+	if is_accelerating and not sfx_engine_loop.playing:
+		_engine_audio_volume = 0.25
+		sfx_engine_loop.volume_db = linear_to_db(_engine_audio_volume)
+		sfx_engine_loop.play()
 
-	elif is_accelerating and not audio_accel.playing and not audio_loop.playing:
-		audio_loop.volume_db = 0.0
-		audio_loop.play()
-		
-	# stop sounds when stopped
-	if moving_speed < 0.1 and not is_accelerating:
-		audio_accel.stop()
-		audio_loop.stop()
-		audio_decel.stop()
+	# Fade volume toward desired level
+	var target_volume := 1.0 if is_accelerating else 0.0
+	_engine_audio_volume = move_toward(_engine_audio_volume, target_volume, 0.5 * delta)
 	
-	# Pitch mod (working)
-	if audio_loop.playing:
-		audio_loop.pitch_scale = clamp(0.8 + (moving_speed * 0.05), 0.8, 1.2)
-	
-	_was_accelerating = is_accelerating
+	if sfx_engine_loop.playing:
+		sfx_engine_loop.volume_db = linear_to_db(maxf(_engine_audio_volume, 0.0001))
+		sfx_engine_loop.pitch_scale = remap(moving_speed, 0.1, 6.0, 0.6, 1.0)
+		sfx_engine_loop.pitch_scale = min(sfx_engine_loop.pitch_scale, 1.0)
+
+	# fully faded out: stop playback
+	if not is_accelerating \
+			and moving_speed < 0.1 \
+			and sfx_engine_loop.playing:
+		sfx_engine_loop.stop()
+
+
+#var _was_accelerating: bool = false
+#func _process_audio(_delta: float) -> void:
+	#var is_accelerating: bool = abs(_drive_input) > 0.01
+	#var moving_speed: float = vehicle_body.linear_velocity.length()
+	#
+	##Release
+	#if _was_accelerating and not is_accelerating and moving_speed > 0.1:
+			#audio_accel.stop()
+			#sfx_engine_loop.stop()
+			#audio_decel.volume_db = 0.0 # dirty hack to make sure volume is max
+			#
+			#audio_decel.play()
+	#
+	##Accelerate
+	#if is_accelerating and not _was_accelerating:
+			#audio_decel.stop()
+			#sfx_engine_loop.stop()
+			#audio_accel.volume_db = 0.0# dirty hack to make sure volume is max
+			#
+			#audio_accel.play()
+## 		Crossfade ( I cannot seem to get this crossfading working between accelerate - loop - decelerate, 
+## 		try cutting off the accelerate off at the end and decelerate so they hit dont fade out)
+	#
+	#
+	#if audio_accel.playing and audio_accel.stream:
+			#var stream_length := audio_accel.stream.get_length()
+			#var current_pos := audio_accel.get_playback_position()
+			#
+			## Start blending 0.2 seconds before the acceleration clip ends
+			#var blend_duration: float = 0.2
+			#if stream_length > blend_duration and current_pos >= (stream_length - blend_duration):
+				#if not sfx_engine_loop.playing:
+					#sfx_engine_loop.volume_db = 0.0
+					#sfx_engine_loop.play()
+				#
+				## Crossfade 
+				#var progress := (current_pos - (stream_length - blend_duration)) / blend_duration
+				#audio_accel.volume_db = linear_to_db(clamp(1.0 - progress, 0.0, 1.0))
+				#sfx_engine_loop.volume_db = linear_to_db(clamp(progress, 0.0, 1.0))
+#
+	#elif is_accelerating and not audio_accel.playing and not sfx_engine_loop.playing:
+		#sfx_engine_loop.volume_db = 0.0
+		#sfx_engine_loop.play()
+		#
+	## stop sounds when stopped
+	#if moving_speed < 0.1 and not is_accelerating:
+		#audio_accel.stop()
+		#sfx_engine_loop.stop()
+		#audio_decel.stop()
+	#
+	## Pitch mod (working)
+	#if sfx_engine_loop.playing:
+		#sfx_engine_loop.pitch_scale = clamp(0.8 + (moving_speed * 0.05), 0.8, 1.2)
+	#
+	#_was_accelerating = is_accelerating
 
 
 func _process_mast_extension() -> void:
@@ -444,7 +503,7 @@ func reset_truck() -> void:
 	forward.y = 0.0
 	forward = forward.normalized()
 	
-	# Construct an upright basis while preserving the truck's heading.
+	# Construct an upright basis preserving the truck's heading
 	var right: Vector3 = forward.cross(Vector3.UP).normalized()
 	var target_basis := Basis(
 		right,
@@ -452,7 +511,7 @@ func reset_truck() -> void:
 		-forward
 	).orthonormalized()
 
-	# Preserve X/Z position, but raise it slightly above the floor.
+	# Preserve X/Z position, but raise it slightly above the floor
 	var target_position := old_vehicle_transform.origin
 	target_position.y = reset_raise
 
@@ -552,9 +611,11 @@ func get_lift_height() -> float:
 	return carriage_in_mast.y
 
 
-func get_mast_tilt_degree() -> float:
+func get_mast_tilt_rad() -> float:
 	var relative_basis: Basis = (
 		vehicle_body.global_transform.basis.inverse()
 		* mast_body.global_transform.basis
 	)
-	return rad_to_deg(relative_basis.get_euler().x)
+	return relative_basis.get_euler().x
+func get_mast_tilt_degree() -> float:
+	return rad_to_deg(get_mast_tilt_rad())
