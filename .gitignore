@@ -5,3 +5,5 @@
 # VSCode specific ignore
 .vscode/
 
+assets/glbs/cardboard_box.glb.import
+*.import

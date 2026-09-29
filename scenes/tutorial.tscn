@@ -7,6 +7,9 @@
 [ext_resource type="PackedScene" uid="uid://7clljett1r8u" path="res://instances/cement_bag.tscn" id="5_g2equ"]
 [ext_resource type="PackedScene" uid="uid://biro1v6rgmrre" path="res://instances/GUI/gui.tscn" id="6_tbcdj"]
 [ext_resource type="PackedScene" uid="uid://c1sb5rpp2v40s" path="res://instances/shelf.tscn" id="7_ej4tf"]
+[ext_resource type="PackedScene" uid="uid://xxt0kld8oboc" path="res://assets/glbs/warehouse/regular/gardrail_Straight.glb" id="8_0epgs"]
+[ext_resource type="PackedScene" uid="uid://bgql3g46eolgy" path="res://assets/glbs/shelves-post.glb" id="9_g2equ"]
+[ext_resource type="PackedScene" uid="uid://bptwc3hmor044" path="res://assets/glbs/shelves-beam.glb" id="10_tbcdj"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_v6tai"]
 rough = true
@@ -43,6 +46,8 @@ size = Vector2(300, 300)
 script = ExtResource("1_gbqnl")
 is_tutorial = true
 
+[node name="GUI" parent="." unique_id=1226663711 instance=ExtResource("6_tbcdj")]
+
 [node name="game_env" type="WorldEnvironment" parent="." unique_id=1576902409]
 environment = ExtResource("2_ckvwl")
 
@@ -72,6 +77,7 @@ mesh = SubResource("QuadMesh_8mt0l")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.08696018, 0)
 
 [node name="pallets" type="Node3D" parent="." unique_id=23978430]
+visible = false
 
 [node name="pallet" parent="pallets" unique_id=143866765 instance=ExtResource("4_0epgs")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -4.748381, 0, -3.1259737)
@@ -184,13 +190,61 @@ transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 6.62
 [node name="cement_bag16" parent="pallets" unique_id=379646153 instance=ExtResource("5_g2equ")]
 transform = Transform3D(-0.027184421, 0, -0.99963045, 0, 1, 0, 0.99963045, 0, -0.027184421, 6.6222305, 3.6130414, 3.5741627)
 
-[node name="GUI" parent="." unique_id=1226663711 instance=ExtResource("6_tbcdj")]
-
 [node name="shelf" parent="." unique_id=842112793 instance=ExtResource("7_ej4tf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8493252, 0, 3.3406777)
+visible = false
 
 [node name="shelf2" parent="." unique_id=1220127838 instance=ExtResource("7_ej4tf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 11)
+visible = false
 
 [node name="shelf3" parent="." unique_id=618751701 instance=ExtResource("7_ej4tf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 12.605203)
+visible = false
+
+[node name="STATIC TUTORIAL" type="Node3D" parent="." unique_id=20562268]
+
+[node name="stage_1" type="Node3D" parent="STATIC TUTORIAL" unique_id=826906088]
+
+[node name="stage_2" type="Node3D" parent="STATIC TUTORIAL" unique_id=1182046451]
+
+[node name="stage_3" type="Node3D" parent="STATIC TUTORIAL" unique_id=538024346]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, -5, 3)
+
+[node name="parking area" type="Node3D" parent="STATIC TUTORIAL/stage_3" unique_id=330503329]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 5, -3)
+
+[node name="gardrail_Straight" parent="STATIC TUTORIAL/stage_3/parking area" unique_id=1339451957 instance=ExtResource("8_0epgs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.3, 0, 0)
+
+[node name="gardrail_Straight2" parent="STATIC TUTORIAL/stage_3/parking area" unique_id=1446837629 instance=ExtResource("8_0epgs")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 3.4, 0, 0)
+
+[node name="gardrail_Straight3" parent="STATIC TUTORIAL/stage_3/parking area" unique_id=245418885 instance=ExtResource("8_0epgs")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, -4.3)
+
+[node name="shelves-post" parent="STATIC TUTORIAL" unique_id=1527784649 instance=ExtResource("9_g2equ")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -4, 0, 3)
+
+[node name="shelves-post2" parent="STATIC TUTORIAL" unique_id=2020532881 instance=ExtResource("9_g2equ")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -4, 0, 6.2)
+
+[node name="shelves-beam" parent="STATIC TUTORIAL" unique_id=557824227 instance=ExtResource("10_tbcdj")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -4, 1, 4.6)
+
+[node name="shelves-beam2" parent="STATIC TUTORIAL" unique_id=1982671578 instance=ExtResource("10_tbcdj")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -4, 2, 4.6)
+
+[node name="shelves-beam3" parent="STATIC TUTORIAL" unique_id=1087332107 instance=ExtResource("10_tbcdj")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -4, 3, 4.6)
+
+[node name="shelves-beam4" parent="STATIC TUTORIAL" unique_id=2085399839 instance=ExtResource("10_tbcdj")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -4, 4, 4.6)
+
+[node name="shelves-beam5" parent="STATIC TUTORIAL" unique_id=885643677 instance=ExtResource("10_tbcdj")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -4, 5, 4.6)
+
+[node name="shelves-beam6" parent="STATIC TUTORIAL" unique_id=262188782 instance=ExtResource("10_tbcdj")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -4, 6, 4.6)
+
+[node name="shelf_obstacle" type="Node3D" parent="STATIC TUTORIAL" unique_id=1756151769]
