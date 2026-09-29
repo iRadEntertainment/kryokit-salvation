@@ -26,6 +26,9 @@ border_width_right = 3
 border_width_bottom = 3
 border_color = Color(0.8001508, 0.8001509, 0.8001508, 0)
 
+[sub_resource type="LabelSettings" id="LabelSettings_8mt0l"]
+font_size = 12
+
 [node name="HUD" type="Control" unique_id=99248591]
 layout_mode = 3
 anchors_preset = 15
@@ -220,3 +223,78 @@ offset_top = 39.0
 offset_right = 93.0
 offset_bottom = 71.0
 action = &"reset_truck"
+
+[node name="PanelContainer" type="Panel" parent="." unique_id=2035641918]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 4.0
+offset_top = -72.0
+offset_right = 306.0
+offset_bottom = -2.0
+grow_vertical = 0
+theme_type_variation = &"PanelTransparent"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer" unique_id=72650807]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 12.0
+offset_top = 21.0
+offset_right = -12.0
+offset_bottom = -21.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/HBoxContainer" unique_id=956254287]
+layout_mode = 2
+
+[node name="lb2" type="Label" parent="PanelContainer/HBoxContainer/HBoxContainer" unique_id=1767116696]
+layout_mode = 2
+text = "Cameras"
+
+[node name="grid_cam" type="GridContainer" parent="PanelContainer/HBoxContainer/HBoxContainer" unique_id=501623693]
+layout_mode = 2
+size_flags_vertical = 4
+columns = 3
+
+[node name="cam2" parent="PanelContainer/HBoxContainer/HBoxContainer/grid_cam" unique_id=649457389 instance=ExtResource("4_hbaeo")]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+action = &"cam_vehicle"
+
+[node name="cam3" parent="PanelContainer/HBoxContainer/HBoxContainer/grid_cam" unique_id=711110033 instance=ExtResource("4_hbaeo")]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+action = &"cam_fork"
+
+[node name="cam4" parent="PanelContainer/HBoxContainer/HBoxContainer/grid_cam" unique_id=338967100 instance=ExtResource("4_hbaeo")]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+action = &"cam_top"
+
+[node name="lb2" type="Label" parent="PanelContainer/HBoxContainer/HBoxContainer/grid_cam" unique_id=1425151225]
+layout_mode = 2
+text = "truck"
+label_settings = SubResource("LabelSettings_8mt0l")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="lb3" type="Label" parent="PanelContainer/HBoxContainer/HBoxContainer/grid_cam" unique_id=1396883120]
+layout_mode = 2
+text = "fork"
+label_settings = SubResource("LabelSettings_8mt0l")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="lb4" type="Label" parent="PanelContainer/HBoxContainer/HBoxContainer/grid_cam" unique_id=2051162867]
+layout_mode = 2
+text = "top"
+label_settings = SubResource("LabelSettings_8mt0l")
+horizontal_alignment = 1
+vertical_alignment = 1

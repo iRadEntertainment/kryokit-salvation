@@ -57,6 +57,12 @@ class_name Forklift extends Node3D
 @onready var audio_decel: AudioStreamPlayer3D = %AudioDecel
 @onready var audio_loop: AudioStreamPlayer3D = %AudioLoop
 
+#Camera
+@onready var fork_focus: RemoteTransform3D = %fork_focus
+@onready var cam_vehicle_target: Marker3D = %cam_vehicle_target
+@onready var cam_fork_target: Marker3D = %cam_fork_target
+@onready var cam_top_target: Marker3D = %cam_top_target
+
 
 var PI_half: float = PI/2.0
 var PI_quarter: float = PI/4.0
@@ -361,8 +367,6 @@ func _process_audio(_delta: float) -> void:
 			audio_accel.volume_db = 0.0# dirty hack to make sure volume is max
 			
 			audio_accel.play()
-	
-
 # 		Crossfade ( I cannot seem to get this crossfading working between accelerate - loop - decelerate, 
 # 		try cutting off the accelerate off at the end and decelerate so they hit dont fade out)
 	
@@ -427,6 +431,10 @@ func _process_thrust_wheel_visuals(delta: float) -> void:
 	
 	# update suspension position
 	rear_wheel_visual_pivot.position.y = wheel_thrust.position.y
+
+
+func _process_cam_focus_markers() -> void:
+	fork_focus.position.x = fork_shift
 
 
 func reset_truck() -> void:

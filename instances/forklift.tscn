@@ -21,6 +21,9 @@
 [ext_resource type="AudioStream" uid="uid://cdyoh6u5qcw02" path="res://assets/audio/forklift_deccelerate.wav" id="15_qkf0m"]
 [ext_resource type="AudioStream" uid="uid://5fuqpt3vnr2j" path="res://assets/audio/forklift_loop.wav" id="16_tprdc"]
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_8mt0l"]
+size = Vector3(1.1542969, 2.8114576, 1.941864)
+
 [sub_resource type="ViewportTexture" id="ViewportTexture_mdew2"]
 viewport_path = NodePath("vehicle_body/monitor/sv_screen")
 
@@ -31,9 +34,6 @@ albedo_texture = SubResource("ViewportTexture_mdew2")
 [sub_resource type="QuadMesh" id="QuadMesh_8mt0l"]
 size = Vector2(1.3, 0.46)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_8mt0l"]
-size = Vector3(1.1542969, 2.8114576, 1.941864)
-
 [sub_resource type="BoxShape3D" id="BoxShape3D_q5rnw"]
 size = Vector3(0.7092285, 2.856186, 0.27191162)
 
@@ -42,7 +42,7 @@ rough = true
 absorbent = true
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_lexek"]
-size = Vector3(1.0061035, 0.6747246, 0.18076599)
+size = Vector3(1.0061035, 1.2294722, 0.15603134)
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_v6tai"]
 friction = 0.95
@@ -55,42 +55,43 @@ size = Vector3(0.08, 0.04, 1.3)
 [sub_resource type="BoxShape3D" id="BoxShape3D_xoi5w"]
 size = Vector3(0.08, 0.04, 1.3)
 
+[sub_resource type="SeparationRayShape3D" id="SeparationRayShape3D_8mt0l"]
+
 [node name="forklift" type="Node3D" unique_id=983298835]
 script = ExtResource("1_ddviu")
 
 [node name="vehicle_body" type="VehicleBody3D" parent="." unique_id=1776535538]
 unique_name_in_owner = true
 collision_layer = 2
-collision_mask = 5
+collision_mask = 13
 mass = 1300.0
 center_of_mass_mode = 1
 center_of_mass = Vector3(0, 0.5, -0.5)
 engine_force = 800.0
 steering = 3.1415927
 
-[node name="Camera3D" type="Camera3D" parent="vehicle_body" unique_id=314452289 node_paths=PackedStringArray("target")]
-transform = Transform3D(-1, 5.440307e-08, -6.843283e-08, 0, 0.7827802, 0.6222984, 8.74228e-08, 0.6222984, -0.7827802, 0, 2.3947394, -1.5647922)
-script = ExtResource("6_v6tai")
-target = NodePath("../../carriage_body/cam_target")
+[node name="coll" type="CollisionShape3D" parent="vehicle_body" unique_id=491634650]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4049973, -0.2361908)
+shape = SubResource("BoxShape3D_8mt0l")
+debug_color = Color(0.67276233, 0.30755237, 1, 0.41960785)
 
-[node name="body" parent="vehicle_body" unique_id=661026329 instance=ExtResource("2_r8te8")]
+[node name="decals" type="Node3D" parent="vehicle_body" unique_id=1542758270]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.09, 0.72)
 
-[node name="Decals" type="Node3D" parent="vehicle_body/body" unique_id=1542758270]
-
-[node name="Decal" type="Decal" parent="vehicle_body/body/Decals" unique_id=1905160401]
+[node name="Decal" type="Decal" parent="vehicle_body/decals" unique_id=1905160401]
 transform = Transform3D(3.004036e-08, 1, -6.008072e-08, 3.0040358e-08, -8.742278e-08, -0.68724334, -0.68724334, 4.371139e-08, -3.004036e-08, 0.6613232, 1.33621, -0.4685136)
 size = Vector3(0.5, 0.07714844, 0.262)
 texture_albedo = ExtResource("3_syp4r")
 
-[node name="Decal2" type="Decal" parent="vehicle_body/body/Decals" unique_id=1565103718]
+[node name="Decal2" type="Decal" parent="vehicle_body/decals" unique_id=1565103718]
 transform = Transform3D(-0.6872434, 5.9604645e-08, -3.0040376e-08, 3.0040358e-08, -8.742276e-08, -0.68724334, -5.9604645e-08, -0.9999999, 6.0080716e-08, 0.35225144, 1.0229841, -1.9254901)
 size = Vector3(0.5, 0.12646484, 0.262)
 texture_albedo = ExtResource("3_syp4r")
 
-[node name="audio" type="Node3D" parent="vehicle_body/body" unique_id=1625408158]
+[node name="audio" type="Node3D" parent="vehicle_body" unique_id=1625408158]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.09, 0.72)
 
-[node name="AudioAccel" type="AudioStreamPlayer3D" parent="vehicle_body/body/audio" unique_id=1304472583]
+[node name="AudioAccel" type="AudioStreamPlayer3D" parent="vehicle_body/audio" unique_id=1304472583]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.09, -0.72)
 stream = ExtResource("14_4slcw")
@@ -99,9 +100,9 @@ max_db = -6.0
 pitch_scale = 1.2
 max_distance = 20.0
 max_polyphony = 2
-bus = &"forklift_engine"
+bus = &"Forklift"
 
-[node name="AudioDecel" type="AudioStreamPlayer3D" parent="vehicle_body/body/audio" unique_id=602683570]
+[node name="AudioDecel" type="AudioStreamPlayer3D" parent="vehicle_body/audio" unique_id=602683570]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.09, -0.72)
 stream = ExtResource("15_qkf0m")
@@ -110,35 +111,42 @@ max_db = -6.0
 pitch_scale = 0.95
 max_distance = 20.0
 max_polyphony = 2
-bus = &"forklift_engine"
+bus = &"Forklift"
 
-[node name="AudioLoop" type="AudioStreamPlayer3D" parent="vehicle_body/body/audio" unique_id=277032601]
+[node name="AudioLoop" type="AudioStreamPlayer3D" parent="vehicle_body/audio" unique_id=277032601]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.09, -0.72)
 stream = ExtResource("16_tprdc")
 unit_size = 1.0
 max_db = -6.0
 max_distance = 20.0
-bus = &"forklift_engine"
+bus = &"Forklift"
 
-[node name="AudioMast_Extend" type="AudioStreamPlayer3D" parent="vehicle_body/body/audio" unique_id=890796869]
+[node name="AudioMast_Extend" type="AudioStreamPlayer3D" parent="vehicle_body/audio" unique_id=890796869]
 unique_name_in_owner = true
 stream = ExtResource("8_rss6s")
+bus = &"Forklift"
 
-[node name="AudioMast_Loop" type="AudioStreamPlayer3D" parent="vehicle_body/body/audio" unique_id=1939129160]
+[node name="AudioMast_Loop" type="AudioStreamPlayer3D" parent="vehicle_body/audio" unique_id=1939129160]
 unique_name_in_owner = true
 stream = ExtResource("9_2p71s")
 max_db = -3.0
+bus = &"Forklift"
 
-[node name="AudioMast_Clunk" type="AudioStreamPlayer3D" parent="vehicle_body/body/audio" unique_id=717537861]
+[node name="AudioMast_Clunk" type="AudioStreamPlayer3D" parent="vehicle_body/audio" unique_id=717537861]
 unique_name_in_owner = true
 stream = ExtResource("8_tprdc")
 max_db = -3.0
+bus = &"Forklift"
 
-[node name="AudioFork_Loop" type="AudioStreamPlayer3D" parent="vehicle_body/body/audio" unique_id=1777231315]
+[node name="AudioFork_Loop" type="AudioStreamPlayer3D" parent="vehicle_body/audio" unique_id=1777231315]
 unique_name_in_owner = true
 stream = ExtResource("9_30ch1")
 max_db = -3.0
+bus = &"Forklift"
+
+[node name="body" parent="vehicle_body" unique_id=661026329 instance=ExtResource("2_r8te8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.09, 0.72)
 
 [node name="monitor" type="MeshInstance3D" parent="vehicle_body" unique_id=150643878]
 transform = Transform3D(-1, 0, -8.742278e-08, -6.181724e-08, 0.70710677, 0.70710677, 6.181724e-08, 0.70710677, -0.70710677, 0, 1.7686391, 0.26978076)
@@ -173,11 +181,6 @@ layout_mode = 2
 size_flags_vertical = 3
 placeholder_text = "test"
 
-[node name="coll" type="CollisionShape3D" parent="vehicle_body" unique_id=491634650]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4049973, -0.2361908)
-shape = SubResource("BoxShape3D_8mt0l")
-debug_color = Color(0.67276233, 0.30755237, 1, 0.41960785)
-
 [node name="wheel_thrust" type="VehicleWheel3D" parent="vehicle_body" unique_id=1335644928]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.22, -0.914)
@@ -193,13 +196,6 @@ suspension_stiffness = 800.0
 suspension_max_force = 35000.0
 damping_compression = 56.0
 damping_relaxation = 60.8
-
-[node name="IDW_SteeringPivot" type="Node3D" parent="vehicle_body" unique_id=1406832720]
-unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.325, 0.21837932, -0.914)
-
-[node name="thrust_wheel" parent="vehicle_body/IDW_SteeringPivot" unique_id=1800178509 instance=ExtResource("2_ryygl")]
-unique_name_in_owner = true
 
 [node name="wheel_front_r" type="VehicleWheel3D" parent="vehicle_body" unique_id=457649157]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.51, 0.26660353, 0.712)
@@ -229,6 +225,13 @@ damping_relaxation = 60.8
 [node name="load_wheel_L" parent="vehicle_body/wheel_front_l" unique_id=611269869 instance=ExtResource("4_ri2lj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4402243, -0.30851865, 0)
 
+[node name="IDW_SteeringPivot" type="Node3D" parent="vehicle_body" unique_id=1406832720]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.325, 0.21837932, -0.914)
+
+[node name="thrust_wheel" parent="vehicle_body/IDW_SteeringPivot" unique_id=1800178509 instance=ExtResource("2_ryygl")]
+unique_name_in_owner = true
+
 [node name="IDW_Rotating_Spotlight3D" type="SpotLight3D" parent="vehicle_body" unique_id=1382821880]
 process_mode = 3
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.27493212, 2.6320844, -0.6610342)
@@ -239,15 +242,26 @@ light_specular = 1.1
 spot_range = 50.0
 spot_attenuation = 1.25
 spot_angle = 50.0
+spot_angle_attenuation = 0.31864017
 script = ExtResource("5_xomti")
 blink_enabled = false
 rotation_speed = 720.0
+
+[node name="vehicle_focus" type="RemoteTransform3D" parent="vehicle_body" unique_id=1179792533]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.0741668, -0.2950071)
+remote_path = NodePath("../../cam_targets/pivot_vehicle")
+update_scale = false
+
+[node name="top_focus" type="RemoteTransform3D" parent="vehicle_body" unique_id=1067626417]
+transform = Transform3D(-1, 8.742278e-08, 3.821371e-15, 0, -4.371139e-08, 1, 8.742278e-08, 1, 4.371139e-08, 0, -0.05805105, 1.0190893)
+remote_path = NodePath("../../cam_targets/arm_top")
+update_scale = false
 
 [node name="mast_body" type="RigidBody3D" parent="." unique_id=958273445]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.14854652, 0.92283607)
 collision_layer = 2
-collision_mask = 5
+collision_mask = 13
 mass = 120.0
 can_sleep = false
 
@@ -264,7 +278,7 @@ debug_color = Color(0, 0.65, 0.021666646, 1)
 
 [node name="SpotLight3D" type="SpotLight3D" parent="mast_body" unique_id=1872910030]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0.42999998, 1.9056296, 0.048130274)
-light_energy = 5.0
+light_energy = 0.0
 spot_range = 11.907
 spot_angle = 70.0
 spot_angle_attenuation = 0.2871746
@@ -282,7 +296,7 @@ unique_name_in_owner = true
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.05805105, 0.8529252)
 collision_layer = 2
-collision_mask = 5
+collision_mask = 13
 mass = 45.0
 physics_material_override = SubResource("PhysicsMaterial_ryygl")
 can_sleep = false
@@ -292,18 +306,21 @@ continuous_cd = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.063405514)
 
 [node name="coll_carriage" type="CollisionShape3D" parent="carriage_body" unique_id=1206881159]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3981037, 0.26405263)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.65787935, 0.27197444)
 shape = SubResource("BoxShape3D_lexek")
 debug_color = Color(0.9974175, 0, 0.17626175, 0.41960785)
 
-[node name="cam_target" type="Marker3D" parent="carriage_body" unique_id=1275762858]
+[node name="fork_focus" type="RemoteTransform3D" parent="carriage_body" unique_id=2090588433]
+unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1303711, 1.1875921)
+remote_path = NodePath("../../cam_targets/pivot_fork")
+update_scale = false
 
 [node name="fork_l_body" type="RigidBody3D" parent="." unique_id=1849089295]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.15, -0.058, 0.854)
 collision_layer = 2
-collision_mask = 5
+collision_mask = 13
 mass = 30.0
 physics_material_override = SubResource("PhysicsMaterial_v6tai")
 center_of_mass_mode = 1
@@ -323,7 +340,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.34604788, 0.028, 0.06835937
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15, -0.058, 0.854)
 collision_layer = 2
-collision_mask = 5
+collision_mask = 13
 mass = 30.0
 physics_material_override = SubResource("PhysicsMaterial_v6tai")
 center_of_mass_mode = 1
@@ -370,3 +387,41 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2, 0, 1.026)
 node_a = NodePath("../carriage_body")
 node_b = NodePath("../fork_r_body")
 linear_motor_x/enabled = true
+
+[node name="cam_targets" type="Node3D" parent="." unique_id=270293293]
+
+[node name="GameCamera" type="Camera3D" parent="cam_targets" unique_id=314452289]
+transform = Transform3D(-1, 5.440307e-08, -6.843283e-08, 0, 0.7827802, 0.6222984, 8.74228e-08, 0.6222984, -0.7827802, 0, 2.3947394, -1.5647922)
+script = ExtResource("6_v6tai")
+
+[node name="pivot_vehicle" type="Node3D" parent="cam_targets" unique_id=547351504]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.0741668, -0.2950071)
+
+[node name="arm_vehicle" type="SpringArm3D" parent="cam_targets/pivot_vehicle" unique_id=1338628099]
+transform = Transform3D(-0.8228312, 0.28414297, -0.49215, 4.371139e-08, 0.8660254, 0.5, 0.5682859, 0.41141558, -0.7125927, 0, 0, 0)
+shape = SubResource("SeparationRayShape3D_8mt0l")
+spring_length = 3.0
+
+[node name="cam_vehicle_target" type="Marker3D" parent="cam_targets/pivot_vehicle/arm_vehicle" unique_id=1690621376]
+unique_name_in_owner = true
+
+[node name="pivot_fork" type="Node3D" parent="cam_targets" unique_id=720676420]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.072320044, 2.0405173)
+
+[node name="arm_fork" type="SpringArm3D" parent="cam_targets/pivot_fork" unique_id=1966658628]
+transform = Transform3D(1.1793229e-07, 0.5, -0.86602527, -3.2398027e-08, 0.8660252, 0.49999994, 0.9999999, -3.0908602e-08, 1.1833138e-07, 0, 0, 0)
+collision_mask = 7
+shape = SubResource("SeparationRayShape3D_8mt0l")
+spring_length = 3.235
+margin = 0.0
+
+[node name="cam_fork_target" type="Marker3D" parent="cam_targets/pivot_fork/arm_fork" unique_id=640971263]
+unique_name_in_owner = true
+
+[node name="arm_top" type="SpringArm3D" parent="cam_targets" unique_id=1958128940]
+transform = Transform3D(-1, 8.742278e-08, 3.821371e-15, 0, -4.371139e-08, 1, 8.742278e-08, 1, 4.371139e-08, 0, -0.05805105, 1.0190893)
+shape = SubResource("SeparationRayShape3D_8mt0l")
+spring_length = 6.0
+
+[node name="cam_top_target" type="Marker3D" parent="cam_targets/arm_top" unique_id=1684347452]
+unique_name_in_owner = true

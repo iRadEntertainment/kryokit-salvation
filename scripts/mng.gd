@@ -6,6 +6,7 @@ extends Node
 var game: Game
 var gui: GUI
 var hud: HUD
+var cam: GameCamera
 var forklift: Forklift
 
 const SETTINGS_PATH: String = "user://settings.txt"
