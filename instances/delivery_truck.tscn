@@ -1,0 +1,70 @@
+[gd_scene format=3 uid="uid://cwk75mpklpojo"]
+
+[ext_resource type="PackedScene" uid="uid://df3ua08tjlrtt" path="res://assets/glbs/warehouse_col/regular/delivery_truck.glb" id="1_l1sa8"]
+[ext_resource type="Script" uid="uid://bjanjit7rbf2y" path="res://scripts/forklift_rotating_spot_light_.gd" id="2_8oija"]
+
+[node name="delivery_truck" unique_id=117611447 instance=ExtResource("1_l1sa8")]
+
+[node name="SpotLight3D" type="SpotLight3D" parent="." index="4" unique_id=886564627]
+transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, 1.3351867, 0.32721046, -0.8206128)
+light_color = Color(1, 0, 0, 1)
+light_energy = 5.0
+light_size = 0.1
+light_specular = 3.0
+spot_range = 0.172
+spot_attenuation = 2.0
+spot_angle = 20.0
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="." index="5" unique_id=11255153]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 1.3351867, 0.32721046, -0.9460329)
+light_color = Color(1, 0.5833334, 0, 1)
+light_energy = 5.0
+light_size = 0.1
+light_specular = 3.0
+spot_range = 0.172
+spot_attenuation = 2.0
+spot_angle = 20.0
+script = ExtResource("2_8oija")
+rotation_enabled = false
+
+[node name="SpotLight3D3" type="SpotLight3D" parent="." index="6" unique_id=676874086]
+transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, 1.3351867, 0.32721046, -0.6986361)
+light_color = Color(1, 0, 0, 1)
+light_energy = 5.0
+light_size = 0.1
+light_specular = 3.0
+spot_range = 0.172
+spot_attenuation = 2.0
+spot_angle = 20.0
+
+[node name="SpotLight3D4" type="SpotLight3D" parent="." index="7" unique_id=1248211720]
+transform = Transform3D(1.3113416e-07, 0, -1, 8.742278e-08, -1, 1.1464112e-14, -1, -8.742278e-08, -1.3113416e-07, 1.3351867, 0.32721046, 0.81752074)
+light_color = Color(1, 0, 0, 1)
+light_energy = 5.0
+light_size = 0.1
+light_specular = 3.0
+spot_range = 0.172
+spot_attenuation = 2.0
+spot_angle = 20.0
+
+[node name="SpotLight3D5" type="SpotLight3D" parent="." index="8" unique_id=532511166]
+transform = Transform3D(4.371139e-08, -3.821371e-15, -1, -8.742278e-08, -1, 0, -1, 8.742278e-08, -4.371139e-08, 1.3351867, 0.32721046, 0.939868)
+light_color = Color(1, 0.5833334, 0, 1)
+light_energy = 5.0
+light_size = 0.1
+light_specular = 3.0
+spot_range = 0.172
+spot_attenuation = 2.0
+spot_angle = 20.0
+script = ExtResource("2_8oija")
+rotation_enabled = false
+
+[node name="SpotLight3D6" type="SpotLight3D" parent="." index="9" unique_id=1015278476]
+transform = Transform3D(1.3113416e-07, 0, -1, 8.742278e-08, -1, 1.1464112e-14, -1, -8.742278e-08, -1.3113416e-07, 1.3351867, 0.32721046, 0.6985008)
+light_color = Color(1, 0, 0, 1)
+light_energy = 5.0
+light_size = 0.1
+light_specular = 3.0
+spot_range = 0.172
+spot_attenuation = 2.0
+spot_angle = 20.0

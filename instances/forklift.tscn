@@ -20,7 +20,7 @@
 [ext_resource type="AudioStream" uid="uid://5fuqpt3vnr2j" path="res://assets/audio/forklift_loop.wav" id="16_tprdc"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_8mt0l"]
-size = Vector3(1.1542969, 2.8114576, 1.941864)
+size = Vector3(1.1542969, 2.7997882, 1.941864)
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_mdew2"]
 viewport_path = NodePath("vehicle_body/monitor/sv_screen")
@@ -70,7 +70,7 @@ engine_force = 800.0
 steering = 3.1415927
 
 [node name="coll" type="CollisionShape3D" parent="vehicle_body" unique_id=491634650]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4049973, -0.2361908)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.410832, -0.2361908)
 shape = SubResource("BoxShape3D_8mt0l")
 debug_color = Color(0.67276233, 0.30755237, 1, 0.41960785)
 
@@ -202,14 +202,14 @@ damping_relaxation = 60.8
 [node name="load_wheel_L" parent="vehicle_body/wheel_front_l" unique_id=611269869 instance=ExtResource("4_ri2lj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4402243, -0.30851865, 0)
 
-[node name="IDW_SteeringPivot" type="Node3D" parent="vehicle_body" unique_id=1406832720]
+[node name="SteeringPivot" type="Node3D" parent="vehicle_body" unique_id=1406832720]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.325, 0.21837932, -0.914)
 
-[node name="thrust_wheel" parent="vehicle_body/IDW_SteeringPivot" unique_id=1800178509 instance=ExtResource("2_ryygl")]
+[node name="thrust_wheel" parent="vehicle_body/SteeringPivot" unique_id=1800178509 instance=ExtResource("2_ryygl")]
 unique_name_in_owner = true
 
-[node name="IDW_Rotating_Spotlight3D" type="SpotLight3D" parent="vehicle_body" unique_id=1382821880]
+[node name="Rotating_Spotlight3D" type="SpotLight3D" parent="vehicle_body" unique_id=1382821880]
 process_mode = 3
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.27493212, 2.6320844, -0.6610342)
 light_color = Color(1, 0.51950234, 0.23511073, 1)

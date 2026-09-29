@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://bdp58nsqupkid" path="res://assets/glbs/warehouse/refrigerated/refrigerated_floor.glb" id="2_8wn02"]
 [ext_resource type="PackedScene" uid="uid://ctw07nk0o84ue" path="res://assets/glbs/warehouse/refrigerated/refrigerated_roof_frame.glb" id="4_o457u"]
-[ext_resource type="PackedScene" uid="uid://1wtsvwns84xg" path="res://assets/glbs/warehouse/regular/Floor.glb" id="10_hbd72"]
+[ext_resource type="PackedScene" uid="uid://1wtsvwns84xg" path="res://assets/glbs/warehouse/regular/floor.glb" id="10_hbd72"]
 [ext_resource type="PackedScene" uid="uid://c1t1pq0n2rpv5" path="res://assets/glbs/warehouse/regular/roof_corrugated.glb" id="13_d47p5"]
 [ext_resource type="PackedScene" uid="uid://dpnefjtqisswu" path="res://assets/glbs/warehouse/regular/roof_frame.glb" id="14_na6m5"]
 

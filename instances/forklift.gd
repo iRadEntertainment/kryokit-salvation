@@ -36,7 +36,7 @@ class_name Forklift extends Node3D
 @onready var fork_l_body: RigidBody3D = %fork_l_body
 @onready var fork_r_body: RigidBody3D = %fork_r_body
 
-@onready var rear_wheel_visual_pivot: Node3D = %IDW_SteeringPivot
+@onready var rear_wheel_visual_pivot: Node3D = %SteeringPivot
 @onready var thrust_wheel: Node3D = %thrust_wheel
 @onready var wheel_thrust: VehicleWheel3D = %wheel_thrust
 

@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://cclyjvl520ae6"
-path="res://.godot/imported/Refrigerated_Gardrail_Straight.glb-9f232566b6db486e88774330381c0284.scn"
+path="res://.godot/imported/refrigerated_gardrail_straight.glb-713265d4ef8c4ec9516f55d2e916b5c5.scn"
 
 [deps]
 
-source_file="res://assets/glbs/warehouse_col/refrigerated/Refrigerated_Gardrail_Straight.glb"
-dest_files=["res://.godot/imported/Refrigerated_Gardrail_Straight.glb-9f232566b6db486e88774330381c0284.scn"]
+source_file="res://assets/glbs/warehouse_col/refrigerated/refrigerated_gardrail_straight.glb"
+dest_files=["res://.godot/imported/refrigerated_gardrail_straight.glb-713265d4ef8c4ec9516f55d2e916b5c5.scn"]
 
 [params]
 

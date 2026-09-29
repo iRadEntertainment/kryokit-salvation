@@ -169,7 +169,39 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.6000004, -1.3411045e-07, -1
 mesh = SubResource("QuadMesh_00ci2")
 
 [node name="MeshInstance3D15" type="MeshInstance3D" parent="." unique_id=1996879012]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1999997, -1.3411045e-07, -9)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1999997, -0.7000001, -9)
+mesh = SubResource("QuadMesh_00ci2")
+
+[node name="MeshInstance3D16" type="MeshInstance3D" parent="." unique_id=972573531]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.8, -1.3411045e-07, 16.5)
+mesh = SubResource("QuadMesh_00ci2")
+
+[node name="MeshInstance3D17" type="MeshInstance3D" parent="." unique_id=1450475436]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.6, 0.39999986, -2.1)
+mesh = SubResource("QuadMesh_00ci2")
+
+[node name="MeshInstance3D18" type="MeshInstance3D" parent="." unique_id=1130056308]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.8, -1.3411045e-07, -2.3999999)
+mesh = SubResource("QuadMesh_00ci2")
+
+[node name="MeshInstance3D19" type="MeshInstance3D" parent="." unique_id=1882020336]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.9, -1.3411045e-07, -2.6)
+mesh = SubResource("QuadMesh_00ci2")
+
+[node name="MeshInstance3D20" type="MeshInstance3D" parent="." unique_id=1880549065]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.2, 0.5999999, -10)
+mesh = SubResource("QuadMesh_00ci2")
+
+[node name="MeshInstance3D21" type="MeshInstance3D" parent="." unique_id=704750638]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.0999994, -1.3411045e-07, -13.9)
+mesh = SubResource("QuadMesh_00ci2")
+
+[node name="MeshInstance3D22" type="MeshInstance3D" parent="." unique_id=2111268966]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.8, 0.69999987, -13.5)
+mesh = SubResource("QuadMesh_00ci2")
+
+[node name="MeshInstance3D23" type="MeshInstance3D" parent="." unique_id=100327662]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33.3, -0.5000001, -5.3)
 mesh = SubResource("QuadMesh_00ci2")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=700850159]

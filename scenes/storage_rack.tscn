@@ -1,0 +1,108 @@
+[gd_scene format=3 uid="uid://b2a5hpbqgaq10"]
+
+[node name="Storage_Rack" type="Node3D" unique_id=1891672586]
+
+[node name="rack_mesh" type="Node3D" parent="." unique_id=1916355080]
+metadata/_edit_lock_ = true
+
+[node name="loc_1" type="Marker3D" parent="." unique_id=1567188733]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.90000004, 0.1, 0.5)
+
+[node name="loc_2" type="Marker3D" parent="." unique_id=2093233763]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3000002, 0.1, 0.5)
+
+[node name="loc_3" type="Marker3D" parent="." unique_id=339933132]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.90000004, 1.1, 0.5)
+
+[node name="loc_4" type="Marker3D" parent="." unique_id=732852074]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3000002, 1.1, 0.5)
+
+[node name="loc_5" type="Marker3D" parent="." unique_id=1326059130]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.90000004, 2.1, 0.5)
+
+[node name="loc_6" type="Marker3D" parent="." unique_id=138063246]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3000002, 2.1, 0.5)
+
+[node name="loc_7" type="Marker3D" parent="." unique_id=1433583814]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.90000004, 3.6999998, 0.5)
+
+[node name="loc_8" type="Marker3D" parent="." unique_id=538139653]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3000002, 3.6999998, 0.5)
+
+[node name="loc_9" type="Marker3D" parent="." unique_id=1364233480]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.90000004, 5.2999997, 0.5)
+
+[node name="loc_10" type="Marker3D" parent="." unique_id=1221862004]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3000002, 5.2999997, 0.5)
+
+[node name="loc_11" type="Marker3D" parent="." unique_id=688351048]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.1, 0.1, 0.5)
+
+[node name="loc_12" type="Marker3D" parent="." unique_id=590805408]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.5, 0.1, 0.5)
+
+[node name="loc_17" type="Marker3D" parent="." unique_id=2135529987]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.1, 1.7, 0.5)
+
+[node name="loc_18" type="Marker3D" parent="." unique_id=676808697]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.5, 1.7, 0.5)
+
+[node name="loc_19" type="Marker3D" parent="." unique_id=252843114]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.1, 3.2999997, 0.5)
+
+[node name="loc_20" type="Marker3D" parent="." unique_id=31951568]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.5, 3.2999997, 0.5)
+
+[node name="loc_21" type="Marker3D" parent="." unique_id=204642380]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.1, 4.8999996, 0.5)
+
+[node name="loc_22" type="Marker3D" parent="." unique_id=1515503750]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.5, 4.8999996, 0.5)
+
+[node name="loc_13" type="Marker3D" parent="." unique_id=2013278800]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.2999997, 0.1, 0.5)
+
+[node name="loc_14" type="Marker3D" parent="." unique_id=1018576796]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.7, 0.1, 0.5)
+
+[node name="loc_23" type="Marker3D" parent="." unique_id=1729974555]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.2999997, 1.7, 0.5)
+
+[node name="loc_24" type="Marker3D" parent="." unique_id=2038309508]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.7, 1.7, 0.5)
+
+[node name="loc_25" type="Marker3D" parent="." unique_id=1977250116]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.2999997, 3.2999997, 0.5)
+
+[node name="loc_26" type="Marker3D" parent="." unique_id=937714211]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.7, 3.2999997, 0.5)
+
+[node name="loc_27" type="Marker3D" parent="." unique_id=2067972674]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.2999997, 4.8999996, 0.5)
+
+[node name="loc_28" type="Marker3D" parent="." unique_id=1743721159]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.7, 4.8999996, 0.5)
+
+[node name="loc_15" type="Marker3D" parent="." unique_id=1773488516]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.499999, 0.1, 0.5)
+
+[node name="loc_16" type="Marker3D" parent="." unique_id=1516516631]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.9, 0.1, 0.5)
+
+[node name="loc_29" type="Marker3D" parent="." unique_id=301924513]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.499999, 1.7, 0.5)
+
+[node name="loc_30" type="Marker3D" parent="." unique_id=1228899105]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.9, 1.7, 0.5)
+
+[node name="loc_31" type="Marker3D" parent="." unique_id=550425588]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.499999, 3.2999997, 0.5)
+
+[node name="loc_32" type="Marker3D" parent="." unique_id=123774256]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.9, 3.2999997, 0.5)
+
+[node name="loc_33" type="Marker3D" parent="." unique_id=245252491]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.499999, 4.8999996, 0.5)
+
+[node name="loc_34" type="Marker3D" parent="." unique_id=2108764244]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.9, 4.8999996, 0.5)

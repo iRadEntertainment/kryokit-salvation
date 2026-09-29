@@ -2,8 +2,8 @@
 
 [ext_resource type="PackedScene" uid="uid://dlyayug82m5ux" path="res://assets/glbs/warehouse/refrigerated/refrigerated_doorframe.glb" id="1_p0suc"]
 [ext_resource type="PackedScene" uid="uid://dvyrqc3phevvx" path="res://assets/glbs/warehouse/refrigerated/refrigerated_wall.glb" id="5_lrm27"]
-[ext_resource type="PackedScene" uid="uid://flht3yypd4kx" path="res://assets/glbs/warehouse/regular/Delivery_Doorframe.glb" id="8_5mer1"]
-[ext_resource type="PackedScene" uid="uid://8proytrq7iyg" path="res://assets/glbs/warehouse/regular/Delivery_Truck.glb" id="9_wghfu"]
+[ext_resource type="PackedScene" uid="uid://flht3yypd4kx" path="res://assets/glbs/warehouse/regular/delivery_doorframe_shut.glb" id="8_5mer1"]
+[ext_resource type="PackedScene" uid="uid://8proytrq7iyg" path="res://assets/glbs/warehouse/regular/delivery_truck.glb" id="9_wghfu"]
 [ext_resource type="PackedScene" uid="uid://b0nmnc3nqyunu" path="res://assets/glbs/warehouse/regular/wall.glb" id="16_4wedj"]
 [ext_resource type="PackedScene" uid="uid://cifsdrd1e3a78" path="res://assets/glbs/warehouse/regular/wall_corner.glb" id="17_qllfc"]
 [ext_resource type="PackedScene" uid="uid://c6q12wokabwvg" path="res://assets/glbs/warehouse/regular/wall_window.glb" id="18_4vw8o"]

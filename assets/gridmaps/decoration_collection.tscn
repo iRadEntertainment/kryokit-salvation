@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://bgpxrgfo487jo" path="res://assets/glbs/warehouse/refrigerated/refrigeration_unit.glb" id="4_owsmf"]
 [ext_resource type="PackedScene" uid="uid://cdxeyc5rxhnir" path="res://assets/glbs/warehouse/refrigerated/refrigeration_unit_fan.glb" id="5_o3avv"]
 [ext_resource type="PackedScene" uid="uid://xxt0kld8oboc" path="res://assets/glbs/warehouse/regular/gardrail_Straight.glb" id="7_585pl"]
-[ext_resource type="PackedScene" uid="uid://bax65j2ewudkt" path="res://assets/glbs/warehouse/regular/Pillar.glb" id="8_ap7ms"]
+[ext_resource type="PackedScene" uid="uid://bax65j2ewudkt" path="res://assets/glbs/warehouse/regular/pillar.glb" id="8_ap7ms"]
 [ext_resource type="PackedScene" uid="uid://cofxnpkuw0cl4" path="res://assets/glbs/warehouse/regular/truss_straight.glb" id="11_fq65r"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_8mt0l"]
