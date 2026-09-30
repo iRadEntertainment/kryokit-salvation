@@ -3,34 +3,28 @@
 [ext_resource type="Script" uid="uid://dnidtpkq32g0c" path="res://scenes/game.gd" id="1_1dy31"]
 [ext_resource type="PackedScene" uid="uid://1wtsvwns84xg" path="res://assets/glbs/warehouse/regular/floor.glb" id="1_rk4d1"]
 [ext_resource type="Environment" uid="uid://dihu5qtbnrl4j" path="res://scenes/game_data/game_environment.tres" id="2_4tw74"]
-[ext_resource type="PackedScene" uid="uid://by06oqxgau44" path="res://assets/glbs/warehouse_col/regular/wall_corner.glb" id="2_f2u2m"]
-[ext_resource type="PackedScene" uid="uid://b0nmnc3nqyunu" path="res://assets/glbs/warehouse/regular/wall.glb" id="3_kix2c"]
 [ext_resource type="CameraAttributesPractical" uid="uid://cc3qlsk81mio5" path="res://scenes/game_data/game_cam_attributes.tres" id="3_lld3s"]
 [ext_resource type="Script" uid="uid://ci1ft14p88ko6" path="res://scenes/warehouse_meshes.gd" id="4_4tw74"]
 [ext_resource type="PackedScene" uid="uid://bax65j2ewudkt" path="res://assets/glbs/warehouse/regular/pillar.glb" id="4_f2u2m"]
-[ext_resource type="PackedScene" uid="uid://dlyayug82m5ux" path="res://assets/glbs/warehouse/refrigerated/refrigerated_doorframe.glb" id="5_bm5co"]
 [ext_resource type="PackedScene" uid="uid://oprq6s2kaqur" path="res://assets/glbs/warehouse_col/regular/doorframe_delivery_shut.glb" id="5_f1fhc"]
 [ext_resource type="PackedScene" uid="uid://6xneyfter7sq" path="res://instances/warehouse_obj/wall.tscn" id="5_rsqgy"]
 [ext_resource type="PackedScene" uid="uid://dc2jrkj4ts5g7" path="res://instances/warehouse_obj/wall_corner.tscn" id="6_dhrhg"]
-[ext_resource type="PackedScene" uid="uid://bh3tfwdfatidp" path="res://assets/glbs/warehouse_col/refrigerated/refrigerated_wall.glb" id="6_mgx2w"]
-[ext_resource type="PackedScene" uid="uid://dquohji5au0wa" path="res://assets/glbs/sign_goods_in_out.glb" id="7_kix2c"]
+[ext_resource type="PackedScene" uid="uid://w4t8sdxifpw8" path="res://assets/glbs/sign_goods_in_out.glb" id="7_kix2c"]
 [ext_resource type="PackedScene" uid="uid://bgnh72s4vcjhl" path="res://instances/warehouse_obj/refrigerated_wall.tscn" id="7_nlav1"]
-[ext_resource type="Texture2D" uid="uid://7ywdo8e4fjdo" path="res://assets/decals/Bay3.png" id="7_u1pcc"]
-[ext_resource type="Texture2D" uid="uid://deck4mlnqgrs5" path="res://assets/decals/Bay1.png" id="8_77npy"]
+[ext_resource type="Texture2D" uid="uid://76hm2jm6n4kc" path="res://assets/decals/Bay3.png" id="7_u1pcc"]
+[ext_resource type="Texture2D" uid="uid://cp66tw16wv5tn" path="res://assets/decals/Bay1.png" id="8_77npy"]
 [ext_resource type="PackedScene" uid="uid://btg4s1xxnwbmt" path="res://instances/warehouse_obj/refrigerated_doorframe.tscn" id="8_dhrhg"]
-[ext_resource type="Texture2D" uid="uid://cntxini05fh5f" path="res://assets/decals/goods in.png" id="8_f1fhc"]
+[ext_resource type="Texture2D" uid="uid://bh4ix8kuw5bwl" path="res://assets/decals/goods in.png" id="8_f1fhc"]
 [ext_resource type="Texture2D" uid="uid://c4748qmv2jbaw" path="res://assets/decals/Bay5.png" id="9_8q4a4"]
-[ext_resource type="Texture2D" uid="uid://6d3e7vlf5j0o" path="res://assets/decals/goods out.png" id="9_p5hu1"]
+[ext_resource type="Texture2D" uid="uid://cke3fmrxfy48h" path="res://assets/decals/goods out.png" id="9_p5hu1"]
 [ext_resource type="Texture2D" uid="uid://cjaftw4oetjn6" path="res://assets/decals/Bay8.png" id="10_g1tdh"]
 [ext_resource type="PackedScene" uid="uid://b8q30gvx50smh" path="res://assets/glbs/warehouse/refrigerated/refrigerated_gardrail_Straight.glb" id="14_77npy"]
 [ext_resource type="PackedScene" uid="uid://bdp58nsqupkid" path="res://assets/glbs/warehouse/refrigerated/refrigerated_floor.glb" id="15_8q4a4"]
-[ext_resource type="PackedScene" uid="uid://cifsdrd1e3a78" path="res://assets/glbs/warehouse/regular/wall_corner.glb" id="18_oh65h"]
 [ext_resource type="PackedScene" uid="uid://cofxnpkuw0cl4" path="res://assets/glbs/warehouse/regular/truss_straight.glb" id="19_mgx2w"]
 [ext_resource type="PackedScene" uid="uid://c1t1pq0n2rpv5" path="res://assets/glbs/warehouse/regular/roof_corrugated.glb" id="20_8f41u"]
 [ext_resource type="PackedScene" uid="uid://dpnefjtqisswu" path="res://assets/glbs/warehouse/regular/roof_frame.glb" id="20_oh65h"]
 [ext_resource type="PackedScene" uid="uid://cwk75mpklpojo" path="res://instances/warehouse_obj/delivery_truck.tscn" id="22_cxvwm"]
 [ext_resource type="PackedScene" uid="uid://blseo38kk11bo" path="res://instances/forklift.tscn" id="23_cxvwm"]
-[ext_resource type="Script" uid="uid://bg4oq7xomkatk" path="res://scenes/lighting_tool.gd" id="24_rhy15"]
 [ext_resource type="PackedScene" uid="uid://biro1v6rgmrre" path="res://instances/GUI/gui.tscn" id="24_v0vn1"]
 [ext_resource type="PackedScene" uid="uid://v1421xnqe3qm" path="res://instances/warehouse_obj/light_flourescent_tube.tscn" id="25_rsqgy"]
 [ext_resource type="PackedScene" uid="uid://b2a5hpbqgaq10" path="res://instances/storage_rack_A.tscn" id="26_mn7f6"]
@@ -698,429 +692,429 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40, 0, 12)
 [node name="walls" type="Node3D" parent="warehouse_meshes" unique_id=1336185168]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 16, 14)
 
-[node name="wall" parent="warehouse_meshes/walls" unique_id=1279407899 instance=ExtResource("3_kix2c")]
+[node name="wall" parent="warehouse_meshes/walls" unique_id=535274196 instance=ExtResource("5_rsqgy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 0, 32)
 
-[node name="wall25" parent="warehouse_meshes/walls" unique_id=929055776 instance=ExtResource("3_kix2c")]
+[node name="wall3" parent="warehouse_meshes/walls" unique_id=1713905236 instance=ExtResource("5_rsqgy")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 4, 36)
 
-[node name="wall35" parent="warehouse_meshes/walls" unique_id=78658774 instance=ExtResource("3_kix2c")]
+[node name="wall13" parent="warehouse_meshes/walls" unique_id=134380561 instance=ExtResource("5_rsqgy")]
 transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, 4, 4, 40)
 
-[node name="wall42" parent="warehouse_meshes/walls" unique_id=815398642 instance=ExtResource("3_kix2c")]
+[node name="wall22" parent="warehouse_meshes/walls" unique_id=1039284804 instance=ExtResource("5_rsqgy")]
 transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, 4, 0, 40)
 
-[node name="wall45" parent="warehouse_meshes/walls" unique_id=177411057 instance=ExtResource("3_kix2c")]
+[node name="wall23" parent="warehouse_meshes/walls" unique_id=1624579878 instance=ExtResource("5_rsqgy")]
 transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, 8, 4, 40)
 
-[node name="wall46" parent="warehouse_meshes/walls" unique_id=1986548656 instance=ExtResource("3_kix2c")]
+[node name="wall24" parent="warehouse_meshes/walls" unique_id=1956833599 instance=ExtResource("5_rsqgy")]
 transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, 8, 0, 40)
 
-[node name="wall47" parent="warehouse_meshes/walls" unique_id=1163412258 instance=ExtResource("3_kix2c")]
+[node name="wall25" parent="warehouse_meshes/walls" unique_id=1794250 instance=ExtResource("5_rsqgy")]
 transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, 12, 4, 40)
 
-[node name="wall48" parent="warehouse_meshes/walls" unique_id=606271192 instance=ExtResource("3_kix2c")]
+[node name="wall35" parent="warehouse_meshes/walls" unique_id=494140115 instance=ExtResource("5_rsqgy")]
 transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, 12, 0, 40)
 
-[node name="wall49" parent="warehouse_meshes/walls" unique_id=1427162632 instance=ExtResource("3_kix2c")]
+[node name="wall42" parent="warehouse_meshes/walls" unique_id=1966632429 instance=ExtResource("5_rsqgy")]
 transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, 16, 4, 40)
 
-[node name="wall50" parent="warehouse_meshes/walls" unique_id=1390153108 instance=ExtResource("3_kix2c")]
+[node name="wall45" parent="warehouse_meshes/walls" unique_id=1732961382 instance=ExtResource("5_rsqgy")]
 transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, 16, 0, 40)
 
-[node name="wall51" parent="warehouse_meshes/walls" unique_id=1208067689 instance=ExtResource("3_kix2c")]
+[node name="wall46" parent="warehouse_meshes/walls" unique_id=1565429384 instance=ExtResource("5_rsqgy")]
 transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, 20, 4, 40)
 
-[node name="wall52" parent="warehouse_meshes/walls" unique_id=239703831 instance=ExtResource("3_kix2c")]
+[node name="wall47" parent="warehouse_meshes/walls" unique_id=887562759 instance=ExtResource("5_rsqgy")]
 transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, 20, 0, 40)
 
-[node name="wall53" parent="warehouse_meshes/walls" unique_id=1372279358 instance=ExtResource("3_kix2c")]
+[node name="wall48" parent="warehouse_meshes/walls" unique_id=829764052 instance=ExtResource("5_rsqgy")]
 transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, 28, 4, 40)
 
-[node name="wall54" parent="warehouse_meshes/walls" unique_id=1756274226 instance=ExtResource("3_kix2c")]
+[node name="wall49" parent="warehouse_meshes/walls" unique_id=921326921 instance=ExtResource("5_rsqgy")]
 transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, 28, 0, 40)
 
-[node name="wall114" parent="warehouse_meshes/walls" unique_id=426935377 instance=ExtResource("3_kix2c")]
+[node name="wall50" parent="warehouse_meshes/walls" unique_id=791564527 instance=ExtResource("5_rsqgy")]
 transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, 32, 4, 40)
 
-[node name="wall115" parent="warehouse_meshes/walls" unique_id=1984648238 instance=ExtResource("3_kix2c")]
+[node name="wall51" parent="warehouse_meshes/walls" unique_id=39612879 instance=ExtResource("5_rsqgy")]
 transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, 32, 0, 40)
 
-[node name="wall120" parent="warehouse_meshes/walls" unique_id=400346796 instance=ExtResource("3_kix2c")]
+[node name="wall52" parent="warehouse_meshes/walls" unique_id=916330093 instance=ExtResource("5_rsqgy")]
 transform = Transform3D(1, 0, 1.7484555e-07, 0, 1, 0, -1.7484555e-07, 0, 1, 36, 4, 36)
 
-[node name="wall121" parent="warehouse_meshes/walls" unique_id=1565942877 instance=ExtResource("3_kix2c")]
+[node name="wall53" parent="warehouse_meshes/walls" unique_id=1822577860 instance=ExtResource("5_rsqgy")]
 transform = Transform3D(1, 0, 1.7484555e-07, 0, 1, 0, -1.7484555e-07, 0, 1, 36, 0, 36)
 
-[node name="wall122" parent="warehouse_meshes/walls" unique_id=1544822617 instance=ExtResource("3_kix2c")]
+[node name="wall54" parent="warehouse_meshes/walls" unique_id=807789132 instance=ExtResource("5_rsqgy")]
 transform = Transform3D(1, 0, 1.7484555e-07, 0, 1, 0, -1.7484555e-07, 0, 1, 36, 4, 32)
 
-[node name="wall123" parent="warehouse_meshes/walls" unique_id=1190683757 instance=ExtResource("3_kix2c")]
+[node name="wall114" parent="warehouse_meshes/walls" unique_id=471547788 instance=ExtResource("5_rsqgy")]
 transform = Transform3D(1, 0, 1.7484555e-07, 0, 1, 0, -1.7484555e-07, 0, 1, 36, 0, 32)
 
-[node name="wall55" parent="warehouse_meshes/walls" unique_id=715166026 instance=ExtResource("3_kix2c")]
+[node name="wall55" parent="warehouse_meshes/walls" unique_id=1044983023 instance=ExtResource("5_rsqgy")]
 transform = Transform3D(-2.1855693e-07, 0, 1, 0, 1, 0, -1, 0, -2.1855693e-07, 24, 4, 40.100002)
 
-[node name="wall56" parent="warehouse_meshes/walls" unique_id=559139036 instance=ExtResource("3_kix2c")]
+[node name="wall56" parent="warehouse_meshes/walls" unique_id=1362672158 instance=ExtResource("5_rsqgy")]
 transform = Transform3D(-2.1855693e-07, 0, 1, 0, 1, 0, -1, 0, -2.1855693e-07, 24, 0, 40.100002)
 
-[node name="wall57" parent="warehouse_meshes/walls" unique_id=1845214598 instance=ExtResource("3_kix2c")]
+[node name="wall57" parent="warehouse_meshes/walls" unique_id=1190829769 instance=ExtResource("5_rsqgy")]
 transform = Transform3D(-1, 0, -8.742277e-08, 0, 1, 0, 8.742277e-08, 0, -1, 28, 4, 40)
 
-[node name="wall58" parent="warehouse_meshes/walls" unique_id=533953276 instance=ExtResource("3_kix2c")]
+[node name="wall58" parent="warehouse_meshes/walls" unique_id=476960199 instance=ExtResource("5_rsqgy")]
 transform = Transform3D(-1, 0, -8.742277e-08, 0, 1, 0, 8.742277e-08, 0, -1, 28, 0, 40)
 
-[node name="wall59" parent="warehouse_meshes/walls" unique_id=1755046895 instance=ExtResource("3_kix2c")]
+[node name="wall59" parent="warehouse_meshes/walls" unique_id=1047534576 instance=ExtResource("5_rsqgy")]
 transform = Transform3D(1, 0, 1.7484555e-07, 0, 1, 0, -1.7484555e-07, 0, 1, 20, 4, 40)
 
-[node name="wall60" parent="warehouse_meshes/walls" unique_id=84414823 instance=ExtResource("3_kix2c")]
+[node name="wall60" parent="warehouse_meshes/walls" unique_id=726066898 instance=ExtResource("5_rsqgy")]
 transform = Transform3D(1, 0, 1.7484555e-07, 0, 1, 0, -1.7484555e-07, 0, 1, 20, 0, 40)
 
-[node name="wall14" parent="warehouse_meshes/walls" unique_id=1587124260 instance=ExtResource("3_kix2c")]
+[node name="wall14" parent="warehouse_meshes/walls" unique_id=140387457 instance=ExtResource("5_rsqgy")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 4, 32)
 
-[node name="wall15" parent="warehouse_meshes/walls" unique_id=2126479240 instance=ExtResource("3_kix2c")]
+[node name="wall15" parent="warehouse_meshes/walls" unique_id=1614466561 instance=ExtResource("5_rsqgy")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 4, 28)
 
-[node name="wall16" parent="warehouse_meshes/walls" unique_id=1479768850 instance=ExtResource("3_kix2c")]
+[node name="wall16" parent="warehouse_meshes/walls" unique_id=1831649668 instance=ExtResource("5_rsqgy")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 4, 24)
 
-[node name="wall17" parent="warehouse_meshes/walls" unique_id=799521022 instance=ExtResource("3_kix2c")]
+[node name="wall17" parent="warehouse_meshes/walls" unique_id=1092166683 instance=ExtResource("5_rsqgy")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 4, 20)
 
-[node name="wall26" parent="warehouse_meshes/walls" unique_id=1367441526 instance=ExtResource("3_kix2c")]
+[node name="wall26" parent="warehouse_meshes/walls" unique_id=1297490019 instance=ExtResource("5_rsqgy")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 20)
 
-[node name="wall36" parent="warehouse_meshes/walls" unique_id=917512584 instance=ExtResource("3_kix2c")]
+[node name="wall36" parent="warehouse_meshes/walls" unique_id=948168107 instance=ExtResource("5_rsqgy")]
 transform = Transform3D(1, 0, 1.7484555e-07, 0, 1, 0, -1.7484555e-07, 0, 1, 8, 0, 20)
 
-[node name="wall66" parent="warehouse_meshes/walls" unique_id=1206351484 instance=ExtResource("3_kix2c")]
+[node name="wall66" parent="warehouse_meshes/walls" unique_id=1076477555 instance=ExtResource("5_rsqgy")]
 transform = Transform3D(1, 0, 1.7484555e-07, 0, 1, 0, -1.7484555e-07, 0, 1, 27.9, 0, 20)
 
-[node name="wall67" parent="warehouse_meshes/walls" unique_id=2117599194 instance=ExtResource("3_kix2c")]
+[node name="wall67" parent="warehouse_meshes/walls" unique_id=489407232 instance=ExtResource("5_rsqgy")]
 transform = Transform3D(1, 0, 1.7484555e-07, 0, 1, 0, -1.7484555e-07, 0, 1, 27.9, 4, 20)
 
-[node name="wall41" parent="warehouse_meshes/walls" unique_id=294144871 instance=ExtResource("3_kix2c")]
+[node name="wall41" parent="warehouse_meshes/walls" unique_id=689754790 instance=ExtResource("5_rsqgy")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 8, 0, 20)
 
-[node name="wall27" parent="warehouse_meshes/walls" unique_id=1090179518 instance=ExtResource("3_kix2c")]
+[node name="wall27" parent="warehouse_meshes/walls" unique_id=1600658315 instance=ExtResource("5_rsqgy")]
 transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, 0, 4, 19.969887)
 
-[node name="wall28" parent="warehouse_meshes/walls" unique_id=39972897 instance=ExtResource("3_kix2c")]
+[node name="wall28" parent="warehouse_meshes/walls" unique_id=165679957 instance=ExtResource("5_rsqgy")]
 transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, 0, 0, 19.969887)
 
-[node name="wall31" parent="warehouse_meshes/walls" unique_id=121294714 instance=ExtResource("3_kix2c")]
+[node name="wall31" parent="warehouse_meshes/walls" unique_id=90923247 instance=ExtResource("5_rsqgy")]
 transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, 4, 4, 19.969887)
 
-[node name="wall32" parent="warehouse_meshes/walls" unique_id=727632299 instance=ExtResource("3_kix2c")]
+[node name="wall32" parent="warehouse_meshes/walls" unique_id=1958956069 instance=ExtResource("5_rsqgy")]
 transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, 4, 0, 19.969887)
 
-[node name="wall37" parent="warehouse_meshes/walls" unique_id=800536466 instance=ExtResource("3_kix2c")]
+[node name="wall37" parent="warehouse_meshes/walls" unique_id=109112523 instance=ExtResource("5_rsqgy")]
 transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, 12, 4, 19.969887)
 
-[node name="wall38" parent="warehouse_meshes/walls" unique_id=1980877824 instance=ExtResource("3_kix2c")]
+[node name="wall38" parent="warehouse_meshes/walls" unique_id=692744393 instance=ExtResource("5_rsqgy")]
 transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, 12, 0, 19.969887)
 
-[node name="wall65" parent="warehouse_meshes/walls" unique_id=655817055 instance=ExtResource("3_kix2c")]
+[node name="wall65" parent="warehouse_meshes/walls" unique_id=989832899 instance=ExtResource("5_rsqgy")]
 transform = Transform3D(-2.1855693e-07, 0, 1, 0, 1, 0, -1, 0, -2.1855693e-07, 4, 0, 20.165054)
 
-[node name="wall39" parent="warehouse_meshes/walls" unique_id=1331050354 instance=ExtResource("3_kix2c")]
+[node name="wall39" parent="warehouse_meshes/walls" unique_id=1754431364 instance=ExtResource("5_rsqgy")]
 transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, 16, 4, 19.969887)
 
-[node name="wall40" parent="warehouse_meshes/walls" unique_id=114939835 instance=ExtResource("3_kix2c")]
+[node name="wall40" parent="warehouse_meshes/walls" unique_id=2039031511 instance=ExtResource("5_rsqgy")]
 transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, 16, 0, 19.969887)
 
-[node name="wall29" parent="warehouse_meshes/walls" unique_id=1401371812 instance=ExtResource("3_kix2c")]
+[node name="wall29" parent="warehouse_meshes/walls" unique_id=1720693748 instance=ExtResource("5_rsqgy")]
 transform = Transform3D(-2.1855693e-07, 0, 1, 0, 1, 0, -1, 0, -2.1855693e-07, 16, 4, 19.969887)
 
-[node name="wall30" parent="warehouse_meshes/walls" unique_id=1994936977 instance=ExtResource("3_kix2c")]
+[node name="wall30" parent="warehouse_meshes/walls" unique_id=1666052271 instance=ExtResource("5_rsqgy")]
 transform = Transform3D(-2.1855693e-07, 0, 1, 0, 1, 0, -1, 0, -2.1855693e-07, 16, 0, 19.969887)
 
-[node name="wall78" parent="warehouse_meshes/walls" unique_id=1210131360 instance=ExtResource("3_kix2c")]
+[node name="wall78" parent="warehouse_meshes/walls" unique_id=650198244 instance=ExtResource("5_rsqgy")]
 transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, 20, 4, 19.969887)
 
-[node name="wall79" parent="warehouse_meshes/walls" unique_id=275305861 instance=ExtResource("3_kix2c")]
+[node name="wall79" parent="warehouse_meshes/walls" unique_id=1412690773 instance=ExtResource("5_rsqgy")]
 transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, 20, 0, 19.969887)
 
-[node name="wall80" parent="warehouse_meshes/walls" unique_id=1036127136 instance=ExtResource("3_kix2c")]
+[node name="wall80" parent="warehouse_meshes/walls" unique_id=479768258 instance=ExtResource("5_rsqgy")]
 transform = Transform3D(-2.1855693e-07, 0, 1, 0, 1, 0, -1, 0, -2.1855693e-07, 20, 4, 19.969887)
 
-[node name="wall81" parent="warehouse_meshes/walls" unique_id=1445248362 instance=ExtResource("3_kix2c")]
+[node name="wall81" parent="warehouse_meshes/walls" unique_id=227646867 instance=ExtResource("5_rsqgy")]
 transform = Transform3D(-2.1855693e-07, 0, 1, 0, 1, 0, -1, 0, -2.1855693e-07, 20, 0, 19.969887)
 
-[node name="wall82" parent="warehouse_meshes/walls" unique_id=463920769 instance=ExtResource("3_kix2c")]
+[node name="wall82" parent="warehouse_meshes/walls" unique_id=977744544 instance=ExtResource("5_rsqgy")]
 transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, 24, 4, 19.969887)
 
-[node name="wall83" parent="warehouse_meshes/walls" unique_id=1863636695 instance=ExtResource("3_kix2c")]
+[node name="wall83" parent="warehouse_meshes/walls" unique_id=85033183 instance=ExtResource("5_rsqgy")]
 transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, 24, 0, 19.969887)
 
-[node name="wall84" parent="warehouse_meshes/walls" unique_id=258548290 instance=ExtResource("3_kix2c")]
+[node name="wall84" parent="warehouse_meshes/walls" unique_id=1435393504 instance=ExtResource("5_rsqgy")]
 transform = Transform3D(-2.1855693e-07, 0, 1, 0, 1, 0, -1, 0, -2.1855693e-07, 24, 4, 19.969887)
 
-[node name="wall85" parent="warehouse_meshes/walls" unique_id=974583115 instance=ExtResource("3_kix2c")]
+[node name="wall85" parent="warehouse_meshes/walls" unique_id=1926885048 instance=ExtResource("5_rsqgy")]
 transform = Transform3D(-2.1855693e-07, 0, 1, 0, 1, 0, -1, 0, -2.1855693e-07, 24, 0, 19.969887)
 
-[node name="wall86" parent="warehouse_meshes/walls" unique_id=718179208 instance=ExtResource("3_kix2c")]
+[node name="wall86" parent="warehouse_meshes/walls" unique_id=30888099 instance=ExtResource("5_rsqgy")]
 transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, 28, 4, 19.969887)
 
-[node name="wall87" parent="warehouse_meshes/walls" unique_id=379970561 instance=ExtResource("3_kix2c")]
+[node name="wall87" parent="warehouse_meshes/walls" unique_id=1326465561 instance=ExtResource("5_rsqgy")]
 transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, 28, 0, 19.969887)
 
-[node name="wall88" parent="warehouse_meshes/walls" unique_id=481564693 instance=ExtResource("3_kix2c")]
+[node name="wall88" parent="warehouse_meshes/walls" unique_id=1696871089 instance=ExtResource("5_rsqgy")]
 transform = Transform3D(-2.1855693e-07, 0, 1, 0, 1, 0, -1, 0, -2.1855693e-07, 28, 4, 19.969887)
 
-[node name="wall89" parent="warehouse_meshes/walls" unique_id=1480323033 instance=ExtResource("3_kix2c")]
+[node name="wall89" parent="warehouse_meshes/walls" unique_id=675458928 instance=ExtResource("5_rsqgy")]
 transform = Transform3D(-2.1855693e-07, 0, 1, 0, 1, 0, -1, 0, -2.1855693e-07, 28, 0, 19.969887)
 
-[node name="wall33" parent="warehouse_meshes/walls" unique_id=294928650 instance=ExtResource("3_kix2c")]
+[node name="wall33" parent="warehouse_meshes/walls" unique_id=2068318038 instance=ExtResource("5_rsqgy")]
 transform = Transform3D(-2.1855693e-07, 0, 1, 0, 1, 0, -1, 0, -2.1855693e-07, 12, 4, 19.969887)
 
-[node name="wall43" parent="warehouse_meshes/walls" unique_id=997764214 instance=ExtResource("3_kix2c")]
+[node name="wall43" parent="warehouse_meshes/walls" unique_id=577237289 instance=ExtResource("5_rsqgy")]
 transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, 8, 4, 19.969887)
 
-[node name="wall44" parent="warehouse_meshes/walls" unique_id=242592286 instance=ExtResource("3_kix2c")]
+[node name="wall44" parent="warehouse_meshes/walls" unique_id=640957241 instance=ExtResource("5_rsqgy")]
 transform = Transform3D(-2.1855693e-07, 0, 1, 0, 1, 0, -1, 0, -2.1855693e-07, 8, 4, 19.969887)
 
-[node name="wall34" parent="warehouse_meshes/walls" unique_id=112253196 instance=ExtResource("3_kix2c")]
+[node name="wall34" parent="warehouse_meshes/walls" unique_id=43360773 instance=ExtResource("5_rsqgy")]
 transform = Transform3D(-2.1855693e-07, 0, 1, 0, 1, 0, -1, 0, -2.1855693e-07, 12, 0, 19.969887)
 
-[node name="wall61" parent="warehouse_meshes/walls" unique_id=2059711885 instance=ExtResource("3_kix2c")]
+[node name="wall61" parent="warehouse_meshes/walls" unique_id=235534501 instance=ExtResource("5_rsqgy")]
 transform = Transform3D(-2.1855693e-07, 0, 1, 0, 1, 0, -1, 0, -2.1855693e-07, 4, 4, 19.969887)
 
-[node name="wall62" parent="warehouse_meshes/walls" unique_id=354069777 instance=ExtResource("3_kix2c")]
+[node name="wall62" parent="warehouse_meshes/walls" unique_id=207463321 instance=ExtResource("5_rsqgy")]
 transform = Transform3D(-2.1855693e-07, 0, 1, 0, 1, 0, -1, 0, -2.1855693e-07, 4, 0, 19.969887)
 
-[node name="wall63" parent="warehouse_meshes/walls" unique_id=1713723802 instance=ExtResource("3_kix2c")]
+[node name="wall63" parent="warehouse_meshes/walls" unique_id=1809104141 instance=ExtResource("5_rsqgy")]
 transform = Transform3D(-2.1855693e-07, 0, 1, 0, 1, 0, -1, 0, -2.1855693e-07, 0, 4, 19.969887)
 
-[node name="wall64" parent="warehouse_meshes/walls" unique_id=377304356 instance=ExtResource("3_kix2c")]
+[node name="wall64" parent="warehouse_meshes/walls" unique_id=769997623 instance=ExtResource("5_rsqgy")]
 transform = Transform3D(-2.1855693e-07, 0, 1, 0, 1, 0, -1, 0, -2.1855693e-07, 0, 0, 19.969887)
 
-[node name="wall18" parent="warehouse_meshes/walls" unique_id=1282730241 instance=ExtResource("3_kix2c")]
+[node name="wall18" parent="warehouse_meshes/walls" unique_id=204135448 instance=ExtResource("5_rsqgy")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 4, 16)
 
-[node name="wall19" parent="warehouse_meshes/walls" unique_id=1216565868 instance=ExtResource("3_kix2c")]
+[node name="wall19" parent="warehouse_meshes/walls" unique_id=1906142858 instance=ExtResource("5_rsqgy")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 4, 12)
 
-[node name="wall20" parent="warehouse_meshes/walls" unique_id=840984662 instance=ExtResource("3_kix2c")]
+[node name="wall20" parent="warehouse_meshes/walls" unique_id=416235271 instance=ExtResource("5_rsqgy")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 4, 8)
 
-[node name="wall21" parent="warehouse_meshes/walls" unique_id=1456300699 instance=ExtResource("3_kix2c")]
+[node name="wall21" parent="warehouse_meshes/walls" unique_id=1945695859 instance=ExtResource("5_rsqgy")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 4, 4)
 
-[node name="wall68" parent="warehouse_meshes/walls" unique_id=245157945 instance=ExtResource("3_kix2c")]
+[node name="wall68" parent="warehouse_meshes/walls" unique_id=1317350149 instance=ExtResource("5_rsqgy")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 4, 4, 0)
 
-[node name="wall69" parent="warehouse_meshes/walls" unique_id=1261961876 instance=ExtResource("3_kix2c")]
+[node name="wall69" parent="warehouse_meshes/walls" unique_id=1376956609 instance=ExtResource("5_rsqgy")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 4, 0, 0)
 
-[node name="wall70" parent="warehouse_meshes/walls" unique_id=577508027 instance=ExtResource("3_kix2c")]
+[node name="wall70" parent="warehouse_meshes/walls" unique_id=160711610 instance=ExtResource("5_rsqgy")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 8, 4, 0)
 
-[node name="wall71" parent="warehouse_meshes/walls" unique_id=1258452171 instance=ExtResource("3_kix2c")]
+[node name="wall71" parent="warehouse_meshes/walls" unique_id=710755022 instance=ExtResource("5_rsqgy")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 8, 0, 0)
 
-[node name="wall72" parent="warehouse_meshes/walls" unique_id=834337121 instance=ExtResource("3_kix2c")]
+[node name="wall72" parent="warehouse_meshes/walls" unique_id=1211969607 instance=ExtResource("5_rsqgy")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 12, 4, 0)
 
-[node name="wall73" parent="warehouse_meshes/walls" unique_id=1769111560 instance=ExtResource("3_kix2c")]
+[node name="wall73" parent="warehouse_meshes/walls" unique_id=403705234 instance=ExtResource("5_rsqgy")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 12, 0, 0)
 
-[node name="wall74" parent="warehouse_meshes/walls" unique_id=514982962 instance=ExtResource("3_kix2c")]
+[node name="wall74" parent="warehouse_meshes/walls" unique_id=1311433335 instance=ExtResource("5_rsqgy")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 16, 4, 0)
 
-[node name="wall75" parent="warehouse_meshes/walls" unique_id=1650481026 instance=ExtResource("3_kix2c")]
+[node name="wall75" parent="warehouse_meshes/walls" unique_id=1842674844 instance=ExtResource("5_rsqgy")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 16, 0, 0)
 
-[node name="wall94" parent="warehouse_meshes/walls" unique_id=1712237439 instance=ExtResource("3_kix2c")]
+[node name="wall94" parent="warehouse_meshes/walls" unique_id=2115357919 instance=ExtResource("5_rsqgy")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 28, 4, 12)
 
-[node name="wall95" parent="warehouse_meshes/walls" unique_id=949572823 instance=ExtResource("3_kix2c")]
+[node name="wall95" parent="warehouse_meshes/walls" unique_id=2144193948 instance=ExtResource("5_rsqgy")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 28, 0, 12)
 
-[node name="wall96" parent="warehouse_meshes/walls" unique_id=1934350597 instance=ExtResource("3_kix2c")]
+[node name="wall96" parent="warehouse_meshes/walls" unique_id=1579522320 instance=ExtResource("5_rsqgy")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 32, 4, 12)
 
-[node name="wall98" parent="warehouse_meshes/walls" unique_id=1816787167 instance=ExtResource("3_kix2c")]
+[node name="wall98" parent="warehouse_meshes/walls" unique_id=1791020603 instance=ExtResource("5_rsqgy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36, 4, 16)
 
-[node name="wall99" parent="warehouse_meshes/walls" unique_id=1253078888 instance=ExtResource("3_kix2c")]
+[node name="wall99" parent="warehouse_meshes/walls" unique_id=666241759 instance=ExtResource("5_rsqgy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36, 4, 20)
 
-[node name="wall103" parent="warehouse_meshes/walls" unique_id=2036008170 instance=ExtResource("3_kix2c")]
+[node name="wall103" parent="warehouse_meshes/walls" unique_id=1334591888 instance=ExtResource("5_rsqgy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36, 0, 20)
 
-[node name="wall100" parent="warehouse_meshes/walls" unique_id=126289055 instance=ExtResource("3_kix2c")]
+[node name="wall100" parent="warehouse_meshes/walls" unique_id=778291660 instance=ExtResource("5_rsqgy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36, 4, 24)
 
-[node name="wall101" parent="warehouse_meshes/walls" unique_id=617861072 instance=ExtResource("3_kix2c")]
+[node name="wall101" parent="warehouse_meshes/walls" unique_id=1412922357 instance=ExtResource("5_rsqgy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36, 4, 28)
 
-[node name="wall102" parent="warehouse_meshes/walls" unique_id=1540326461 instance=ExtResource("3_kix2c")]
+[node name="wall102" parent="warehouse_meshes/walls" unique_id=1036329801 instance=ExtResource("5_rsqgy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36, 0, 28)
 
-[node name="wall104" parent="warehouse_meshes/walls" unique_id=2128843699 instance=ExtResource("3_kix2c")]
+[node name="wall104" parent="warehouse_meshes/walls" unique_id=267437128 instance=ExtResource("5_rsqgy")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 56, 4, 24)
 
-[node name="wall105" parent="warehouse_meshes/walls" unique_id=786130423 instance=ExtResource("3_kix2c")]
+[node name="wall105" parent="warehouse_meshes/walls" unique_id=71995040 instance=ExtResource("5_rsqgy")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 56, 4, 20)
 
-[node name="wall106" parent="warehouse_meshes/walls" unique_id=421035659 instance=ExtResource("3_kix2c")]
+[node name="wall106" parent="warehouse_meshes/walls" unique_id=2093075926 instance=ExtResource("5_rsqgy")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 56, 0, 20)
 
-[node name="wall107" parent="warehouse_meshes/walls" unique_id=606348863 instance=ExtResource("3_kix2c")]
+[node name="wall107" parent="warehouse_meshes/walls" unique_id=614275273 instance=ExtResource("5_rsqgy")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 56, 4, 16)
 
-[node name="wall108" parent="warehouse_meshes/walls" unique_id=881062132 instance=ExtResource("3_kix2c")]
+[node name="wall108" parent="warehouse_meshes/walls" unique_id=1166894310 instance=ExtResource("5_rsqgy")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 56, 4, 12)
 
-[node name="wall109" parent="warehouse_meshes/walls" unique_id=1407229200 instance=ExtResource("3_kix2c")]
+[node name="wall109" parent="warehouse_meshes/walls" unique_id=111039922 instance=ExtResource("5_rsqgy")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 56, 0, 12)
 
-[node name="wall110" parent="warehouse_meshes/walls" unique_id=1669532031 instance=ExtResource("3_kix2c")]
+[node name="wall110" parent="warehouse_meshes/walls" unique_id=1783155690 instance=ExtResource("5_rsqgy")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 56, 0, 24)
 
-[node name="wall112" parent="warehouse_meshes/walls" unique_id=1863755332 instance=ExtResource("3_kix2c")]
+[node name="wall112" parent="warehouse_meshes/walls" unique_id=970627703 instance=ExtResource("5_rsqgy")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 56, 4, 28)
 
-[node name="wall113" parent="warehouse_meshes/walls" unique_id=741716621 instance=ExtResource("3_kix2c")]
+[node name="wall113" parent="warehouse_meshes/walls" unique_id=1732681348 instance=ExtResource("5_rsqgy")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 56, 0, 28)
 
-[node name="wall111" parent="warehouse_meshes/walls" unique_id=637566150 instance=ExtResource("3_kix2c")]
+[node name="wall111" parent="warehouse_meshes/walls" unique_id=416331548 instance=ExtResource("5_rsqgy")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 56, 0, 16)
 
-[node name="wall97" parent="warehouse_meshes/walls" unique_id=657828319 instance=ExtResource("3_kix2c")]
+[node name="wall97" parent="warehouse_meshes/walls" unique_id=1958700991 instance=ExtResource("5_rsqgy")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 32, 0, 12)
 
-[node name="wall76" parent="warehouse_meshes/walls" unique_id=681207009 instance=ExtResource("3_kix2c")]
+[node name="wall76" parent="warehouse_meshes/walls" unique_id=1987176677 instance=ExtResource("5_rsqgy")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 20, 4, 0)
 
-[node name="wall77" parent="warehouse_meshes/walls" unique_id=2032979140 instance=ExtResource("3_kix2c")]
+[node name="wall77" parent="warehouse_meshes/walls" unique_id=328711584 instance=ExtResource("5_rsqgy")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 20, 0, 0)
 
-[node name="wall90" parent="warehouse_meshes/walls" unique_id=2010793573 instance=ExtResource("3_kix2c")]
+[node name="wall90" parent="warehouse_meshes/walls" unique_id=1858832713 instance=ExtResource("5_rsqgy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 4, 4)
 
-[node name="wall91" parent="warehouse_meshes/walls" unique_id=1916397659 instance=ExtResource("3_kix2c")]
+[node name="wall91" parent="warehouse_meshes/walls" unique_id=1005470722 instance=ExtResource("5_rsqgy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, 4)
 
-[node name="wall92" parent="warehouse_meshes/walls" unique_id=1353365458 instance=ExtResource("3_kix2c")]
+[node name="wall92" parent="warehouse_meshes/walls" unique_id=736085723 instance=ExtResource("5_rsqgy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 4, 8)
 
-[node name="wall93" parent="warehouse_meshes/walls" unique_id=1126275569 instance=ExtResource("3_kix2c")]
+[node name="wall93" parent="warehouse_meshes/walls" unique_id=360817349 instance=ExtResource("5_rsqgy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, 8)
 
-[node name="wall4" parent="warehouse_meshes/walls" unique_id=1284876071 instance=ExtResource("3_kix2c")]
+[node name="wall4" parent="warehouse_meshes/walls" unique_id=2087936112 instance=ExtResource("5_rsqgy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 0, 28)
 
-[node name="wall5" parent="warehouse_meshes/walls" unique_id=434361353 instance=ExtResource("3_kix2c")]
+[node name="wall5" parent="warehouse_meshes/walls" unique_id=1732954392 instance=ExtResource("5_rsqgy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 0, 24)
 
-[node name="wall6" parent="warehouse_meshes/walls" unique_id=479238336 instance=ExtResource("3_kix2c")]
+[node name="wall6" parent="warehouse_meshes/walls" unique_id=1952718919 instance=ExtResource("5_rsqgy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 0, 20)
 
-[node name="wall7" parent="warehouse_meshes/walls" unique_id=1620272799 instance=ExtResource("3_kix2c")]
+[node name="wall7" parent="warehouse_meshes/walls" unique_id=1689110575 instance=ExtResource("5_rsqgy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 0, 16)
 
-[node name="wall8" parent="warehouse_meshes/walls" unique_id=1745831141 instance=ExtResource("3_kix2c")]
+[node name="wall8" parent="warehouse_meshes/walls" unique_id=2123267663 instance=ExtResource("5_rsqgy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 0, 12)
 
-[node name="wall9" parent="warehouse_meshes/walls" unique_id=1181941671 instance=ExtResource("3_kix2c")]
+[node name="wall9" parent="warehouse_meshes/walls" unique_id=2103780845 instance=ExtResource("5_rsqgy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 0, 8)
 
-[node name="wall10" parent="warehouse_meshes/walls" unique_id=978131884 instance=ExtResource("3_kix2c")]
+[node name="wall10" parent="warehouse_meshes/walls" unique_id=1254921344 instance=ExtResource("5_rsqgy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 0, 4)
 
-[node name="wall11" parent="warehouse_meshes/walls" unique_id=1972938730 instance=ExtResource("3_kix2c")]
+[node name="wall11" parent="warehouse_meshes/walls" unique_id=163353601 instance=ExtResource("5_rsqgy")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -4, 0, 0)
 
-[node name="wall12" parent="warehouse_meshes/walls" unique_id=1408047052 instance=ExtResource("3_kix2c")]
+[node name="wall12" parent="warehouse_meshes/walls" unique_id=1801240063 instance=ExtResource("5_rsqgy")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -8, 0, 0)
 
-[node name="wall2" parent="warehouse_meshes/walls" unique_id=769699981 instance=ExtResource("3_kix2c")]
+[node name="wall2" parent="warehouse_meshes/walls" unique_id=1944725405 instance=ExtResource("5_rsqgy")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -7, 0, 36)
 
 [node name="wall_corners" type="Node3D" parent="warehouse_meshes" unique_id=1294242858]
 
-[node name="Wall_Corner2" parent="warehouse_meshes/wall_corners" unique_id=782011137 instance=ExtResource("2_f2u2m")]
+[node name="wall_corner3" parent="warehouse_meshes/wall_corners" unique_id=1938493291 instance=ExtResource("6_dhrhg")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -4, 16, 14)
 
-[node name="Wall_Corner3" parent="warehouse_meshes/wall_corners" unique_id=309258869 instance=ExtResource("2_f2u2m")]
+[node name="wall_corner4" parent="warehouse_meshes/wall_corners" unique_id=1538335351 instance=ExtResource("6_dhrhg")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -4, 20, 14)
 
-[node name="Wall_Corner4" parent="warehouse_meshes/wall_corners" unique_id=16170495 instance=ExtResource("2_f2u2m")]
+[node name="wall_corner9" parent="warehouse_meshes/wall_corners" unique_id=319280379 instance=ExtResource("6_dhrhg")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -4, 16, 54)
 
-[node name="Wall_Corner5" parent="warehouse_meshes/wall_corners" unique_id=43359098 instance=ExtResource("2_f2u2m")]
+[node name="wall_corner10" parent="warehouse_meshes/wall_corners" unique_id=1136187408 instance=ExtResource("6_dhrhg")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -4, 20, 54)
 
-[node name="wall_corner" parent="warehouse_meshes/wall_corners" unique_id=104622242 instance=ExtResource("18_oh65h")]
+[node name="wall_corner" parent="warehouse_meshes/wall_corners" unique_id=392429125 instance=ExtResource("6_dhrhg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 16, 14)
 
-[node name="wall_corner2" parent="warehouse_meshes/wall_corners" unique_id=1990870421 instance=ExtResource("18_oh65h")]
+[node name="wall_corner2" parent="warehouse_meshes/wall_corners" unique_id=1085646360 instance=ExtResource("6_dhrhg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 20, 14)
 
-[node name="wall_corner5" parent="warehouse_meshes/wall_corners" unique_id=760091878 instance=ExtResource("18_oh65h")]
+[node name="wall_corner5" parent="warehouse_meshes/wall_corners" unique_id=501061223 instance=ExtResource("6_dhrhg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32, 16, 26)
 
-[node name="wall_corner6" parent="warehouse_meshes/wall_corners" unique_id=1115005814 instance=ExtResource("18_oh65h")]
+[node name="wall_corner6" parent="warehouse_meshes/wall_corners" unique_id=840582812 instance=ExtResource("6_dhrhg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32, 20, 26)
 
-[node name="wall_corner7" parent="warehouse_meshes/wall_corners" unique_id=698083699 instance=ExtResource("18_oh65h")]
+[node name="wall_corner7" parent="warehouse_meshes/wall_corners" unique_id=1729652982 instance=ExtResource("6_dhrhg")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 32, 16, 54)
 
-[node name="wall_corner8" parent="warehouse_meshes/wall_corners" unique_id=2044518823 instance=ExtResource("18_oh65h")]
+[node name="wall_corner8" parent="warehouse_meshes/wall_corners" unique_id=423363150 instance=ExtResource("6_dhrhg")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 32, 20, 54)
 
 [node name="refrigerated_walls" type="Node3D" parent="warehouse_meshes" unique_id=1722698739]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 16, 14)
 
-[node name="refrigerated_wall" parent="warehouse_meshes/refrigerated_walls" unique_id=125016612 instance=ExtResource("6_mgx2w")]
+[node name="refrigerated_wall" parent="warehouse_meshes/refrigerated_walls" unique_id=343883702 instance=ExtResource("7_nlav1")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 40, 0, 28)
 
-[node name="refrigerated_wall2" parent="warehouse_meshes/refrigerated_walls" unique_id=1343347928 instance=ExtResource("6_mgx2w")]
+[node name="refrigerated_wall2" parent="warehouse_meshes/refrigerated_walls" unique_id=784973256 instance=ExtResource("7_nlav1")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 40, 4, 28)
 
-[node name="refrigerated_wall3" parent="warehouse_meshes/refrigerated_walls" unique_id=2035029299 instance=ExtResource("6_mgx2w")]
+[node name="refrigerated_wall3" parent="warehouse_meshes/refrigerated_walls" unique_id=413516308 instance=ExtResource("7_nlav1")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 44, 0, 28)
 
-[node name="refrigerated_wall4" parent="warehouse_meshes/refrigerated_walls" unique_id=1689031554 instance=ExtResource("6_mgx2w")]
+[node name="refrigerated_wall4" parent="warehouse_meshes/refrigerated_walls" unique_id=1478469934 instance=ExtResource("7_nlav1")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 44, 4, 28)
 
-[node name="refrigerated_wall5" parent="warehouse_meshes/refrigerated_walls" unique_id=1409965807 instance=ExtResource("6_mgx2w")]
+[node name="refrigerated_wall5" parent="warehouse_meshes/refrigerated_walls" unique_id=209292198 instance=ExtResource("7_nlav1")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 48, 0, 28)
 
-[node name="refrigerated_wall6" parent="warehouse_meshes/refrigerated_walls" unique_id=51224241 instance=ExtResource("6_mgx2w")]
+[node name="refrigerated_wall6" parent="warehouse_meshes/refrigerated_walls" unique_id=2109261850 instance=ExtResource("7_nlav1")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 48, 4, 28)
 
-[node name="refrigerated_wall7" parent="warehouse_meshes/refrigerated_walls" unique_id=537402300 instance=ExtResource("6_mgx2w")]
+[node name="refrigerated_wall7" parent="warehouse_meshes/refrigerated_walls" unique_id=345459828 instance=ExtResource("7_nlav1")]
 transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, 48, 0, 12)
 
-[node name="refrigerated_wall8" parent="warehouse_meshes/refrigerated_walls" unique_id=184142663 instance=ExtResource("6_mgx2w")]
+[node name="refrigerated_wall8" parent="warehouse_meshes/refrigerated_walls" unique_id=2089839874 instance=ExtResource("7_nlav1")]
 transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, 48, 4, 12)
 
-[node name="refrigerated_wall13" parent="warehouse_meshes/refrigerated_walls" unique_id=472281416 instance=ExtResource("6_mgx2w")]
+[node name="refrigerated_wall13" parent="warehouse_meshes/refrigerated_walls" unique_id=240035235 instance=ExtResource("7_nlav1")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 52, 0, 28)
 
-[node name="refrigerated_wall14" parent="warehouse_meshes/refrigerated_walls" unique_id=1727695440 instance=ExtResource("6_mgx2w")]
+[node name="refrigerated_wall14" parent="warehouse_meshes/refrigerated_walls" unique_id=659888877 instance=ExtResource("7_nlav1")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 52, 4, 28)
 
-[node name="refrigerated_wall15" parent="warehouse_meshes/refrigerated_walls" unique_id=1906839548 instance=ExtResource("6_mgx2w")]
+[node name="refrigerated_wall15" parent="warehouse_meshes/refrigerated_walls" unique_id=539308103 instance=ExtResource("7_nlav1")]
 transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, 52, 0, 12)
 
-[node name="refrigerated_wall16" parent="warehouse_meshes/refrigerated_walls" unique_id=1635145305 instance=ExtResource("6_mgx2w")]
+[node name="refrigerated_wall16" parent="warehouse_meshes/refrigerated_walls" unique_id=1244891828 instance=ExtResource("7_nlav1")]
 transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, 52, 4, 12)
 
-[node name="refrigerated_wall9" parent="warehouse_meshes/refrigerated_walls" unique_id=1579377569 instance=ExtResource("6_mgx2w")]
+[node name="refrigerated_wall9" parent="warehouse_meshes/refrigerated_walls" unique_id=381122243 instance=ExtResource("7_nlav1")]
 transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, 44, 0, 12)
 
-[node name="refrigerated_wall10" parent="warehouse_meshes/refrigerated_walls" unique_id=238324951 instance=ExtResource("6_mgx2w")]
+[node name="refrigerated_wall10" parent="warehouse_meshes/refrigerated_walls" unique_id=929439854 instance=ExtResource("7_nlav1")]
 transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, 44, 4, 12)
 
-[node name="refrigerated_wall11" parent="warehouse_meshes/refrigerated_walls" unique_id=2129609710 instance=ExtResource("6_mgx2w")]
+[node name="refrigerated_wall11" parent="warehouse_meshes/refrigerated_walls" unique_id=485963429 instance=ExtResource("7_nlav1")]
 transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, 40, 0, 12)
 
-[node name="refrigerated_wall12" parent="warehouse_meshes/refrigerated_walls" unique_id=185632977 instance=ExtResource("6_mgx2w")]
+[node name="refrigerated_wall12" parent="warehouse_meshes/refrigerated_walls" unique_id=1220111706 instance=ExtResource("7_nlav1")]
 transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, 40, 4, 12)
 
 [node name="trusses" type="Node3D" parent="warehouse_meshes" unique_id=922432502]
@@ -1870,7 +1864,6 @@ transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 19.9
 
 [node name="lighting" type="Node3D" parent="warehouse_meshes" unique_id=849946198]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 16, 14)
-script = ExtResource("24_rhy15")
 
 [node name="light01" parent="warehouse_meshes/lighting" unique_id=295030425 instance=ExtResource("25_rsqgy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 7, 36)
@@ -2619,10 +2612,10 @@ transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 7.89
 
 [node name="doorframes" type="Node3D" parent="warehouse_meshes" unique_id=1127440609]
 
-[node name="refrigerated_doorframe" parent="warehouse_meshes/doorframes" unique_id=1560622206 instance=ExtResource("5_bm5co")]
+[node name="doorframe" parent="warehouse_meshes/doorframes" unique_id=2107255950 instance=ExtResource("8_dhrhg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32, 16, 30)
 
-[node name="refrigerated_doorframe2" parent="warehouse_meshes/doorframes" unique_id=380863221 instance=ExtResource("5_bm5co")]
+[node name="doorframe2" parent="warehouse_meshes/doorframes" unique_id=1619853478 instance=ExtResource("8_dhrhg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32, 16, 38)
 
 [node name="Doorframe_Delivery_shut" parent="warehouse_meshes" unique_id=806330949 instance=ExtResource("5_f1fhc")]

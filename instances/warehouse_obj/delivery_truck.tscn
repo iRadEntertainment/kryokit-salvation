@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cwk75mpklpojo"]
 
-[ext_resource type="PackedScene" uid="uid://df3ua08tjlrtt" path="res://assets/glbs/warehouse_col/regular/Delivery_Truck.glb" id="1_l1sa8"]
+[ext_resource type="PackedScene" uid="uid://df3ua08tjlrtt" path="res://assets/glbs/warehouse_col/regular/delivery_truck.glb" id="1_l1sa8"]
 [ext_resource type="Script" uid="uid://bjanjit7rbf2y" path="res://scripts/forklift_rotating_spot_light_.gd" id="2_8oija"]
 
 [node name="delivery_truck" unique_id=117611447 instance=ExtResource("1_l1sa8")]

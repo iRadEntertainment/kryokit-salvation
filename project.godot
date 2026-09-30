@@ -159,3 +159,5 @@ jolt_physics_3d/simulation/position_steps=5
 [rendering]
 
 rendering_device/driver.windows="d3d12"
+renderer/rendering_method="gl_compatibility"
+lights_and_shadows/positional_shadow/atlas_quadrant_0_subdiv=1
