@@ -8,9 +8,9 @@
 [ext_resource type="PackedScene" uid="uid://dpnefjtqisswu" path="res://assets/glbs/warehouse/regular/roof_frame.glb" id="6_5ny2n"]
 [ext_resource type="PackedScene" uid="uid://b0vo181ogbtpj" path="res://instances/refrigeration_unit.tscn" id="7_bl6k7"]
 [ext_resource type="PackedScene" uid="uid://cofxnpkuw0cl4" path="res://assets/glbs/warehouse/regular/truss_straight.glb" id="7_wpgx1"]
-[ext_resource type="PackedScene" uid="uid://b8q30gvx50smh" path="res://assets/glbs/warehouse/refrigerated/refrigerated_gardrail_straight.glb" id="8_bl6k7"]
+[ext_resource type="PackedScene" uid="uid://b8q30gvx50smh" path="res://assets/glbs/warehouse/refrigerated/refrigerated_gardrail_Straight.glb" id="8_bl6k7"]
 [ext_resource type="PackedScene" uid="uid://bax65j2ewudkt" path="res://assets/glbs/warehouse/regular/pillar.glb" id="9_r42ei"]
-[ext_resource type="PackedScene" uid="uid://xxt0kld8oboc" path="res://assets/glbs/warehouse/regular/gardrail_straight.glb" id="10_eoek6"]
+[ext_resource type="PackedScene" uid="uid://xxt0kld8oboc" path="res://assets/glbs/warehouse/regular/gardrail_Straight.glb" id="10_eoek6"]
 
 [node name="Warehouse_Refrigirated_Test" type="Node3D" unique_id=100941699]
 

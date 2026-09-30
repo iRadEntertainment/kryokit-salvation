@@ -18,7 +18,7 @@
 [ext_resource type="Texture2D" uid="uid://c4748qmv2jbaw" path="res://assets/decals/Bay5.png" id="9_8q4a4"]
 [ext_resource type="Texture2D" uid="uid://cke3fmrxfy48h" path="res://assets/decals/goods out.png" id="9_p5hu1"]
 [ext_resource type="Texture2D" uid="uid://cjaftw4oetjn6" path="res://assets/decals/Bay8.png" id="10_g1tdh"]
-[ext_resource type="PackedScene" uid="uid://b8q30gvx50smh" path="res://assets/glbs/warehouse/refrigerated/refrigerated_gardrail_straight.glb" id="14_77npy"]
+[ext_resource type="PackedScene" uid="uid://b8q30gvx50smh" path="res://assets/glbs/warehouse/refrigerated/refrigerated_gardrail_Straight.glb" id="14_77npy"]
 [ext_resource type="PackedScene" uid="uid://bdp58nsqupkid" path="res://assets/glbs/warehouse/refrigerated/refrigerated_floor.glb" id="15_8q4a4"]
 [ext_resource type="PackedScene" uid="uid://cofxnpkuw0cl4" path="res://assets/glbs/warehouse/regular/truss_straight.glb" id="19_mgx2w"]
 [ext_resource type="PackedScene" uid="uid://c1t1pq0n2rpv5" path="res://assets/glbs/warehouse/regular/roof_corrugated.glb" id="20_8f41u"]

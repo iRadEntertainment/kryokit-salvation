@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://7clljett1r8u" path="res://instances/cement_bag.tscn" id="5_g2equ"]
 [ext_resource type="PackedScene" uid="uid://biro1v6rgmrre" path="res://instances/GUI/gui.tscn" id="6_tbcdj"]
 [ext_resource type="PackedScene" uid="uid://c1sb5rpp2v40s" path="res://instances/rack.tscn" id="7_ej4tf"]
-[ext_resource type="PackedScene" uid="uid://xxt0kld8oboc" path="res://assets/glbs/warehouse/regular/gardrail_straight.glb" id="8_0epgs"]
+[ext_resource type="PackedScene" uid="uid://xxt0kld8oboc" path="res://assets/glbs/warehouse/regular/gardrail_Straight.glb" id="8_0epgs"]
 [ext_resource type="PackedScene" uid="uid://bgql3g46eolgy" path="res://assets/glbs/shelves-post.glb" id="9_g2equ"]
 [ext_resource type="PackedScene" uid="uid://bptwc3hmor044" path="res://assets/glbs/shelves-beam.glb" id="10_tbcdj"]
 

@@ -10,7 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://w4t8sdxifpw8" path="res://assets/glbs/sign_goods_in_out.glb" id="6_5k0yh"]
 [ext_resource type="PackedScene" uid="uid://cofxnpkuw0cl4" path="res://assets/glbs/warehouse/regular/truss_straight.glb" id="6_tgn7q"]
 [ext_resource type="Texture2D" uid="uid://cke3fmrxfy48h" path="res://assets/decals/goods out.png" id="6_wanvp"]
-[ext_resource type="PackedScene" uid="uid://xxt0kld8oboc" path="res://assets/glbs/warehouse/regular/gardrail_straight.glb" id="9_13dtl"]
+[ext_resource type="PackedScene" uid="uid://xxt0kld8oboc" path="res://assets/glbs/warehouse/regular/gardrail_Straight.glb" id="9_13dtl"]
 [ext_resource type="PackedScene" uid="uid://dlyayug82m5ux" path="res://assets/glbs/warehouse/refrigerated/refrigerated_doorframe.glb" id="9_qnbff"]
 [ext_resource type="PackedScene" uid="uid://cd5blac0qgg6g" path="res://assets/glbs/warehouse/regular/delivery_doorframe_shut.glb" id="11_tgn7q"]
 [ext_resource type="Texture2D" uid="uid://cp66tw16wv5tn" path="res://assets/decals/Bay1.png" id="12_xt0mp"]

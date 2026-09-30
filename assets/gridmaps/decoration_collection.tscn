@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://ciekfste2513o"]
 
-[ext_resource type="PackedScene" uid="uid://b8q30gvx50smh" path="res://assets/glbs/warehouse/refrigerated/refrigerated_gardrail_straight.glb" id="2_8rp3j"]
+[ext_resource type="PackedScene" uid="uid://b8q30gvx50smh" path="res://assets/glbs/warehouse/refrigerated/refrigerated_gardrail_Straight.glb" id="2_8rp3j"]
 [ext_resource type="PackedScene" uid="uid://bgpxrgfo487jo" path="res://assets/glbs/warehouse/refrigerated/refrigeration_unit.glb" id="4_owsmf"]
 [ext_resource type="PackedScene" uid="uid://cdxeyc5rxhnir" path="res://assets/glbs/warehouse/refrigerated/refrigeration_unit_fan.glb" id="5_o3avv"]
-[ext_resource type="PackedScene" uid="uid://xxt0kld8oboc" path="res://assets/glbs/warehouse/regular/gardrail_straight.glb" id="7_585pl"]
+[ext_resource type="PackedScene" uid="uid://xxt0kld8oboc" path="res://assets/glbs/warehouse/regular/gardrail_Straight.glb" id="7_585pl"]
 [ext_resource type="PackedScene" uid="uid://bax65j2ewudkt" path="res://assets/glbs/warehouse/regular/pillar.glb" id="8_ap7ms"]
 [ext_resource type="PackedScene" uid="uid://cofxnpkuw0cl4" path="res://assets/glbs/warehouse/regular/truss_straight.glb" id="11_fq65r"]
 
@@ -21,7 +21,7 @@ size = Vector3(4, 0.6, 0.2)
 [node name="refrigerated_gardrail_Straight" parent="." unique_id=927697246 instance=ExtResource("2_8rp3j")]
 visible = false
 
-[node name="StaticBody3D" type="StaticBody3D" parent="refrigerated_gardrail_Straight/Refrigerated_Gardrail_Straight" parent_id_path=PackedInt32Array(927697246, 1593935661) index="0" unique_id=1326260366]
+[node name="StaticBody3D" type="StaticBody3D" parent="refrigerated_gardrail_Straight/Refrigerated_Gardrail_Straight" parent_id_path=PackedInt32Array(927697246, 475867052) index="0" unique_id=1326260366]
 transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 0, 0, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="refrigerated_gardrail_Straight/Refrigerated_Gardrail_Straight/StaticBody3D" unique_id=1588523196]
@@ -36,7 +36,7 @@ visible = false
 
 [node name="gardrail_Straight" parent="." unique_id=135060244 instance=ExtResource("7_585pl")]
 
-[node name="StaticBody3D" type="StaticBody3D" parent="gardrail_Straight/Gardrail_Straight" parent_id_path=PackedInt32Array(135060244, 1427137986) index="0" unique_id=1640318253]
+[node name="StaticBody3D" type="StaticBody3D" parent="gardrail_Straight/Gardrail_Straight" parent_id_path=PackedInt32Array(135060244, 1892652626) index="0" unique_id=1640318253]
 transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 0, 0, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="gardrail_Straight/Gardrail_Straight/StaticBody3D" unique_id=1055916981]
