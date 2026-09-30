@@ -40,6 +40,8 @@ var steering_snap_increment_deg: float = 5.0:
 		steering_snap_increment_deg = value
 		steering_snap_increment_rad = deg_to_rad(value)
 var snap_while_drive: bool = true
+var pallet_tolerance_dist: float = 0.3
+var pallet_tolerance_rot: float = 0.14
 
 # getters
 var speed_mult: float:

@@ -13,6 +13,7 @@ const HIT_SFX_UIDS := [
 
 @export var sfx_min_linear_speed: float = 1.0
 @export var sfx_min_angular_speed: float = 0.8
+@export var to_deliver: bool
 
 @onready var sfx_collision: AudioStreamPlayer3D = $sfx_collision
 

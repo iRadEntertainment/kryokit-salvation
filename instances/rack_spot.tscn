@@ -1,52 +1,27 @@
 [gd_scene format=3 uid="uid://c2mvksek6pxtn"]
 
 [ext_resource type="Script" uid="uid://bo3kb5ouqkw66" path="res://instances/rack_spot.gd" id="1_abu1l"]
-[ext_resource type="Shader" uid="uid://dw8quej01ojxd" path="res://assets/shaders/flame.gdshader" id="2_kr66a"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_flr60"]
-render_priority = 0
-shader = ExtResource("2_kr66a")
-shader_parameter/overall_alpha = 0.3
-shader_parameter/apply_shape_deform = false
-shader_parameter/top_radius = 0.0
-shader_parameter/bottom_radius = 0.0
-shader_parameter/center_radius = 0.0
-shader_parameter/center_position = 0.0
-shader_parameter/cylinder_height = 1.0
-shader_parameter/bottom_curve = 0.4
-shader_parameter/_vibrate_amplitude = 0.015
-shader_parameter/_vibrate_frequency = 200.0
-shader_parameter/_speed = 2.0
-shader_parameter/_scale = 9.665
-shader_parameter/color_inner = Color(0, 1.1645998, 1.2198752, 0.5019608)
-shader_parameter/color_outer = Color(4.933402e-07, 0.3149365, 0.21972889, 0.6784314)
-shader_parameter/color_threshold = 0.5230000248425
-shader_parameter/flame_height = 1.52
-shader_parameter/flame_height_offset = 0.0
-shader_parameter/pattern_scale = 2.5
-shader_parameter/use_additional_texture = false
-shader_parameter/texture_scale = 1.0
-shader_parameter/texture_blend = 1.0
-shader_parameter/outline_enabled = false
-shader_parameter/outline_color = Color(0, 0, 0, 1)
-shader_parameter/outline_thickness = 0.04
+[ext_resource type="Material" uid="uid://dc3vrhfiklpkw" path="res://assets/materials/rack_location_material_wrong.tres" id="2_kr66a"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_8mt0l"]
-material = SubResource("ShaderMaterial_flr60")
 size = Vector3(0.8, 1, 1.2)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_8mt0l"]
 size = Vector3(0.8, 1, 1.2)
 
-[node name="rack_spot" type="Area3D" unique_id=728663095]
+[node name="rack_location" type="Area3D" unique_id=728663095]
 collision_mask = 4
 script = ExtResource("1_abu1l")
 
 [node name="mesh" type="MeshInstance3D" parent="." unique_id=1992965057]
 transform = Transform3D(-1, -8.742278e-08, 0, 8.742278e-08, -1, 0, 0, 0, 1, 0, 0.5, 0)
 mesh = SubResource("BoxMesh_8mt0l")
+surface_material_override/0 = ExtResource("2_kr66a")
 
 [node name="coll" type="CollisionShape3D" parent="." unique_id=1753569402]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 visible = false
 shape = SubResource("BoxShape3D_8mt0l")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

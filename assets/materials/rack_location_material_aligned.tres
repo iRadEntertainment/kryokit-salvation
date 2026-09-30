@@ -1,10 +1,10 @@
-[gd_resource type="ShaderMaterial" format=3 uid="uid://c7qynw0inx2f4"]
+[gd_resource type="ShaderMaterial" format=3 uid="uid://drhlbi35wusht"]
 
-[ext_resource type="Shader" uid="uid://dw8quej01ojxd" path="res://assets/shaders/flame.gdshader" id="1_5esih"]
+[ext_resource type="Shader" uid="uid://dw8quej01ojxd" path="res://assets/shaders/flame.gdshader" id="1_6kx43"]
 
 [resource]
 render_priority = 0
-shader = ExtResource("1_5esih")
+shader = ExtResource("1_6kx43")
 shader_parameter/overall_alpha = 0.3
 shader_parameter/apply_shape_deform = false
 shader_parameter/top_radius = 0.0
@@ -17,9 +17,9 @@ shader_parameter/_vibrate_amplitude = 0.015
 shader_parameter/_vibrate_frequency = 200.0
 shader_parameter/_speed = 2.0
 shader_parameter/_scale = 9.665
-shader_parameter/color_inner = Color(7.583002e-08, 0.601452, 0.63104635, 0.502)
-shader_parameter/color_outer = Color(0.8652941, 0.81809115, 0.9451421, 0.6784314)
-shader_parameter/color_threshold = 0.054000002564999997
+shader_parameter/color_inner = Color(0, 1.1645998, 1.2198752, 0.5019608)
+shader_parameter/color_outer = Color(4.933402e-07, 0.3149365, 0.21972889, 0.6784314)
+shader_parameter/color_threshold = 0.5230000248425
 shader_parameter/flame_height = 1.52
 shader_parameter/flame_height_offset = 0.0
 shader_parameter/pattern_scale = 2.5
