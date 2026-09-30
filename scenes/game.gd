@@ -27,5 +27,3 @@ func _ready() -> void:
 				MissionManager.register_pickup_target(child)
 				MissionManager.register_dropoff_target(child)
 				
-	# Kick off the first mission loop after everything is registered
-	MissionManager.start_new_task()

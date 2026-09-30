@@ -1,17 +1,19 @@
 extends Node
 
 const PALLET_SCENE_PATH := "res://instances/pallet.tscn"
+
+#list of loads
 const LOAD_SCENES: Array[String] = [
 	"res://instances/cement_bag.tscn",
-	"res://instances/load_blackwrap.tscn",
+	#"res://instances/load_blackwrap.tscn",
 ]
 
-var success_tolerance: float = 0.02
+var success_tolerance: float = 0.5 # meters between pallet and target 
 
 var pickup_markers: Array[Marker3D] = []
 var dropoff_markers: Array[Marker3D] = []
 
-# Stores serializable data: { "NodePathString": { "pallet": String, "load": String } }
+# Stores serializable data: { "NodePathString": { "pallet": String, "load": String } } # this is incase you want to add save state later on we can write the string to JSON
 var marker_contents: Dictionary = {}
 
 var current_target_marker: Marker3D = null
@@ -43,11 +45,12 @@ func gather_markers() -> void:
 	dropoff_markers.clear()
 	marker_contents.clear()
 	
-	if has_node("%in_marker_1"): pickup_markers.append(%in_marker_1)
-	if has_node("%in_marker_2"): pickup_markers.append(%in_marker_2)
-	
-	if has_node("%out_marker_1"): dropoff_markers.append(%out_marker_1)
-	if has_node("%out_marker_2"): dropoff_markers.append(%out_marker_2)
+	var current_scene := get_tree().current_scene
+	if current_scene:
+		if current_scene.has_node("locations/in_marker_1"): pickup_markers.append(current_scene.get_node("locations/in_marker_1"))
+		if current_scene.has_node("locations/in_marker_2"): pickup_markers.append(current_scene.get_node("locations/in_marker_2"))
+		if current_scene.has_node("locations/out_marker_1"): dropoff_markers.append(current_scene.get_node("locations/out_marker_1"))
+		if current_scene.has_node("locations/out_marker_2"): dropoff_markers.append(current_scene.get_node("locations/out_marker_2"))
 	
 	var racks := get_tree().get_nodes_in_group("racks")
 	print("DEBUG: Found ", racks.size(), " nodes in group 'racks'.")
