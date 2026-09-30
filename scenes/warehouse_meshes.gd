@@ -49,5 +49,5 @@ func _replace_mesh(where: Node3D, with: PackedScene, new_name: String) -> void:
 		var new: Node3D = with.instantiate()
 		new.transform = transf
 		new.name = new_name
-		add_child(new, true)
+		where.add_child(new, true)
 		new.owner = owner
