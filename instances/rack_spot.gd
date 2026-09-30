@@ -10,6 +10,8 @@ enum State{
 	GOOD_ALIGNED,
 }
 
+@export var must_be_freed: bool
+
 @onready var mesh: MeshInstance3D = $mesh
 
 var state: State = State.FREE: set = set_state
@@ -18,7 +20,12 @@ var _tracked_dist: float:
 	get:
 		if not _tracked_pallet:
 			return 0.0
-		return _tracked_pallet.global_position.distance_squared_to(global_position)
+		var tr_pos2d := Vector2(
+			_tracked_pallet.global_position.x,
+			_tracked_pallet.global_position.z
+		)
+		var pos2d := Vector2(global_position.x, global_position.z)
+		return tr_pos2d.distance_squared_to(pos2d)
 var _tracked_rot: float:
 	get:
 		if not _tracked_pallet:
@@ -38,11 +45,16 @@ func _ready() -> void:
 func set_state(value: State) -> void:
 	state = value
 	if not is_node_ready(): await ready
-	match state:
-		State.FREE: mesh.material_override = preload("uid://c7qynw0inx2f4")
-		State.WRONG: mesh.material_override = preload("uid://dc3vrhfiklpkw")
-		State.GOOD_NOT_ALIGNED: mesh.material_override = preload("uid://ba32lims6w1ei")
-		State.GOOD_ALIGNED: mesh.material_override = preload("uid://drhlbi35wusht")
+	if must_be_freed:
+		match state:
+			State.FREE: mesh.material_override = preload("uid://drhlbi35wusht")
+			_: mesh.material_override = preload("uid://dc3vrhfiklpkw")
+	else:
+		match state:
+			State.FREE: mesh.material_override = preload("uid://c7qynw0inx2f4")
+			State.WRONG: mesh.material_override = preload("uid://dc3vrhfiklpkw")
+			State.GOOD_NOT_ALIGNED: mesh.material_override = preload("uid://ba32lims6w1ei")
+			State.GOOD_ALIGNED: mesh.material_override = preload("uid://drhlbi35wusht")
 
 
 func _process(_delta: float) -> void:
