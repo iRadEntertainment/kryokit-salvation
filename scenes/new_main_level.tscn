@@ -23,9 +23,17 @@
 [ext_resource type="PackedScene" uid="uid://blseo38kk11bo" path="res://instances/forklift.tscn" id="23_cxvwm"]
 [ext_resource type="PackedScene" uid="uid://biro1v6rgmrre" path="res://instances/GUI/gui.tscn" id="24_v0vn1"]
 [ext_resource type="PackedScene" uid="uid://v1421xnqe3qm" path="res://instances/warehouse_obj/light_flourescent_tube.tscn" id="25_rsqgy"]
+[ext_resource type="PackedScene" uid="uid://daqro7s03yvdi" path="res://assets/glbs/cardboard_box.glb" id="26_1afky"]
 [ext_resource type="PackedScene" uid="uid://b2a5hpbqgaq10" path="res://instances/storage_rack_A.tscn" id="26_mn7f6"]
 [ext_resource type="PackedScene" uid="uid://c2mvksek6pxtn" path="res://instances/rack_spot.tscn" id="27_4tw74"]
+[ext_resource type="PackedScene" uid="uid://x8jofwjxb3dl" path="res://assets/glbs/cement_bag_1k.glb" id="27_h41at"]
 [ext_resource type="PackedScene" uid="uid://xu0r8ac28h4g" path="res://instances/pallet.tscn" id="28_lld3s"]
+[ext_resource type="PackedScene" uid="uid://c1bayfbp7p518" path="res://assets/glbs/load_wheel_L.glb" id="28_qax71"]
+[ext_resource type="PackedScene" uid="uid://cbxodbxgl4rwy" path="res://assets/glbs/Metal_Barrel.glb" id="29_4tw74"]
+[ext_resource type="PackedScene" uid="uid://jv5s4goe5w0h" path="res://assets/glbs/Plastic_Barrel.glb" id="30_lld3s"]
+[ext_resource type="PackedScene" uid="uid://cwcqwq50cbb0s" path="res://assets/glbs/pallet_blackwrap.glb" id="31_dhrhg"]
+[ext_resource type="PackedScene" uid="uid://divu04mo3x1vn" path="res://assets/glbs/fork.glb" id="31_rhy15"]
+[ext_resource type="PackedScene" uid="uid://bk7uhy3mf20jf" path="res://assets/glbs/load_wheel_R.glb" id="33_nlav1"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_cxvwm"]
 rough = true
@@ -35,6 +43,7 @@ absorbent = true
 
 [node name="New_Main_Level" type="Node3D" unique_id=38530]
 script = ExtResource("1_1dy31")
+is_tutorial = null
 
 [node name="env" type="WorldEnvironment" parent="." unique_id=1297072512]
 environment = ExtResource("2_4tw74")
@@ -2770,13 +2779,28 @@ must_be_freed = true
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
 to_deliver = true
 
+[node name="cardboard_box" parent="to_unload/rack_location/pallet" unique_id=86642890 instance=ExtResource("26_1afky")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.29999924, 0, 0)
+
+[node name="cardboard_box2" parent="to_unload/rack_location/pallet" unique_id=1772162608 instance=ExtResource("26_1afky")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.057655334, 0, 0)
+
+[node name="cardboard_box3" parent="to_unload/rack_location/pallet" unique_id=1370032210 instance=ExtResource("26_1afky")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.40000153, 0, 0)
+
 [node name="rack_location2" parent="to_unload" unique_id=1070982179 instance=ExtResource("27_4tw74")]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 8.274651, 3.2977571, 41.02877)
 must_be_freed = true
 
 [node name="pallet" parent="to_unload/rack_location2" unique_id=1371802181 instance=ExtResource("28_lld3s")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+transform = Transform3D(-4.371138e-08, 0, -1, 0, 1, 0, 1, 0, -4.371138e-08, 0, 0.03235364, 0)
 to_deliver = true
+
+[node name="cement_bag_1k" parent="to_unload/rack_location2" unique_id=1701340764 instance=ExtResource("27_h41at")]
+transform = Transform3D(-0.02644378, 0, 0.9996503, 0, 1, 0, -0.9996503, 0, -0.02644378, 0, 0.18973875, -0.19783401)
+
+[node name="cement_bag_1k2" parent="to_unload/rack_location2" unique_id=46816314 instance=ExtResource("27_h41at")]
+transform = Transform3D(-0.02644378, 0, 0.9996503, 0, 1, 0, -0.9996503, 0, -0.02644378, 0, 0.18973875, 0.32538986)
 
 [node name="rack_location3" parent="to_unload" unique_id=340270969 instance=ExtResource("27_4tw74")]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 15.274651, 5.297757, 41.02877)
@@ -2786,6 +2810,12 @@ must_be_freed = true
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
 to_deliver = true
 
+[node name="load_wheel_L" parent="to_unload/rack_location3/pallet" unique_id=1786860721 instance=ExtResource("28_qax71")]
+transform = Transform3D(-4.371137e-08, -1, 1.3113416e-07, 1, -4.371139e-08, -1.3113416e-07, 1.3113416e-07, 1.3113416e-07, 1, 0, -0.19999981, 0)
+
+[node name="load_wheel_L2" parent="to_unload/rack_location3/pallet" unique_id=157053036 instance=ExtResource("28_qax71")]
+transform = Transform3D(-4.371137e-08, -1, 1.3113416e-07, 1, -4.371139e-08, -1.3113416e-07, 1.3113416e-07, 1.3113416e-07, 1, 0.5999985, -0.19999981, 0)
+
 [node name="rack_location4" parent="to_unload" unique_id=1415287181 instance=ExtResource("27_4tw74")]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 15.274651, 3.2977571, 33.02877)
 must_be_freed = true
@@ -2794,21 +2824,39 @@ must_be_freed = true
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
 to_deliver = true
 
+[node name="cement_bag_1k" parent="to_unload/rack_location4/pallet" unique_id=1295020553 instance=ExtResource("27_h41at")]
+transform = Transform3D(-0.9996503, 0, -0.026443822, 0, 1, 0, 0.026443822, 0, -0.9996503, -0.16161346, 0.18973875, 0.06377792)
+
+[node name="cement_bag_1k2" parent="to_unload/rack_location4/pallet" unique_id=202500316 instance=ExtResource("27_h41at")]
+transform = Transform3D(-0.9996503, 0, -0.026443822, 0, 1, 0, 0.026443822, 0, -0.9996503, 0.3616104, 0.18973875, 0.06377697)
+
 [node name="rack_location5" parent="to_unload" unique_id=583396038 instance=ExtResource("27_4tw74")]
-transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 15.274651, 3.2977571, 17.02877)
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 15.274651, 0.39775714, 17.02877)
 must_be_freed = true
 
 [node name="pallet" parent="to_unload/rack_location5" unique_id=2094118533 instance=ExtResource("28_lld3s")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
 to_deliver = true
 
+[node name="Metal_Barrel2" parent="to_unload/rack_location5/pallet" unique_id=1346654709 instance=ExtResource("29_4tw74")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.29999924, 0, 0)
+
+[node name="Metal_Barrel3" parent="to_unload/rack_location5/pallet" unique_id=1264819888 instance=ExtResource("29_4tw74")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.30000114, 0, 0)
+
 [node name="rack_location6" parent="to_unload" unique_id=2006554583 instance=ExtResource("27_4tw74")]
-transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 20.27465, 4.297757, 17.02877)
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 27.27465, 0.29775715, 17.02877)
 must_be_freed = true
 
 [node name="pallet" parent="to_unload/rack_location6" unique_id=1754582651 instance=ExtResource("28_lld3s")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
 to_deliver = true
+
+[node name="Plastic_Barrel2" parent="to_unload/rack_location6/pallet" unique_id=2050845687 instance=ExtResource("30_lld3s")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.29999924, 0, 0)
+
+[node name="Plastic_Barrel3" parent="to_unload/rack_location6/pallet" unique_id=881333913 instance=ExtResource("30_lld3s")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.30000114, 0, 0)
 
 [node name="rack_location7" parent="to_unload" unique_id=602160109 instance=ExtResource("27_4tw74")]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 20.27465, 4.297757, 9.02877)
@@ -2826,6 +2874,12 @@ must_be_freed = true
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
 to_deliver = true
 
+[node name="cement_bag_1k" parent="to_unload/rack_location8/pallet" unique_id=2054790433 instance=ExtResource("27_h41at")]
+transform = Transform3D(-0.9996503, 0, -0.026443822, 0, 1, 0, 0.026443822, 0, -0.9996503, -0.26161194, 0.18973875, 0.06377792)
+
+[node name="cement_bag_1k2" parent="to_unload/rack_location8/pallet" unique_id=2102737456 instance=ExtResource("27_h41at")]
+transform = Transform3D(-0.9996503, 0, -0.026443822, 0, 1, 0, 0.026443822, 0, -0.9996503, 0.26161188, 0.18973875, 0.06377792)
+
 [node name="noise_pallet" type="Node3D" parent="." unique_id=1807683903]
 
 [node name="pallet" parent="noise_pallet" unique_id=1541504365 instance=ExtResource("28_lld3s")]
@@ -2839,6 +2893,8 @@ transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 11.9
 
 [node name="pallet2" parent="noise_pallet" unique_id=936292114 instance=ExtResource("28_lld3s")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 3.9577124, 0.3, -0.9509895)
+
+[node name="pallet_blackwrap" parent="noise_pallet/pallet2" unique_id=1251176660 instance=ExtResource("31_dhrhg")]
 
 [node name="pallet20" parent="noise_pallet" unique_id=1167569449 instance=ExtResource("28_lld3s")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 11.957712, 0.3, 9.04901)
@@ -2855,8 +2911,12 @@ transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 15.9
 [node name="pallet22" parent="noise_pallet" unique_id=315793199 instance=ExtResource("28_lld3s")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 23.957712, 0.3, 9.04901)
 
+[node name="Plastic_Barrel2" parent="noise_pallet/pallet22" unique_id=1840051143 instance=ExtResource("30_lld3s")]
+
 [node name="pallet3" parent="noise_pallet" unique_id=1870434867 instance=ExtResource("28_lld3s")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 4.9577127, 0.3, -0.9509895)
+
+[node name="pallet_blackwrap" parent="noise_pallet/pallet3" unique_id=1795317318 instance=ExtResource("31_dhrhg")]
 
 [node name="pallet4" parent="noise_pallet" unique_id=393348082 instance=ExtResource("28_lld3s")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 2.9577124, 2.2, -0.9509895)
@@ -2898,16 +2958,25 @@ transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 22.9
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 26.957712, 3.3000002, 22.84901)
 
 [node name="pallet36" parent="noise_pallet" unique_id=601222227 instance=ExtResource("28_lld3s")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 26.957712, 1.3000002, 22.84901)
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 26.957712, 0.3000002, 22.84901)
+
+[node name="cement_bag_1k" parent="noise_pallet/pallet36" unique_id=1729826076 instance=ExtResource("27_h41at")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.19999999, 0)
 
 [node name="pallet37" parent="noise_pallet" unique_id=573531911 instance=ExtResource("28_lld3s")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 28.657713, 1.3000002, 22.84901)
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 28.657713, 0.3000002, 22.84901)
 
 [node name="pallet39" parent="noise_pallet" unique_id=173407090 instance=ExtResource("28_lld3s")]
 transform = Transform3D(0.49999997, 0, -0.8660254, 0, 1, 0, 0.8660254, 0, 0.49999997, 28.957712, 0.40000015, 30.649012)
 
 [node name="pallet40" parent="noise_pallet" unique_id=189249664 instance=ExtResource("28_lld3s")]
-transform = Transform3D(0.96592575, 0, -0.25881904, 0, 1, 0, 0.25881904, 0, 0.96592575, 15.957712, 0.40000015, 36.64901)
+transform = Transform3D(0.96592575, 0, -0.25881904, 0, 1, 0, 0.25881904, 0, 0.96592575, 15.957712, 1.4901161e-07, 36.64901)
+
+[node name="fork" parent="noise_pallet/pallet40" unique_id=1512754253 instance=ExtResource("31_rhy15")]
+transform = Transform3D(1.928353e-08, 0.25881922, 0.9659271, 1.0000002, 1.3411045e-07, -1.4901161e-08, 7.196713e-08, 0.9659268, -0.25881934, -0.8503876, 0.6, -0.0827198)
+
+[node name="fork2" parent="noise_pallet/pallet40" unique_id=2113933828 instance=ExtResource("31_rhy15")]
+transform = Transform3D(1.928353e-08, 0.25881922, 0.9659271, 1.0000002, 1.3411045e-07, -1.4901161e-08, 7.1967136e-08, 0.96592695, -0.25881934, -0.7020321, 0.6, 0.08458328)
 
 [node name="pallet38" parent="noise_pallet" unique_id=48293575 instance=ExtResource("28_lld3s")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 27.957712, 5.4, 22.84901)
@@ -2920,6 +2989,9 @@ transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 11.9
 
 [node name="pallet34" parent="noise_pallet" unique_id=1435506240 instance=ExtResource("28_lld3s")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 20.957712, 0.3000002, 22.84901)
+
+[node name="load_wheel_R" parent="noise_pallet/pallet34" unique_id=1357933915 instance=ExtResource("33_nlav1")]
+transform = Transform3D(-4.3711385e-08, 1, 4.371139e-08, -1, -4.371139e-08, 4.371139e-08, 4.371139e-08, -4.371139e-08, 1, 0, -0.4, 0)
 
 [node name="pallet26" parent="noise_pallet" unique_id=1673243478 instance=ExtResource("28_lld3s")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 22.957712, 3.3000002, 9.04901)
