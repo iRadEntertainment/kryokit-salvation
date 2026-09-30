@@ -31,10 +31,10 @@
 ambient_light_source = 2
 ambient_light_color = Color(0.5, 0.5, 0.5, 1)
 ambient_light_energy = 0.5
+tonemap_mode = 2
 glow_enabled = true
 glow_normalized = true
 glow_bloom = 0.5
-fog_enabled = true
 fog_mode = 1
 fog_density = 1.0
 
@@ -46,6 +46,17 @@ absorbent = true
 
 [node name="New_Main_Level" type="Node3D" unique_id=38530]
 script = ExtResource("1_1dy31")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1297072512]
+environment = SubResource("Environment_64wi0")
+
+[node name="floor" type="StaticBody3D" parent="." unique_id=1904816557]
+physics_material_override = SubResource("PhysicsMaterial_cxvwm")
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="floor" unique_id=2133697806]
+shape = SubResource("WorldBoundaryShape3D_v0vn1")
 
 [node name="world" type="Node3D" parent="." unique_id=350038381]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, -16, -14)
@@ -779,6 +790,15 @@ transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 35.9
 
 [node name="refrigerated_gardrail_Straight34" parent="world" unique_id=1661716122 instance=ExtResource("14_77npy")]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 35.9, 16, 42.034943)
+
+[node name="refrigerated_gardrail_Straight36" parent="world" unique_id=75185467 instance=ExtResource("14_77npy")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 35.9, 16, 46.034943)
+
+[node name="refrigerated_gardrail_Straight37" parent="world" unique_id=1288606388 instance=ExtResource("14_77npy")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 35.9, 16, 50.034943)
+
+[node name="refrigerated_gardrail_Straight38" parent="world" unique_id=377293963 instance=ExtResource("14_77npy")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 35.9, 16, 54.034943)
 
 [node name="refrigerated_gardrail_Straight10" parent="world" unique_id=234935600 instance=ExtResource("14_77npy")]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 7.8999996, 16, 34.034943)
@@ -2573,70 +2593,109 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32, 20, 38)
 [node name="lighting" type="Node3D" parent="." unique_id=849946198]
 
 [node name="light_flourescent_tube" parent="lighting" unique_id=1187528851 instance=ExtResource("22_w8u82")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 5, 34)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 8, 6.5, 34)
 
 [node name="light_flourescent_tube2" parent="lighting" unique_id=532870965 instance=ExtResource("22_w8u82")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 5, 28)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 8, 6.5, 30)
 
 [node name="light_flourescent_tube3" parent="lighting" unique_id=519981184 instance=ExtResource("22_w8u82")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 5, 34)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 2, 6.5, 34)
 
 [node name="light_flourescent_tube4" parent="lighting" unique_id=835913243 instance=ExtResource("22_w8u82")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 5, 28)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 2, 6.5, 30)
 
 [node name="light_flourescent_tube5" parent="lighting" unique_id=478762762 instance=ExtResource("22_w8u82")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 5, 34)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 20, 6.5, 34)
 
 [node name="light_flourescent_tube6" parent="lighting" unique_id=1563621721 instance=ExtResource("22_w8u82")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 5, 28)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 20, 6.5, 30)
 
 [node name="light_flourescent_tube7" parent="lighting" unique_id=841595154 instance=ExtResource("22_w8u82")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 5, 34)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 14, 6.5, 34)
 
 [node name="light_flourescent_tube8" parent="lighting" unique_id=1761886052 instance=ExtResource("22_w8u82")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 5, 28)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 14, 6.5, 30)
 
 [node name="light_flourescent_tube9" parent="lighting" unique_id=203050374 instance=ExtResource("22_w8u82")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32, 5, 34)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 32, 6.5, 34)
+
+[node name="light_flourescent_tube22" parent="lighting" unique_id=1625237625 instance=ExtResource("22_w8u82")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 32, 6.5, 38)
 
 [node name="light_flourescent_tube10" parent="lighting" unique_id=1131637287 instance=ExtResource("22_w8u82")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32, 5, 28)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 32, 6.5, 30)
 
 [node name="light_flourescent_tube11" parent="lighting" unique_id=233291648 instance=ExtResource("22_w8u82")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26, 5, 34)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 26, 6.5, 34)
 
 [node name="light_flourescent_tube12" parent="lighting" unique_id=114587789 instance=ExtResource("22_w8u82")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26, 5, 28)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 26, 6.5, 30)
 
 [node name="light_flourescent_tube13" parent="lighting" unique_id=1524631953 instance=ExtResource("22_w8u82")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 5, 12)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 8, 6.5, 10)
 
 [node name="light_flourescent_tube14" parent="lighting" unique_id=177385696 instance=ExtResource("22_w8u82")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 5, 6)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 8, 6.5, 6)
 
 [node name="light_flourescent_tube15" parent="lighting" unique_id=978878797 instance=ExtResource("22_w8u82")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 5, 12)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 2, 6.5, 10)
 
 [node name="light_flourescent_tube16" parent="lighting" unique_id=2076471704 instance=ExtResource("22_w8u82")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 5, 6)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 2, 6.5, 6)
 
 [node name="light_flourescent_tube17" parent="lighting" unique_id=1155851474 instance=ExtResource("22_w8u82")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 5, 12)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 20, 6.5, 10)
 
 [node name="light_flourescent_tube18" parent="lighting" unique_id=741287813 instance=ExtResource("22_w8u82")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 5, 6)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 20, 6.5, 6)
 
 [node name="light_flourescent_tube19" parent="lighting" unique_id=239446651 instance=ExtResource("22_w8u82")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 5, 12)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 14, 6.5, 10)
 
 [node name="light_flourescent_tube20" parent="lighting" unique_id=1662206920 instance=ExtResource("22_w8u82")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 5, 6)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 14, 6.5, 6)
 
 [node name="light_flourescent_tube21" parent="lighting" unique_id=97457108 instance=ExtResource("22_w8u82")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32, 5, 12)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 32, 6.5, 10)
 
 [node name="light_flourescent_tube23" parent="lighting" unique_id=1276615172 instance=ExtResource("22_w8u82")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26, 5, 12)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 26, 6.5, 10)
+
+[node name="light_flourescent_tube24" parent="lighting" unique_id=596822081 instance=ExtResource("22_w8u82")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 8, 6.5, 14)
+
+[node name="light_flourescent_tube25" parent="lighting" unique_id=1454152752 instance=ExtResource("22_w8u82")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 2, 6.5, 14)
+
+[node name="light_flourescent_tube26" parent="lighting" unique_id=1668630816 instance=ExtResource("22_w8u82")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 20, 6.5, 14)
+
+[node name="light_flourescent_tube27" parent="lighting" unique_id=1809505391 instance=ExtResource("22_w8u82")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 14, 6.5, 14)
+
+[node name="light_flourescent_tube28" parent="lighting" unique_id=27778647 instance=ExtResource("22_w8u82")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 32, 6.5, 14)
+
+[node name="light_flourescent_tube29" parent="lighting" unique_id=1027535308 instance=ExtResource("22_w8u82")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 26, 6.5, 14)
+
+[node name="light_flourescent_tube30" parent="lighting" unique_id=163314227 instance=ExtResource("22_w8u82")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 8, 6.5, 2)
+
+[node name="light_flourescent_tube31" parent="lighting" unique_id=1645623605 instance=ExtResource("22_w8u82")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 2, 6.5, 2)
+
+[node name="light_flourescent_tube32" parent="lighting" unique_id=1350105861 instance=ExtResource("22_w8u82")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 20, 6.5, 2)
+
+[node name="light_flourescent_tube33" parent="lighting" unique_id=1651452225 instance=ExtResource("22_w8u82")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 14, 6.5, 2)
+
+[node name="light_flourescent_tube34" parent="lighting" unique_id=827970996 instance=ExtResource("22_w8u82")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 32, 6.5, 2)
+
+[node name="light_flourescent_tube35" parent="lighting" unique_id=206108024 instance=ExtResource("22_w8u82")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 26, 6.5, 2)
 
 [node name="locations" type="Node3D" parent="." unique_id=1135144804]
 
@@ -2672,21 +2731,132 @@ unique_name_in_owner = true
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -2.6000028, 0.6, 8)
 gizmo_extents = 1.0
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1297072512]
-environment = SubResource("Environment_64wi0")
+[node name="racks" type="Node3D" parent="locations" unique_id=915744495]
+
+[node name="rack_A" type="Node3D" parent="locations/racks" unique_id=492533905]
+
+[node name="Storage_Rack" parent="locations/racks/rack_A" unique_id=1891672586 instance=ExtResource("26_mn7f6")]
+transform = Transform3D(1, 0, 1.9272301e-07, 0, 1, 0, -1.9272301e-07, 0, 1, 8.4, 0, 36.2)
+
+[node name="Storage_Rack2" parent="locations/racks/rack_A" unique_id=1852318455 instance=ExtResource("26_mn7f6")]
+transform = Transform3D(1, 0, 1.9272301e-07, 0, 1, 0, -1.9272301e-07, 0, 1, 12.4, 0, 36.2)
+
+[node name="Storage_Rack3" parent="locations/racks/rack_A" unique_id=1941075151 instance=ExtResource("26_mn7f6")]
+transform = Transform3D(1, 0, 1.9272301e-07, 0, 1, 0, -1.9272301e-07, 0, 1, 16.4, 0, 36.2)
+
+[node name="Storage_Rack4" parent="locations/racks/rack_A" unique_id=452895880 instance=ExtResource("26_mn7f6")]
+transform = Transform3D(1, 0, 1.9272301e-07, 0, 1, 0, -1.9272301e-07, 0, 1, 20.4, 0, 36.2)
+
+[node name="Storage_Rack5" parent="locations/racks/rack_A" unique_id=1695812813 instance=ExtResource("26_mn7f6")]
+transform = Transform3D(1, 0, 1.9272301e-07, 0, 1, 0, -1.9272301e-07, 0, 1, 24.4, 0, 36.2)
+
+[node name="Storage_Rack6" parent="locations/racks/rack_A" unique_id=467757002 instance=ExtResource("26_mn7f6")]
+transform = Transform3D(-2.3643439e-07, 0, 1, 0, 1, 0, -1, 0, -2.3643439e-07, 26.699999, 0, 41.2)
+
+[node name="rack_B" type="Node3D" parent="locations/racks" unique_id=2124328903]
+
+[node name="Storage_Rack2" parent="locations/racks/rack_B" unique_id=273046206 instance=ExtResource("26_mn7f6")]
+transform = Transform3D(1, 0, 1.9272301e-07, 0, 1, 0, -1.9272301e-07, 0, 1, 8.4, 0, 31.5)
+
+[node name="Storage_Rack3" parent="locations/racks/rack_B" unique_id=1826330845 instance=ExtResource("26_mn7f6")]
+transform = Transform3D(1, 0, 1.9272301e-07, 0, 1, 0, -1.9272301e-07, 0, 1, 12.4, 0, 31.5)
+
+[node name="Storage_Rack4" parent="locations/racks/rack_B" unique_id=565193354 instance=ExtResource("26_mn7f6")]
+transform = Transform3D(1, 0, 1.9272301e-07, 0, 1, 0, -1.9272301e-07, 0, 1, 16.4, 0, 31.5)
+
+[node name="Storage_Rack5" parent="locations/racks/rack_B" unique_id=273233033 instance=ExtResource("26_mn7f6")]
+transform = Transform3D(1, 0, 1.9272301e-07, 0, 1, 0, -1.9272301e-07, 0, 1, 20.4, 0, 31.5)
+
+[node name="Storage_Rack6" parent="locations/racks/rack_B" unique_id=702464417 instance=ExtResource("26_mn7f6")]
+transform = Transform3D(1, 0, 1.9272301e-07, 0, 1, 0, -1.9272301e-07, 0, 1, 24.4, 0, 31.5)
+
+[node name="Storage_Rack7" parent="locations/racks/rack_B" unique_id=1607602944 instance=ExtResource("26_mn7f6")]
+transform = Transform3D(1, 0, 1.9272301e-07, 0, 1, 0, -1.9272301e-07, 0, 1, 28.4, 0, 31.5)
+
+[node name="rack_C" type="Node3D" parent="locations/racks" unique_id=1923050871]
+
+[node name="Storage_Rack3" parent="locations/racks/rack_C" unique_id=325824404 instance=ExtResource("26_mn7f6")]
+transform = Transform3D(1, 0, 1.9272301e-07, 0, 1, 0, -1.9272301e-07, 0, 1, 8.4, 0, 26.5)
+
+[node name="Storage_Rack4" parent="locations/racks/rack_C" unique_id=1067798517 instance=ExtResource("26_mn7f6")]
+transform = Transform3D(1, 0, 1.9272301e-07, 0, 1, 0, -1.9272301e-07, 0, 1, 12.4, 0, 26.5)
+
+[node name="Storage_Rack5" parent="locations/racks/rack_C" unique_id=479318170 instance=ExtResource("26_mn7f6")]
+transform = Transform3D(1, 0, 1.9272301e-07, 0, 1, 0, -1.9272301e-07, 0, 1, 16.4, 0, 26.5)
+
+[node name="Storage_Rack6" parent="locations/racks/rack_C" unique_id=43485521 instance=ExtResource("26_mn7f6")]
+transform = Transform3D(1, 0, 1.9272301e-07, 0, 1, 0, -1.9272301e-07, 0, 1, 20.4, 0, 26.5)
+
+[node name="Storage_Rack7" parent="locations/racks/rack_C" unique_id=1230857873 instance=ExtResource("26_mn7f6")]
+transform = Transform3D(1, 0, 1.9272301e-07, 0, 1, 0, -1.9272301e-07, 0, 1, 24.4, 0, 26.5)
+
+[node name="Storage_Rack8" parent="locations/racks/rack_C" unique_id=967383817 instance=ExtResource("26_mn7f6")]
+transform = Transform3D(1, 0, 1.9272301e-07, 0, 1, 0, -1.9272301e-07, 0, 1, 28.4, 0, 26.5)
+
+[node name="rack_d" type="Node3D" parent="locations/racks" unique_id=1569856225]
+
+[node name="Storage_Rack" parent="locations/racks/rack_d" unique_id=568455672 instance=ExtResource("26_mn7f6")]
+transform = Transform3D(1, 0, 1.9272301e-07, 0, 1, 0, -1.9272301e-07, 0, 1, 2.3999996, 0, -1.3999993)
+
+[node name="Storage_Rack2" parent="locations/racks/rack_d" unique_id=40516633 instance=ExtResource("26_mn7f6")]
+transform = Transform3D(1, 0, 1.9272301e-07, 0, 1, 0, -1.9272301e-07, 0, 1, 6.3999996, 0, -1.3999993)
+
+[node name="Storage_Rack3" parent="locations/racks/rack_d" unique_id=1393048402 instance=ExtResource("26_mn7f6")]
+transform = Transform3D(1, 0, 1.9272301e-07, 0, 1, 0, -1.9272301e-07, 0, 1, 10.4, 0, -1.3999993)
+
+[node name="Storage_Rack4" parent="locations/racks/rack_d" unique_id=1273816838 instance=ExtResource("26_mn7f6")]
+transform = Transform3D(1, 0, 1.9272301e-07, 0, 1, 0, -1.9272301e-07, 0, 1, 14.4, 0, -1.3999993)
+
+[node name="Storage_Rack5" parent="locations/racks/rack_d" unique_id=1371673409 instance=ExtResource("26_mn7f6")]
+transform = Transform3D(1, 0, 1.9272301e-07, 0, 1, 0, -1.9272301e-07, 0, 1, 18.4, 0, -1.3999993)
+
+[node name="rack_e" type="Node3D" parent="locations/racks" unique_id=533511913]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
+
+[node name="Storage_Rack" parent="locations/racks/rack_e" unique_id=1724689345 instance=ExtResource("26_mn7f6")]
+transform = Transform3D(1, 0, 1.9272301e-07, 0, 1, 0, -1.9272301e-07, 0, 1, 10.4, 0, -1.4999993)
+
+[node name="Storage_Rack2" parent="locations/racks/rack_e" unique_id=836450154 instance=ExtResource("26_mn7f6")]
+transform = Transform3D(1, 0, 1.9272301e-07, 0, 1, 0, -1.9272301e-07, 0, 1, 14.4, 0, -1.4999993)
+
+[node name="Storage_Rack3" parent="locations/racks/rack_e" unique_id=1883064105 instance=ExtResource("26_mn7f6")]
+transform = Transform3D(1, 0, 1.9272301e-07, 0, 1, 0, -1.9272301e-07, 0, 1, 18.4, 0, -1.4999993)
+
+[node name="rack_f" type="Node3D" parent="locations/racks" unique_id=1738736570]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
+
+[node name="Storage_Rack" parent="locations/racks/rack_f" unique_id=382024914 instance=ExtResource("26_mn7f6")]
+transform = Transform3D(1, 0, 1.9272301e-07, 0, 1, 0, -1.9272301e-07, 0, 1, 10.4, 0, 2.6000009)
+
+[node name="Storage_Rack2" parent="locations/racks/rack_f" unique_id=1919509242 instance=ExtResource("26_mn7f6")]
+transform = Transform3D(1, 0, 1.9272301e-07, 0, 1, 0, -1.9272301e-07, 0, 1, 14.4, 0, 2.6000009)
+
+[node name="Storage_Rack3" parent="locations/racks/rack_f" unique_id=696919674 instance=ExtResource("26_mn7f6")]
+transform = Transform3D(1, 0, 1.9272301e-07, 0, 1, 0, -1.9272301e-07, 0, 1, 18.4, 0, 2.6000009)
+
+[node name="rack_g" type="Node3D" parent="locations/racks" unique_id=967810598]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
+
+[node name="Storage_Rack" parent="locations/racks/rack_g" unique_id=123700933 instance=ExtResource("26_mn7f6")]
+transform = Transform3D(1, 0, 1.9272301e-07, 0, 1, 0, -1.9272301e-07, 0, 1, 10.4, 0, 6.6000004)
+
+[node name="Storage_Rack2" parent="locations/racks/rack_g" unique_id=1632869593 instance=ExtResource("26_mn7f6")]
+transform = Transform3D(1, 0, 1.9272301e-07, 0, 1, 0, -1.9272301e-07, 0, 1, 14.4, 0, 6.6000004)
+
+[node name="Storage_Rack3" parent="locations/racks/rack_g" unique_id=265755596 instance=ExtResource("26_mn7f6")]
+transform = Transform3D(1, 0, 1.9272301e-07, 0, 1, 0, -1.9272301e-07, 0, 1, 18.4, 0, 6.6000004)
+
+[node name="rack_D" type="Node3D" parent="locations/racks" unique_id=1314577354]
+
+[node name="rack_E" type="Node3D" parent="locations/racks" unique_id=2011882749]
+
+[node name="rack_F" type="Node3D" parent="locations/racks" unique_id=457669694]
+
+[node name="rack_G" type="Node3D" parent="locations/racks" unique_id=302569736]
+
+[node name="rack_H" type="Node3D" parent="locations/racks" unique_id=1668389867]
 
 [node name="forklift" parent="." unique_id=983298835 instance=ExtResource("23_cxvwm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 29)
 
-[node name="floor" type="StaticBody3D" parent="." unique_id=1904816557]
-physics_material_override = SubResource("PhysicsMaterial_cxvwm")
-metadata/_edit_group_ = true
-metadata/_edit_lock_ = true
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="floor" unique_id=2133697806]
-shape = SubResource("WorldBoundaryShape3D_v0vn1")
-
 [node name="GUI" parent="." unique_id=1226663711 instance=ExtResource("24_v0vn1")]
-
-[node name="Storage_Rack" parent="." unique_id=1891672586 instance=ExtResource("26_mn7f6")]
-transform = Transform3D(1.4901161e-07, 0, -1, 0, 1, 0, 1, 0, 1.4901161e-07, 3, 0, 35)

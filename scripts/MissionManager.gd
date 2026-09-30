@@ -23,6 +23,9 @@ var current_load_path: String = ""
 var mission_active: bool = false
 var current_pickup_marker: Marker3D = null
 
+var pickup_indicator: Node3D = null
+var dropoff_indicator: Node3D = null
+
 
 func _ready() -> void:
 	await get_tree().process_frame
@@ -68,6 +71,9 @@ func start_new_task() -> void:
 		print("MissionManager: Not enough markers found to create a task!")
 		return
 	
+	if pickup_indicator: pickup_indicator.queue_free()
+	if dropoff_indicator: dropoff_indicator.queue_free()
+	
 	current_pickup_marker = pickup_markers.pick_random()
 	
 	var valid_dropoffs := dropoff_markers.filter(func(m): return m != current_pickup_marker)
@@ -78,7 +84,27 @@ func start_new_task() -> void:
 	
 	print("MISSION: Move pallet from ", source_name, " to ", target_name)
 	spawn_pallet_and_load(current_pickup_marker)
+	
+	pickup_indicator = _spawn_indicator(current_pickup_marker, Color(0, 1, 0, 0.4))
+	dropoff_indicator = _spawn_indicator(current_target_marker, Color(1, 0, 0, 0.4))
+	
 	mission_active = true
+
+
+func _spawn_indicator(marker: Marker3D, color: Color) -> Node3D:
+	var mesh_instance := MeshInstance3D.new()
+	var box_mesh := BoxMesh.new()
+	box_mesh.size = Vector3(1.5, 5, 1.5)
+	mesh_instance.mesh = box_mesh
+	
+	var material := StandardMaterial3D.new()
+	material.transparency = BaseMaterial3D.TRANSPARENCY_ALPHA
+	material.albedo_color = color
+	mesh_instance.material_override = material
+	
+	get_tree().current_scene.add_child(mesh_instance)
+	mesh_instance.global_transform = marker.global_transform
+	return mesh_instance
 
 
 func spawn_pallet_and_load(marker: Marker3D) -> void:
@@ -109,6 +135,13 @@ func _physics_process(_delta: float) -> void:
 	if distance <= success_tolerance:
 		print("success")
 		mission_active = false
+		
+		if pickup_indicator: 
+			pickup_indicator.queue_free()
+			pickup_indicator = null
+		if dropoff_indicator: 
+			dropoff_indicator.queue_free()
+			dropoff_indicator = null
 		
 		# Record serializable paths instead of raw memory node references
 		var target_path_key := str(current_target_marker.get_path())
