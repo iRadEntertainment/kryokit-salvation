@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://duf1j3cvni1hk" path="res://instances/GUI/gui.gd" id="1_yumji"]
 [ext_resource type="PackedScene" uid="uid://bp6i4usty07fs" path="res://instances/GUI/hud.tscn" id="2_yumji"]
 [ext_resource type="PackedScene" uid="uid://baqkc3uq8om3n" path="res://instances/GUI/in_game_menu.tscn" id="3_fvtg6"]
+[ext_resource type="LabelSettings" uid="uid://bsqx4o12mbbs3" path="res://UI/styles/label_titles.tres" id="4_gapnh"]
 
 [node name="GUI" type="CanvasLayer" unique_id=1226663711]
 script = ExtResource("1_yumji")
@@ -11,3 +12,46 @@ script = ExtResource("1_yumji")
 
 [node name="in_game_menu" parent="." unique_id=945941104 instance=ExtResource("3_fvtg6")]
 visible = false
+
+[node name="disclaimer" type="PanelContainer" parent="." unique_id=145815423]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 163.0
+offset_top = 103.0
+offset_right = -163.0
+offset_bottom = -103.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="disclaimer" unique_id=665040463]
+layout_mode = 2
+
+[node name="title" type="Label" parent="disclaimer/VBoxContainer" unique_id=136956031]
+layout_mode = 2
+text = "Welcome"
+label_settings = ExtResource("4_gapnh")
+horizontal_alignment = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="disclaimer/VBoxContainer" unique_id=1451564715]
+layout_mode = 2
+size_flags_vertical = 3
+text = "The warehouse had a malfunction! The HVAC system is down and the cooling isn't working in this warehouse.
+Bring the goods that will spoil if not refrigerated to the refrigerated areas still working!
+Deliver the pallets in the red areas to the white spots!"
+
+[node name="sub" type="Label" parent="disclaimer/VBoxContainer" unique_id=1886777219]
+layout_mode = 2
+text = "Disclaimer"
+horizontal_alignment = 1
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="disclaimer/VBoxContainer" unique_id=957379107]
+layout_mode = 2
+text = "The game isn't exactly finished! We tried, but hey! you can learn how to drive a real forklift!"
+fit_content = true
+scroll_active = false
+
+[node name="sub2" type="Label" parent="disclaimer/VBoxContainer" unique_id=1752167493]
+layout_mode = 2
+text = "Press any key to continue"
+horizontal_alignment = 1
