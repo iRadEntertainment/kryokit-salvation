@@ -9,7 +9,7 @@
 size = Vector3(0.22, 7, 0.22)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_25n5u"]
-size = Vector3(2.982788, 0.14763671, 0.1)
+size = Vector3(2.983, 0.167, 0.1)
 
 [node name="Storage_Rack" type="Node3D" unique_id=1891672586 groups=["racks"]]
 
