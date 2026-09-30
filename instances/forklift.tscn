@@ -122,6 +122,22 @@ stream = ExtResource("9_30ch1")
 max_db = -3.0
 bus = &"Forklift"
 
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="vehicle_body/audio" unique_id=176748031]
+max_db = 0.0
+bus = &"Forklift"
+
+[node name="AudioStreamPlayer3D2" type="AudioStreamPlayer3D" parent="vehicle_body/audio" unique_id=254322221]
+max_db = 0.0
+bus = &"Forklift"
+
+[node name="AudioStreamPlayer3D3" type="AudioStreamPlayer3D" parent="vehicle_body/audio" unique_id=250130946]
+max_db = 0.0
+bus = &"Forklift"
+
+[node name="AudioStreamPlayer3D4" type="AudioStreamPlayer3D" parent="vehicle_body/audio" unique_id=1617677140]
+max_db = 0.0
+bus = &"Forklift"
+
 [node name="body" parent="vehicle_body" unique_id=661026329 instance=ExtResource("2_r8te8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.09, 0.72)
 
@@ -211,7 +227,7 @@ unique_name_in_owner = true
 
 [node name="Rotating_Spotlight3D" type="SpotLight3D" parent="vehicle_body" unique_id=1382821880]
 process_mode = 3
-transform = Transform3D(0.062326744, 0, -0.9994688, 0, 1, 0, 0.9994688, 0, 0.062326744, -0.27493212, 2.6320844, -0.6610342)
+transform = Transform3D(-0.6676205, 0, 0.74649847, 0, 1, 0, -0.74649847, 0, -0.6676205, -0.27493212, 2.6320844, -0.6610342)
 light_color = Color(1, 0.51950234, 0.23511073, 1)
 light_energy = 2.0
 light_volumetric_fog_energy = 5.0
