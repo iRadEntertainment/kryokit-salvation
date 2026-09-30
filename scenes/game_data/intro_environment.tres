@@ -55,7 +55,6 @@ fog_density = 1.0
 fog_sky_affect = 0.616
 fog_height = 2.0
 fog_height_density = 0.1
-volumetric_fog_enabled = true
 volumetric_fog_density = 0.0135
 adjustment_enabled = true
 adjustment_brightness = 1.23

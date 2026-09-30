@@ -68,10 +68,6 @@ _data = {
 &"camera_sway": SubResource("Animation_gyen7")
 }
 
-[sub_resource type="FogMaterial" id="FogMaterial_2mys3"]
-density = 0.05
-albedo = Color(1, 0.95566666, 0.86, 1)
-
 [node name="intro_3d" type="Node3D" unique_id=1815666335]
 
 [node name="intro_env" type="WorldEnvironment" parent="." unique_id=537664222]
@@ -131,28 +127,20 @@ transform = Transform3D(0.7071069, 0, -0.7071066, 0, 1, 0, 0.7071066, 0, 0.70710
 [node name="Office_Intro" parent="." unique_id=1113902176 instance=ExtResource("3_slekq")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.24332428, 0, -13.176103)
 
-[node name="FogVolume" type="FogVolume" parent="." unique_id=1733229442]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.631954, 7.4339542, -8.146902)
-size = Vector3(26.52649, 16.874878, 16.135498)
-material = SubResource("FogMaterial_2mys3")
-
 [node name="Trees" parent="." unique_id=1346160839 instance=ExtResource("4_i45y4")]
 transform = Transform3D(-0.7375412, 0, -0.675302, 0, 1, 0, 0.675302, 0, -0.7375412, -25.567623, -0.3, -29.873892)
 
 [node name="Trees3" parent="." unique_id=1524567935 instance=ExtResource("4_i45y4")]
-transform = Transform3D(0.21605815, 0, -0.97638035, 0, 1, 0, 0.97638035, 0, 0.21605815, -38.238777, -0.3, -2.899055)
+transform = Transform3D(0.21605815, 0, -0.97638035, 0, 1, 0, 0.97638035, 0, 0.21605815, -54.69239, 2.3393927, -21.779472)
 
 [node name="Trees2" parent="." unique_id=1725927218 instance=ExtResource("4_i45y4")]
-transform = Transform3D(0.04400988, 0, 0.9990311, 0, 1, 0, -0.9990311, 0, 0.04400988, -15.406812, -0.40000004, -2.9328818)
-
-[node name="Trees4" parent="." unique_id=823072510 instance=ExtResource("4_i45y4")]
-transform = Transform3D(0.70736927, 0, 0.7068441, 0, 1, 0, -0.7068441, 0, 0.70736927, -27.210579, -0.3, 12.930611)
+transform = Transform3D(0.04400988, 0, 0.9990311, 0, 1, 0, -0.9990311, 0, 0.04400988, -40.774933, 0.89434963, 2.8935356)
 
 [node name="Trees5" parent="." unique_id=136040276 instance=ExtResource("4_i45y4")]
-transform = Transform3D(-0.25846034, 0, 0.9660218, 0, 1, 0, -0.9660218, 0, -0.25846034, -15.728641, -0.3, -14.571484)
+transform = Transform3D(0.74110377, 0, 0.6713904, 0, 1, 0, -0.6713904, 0, 0.74110377, -38.54624, 3.787879, -29.397709)
 
 [node name="Trees6" parent="." unique_id=860161329 instance=ExtResource("4_i45y4")]
-transform = Transform3D(-0.00037145615, 0, -0.99999994, 0, 1, 0, 0.99999994, 0, -0.00037145615, -38.537376, -0.40000004, -13.541331)
+transform = Transform3D(0.1799543, 0, 0.983675, 0, 1, 0, -0.983675, 0, 0.1799543, -20.528421, -1.1029763, -1.7608767)
 
 [node name="SpotLight3D3" type="SpotLight3D" parent="." unique_id=964428587]
 transform = Transform3D(0.21201211, 0.9659259, -0.14845248, 0.72533303, -0.053727444, 0.6862983, 0.65493727, -0.25318104, -0.71200883, -19.546236, 23.021425, -44.22149)
