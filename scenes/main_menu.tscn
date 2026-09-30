@@ -56,11 +56,6 @@ stretch = true
 
 [node name="SubViewport" type="SubViewport" parent="sv_bg" unique_id=604217190]
 handle_input_locally = false
-use_taa = true
-positional_shadow_atlas_quad_0 = 3
-positional_shadow_atlas_quad_1 = 4
-positional_shadow_atlas_quad_2 = 4
-positional_shadow_atlas_quad_3 = 5
 size = Vector2i(1152, 648)
 size_2d_override_stretch = true
 render_target_update_mode = 4

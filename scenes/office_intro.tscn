@@ -2,18 +2,18 @@
 
 [ext_resource type="PackedScene" uid="uid://b0nmnc3nqyunu" path="res://assets/glbs/warehouse/regular/wall.glb" id="1_6rqec"]
 [ext_resource type="PackedScene" uid="uid://c7mpk34aet8yd" path="res://assets/glbs/kryokit_logo_model.glb" id="3_beuwt"]
-[ext_resource type="PackedScene" uid="uid://1wtsvwns84xg" path="res://assets/glbs/warehouse/regular/floor.glb" id="4_sp656"]
+[ext_resource type="PackedScene" uid="uid://1wtsvwns84xg" path="res://assets/glbs/warehouse/regular/Floor.glb" id="4_sp656"]
 [ext_resource type="PackedScene" uid="uid://cd5blac0qgg6g" path="res://assets/glbs/warehouse/regular/delivery_doorframe_shut.glb" id="5_hf2ib"]
 [ext_resource type="PackedScene" uid="uid://xxt0kld8oboc" path="res://assets/glbs/warehouse/regular/gardrail_Straight.glb" id="6_q1da4"]
-[ext_resource type="PackedScene" uid="uid://cn44eki6lb7xh" path="res://assets/glbs/warehouse_col/refrigerated/refrigerated_floor.glb" id="7_xr6vg"]
-[ext_resource type="PackedScene" uid="uid://bax65j2ewudkt" path="res://assets/glbs/warehouse/regular/pillar.glb" id="8_kq45u"]
+[ext_resource type="PackedScene" uid="uid://cn44eki6lb7xh" path="res://assets/glbs/warehouse_col/refrigerated/Refrigerated_Floor.glb" id="7_xr6vg"]
+[ext_resource type="PackedScene" uid="uid://bax65j2ewudkt" path="res://assets/glbs/warehouse/regular/Pillar.glb" id="8_kq45u"]
 [ext_resource type="PackedScene" uid="uid://ctw07nk0o84ue" path="res://assets/glbs/warehouse/refrigerated/refrigerated_roof_frame.glb" id="9_q1da4"]
 [ext_resource type="PackedScene" uid="uid://c6q12wokabwvg" path="res://assets/glbs/warehouse/regular/wall_window.glb" id="10_kq45u"]
 [ext_resource type="PackedScene" uid="uid://c1t1pq0n2rpv5" path="res://assets/glbs/warehouse/regular/roof_corrugated.glb" id="10_xr6vg"]
 [ext_resource type="Environment" uid="uid://bl1fub2kdtprp" path="res://scenes/game_data/intro_environment.tres" id="11_kq45u"]
 [ext_resource type="PackedScene" uid="uid://mfyqgabbf30" path="res://assets/glbs/pallet.glb" id="12_e1e42"]
 [ext_resource type="PackedScene" uid="uid://dpnefjtqisswu" path="res://assets/glbs/warehouse/regular/roof_frame.glb" id="13_u6jkg"]
-[ext_resource type="PackedScene" uid="uid://ctcddkhba6i2a" path="res://assets/glbs/Metal_Barrel.glb" id="14_ubbpv"]
+[ext_resource type="PackedScene" uid="uid://cbxodbxgl4rwy" path="res://assets/glbs/Metal_Barrel.glb" id="14_ubbpv"]
 [ext_resource type="PackedScene" uid="uid://jv5s4goe5w0h" path="res://assets/glbs/Plastic_Barrel.glb" id="15_gf17i"]
 [ext_resource type="PackedScene" uid="uid://cwcqwq50cbb0s" path="res://assets/glbs/pallet_blackwrap.glb" id="15_ubbpv"]
 
@@ -144,48 +144,6 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, -
 
 [node name="wall25" parent="Office" unique_id=2120591097 instance=ExtResource("1_6rqec")]
 transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, 0, 7.9261737, 4)
-
-[node name="wall75" parent="Office" unique_id=796764274 instance=ExtResource("1_6rqec")]
-transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, 0, 7.9261737, -5)
-
-[node name="wall76" parent="Office" unique_id=1800494072 instance=ExtResource("1_6rqec")]
-transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, -4, 7.9261737, -5)
-
-[node name="wall77" parent="Office" unique_id=733143968 instance=ExtResource("1_6rqec")]
-transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, 0, 10.926174, -5)
-
-[node name="wall78" parent="Office" unique_id=729758362 instance=ExtResource("1_6rqec")]
-transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, -4, 10.926174, -5)
-
-[node name="wall79" parent="Office" unique_id=2129729430 instance=ExtResource("1_6rqec")]
-transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, 0, 3.9261742, -5)
-
-[node name="wall80" parent="Office" unique_id=1530952732 instance=ExtResource("1_6rqec")]
-transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, -4, 3.9261742, -5)
-
-[node name="wall81" parent="Office" unique_id=1083770905 instance=ExtResource("1_6rqec")]
-transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, 0, 0.92617416, -5)
-
-[node name="wall82" parent="Office" unique_id=680946569 instance=ExtResource("1_6rqec")]
-transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, -4, 0.92617416, -5)
-
-[node name="wall83" parent="Office" unique_id=622115420 instance=ExtResource("1_6rqec")]
-transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, 0, 3.9261742, -12)
-
-[node name="wall84" parent="Office" unique_id=827799757 instance=ExtResource("1_6rqec")]
-transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, -4, 3.9261742, -12)
-
-[node name="wall85" parent="Office" unique_id=639237380 instance=ExtResource("1_6rqec")]
-transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, 0, 6.926174, -12)
-
-[node name="wall86" parent="Office" unique_id=852669595 instance=ExtResource("1_6rqec")]
-transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, -4, 6.926174, -12)
-
-[node name="wall87" parent="Office" unique_id=1452364684 instance=ExtResource("1_6rqec")]
-transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, 0, 9.926174, -12)
-
-[node name="wall88" parent="Office" unique_id=959276492 instance=ExtResource("1_6rqec")]
-transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, -4, 9.926174, -12)
 
 [node name="wall26" parent="Office" unique_id=1208478883 instance=ExtResource("1_6rqec")]
 transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, -4, 7.9261737, 4)
@@ -1151,22 +1109,18 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.926, -8)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.926, -12)
 
 [node name="SpotLight3D" type="SpotLight3D" parent="Office" unique_id=1813578998]
-transform = Transform3D(0.8660254, -2.1855694e-08, 0.5, -0.5, -3.7855173e-08, 0.8660254, 0, -1, -4.371139e-08, 2.9811246, 4.049382, -12.130998)
-light_energy = 2.0
+transform = Transform3D(0.8660254, -2.1855694e-08, 0.5, -0.5, -3.7855173e-08, 0.8660254, 0, -1, -4.371139e-08, 3.6277628, 3.95851, -12.130998)
 light_volumetric_fog_energy = 4.0
-shadow_enabled = true
-spot_range = 9.94
-spot_attenuation = -0.01
+shadow_opacity = 0.0
+spot_range = 5.471
 spot_angle = 44.61
 spot_angle_attenuation = 1.6245054
 
 [node name="SpotLight3D2" type="SpotLight3D" parent="Office" unique_id=1503575042]
-transform = Transform3D(0.8660254, -2.1855694e-08, 0.5, -0.5, -3.7855173e-08, 0.8660254, 0, -1, -4.371139e-08, 2.9811246, 4.049382, -16.076885)
-light_energy = 2.0
+transform = Transform3D(0.8660254, -2.1855694e-08, 0.5, -0.5, -3.7855173e-08, 0.8660254, 0, -1, -4.371139e-08, 3.6277628, 3.95851, -16.076885)
 light_volumetric_fog_energy = 4.0
-shadow_enabled = true
-spot_range = 9.94
-spot_attenuation = -0.01
+shadow_opacity = 0.0
+spot_range = 5.471
 spot_angle = 44.61
 spot_angle_attenuation = 1.6245054
 
