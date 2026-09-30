@@ -33,6 +33,7 @@
 [ext_resource type="PackedScene" uid="uid://jv5s4goe5w0h" path="res://assets/glbs/Plastic_Barrel.glb" id="30_lld3s"]
 [ext_resource type="PackedScene" uid="uid://cwcqwq50cbb0s" path="res://assets/glbs/pallet_blackwrap.glb" id="31_dhrhg"]
 [ext_resource type="PackedScene" uid="uid://divu04mo3x1vn" path="res://assets/glbs/fork.glb" id="31_rhy15"]
+[ext_resource type="PackedScene" uid="uid://b0vo181ogbtpj" path="res://instances/refrigeration_unit.tscn" id="32_nlav1"]
 [ext_resource type="PackedScene" uid="uid://bk7uhy3mf20jf" path="res://assets/glbs/load_wheel_R.glb" id="33_nlav1"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_cxvwm"]
@@ -43,7 +44,6 @@ absorbent = true
 
 [node name="New_Main_Level" type="Node3D" unique_id=38530]
 script = ExtResource("1_1dy31")
-is_tutorial = null
 
 [node name="env" type="WorldEnvironment" parent="." unique_id=1297072512]
 environment = ExtResource("2_4tw74")
@@ -2895,6 +2895,12 @@ transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 11.9
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 3.9577124, 0.3, -0.9509895)
 
 [node name="pallet_blackwrap" parent="noise_pallet/pallet2" unique_id=1251176660 instance=ExtResource("31_dhrhg")]
+
+[node name="refrigeration_unit" parent="noise_pallet/pallet2" unique_id=1671265384 instance=ExtResource("32_nlav1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.650986, 1.5, -4.0422935)
+
+[node name="refrigeration_unit2" parent="noise_pallet/pallet2" unique_id=295736159 instance=ExtResource("32_nlav1")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 25.150986, 1.5, -4.0422935)
 
 [node name="pallet20" parent="noise_pallet" unique_id=1167569449 instance=ExtResource("28_lld3s")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 11.957712, 0.3, 9.04901)
