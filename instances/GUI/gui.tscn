@@ -10,3 +10,4 @@ script = ExtResource("1_yumji")
 [node name="HUD" parent="." unique_id=99248591 instance=ExtResource("2_yumji")]
 
 [node name="in_game_menu" parent="." unique_id=945941104 instance=ExtResource("3_fvtg6")]
+visible = false

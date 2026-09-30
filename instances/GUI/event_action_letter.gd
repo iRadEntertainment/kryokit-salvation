@@ -23,7 +23,7 @@ func _ready() -> void:
 func _update_label() -> void:
 	if not action:
 		return
-	label.text = get_label_from_event_action(action).left(3).to_upper()
+	label.text = get_label_from_event_action(action).left(3).capitalize()
 
 
 func _input(event: InputEvent) -> void:
