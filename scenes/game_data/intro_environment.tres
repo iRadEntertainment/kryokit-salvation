@@ -36,7 +36,6 @@ sky = SubResource("Sky_slekq")
 ambient_light_source = 2
 ambient_light_color = Color(0.18276983, 0.3303661, 0.5158279, 1)
 ambient_light_energy = 0.3
-tonemap_mode = 2
 tonemap_exposure = 0.69
 tonemap_agx_white = 14.23
 tonemap_agx_contrast = 1.09

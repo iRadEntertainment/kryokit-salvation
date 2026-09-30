@@ -76,9 +76,10 @@ environment = ExtResource("1_0bakh")
 [node name="SpotLight3D3" type="SpotLight3D" parent="intro_env" unique_id=1355807710]
 transform = Transform3D(-3.5806277e-08, 1, 6.878321e-08, 0.57357645, -3.5806266e-08, 0.81915206, 0.81915206, 6.878321e-08, -0.57357645, 6.3948917, 13.115248, -24.629042)
 light_color = Color(0.8289612, 0.9811351, 0.99999994, 1)
-light_energy = 20.0
+light_energy = 16.0
 light_specular = 1.0
 shadow_enabled = true
+shadow_bias = 1.5
 spot_range = 16.862
 spot_angle = 70.57
 spot_angle_attenuation = 0.32987723
@@ -86,9 +87,10 @@ spot_angle_attenuation = 0.32987723
 [node name="SpotLight3D5" type="SpotLight3D" parent="intro_env" unique_id=1186853817]
 transform = Transform3D(0.77490866, -0.32419935, -0.54259694, 0.57357645, -6.628325e-08, 0.8191521, -0.26556858, -0.9459888, 0.18595307, 4.422024, 7.935549, -4.0418434)
 light_color = Color(1, 0.7230816, 0.5322893, 1)
-light_energy = 2.5
+light_energy = 1.004
 light_specular = 1.0
 shadow_enabled = true
+shadow_bias = 1.5
 spot_range = 10.798967
 spot_angle = 70.57
 spot_angle_attenuation = 0.32987723
@@ -96,9 +98,10 @@ spot_angle_attenuation = 0.32987723
 [node name="SpotLight3D4" type="SpotLight3D" parent="intro_env" unique_id=682853565]
 transform = Transform3D(-0.697453, -0.5244636, 0.4883618, 0.57357645, -5.2900177e-08, 0.81915206, -0.4296154, 0.85143286, 0.30082002, 2.4635258, 9.838639, 2.358613)
 light_color = Color(0.8289612, 0.9811351, 0.99999994, 1)
-light_energy = 5.0
+light_energy = 0.738
 light_specular = 1.0
 shadow_enabled = true
+shadow_bias = 1.5
 spot_range = 13.059793
 spot_angle = 70.57
 spot_angle_attenuation = 0.32987723
@@ -155,11 +158,13 @@ spot_angle_attenuation = 2.8284273
 
 [node name="SpotLight3D4" type="SpotLight3D" parent="." unique_id=282225130]
 transform = Transform3D(0.43678346, 0.87039477, -0.2272286, -0.66006166, 0.48171753, 0.5764257, 0.6111779, -0.1017884, 0.7849207, 1.3313236, 4.1520762, 4.7566614)
+visible = false
 light_color = Color(0.8289612, 0.9811351, 0.99999994, 1)
-light_energy = 0.503
+light_energy = 0.129
 light_volumetric_fog_energy = 3.0
 light_specular = 3.5
 shadow_enabled = true
+shadow_bias = 1.0
 spot_range = 9.636798
 spot_attenuation = 0.32
 spot_angle = 41.922497
