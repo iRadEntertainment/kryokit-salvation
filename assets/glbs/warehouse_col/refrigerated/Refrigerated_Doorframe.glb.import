@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://bf4giyqftylr8"
-path="res://.godot/imported/refrigerated_doorframe.glb-9332b611e537f62b55f429f07166e73a.scn"
+path="res://.godot/imported/Refrigerated_Doorframe.glb-428e9a863846385b256a722996020567.scn"
 
 [deps]
 
-source_file="res://assets/glbs/warehouse_col/refrigerated/refrigerated_doorframe.glb"
-dest_files=["res://.godot/imported/refrigerated_doorframe.glb-9332b611e537f62b55f429f07166e73a.scn"]
+source_file="res://assets/glbs/warehouse_col/refrigerated/Refrigerated_Doorframe.glb"
+dest_files=["res://.godot/imported/Refrigerated_Doorframe.glb-428e9a863846385b256a722996020567.scn"]
 
 [params]
 

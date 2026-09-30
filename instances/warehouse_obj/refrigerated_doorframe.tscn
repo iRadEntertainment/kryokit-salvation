@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://btg4s1xxnwbmt"]
+
+[ext_resource type="PackedScene" uid="uid://dlyayug82m5ux" path="res://assets/glbs/warehouse/refrigerated/refrigerated_doorframe.glb" id="1_g1usc"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_kombt"]
+size = Vector3(0.3, 4, 0.5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ew7n5"]
+size = Vector3(0.3, 0.5, 4)
+
+[node name="refrigerated_doorframe" type="StaticBody3D" unique_id=2107255950]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1486124439]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 2, 1.75)
+shape = SubResource("BoxShape3D_kombt")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="." unique_id=1986258326]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 2, -1.75)
+shape = SubResource("BoxShape3D_kombt")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="." unique_id=2114967488]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 3.75, 0)
+shape = SubResource("BoxShape3D_ew7n5")
+
+[node name="refrigerated_doorframe" parent="." unique_id=1661341264 instance=ExtResource("1_g1usc")]

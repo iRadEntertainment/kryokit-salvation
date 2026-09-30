@@ -1,12 +1,12 @@
 [gd_scene format=3 uid="uid://c1sb5rpp2v40s"]
 
-[ext_resource type="Script" uid="uid://cm14qd6iri7xo" path="res://instances/shelf.gd" id="1_1t0n2"]
+[ext_resource type="Script" uid="uid://cm14qd6iri7xo" path="res://instances/rack.gd" id="1_gsc8w"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ytwti"]
 friction = 0.37
 
 [node name="shelf" type="Node3D" unique_id=1220127838]
-script = ExtResource("1_1t0n2")
+script = ExtResource("1_gsc8w")
 bays_data = Array[Array]([[1.0, 2.0, 3.6, 5.2], [1.6, 3.2, 4.8], [1.6, 3.2, 4.8], [1.6, 3.2, 4.8]])
 
 [node name="static_body" type="StaticBody3D" parent="." unique_id=842112793]

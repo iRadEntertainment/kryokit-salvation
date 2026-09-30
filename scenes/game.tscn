@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://7clljett1r8u" path="res://instances/cement_bag.tscn" id="4_u5sy4"]
 [ext_resource type="PackedScene" uid="uid://dnqg04fl6j6" path="res://instances/load_blackwrap.tscn" id="6_0tnpc"]
 [ext_resource type="PackedScene" uid="uid://biro1v6rgmrre" path="res://instances/GUI/gui.tscn" id="6_p57ef"]
-[ext_resource type="PackedScene" uid="uid://c1sb5rpp2v40s" path="res://instances/shelf.tscn" id="7_u5sy4"]
+[ext_resource type="PackedScene" uid="uid://c1sb5rpp2v40s" path="res://instances/rack.tscn" id="7_u5sy4"]
 [ext_resource type="PackedScene" uid="uid://bn3gntsl510ao" path="res://scenes/warehouse_refrigirated_test.tscn" id="7_vtaks"]
 [ext_resource type="PackedScene" uid="uid://bn4m8aiq6k0hj" path="res://scenes/warehouse_test.tscn" id="8_gee14"]
 

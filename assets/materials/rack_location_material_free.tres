@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://c7qynw0inx2f4"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_c1x64"]
+
+[resource]
+transparency = 1
+albedo_texture = SubResource("NoiseTexture2D_c1x64")
+uv1_triplanar = true

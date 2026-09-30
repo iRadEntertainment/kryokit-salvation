@@ -1,105 +1,31 @@
 [gd_scene format=3 uid="uid://c463nucvc2cgi"]
 
-[ext_resource type="PackedScene" uid="uid://dlyayug82m5ux" path="res://assets/glbs/warehouse/refrigerated/refrigerated_doorframe.glb" id="1_p0suc"]
-[ext_resource type="PackedScene" uid="uid://dvyrqc3phevvx" path="res://assets/glbs/warehouse/refrigerated/refrigerated_wall.glb" id="5_lrm27"]
-[ext_resource type="PackedScene" uid="uid://flht3yypd4kx" path="res://assets/glbs/warehouse/regular/delivery_doorframe_shut.glb" id="8_5mer1"]
-[ext_resource type="PackedScene" uid="uid://8proytrq7iyg" path="res://assets/glbs/warehouse/regular/delivery_truck.glb" id="9_wghfu"]
-[ext_resource type="PackedScene" uid="uid://b0nmnc3nqyunu" path="res://assets/glbs/warehouse/regular/wall.glb" id="16_4wedj"]
-[ext_resource type="PackedScene" uid="uid://cifsdrd1e3a78" path="res://assets/glbs/warehouse/regular/wall_corner.glb" id="17_qllfc"]
-[ext_resource type="PackedScene" uid="uid://c6q12wokabwvg" path="res://assets/glbs/warehouse/regular/wall_window.glb" id="18_4vw8o"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_kombt"]
-size = Vector3(0.3, 4, 0.5)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_ew7n5"]
-size = Vector3(0.3, 0.5, 4)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_8mt0l"]
-size = Vector3(0.3, 4, 4)
+[ext_resource type="PackedScene" uid="uid://btg4s1xxnwbmt" path="res://instances/warehouse_obj/refrigerated_doorframe.tscn" id="1_kombt"]
+[ext_resource type="PackedScene" uid="uid://de8vdhdau7c7o" path="res://instances/warehouse_obj/delivery_doorframe.tscn" id="2_ew7n5"]
+[ext_resource type="PackedScene" uid="uid://6xneyfter7sq" path="res://instances/warehouse_obj/wall.tscn" id="3_lw7ow"]
+[ext_resource type="PackedScene" uid="uid://dc2jrkj4ts5g7" path="res://instances/warehouse_obj/wall_corner.tscn" id="4_xreoy"]
+[ext_resource type="PackedScene" uid="uid://df6c7nq8ufm1" path="res://instances/warehouse_obj/wall_window.tscn" id="5_i88vb"]
+[ext_resource type="PackedScene" uid="uid://bgnh72s4vcjhl" path="res://instances/warehouse_obj/refrigerated_wall.tscn" id="6_5h4eo"]
+[ext_resource type="PackedScene" uid="uid://cwk75mpklpojo" path="res://instances/warehouse_obj/delivery_truck.tscn" id="7_ac7vl"]
 
 [node name="walls_collection" type="Node3D" unique_id=184957863]
 
-[node name="refrigerated_doorframe" parent="." unique_id=1661341264 instance=ExtResource("1_p0suc")]
-
-[node name="StaticBody3D" type="StaticBody3D" parent="refrigerated_doorframe/Refrigerated_Doorframe" parent_id_path=PackedInt32Array(1661341264, 1139955448) index="0" unique_id=1839131156]
-transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, -2.0411708, 0, 3.6840003)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="refrigerated_doorframe/Refrigerated_Doorframe/StaticBody3D" unique_id=212636859]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 2, 1.75)
-shape = SubResource("BoxShape3D_kombt")
-
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="refrigerated_doorframe/Refrigerated_Doorframe/StaticBody3D" unique_id=91493029]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 2, -1.75)
-shape = SubResource("BoxShape3D_kombt")
-
-[node name="CollisionShape3D3" type="CollisionShape3D" parent="refrigerated_doorframe/Refrigerated_Doorframe/StaticBody3D" unique_id=1283943954]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 3.75, 0)
-shape = SubResource("BoxShape3D_ew7n5")
-
-[node name="refrigerated_wall" parent="." unique_id=707431029 instance=ExtResource("5_lrm27")]
+[node name="refrigerated_doorframe" parent="." unique_id=2107255950 instance=ExtResource("1_kombt")]
 visible = false
 
-[node name="StaticBody3D" type="StaticBody3D" parent="refrigerated_wall/Refrigerated_Wall" parent_id_path=PackedInt32Array(707431029, 1611011108) index="0" unique_id=1753403090]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="refrigerated_wall/Refrigerated_Wall/StaticBody3D" unique_id=609130831]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 2, 0)
-shape = SubResource("BoxShape3D_8mt0l")
-
-[node name="Delivery_Doorframe" parent="." unique_id=75533941 instance=ExtResource("8_5mer1")]
+[node name="Delivery_Doorframe" parent="." unique_id=1417020267 instance=ExtResource("2_ew7n5")]
 visible = false
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Delivery_Doorframe/Doorframe_Delivery" parent_id_path=PackedInt32Array(75533941, 1064536209) index="0" unique_id=1793262434]
-transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, -2.0411708, 0, 3.6840003)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Delivery_Doorframe/Doorframe_Delivery/StaticBody3D" unique_id=1365334425]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 2, 0)
-shape = SubResource("BoxShape3D_8mt0l")
-
-[node name="Delivery_Truck" parent="." unique_id=1210108847 instance=ExtResource("9_wghfu")]
+[node name="wall" parent="." unique_id=535274196 instance=ExtResource("3_lw7ow")]
 visible = false
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Delivery_Truck/Doorframe_Delivery" parent_id_path=PackedInt32Array(1210108847, 1823257952) index="0" unique_id=1642274923]
-transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, -2.0411708, 0, 3.6840003)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Delivery_Truck/Doorframe_Delivery/StaticBody3D" unique_id=1736415779]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 2, 0)
-shape = SubResource("BoxShape3D_8mt0l")
-
-[node name="wall" parent="." unique_id=425246855 instance=ExtResource("16_4wedj")]
+[node name="wall_corner" parent="." unique_id=1938493291 instance=ExtResource("4_xreoy")]
 visible = false
 
-[node name="StaticBody3D" type="StaticBody3D" parent="wall/Wall" parent_id_path=PackedInt32Array(425246855, 2115277093) index="0" unique_id=777798796]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="wall/Wall/StaticBody3D" unique_id=1627505902]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 2, 0)
-shape = SubResource("BoxShape3D_8mt0l")
-
-[node name="wall_corner" parent="." unique_id=1468231765 instance=ExtResource("17_qllfc")]
+[node name="wall_window" parent="." unique_id=2135274753 instance=ExtResource("5_i88vb")]
 visible = false
 
-[node name="StaticBody3D" type="StaticBody3D" parent="wall_corner/Wall_Corner" parent_id_path=PackedInt32Array(1468231765, 1501638137) index="0" unique_id=1095647787]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="wall_corner/Wall_Corner/StaticBody3D" unique_id=45133088]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 2, 0)
-shape = SubResource("BoxShape3D_8mt0l")
-
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="wall_corner/Wall_Corner/StaticBody3D" unique_id=272171079]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 2, -2)
-shape = SubResource("BoxShape3D_8mt0l")
-
-[node name="wall_window" parent="." unique_id=1848832891 instance=ExtResource("18_4vw8o")]
+[node name="refrigerated_wall" parent="." unique_id=343883702 instance=ExtResource("6_5h4eo")]
 visible = false
 
-[node name="StaticBody3D" type="StaticBody3D" parent="wall_window/Wall_Window" parent_id_path=PackedInt32Array(1848832891, 306824153) index="0" unique_id=2024967466]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="wall_window/Wall_Window/StaticBody3D" unique_id=483306344]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 2, 0)
-shape = SubResource("BoxShape3D_8mt0l")
-
-[editable path="refrigerated_doorframe"]
-[editable path="refrigerated_wall"]
-[editable path="Delivery_Doorframe"]
-[editable path="Delivery_Truck"]
-[editable path="wall"]
-[editable path="wall_corner"]
-[editable path="wall_window"]
+[node name="delivery_truck" parent="." unique_id=117611447 instance=ExtResource("7_ac7vl")]

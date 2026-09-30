@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://de8vdhdau7c7o"]
+
+[ext_resource type="PackedScene" uid="uid://cd5blac0qgg6g" path="res://assets/glbs/warehouse/regular/delivery_doorframe_shut.glb" id="1_hkifl"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8mt0l"]
+size = Vector3(0.3, 4, 4)
+
+[node name="Delivery_Doorframe" type="StaticBody3D" unique_id=1417020267]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=302229722]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 2, 0)
+shape = SubResource("BoxShape3D_8mt0l")
+
+[node name="Delivery_Doorframe" parent="." unique_id=927730707 instance=ExtResource("1_hkifl")]
