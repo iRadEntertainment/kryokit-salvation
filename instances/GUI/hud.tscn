@@ -126,7 +126,6 @@ offset_transform_enabled = true
 texture = ExtResource("4_q8bvl")
 expand_mode = 1
 stretch_mode = 5
-metadata/_edit_group_ = true
 
 [node name="fork_l" type="TextureRect" parent="controls/truck" unique_id=379813822]
 unique_name_in_owner = true
@@ -216,13 +215,37 @@ offset_right = 4.0
 offset_bottom = -1.0
 action = &"shrink_fork"
 
-[node name="reset" parent="controls/truck" unique_id=1537205773 instance=ExtResource("4_hbaeo")]
+[node name="shift_l" parent="controls" unique_id=1447219595 instance=ExtResource("4_hbaeo")]
 layout_mode = 0
-offset_left = 61.0
-offset_top = 39.0
-offset_right = 93.0
-offset_bottom = 71.0
-action = &"reset_truck"
+offset_left = 245.0
+offset_top = 50.0
+offset_right = 277.0
+offset_bottom = 82.0
+action = &"lift_fork"
+
+[node name="shift_r" parent="controls" unique_id=1028108190 instance=ExtResource("4_hbaeo")]
+layout_mode = 0
+offset_left = 245.0
+offset_top = 103.0
+offset_right = 277.0
+offset_bottom = 135.0
+action = &"lower_fork"
+
+[node name="shift_l2" parent="controls" unique_id=1287848871 instance=ExtResource("4_hbaeo")]
+layout_mode = 0
+offset_left = 418.0
+offset_top = 50.0
+offset_right = 450.0
+offset_bottom = 82.0
+action = &"tilt_forward"
+
+[node name="shift_r2" parent="controls" unique_id=164856597 instance=ExtResource("4_hbaeo")]
+layout_mode = 0
+offset_left = 418.0
+offset_top = 103.0
+offset_right = 450.0
+offset_bottom = 135.0
+action = &"tilt_backward"
 
 [node name="PanelContainer" type="Panel" parent="." unique_id=2035641918]
 layout_mode = 1
@@ -231,7 +254,7 @@ anchor_top = 1.0
 anchor_bottom = 1.0
 offset_left = 4.0
 offset_top = -72.0
-offset_right = 306.0
+offset_right = 403.0
 offset_bottom = -2.0
 grow_vertical = 0
 theme_type_variation = &"PanelTransparent"
@@ -248,10 +271,31 @@ offset_bottom = -21.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/HBoxContainer" unique_id=1424845990]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="lb" type="Label" parent="PanelContainer/HBoxContainer/VBoxContainer" unique_id=1767116696]
+layout_mode = 2
+text = "Pause"
+
+[node name="lb2" type="Label" parent="PanelContainer/HBoxContainer/VBoxContainer" unique_id=852670837]
+layout_mode = 2
+text = "double tap"
+label_settings = SubResource("LabelSettings_8mt0l")
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/HBoxContainer" unique_id=956254287]
 layout_mode = 2
 
-[node name="lb2" type="Label" parent="PanelContainer/HBoxContainer/HBoxContainer" unique_id=1767116696]
+[node name="cam2" parent="PanelContainer/HBoxContainer/HBoxContainer" unique_id=1559560802 instance=ExtResource("4_hbaeo")]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+action = &"pause"
+
+[node name="lb3" type="Label" parent="PanelContainer/HBoxContainer/HBoxContainer" unique_id=422996856]
 layout_mode = 2
 text = "Cameras"
 
@@ -295,6 +339,21 @@ vertical_alignment = 1
 [node name="lb4" type="Label" parent="PanelContainer/HBoxContainer/HBoxContainer/grid_cam" unique_id=2051162867]
 layout_mode = 2
 text = "top"
+label_settings = SubResource("LabelSettings_8mt0l")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="PanelContainer/HBoxContainer" unique_id=1235356590]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="reset" parent="PanelContainer/HBoxContainer/VBoxContainer2" unique_id=742311154 instance=ExtResource("4_hbaeo")]
+layout_mode = 2
+action = &"reset_truck"
+
+[node name="lb2" type="Label" parent="PanelContainer/HBoxContainer/VBoxContainer2" unique_id=363347459]
+layout_mode = 2
+text = "reset"
 label_settings = SubResource("LabelSettings_8mt0l")
 horizontal_alignment = 1
 vertical_alignment = 1

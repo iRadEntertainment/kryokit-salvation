@@ -50,6 +50,7 @@ layout_mode = 2
 theme_override_constants/separation = 0
 
 [node name="lb1" type="Label" parent="vb/hb_labels" unique_id=1433270965]
+visible = false
 layout_mode = 2
 size_flags_horizontal = 3
 text = "I need a licence!"
@@ -67,6 +68,7 @@ autowrap_mode = 3
 layout_mode = 2
 
 [node name="btn_tutorial" type="Button" parent="vb/hb_bottom" unique_id=188817418]
+visible = false
 layout_mode = 2
 size_flags_horizontal = 3
 text = "LEARN HOW TO DRIVE
