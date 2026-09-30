@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://7clljett1r8u" path="res://instances/cement_bag.tscn" id="6_4e0g4"]
 [ext_resource type="PackedScene" uid="uid://dnqg04fl6j6" path="res://instances/load_blackwrap.tscn" id="7_y6ijl"]
 [ext_resource type="PackedScene" uid="uid://biro1v6rgmrre" path="res://instances/GUI/gui.tscn" id="8_bc4ie"]
-[ext_resource type="PackedScene" uid="uid://c1sb5rpp2v40s" path="res://instances/shelf.tscn" id="9_xg03u"]
+[ext_resource type="PackedScene" uid="uid://c1sb5rpp2v40s" path="res://instances/rack.tscn" id="9_xg03u"]
 [ext_resource type="PackedScene" uid="uid://ewakxf5i0nmu" path="res://scenes/new_main_level.tscn" id="10_uskmj"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_663hl"]

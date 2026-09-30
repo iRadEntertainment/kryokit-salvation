@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://bgnh72s4vcjhl"]
+
+[ext_resource type="PackedScene" uid="uid://dvyrqc3phevvx" path="res://assets/glbs/warehouse/refrigerated/refrigerated_wall.glb" id="1_ol8jw"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8mt0l"]
+size = Vector3(0.3, 4, 4)
+
+[node name="refrigerated_wall" type="StaticBody3D" unique_id=343883702]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1105324002]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 2, 0)
+shape = SubResource("BoxShape3D_8mt0l")
+
+[node name="refrigerated_wall" parent="." unique_id=707431029 instance=ExtResource("1_ol8jw")]

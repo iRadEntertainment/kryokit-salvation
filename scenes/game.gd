@@ -11,7 +11,7 @@ func _init() -> void:
 
 func _ready() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
-# Register Goods-In markers as valid pickups
+	# Register Goods-In markers as valid pickups
 	MissionManager.register_pickup_target(%in_marker_1)
 	MissionManager.register_pickup_target(%in_marker_2)
 	

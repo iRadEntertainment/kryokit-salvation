@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://df3ua08tjlrtt"
-path="res://.godot/imported/delivery_truck.glb-e886fed86297d5d9ee3750dd1a21aeea.scn"
+path="res://.godot/imported/Delivery_Truck.glb-6bf7cbc98623d392728020764c223cd5.scn"
 
 [deps]
 
-source_file="res://assets/glbs/warehouse_col/regular/delivery_truck.glb"
-dest_files=["res://.godot/imported/delivery_truck.glb-e886fed86297d5d9ee3750dd1a21aeea.scn"]
+source_file="res://assets/glbs/warehouse_col/regular/Delivery_Truck.glb"
+dest_files=["res://.godot/imported/Delivery_Truck.glb-6bf7cbc98623d392728020764c223cd5.scn"]
 
 [params]
 

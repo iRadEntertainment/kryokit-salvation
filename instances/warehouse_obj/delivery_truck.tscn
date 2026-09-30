@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cwk75mpklpojo"]
 
-[ext_resource type="PackedScene" uid="uid://df3ua08tjlrtt" path="res://assets/glbs/warehouse_col/regular/delivery_truck.glb" id="1_l1sa8"]
+[ext_resource type="PackedScene" uid="uid://df3ua08tjlrtt" path="res://assets/glbs/warehouse_col/regular/Delivery_Truck.glb" id="1_l1sa8"]
 [ext_resource type="Script" uid="uid://bjanjit7rbf2y" path="res://scripts/forklift_rotating_spot_light_.gd" id="2_8oija"]
 
 [node name="delivery_truck" unique_id=117611447 instance=ExtResource("1_l1sa8")]
@@ -17,6 +17,7 @@ spot_angle = 20.0
 
 [node name="SpotLight3D2" type="SpotLight3D" parent="." index="5" unique_id=11255153]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 1.3351867, 0.32721046, -0.9460329)
+visible = false
 light_color = Color(1, 0.5833334, 0, 1)
 light_energy = 5.0
 light_size = 0.1
@@ -49,6 +50,7 @@ spot_angle = 20.0
 
 [node name="SpotLight3D5" type="SpotLight3D" parent="." index="8" unique_id=532511166]
 transform = Transform3D(4.371139e-08, -3.821371e-15, -1, -8.742278e-08, -1, 0, -1, 8.742278e-08, -4.371139e-08, 1.3351867, 0.32721046, 0.939868)
+visible = false
 light_color = Color(1, 0.5833334, 0, 1)
 light_energy = 5.0
 light_size = 0.1

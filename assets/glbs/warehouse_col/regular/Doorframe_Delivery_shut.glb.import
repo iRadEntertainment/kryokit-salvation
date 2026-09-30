@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://oprq6s2kaqur"
-path="res://.godot/imported/doorframe_delivery_shut.glb-fb501cb271b77bda240ab917d419dfb2.scn"
+path="res://.godot/imported/Doorframe_Delivery_shut.glb-174cf90803d48d114a70ce4d1bf043e8.scn"
 
 [deps]
 
-source_file="res://assets/glbs/warehouse_col/regular/doorframe_delivery_shut.glb"
-dest_files=["res://.godot/imported/doorframe_delivery_shut.glb-fb501cb271b77bda240ab917d419dfb2.scn"]
+source_file="res://assets/glbs/warehouse_col/regular/Doorframe_Delivery_shut.glb"
+dest_files=["res://.godot/imported/Doorframe_Delivery_shut.glb-174cf90803d48d114a70ce4d1bf043e8.scn"]
 
 [params]
 
