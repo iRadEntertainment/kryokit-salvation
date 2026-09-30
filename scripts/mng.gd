@@ -23,7 +23,7 @@ func go_to_title() -> void:
 
 
 func go_to_new_game() -> void:
-	get_tree().change_scene_to_file("uid://4etuo4dq13m0")
+	get_tree().change_scene_to_file("uid://ewakxf5i0nmu")
 
 
 func go_to_tutorial() -> void:

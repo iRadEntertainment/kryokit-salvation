@@ -16,18 +16,15 @@ extends SpotLight3D
 var _blink_timer: float = 0.0
 var _is_on: bool = true
 
-
 func _ready() -> void:
-	# Give every instance a different starting point for the blink cycle.
+	
 	if blink_enabled and blink_random_delay > 0.0:
 		_blink_timer = randf_range(0.0, blink_random_delay)
 
-	# Give every instance a slightly different starting rotation.
 	if rotation_enabled and rotation_random_offset > 0.0:
 		var random_angle := deg_to_rad(
 			randf_range(-rotation_random_offset, rotation_random_offset)
 		)
-
 		match rotation_axis:
 			0:
 				rotate_x(random_angle)
@@ -35,7 +32,6 @@ func _ready() -> void:
 				rotate_y(random_angle)
 			2:
 				rotate_z(random_angle)
-
 
 func _process(delta: float) -> void:
 	_handle_blink(delta)

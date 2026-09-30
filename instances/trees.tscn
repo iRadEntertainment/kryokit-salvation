@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bssnydjohvcvp"]
 
-[ext_resource type="Shader" uid="uid://cr1hsobsm6ybl" path="res://scenes/tree_sway_shader.gdshader" id="1_lvwx8"]
+[ext_resource type="Shader" uid="uid://cr1hsobsm6ybl" path="res://instances/tree_sway_shader.gdshader" id="1_lvwx8"]
 [ext_resource type="Texture2D" uid="uid://db17x1vixofi5" path="res://assets/materials/pngtree-big-tree-on-transparent-background-ai-generative-png-image_14887826.png" id="2_v4a6f"]
 [ext_resource type="Texture2D" uid="uid://ovtp2qeogn48" path="res://assets/materials/green-bush-isolated-on-transparent-background-file-cut-out-ai-generated-png.png" id="3_5au81"]
 [ext_resource type="Texture2D" uid="uid://dlxbqna1qn5ue" path="res://assets/materials/pngtree-big-tree-on-transparent-background-png-image_15615350.png" id="3_cy38b"]

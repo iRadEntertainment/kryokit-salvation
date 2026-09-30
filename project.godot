@@ -29,12 +29,17 @@ buses/default_bus_layout="uid://cr1kg4urwvyq1"
 
 Mng="*uid://dil0b7w6s2qgd"
 Aud="*uid://6vyc3t2jgbu"
+MissionManager="*uid://cbkx85p12ee44"
 
 [display]
 
 window/size/mode=2
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
+
+[global_group]
+
+racks=""
 
 [gui]
 

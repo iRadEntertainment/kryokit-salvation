@@ -3,7 +3,7 @@
 [ext_resource type="Environment" uid="uid://bl1fub2kdtprp" path="res://scenes/game_data/intro_environment.tres" id="1_0bakh"]
 [ext_resource type="PackedScene" uid="uid://blseo38kk11bo" path="res://instances/forklift.tscn" id="1_7m2fh"]
 [ext_resource type="PackedScene" uid="uid://6a0e1oacp8re" path="res://scenes/office_intro.tscn" id="3_slekq"]
-[ext_resource type="PackedScene" uid="uid://bssnydjohvcvp" path="res://scenes/trees.tscn" id="4_i45y4"]
+[ext_resource type="PackedScene" uid="uid://bssnydjohvcvp" path="res://instances/trees.tscn" id="4_i45y4"]
 
 [sub_resource type="Animation" id="Animation_i45y4"]
 length = 0.001
