@@ -74,7 +74,7 @@ _data = {
 environment = ExtResource("1_0bakh")
 
 [node name="SpotLight3D3" type="SpotLight3D" parent="intro_env" unique_id=1355807710]
-transform = Transform3D(1, 0, 0, 0, 0.8169526, -0.57670486, 0, 0.57670486, 0.8169526, 6.418014, 0.9597664, -16.121016)
+transform = Transform3D(0.99096596, 0.060099084, 0.119894296, 0.01986842, 0.81832165, -0.57441694, -0.13263401, 0.5716097, 0.8097348, 6.007874, 0.04243946, -19.71337)
 light_color = Color(0.88, 0.5683334, 0.13199998, 1)
 light_energy = 16.0
 light_specular = 1.0
@@ -82,22 +82,11 @@ shadow_enabled = true
 shadow_bias = 1.5
 spot_range = 26.276
 spot_attenuation = -1.83
-spot_angle = 83.37
-spot_angle_attenuation = 0.32987723
-
-[node name="SpotLight3D5" type="SpotLight3D" parent="intro_env" unique_id=1186853817]
-transform = Transform3D(0.77490866, -0.32419935, -0.54259694, 0.57357645, -6.628325e-08, 0.8191521, -0.26556858, -0.9459888, 0.18595307, 4.422024, 7.935549, 16.618563)
-light_color = Color(1, 0.7230816, 0.5322893, 1)
-light_energy = 1.004
-light_specular = 1.0
-shadow_enabled = true
-shadow_bias = 1.5
-spot_range = 10.798967
-spot_angle = 70.57
-spot_angle_attenuation = 0.32987723
+spot_angle = 81.32
+spot_angle_attenuation = 1.1095715
 
 [node name="SpotLight3D4" type="SpotLight3D" parent="intro_env" unique_id=682853565]
-transform = Transform3D(-0.697453, -0.5244636, 0.4883618, 0.57357645, -6.999409e-08, 0.81915206, -0.4296154, 0.85143286, 0.30082002, 2.4635258, 9.838639, 23.01902)
+transform = Transform3D(-0.697453, -0.5244636, 0.4883618, 0.57357645, -8.7088e-08, 0.81915206, -0.4296154, 0.85143286, 0.30082002, 17.807297, 2.3464775, -4.904192)
 light_color = Color(0.8289612, 0.9811351, 0.99999994, 1)
 light_energy = 0.738
 light_specular = 1.0
@@ -136,19 +125,19 @@ transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.24
 transform = Transform3D(-0.7375412, 0, -0.675302, 0, 1, 0, 0.675302, 0, -0.7375412, -25.567623, -0.3, -29.873892)
 
 [node name="Trees3" parent="." unique_id=1524567935 instance=ExtResource("4_i45y4")]
-transform = Transform3D(0.21605815, 0, -0.97638035, 0, 1, 0, 0.97638035, 0, 0.21605815, -54.69239, 2.3393927, -21.779472)
+transform = Transform3D(0.21605815, 0, -0.97638035, 0, 1, 0, 0.97638035, 0, 0.21605815, -38.578392, -0.96979904, -9.46653)
 
 [node name="Trees2" parent="." unique_id=1725927218 instance=ExtResource("4_i45y4")]
-transform = Transform3D(0.04400988, 0, 0.9990311, 0, 1, 0, -0.9990311, 0, 0.04400988, -40.774933, 0.89434963, 2.8935356)
+transform = Transform3D(0.09080139, -0.015939439, -0.99574155, 0.11754038, 0.99305475, -0.0051779547, 0.9889083, -0.116569646, 0.092044264, -43.10237, -3.7971754, -12.753455)
 
 [node name="Trees5" parent="." unique_id=136040276 instance=ExtResource("4_i45y4")]
-transform = Transform3D(0.74110377, 0, 0.6713904, 0, 1, 0, -0.6713904, 0, 0.74110377, -38.54624, 3.787879, -29.397709)
+transform = Transform3D(0.74110377, 0, 0.6713904, 0, 1, 0, -0.6713904, 0, 0.74110377, -38.54624, 3.1200905, -29.397709)
 
 [node name="Trees6" parent="." unique_id=860161329 instance=ExtResource("4_i45y4")]
-transform = Transform3D(0.1799543, 0, 0.983675, 0, 1, 0, -0.983675, 0, 0.1799543, -20.528421, -1.1029763, -1.7608767)
+transform = Transform3D(0.13327259, -0.05089778, 0.9897716, 0.028995015, 0.99845314, 0.047440056, -0.99065524, 0.022376005, 0.13454223, -30.860498, -1.1029763, -11.0491705)
 
 [node name="SpotLight3D3" type="SpotLight3D" parent="." unique_id=964428587]
-transform = Transform3D(0.21201211, 0.9659259, -0.14845248, 0.72533303, -0.053727444, 0.6862983, 0.65493727, -0.25318104, -0.71200883, -19.546236, 23.021425, -44.22149)
+transform = Transform3D(0.5368785, 0.66815066, -0.51510805, 0.72533303, -0.05372746, 0.6862983, 0.43087518, -0.7420837, -0.51347685, -19.546236, 23.021425, -44.22149)
 light_color = Color(0.8289612, 0.9811351, 0.99999994, 1)
 light_energy = 16.0
 light_indirect_energy = 2.0
@@ -160,13 +149,13 @@ spot_angle_attenuation = 2.8284273
 
 [node name="SpotLight3D4" type="SpotLight3D" parent="." unique_id=282225130]
 transform = Transform3D(0.43678346, 0.87039477, -0.2272286, -0.66006166, 0.48171753, 0.5764257, 0.6111779, -0.1017884, 0.7849207, 1.3313236, 4.1520762, 4.7566614)
-light_color = Color(0.99, 0.87450004, 0.29700002, 1)
-light_energy = 0.02
+light_color = Color(0.9004264, 0.77278054, 1, 1)
+light_energy = 0.054
 light_volumetric_fog_energy = 3.0
 light_specular = 12.8
 shadow_enabled = true
 shadow_bias = 1.0
-spot_range = 9.636798
+spot_range = 10.767
 spot_attenuation = 0.32
 spot_angle = 41.922497
 spot_angle_attenuation = 0.32987723

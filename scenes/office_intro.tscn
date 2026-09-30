@@ -1109,19 +1109,21 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.926, -8)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.926, -12)
 
 [node name="SpotLight3D" type="SpotLight3D" parent="Office" unique_id=1813578998]
-transform = Transform3D(0.8660254, -2.1855694e-08, 0.5, -0.5, -3.7855173e-08, 0.8660254, 0, -1, -4.371139e-08, 3.6277628, 3.95851, -12.130998)
+transform = Transform3D(0.8660254, -2.1855694e-08, 0.5, -0.5, -3.7855173e-08, 0.8660254, 0, -1, -4.371139e-08, 4.720788, 3.984591, -12.130998)
 light_volumetric_fog_energy = 4.0
+shadow_enabled = true
 shadow_opacity = 0.0
 spot_range = 5.471
-spot_angle = 44.61
+spot_angle = 46.94
 spot_angle_attenuation = 1.6245054
 
 [node name="SpotLight3D2" type="SpotLight3D" parent="Office" unique_id=1503575042]
-transform = Transform3D(0.8660254, -2.1855694e-08, 0.5, -0.5, -3.7855173e-08, 0.8660254, 0, -1, -4.371139e-08, 3.6277628, 3.95851, -16.076885)
+transform = Transform3D(0.8660254, -2.1855694e-08, 0.5, -0.5, -3.7855173e-08, 0.8660254, 0, -1, -4.371139e-08, 4.720788, 3.984591, -16.076885)
 light_volumetric_fog_energy = 4.0
+shadow_enabled = true
 shadow_opacity = 0.0
 spot_range = 5.471
-spot_angle = 44.61
+spot_angle = 46.94
 spot_angle_attenuation = 1.6245054
 
 [node name="SpotLight3D3" type="SpotLight3D" parent="Office" unique_id=220926815]
@@ -1479,19 +1481,19 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.33466434, 0, 1.0395226)
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 5.1139035, -0.06723815, -8.889698)
 
 [node name="pallet135" parent="Pallets" unique_id=209429866 instance=ExtResource("12_e1e42")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.311129, -0.06723815, -9.289698)
+transform = Transform3D(0.6101725, 0, -0.7922686, 0, 1, 0, 0.7922686, 0, 0.6101725, 7.9008527, -0.06723839, 1.2512077)
 
 [node name="Plastic_Barrel2" parent="Pallets/pallet135" unique_id=103147336 instance=ExtResource("15_gf17i")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3000002, 0, -0.23760891)
+transform = Transform3D(0.99998355, -0.004143065, 0.0039757225, 0.004166265, 0.99997425, -0.005848396, -0.003951404, 0.0058648544, 0.9999751, -0.29999638, -0.0010079518, -0.23665333)
 
 [node name="Plastic_Barrel3" parent="Pallets/pallet135" unique_id=323720156 instance=ExtResource("15_gf17i")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.062195778, 0, 0.2623911)
 
 [node name="Plastic_Barrel4" parent="Pallets/pallet135" unique_id=719074628 instance=ExtResource("15_gf17i")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.18386173, 0, -0.23760891)
+transform = Transform3D(0.99998355, -0.004143065, 0.0039757225, 0.004166265, 0.99997425, -0.005848396, -0.003951404, 0.0058648544, 0.9999751, 0.18385792, 0.0010079518, -0.23856449)
 
 [node name="pallet131" parent="Pallets" unique_id=31008242 instance=ExtResource("12_e1e42")]
-transform = Transform3D(0.5084377, 0, 0.86109877, 0, 1, 0, -0.86109877, 0, 0.5084377, 13.001025, -0.067237675, 4.2883987)
+transform = Transform3D(-0.00035385042, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, -0.00035385042, 13.326876, -0.06723744, 3.8687668)
 
 [node name="pallet132" parent="Pallets" unique_id=265066229 instance=ExtResource("12_e1e42")]
 transform = Transform3D(0.5084377, 0, 0.86109877, 0, 1, 0, -0.86109877, 0, 0.5084377, 12.139926, -0.067237616, 3.779961)
@@ -1539,4 +1541,4 @@ transform = Transform3D(0.5084377, 0, 0.86109877, 0, 1, 0, -0.86109877, 0, 0.508
 transform = Transform3D(0.5084377, 0, 0.86109877, 0, 1, 0, -0.86109877, 0, 0.5084377, 12.246506, -0.06592554, 3.5143821)
 
 [node name="pallet_blackwrap" parent="Pallets" unique_id=1190054037 instance=ExtResource("15_ubbpv")]
-transform = Transform3D(0.5084377, 0, 0.86109877, 0, 1, 0, -0.86109877, 0, 0.5084377, 13.030856, -0.07076225, 4.263401)
+transform = Transform3D(-0.00035385042, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, -0.00035385042, 13.33984, -0.07076201, 3.8320694)
