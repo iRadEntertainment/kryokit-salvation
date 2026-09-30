@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://mfyqgabbf30" path="res://assets/glbs/pallet.glb" id="12_e1e42"]
 [ext_resource type="PackedScene" uid="uid://dpnefjtqisswu" path="res://assets/glbs/warehouse/regular/roof_frame.glb" id="13_u6jkg"]
 [ext_resource type="PackedScene" uid="uid://ctcddkhba6i2a" path="res://assets/glbs/Metal_Barrel.glb" id="14_ubbpv"]
+[ext_resource type="PackedScene" uid="uid://b67b3boblsov1" path="res://assets/glbs/Plastic_Barrel.glb" id="15_gf17i"]
 [ext_resource type="PackedScene" uid="uid://cwcqwq50cbb0s" path="res://assets/glbs/pallet_blackwrap.glb" id="15_ubbpv"]
 
 [node name="Office_Intro" type="Node3D" unique_id=1113902176]
@@ -1499,8 +1500,41 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.1139035, -0.06723815, 0.110
 [node name="pallet129" parent="Pallets" unique_id=992732934 instance=ExtResource("12_e1e42")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 6.1139035, -0.06723815, -8.889698)
 
+[node name="Metal_Barrel2" parent="Pallets/pallet129" unique_id=912559812 instance=ExtResource("14_ubbpv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.21347332, 0, 0)
+
+[node name="Metal_Barrel3" parent="Pallets/pallet129" unique_id=2092024556 instance=ExtResource("14_ubbpv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.29518127, 0, 1.0395226)
+
+[node name="Metal_Barrel4" parent="Pallets/pallet129" unique_id=865624620 instance=ExtResource("14_ubbpv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.33466434, 0, 1.0395226)
+
+[node name="pallet134" parent="Pallets" unique_id=1873289409 instance=ExtResource("12_e1e42")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 6.1139035, -0.06723815, -8.889698)
+
+[node name="Metal_Barrel2" parent="Pallets/pallet134" unique_id=840646794 instance=ExtResource("14_ubbpv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.21347332, 0, 0)
+
+[node name="Metal_Barrel3" parent="Pallets/pallet134" unique_id=742086286 instance=ExtResource("14_ubbpv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.29518127, 0, 1.0395226)
+
+[node name="Metal_Barrel4" parent="Pallets/pallet134" unique_id=1149697299 instance=ExtResource("14_ubbpv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.33466434, 0, 1.0395226)
+
 [node name="pallet130" parent="Pallets" unique_id=1140648239 instance=ExtResource("12_e1e42")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 5.1139035, -0.06723815, -8.889698)
+
+[node name="pallet135" parent="Pallets" unique_id=209429866 instance=ExtResource("12_e1e42")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.311129, -0.06723815, -9.289698)
+
+[node name="Plastic_Barrel2" parent="Pallets/pallet135" unique_id=103147336 instance=ExtResource("15_gf17i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3000002, 0, -0.23760891)
+
+[node name="Plastic_Barrel3" parent="Pallets/pallet135" unique_id=323720156 instance=ExtResource("15_gf17i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.062195778, 0, 0.2623911)
+
+[node name="Plastic_Barrel4" parent="Pallets/pallet135" unique_id=719074628 instance=ExtResource("15_gf17i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.18386173, 0, -0.23760891)
 
 [node name="pallet131" parent="Pallets" unique_id=31008242 instance=ExtResource("12_e1e42")]
 transform = Transform3D(0.5084377, 0, 0.86109877, 0, 1, 0, -0.86109877, 0, 0.5084377, 13.001025, -0.067237675, 4.2883987)
@@ -1538,7 +1572,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.113452, 1.0922241, 0.109972
 [node name="pallet128" parent="Pallets" unique_id=463783369 instance=ExtResource("12_e1e42")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.1139035, 1.2513802, 0.11030245)
 
-[node name="Metal_Barrel2" parent="Pallets" unique_id=912559812 instance=ExtResource("14_ubbpv")]
+[node name="Metal_Barrel2" parent="Pallets" unique_id=706068165 instance=ExtResource("14_ubbpv")]
 transform = Transform3D(0.5084377, 0, 0.86109877, 0, 1, 0, -0.86109877, 0, 0.5084377, 11.180484, -0.06592554, 3.5637612)
 
 [node name="Metal_Barrel3" parent="Pallets" unique_id=831844999 instance=ExtResource("14_ubbpv")]

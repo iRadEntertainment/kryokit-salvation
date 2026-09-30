@@ -74,7 +74,7 @@ _data = {
 environment = ExtResource("1_0bakh")
 
 [node name="SpotLight3D3" type="SpotLight3D" parent="intro_env" unique_id=1355807710]
-transform = Transform3D(-3.5806277e-08, 1, 6.878321e-08, 0.57357645, -3.5806266e-08, 0.81915206, 0.81915206, 6.878321e-08, -0.57357645, 15.118408, 13.115248, -24.629042)
+transform = Transform3D(-3.5806277e-08, 1, 6.878321e-08, 0.57357645, -3.5806266e-08, 0.81915206, 0.81915206, 6.878321e-08, -0.57357645, 6.3948917, 13.115248, -24.629042)
 light_color = Color(0.8289612, 0.9811351, 0.99999994, 1)
 light_energy = 20.0
 light_specular = 1.0
@@ -84,22 +84,22 @@ spot_angle = 70.57
 spot_angle_attenuation = 0.32987723
 
 [node name="SpotLight3D5" type="SpotLight3D" parent="intro_env" unique_id=1186853817]
-transform = Transform3D(-3.5806277e-08, 1, 6.878321e-08, 0.57357645, -3.5806266e-08, 0.81915206, 0.81915206, 6.878321e-08, -0.57357645, 22.118406, 14.139442, -23.515028)
+transform = Transform3D(0.77490866, -0.32419935, -0.54259694, 0.57357645, -6.628325e-08, 0.8191521, -0.26556858, -0.9459888, 0.18595307, 4.422024, 7.935549, -4.0418434)
 light_color = Color(1, 0.7230816, 0.5322893, 1)
-light_energy = 20.0
+light_energy = 2.5
 light_specular = 1.0
 shadow_enabled = true
-spot_range = 16.862
+spot_range = 10.798967
 spot_angle = 70.57
 spot_angle_attenuation = 0.32987723
 
 [node name="SpotLight3D4" type="SpotLight3D" parent="intro_env" unique_id=682853565]
-transform = Transform3D(-3.5806277e-08, 1, 6.878321e-08, 0.57357645, -3.5806266e-08, 0.81915206, 0.81915206, 6.878321e-08, -0.57357645, 7.118408, 9.838639, -22.334738)
+transform = Transform3D(-0.697453, -0.5244636, 0.4883618, 0.57357645, -5.2900177e-08, 0.81915206, -0.4296154, 0.85143286, 0.30082002, 2.4635258, 9.838639, 2.358613)
 light_color = Color(0.8289612, 0.9811351, 0.99999994, 1)
-light_energy = 20.0
+light_energy = 5.0
 light_specular = 1.0
 shadow_enabled = true
-spot_range = 16.862
+spot_range = 13.059793
 spot_angle = 70.57
 spot_angle_attenuation = 0.32987723
 
