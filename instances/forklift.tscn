@@ -11,10 +11,8 @@
 [ext_resource type="Script" uid="uid://bjanjit7rbf2y" path="res://scripts/forklift_rotating_spot_light_.gd" id="5_xomti"]
 [ext_resource type="PackedScene" uid="uid://ci07wfnk1n4hu" path="res://assets/glbs/mast.glb" id="6_c51dl"]
 [ext_resource type="Script" uid="uid://bewj0dep4bhip" path="res://instances/cam.gd" id="6_v6tai"]
-[ext_resource type="AudioStream" uid="uid://w2y7bcw3x3gj" path="res://assets/audio/forklift_mast_extend.wav" id="8_rss6s"]
 [ext_resource type="AudioStream" uid="uid://bacxq8hkf04cm" path="res://assets/audio/forklift_mast_clunk.wav" id="8_tprdc"]
 [ext_resource type="AudioStream" uid="uid://bqfex00whvub6" path="res://assets/audio/forklift_mast_loop_1.wav" id="9_2p71s"]
-[ext_resource type="AudioStream" uid="uid://ddxxaq2236kgd" path="res://assets/audio/forklift_fork_loop.wav" id="9_30ch1"]
 [ext_resource type="PackedScene" uid="uid://dm35x7ohux76s" path="res://assets/glbs/mast_2.glb" id="9_bwns0"]
 [ext_resource type="PackedScene" uid="uid://crby8705xrn1x" path="res://assets/glbs/mast_3.glb" id="10_ygvo3"]
 [ext_resource type="AudioStream" uid="uid://5fuqpt3vnr2j" path="res://assets/audio/forklift_loop.wav" id="16_tprdc"]
@@ -99,26 +97,15 @@ max_db = -6.0
 max_distance = 20.0
 bus = &"Forklift"
 
-[node name="AudioMast_Extend" type="AudioStreamPlayer3D" parent="vehicle_body/audio" unique_id=890796869]
-unique_name_in_owner = true
-stream = ExtResource("8_rss6s")
-bus = &"Forklift"
-
-[node name="AudioMast_Loop" type="AudioStreamPlayer3D" parent="vehicle_body/audio" unique_id=1939129160]
+[node name="sfx_mast_loop" type="AudioStreamPlayer3D" parent="vehicle_body/audio" unique_id=1939129160]
 unique_name_in_owner = true
 stream = ExtResource("9_2p71s")
 max_db = -3.0
 bus = &"Forklift"
 
-[node name="AudioMast_Clunk" type="AudioStreamPlayer3D" parent="vehicle_body/audio" unique_id=717537861]
+[node name="sfx_mast_clunk" type="AudioStreamPlayer3D" parent="vehicle_body/audio" unique_id=717537861]
 unique_name_in_owner = true
 stream = ExtResource("8_tprdc")
-max_db = -3.0
-bus = &"Forklift"
-
-[node name="AudioFork_Loop" type="AudioStreamPlayer3D" parent="vehicle_body/audio" unique_id=1777231315]
-unique_name_in_owner = true
-stream = ExtResource("9_30ch1")
 max_db = -3.0
 bus = &"Forklift"
 
@@ -211,7 +198,7 @@ unique_name_in_owner = true
 
 [node name="Rotating_Spotlight3D" type="SpotLight3D" parent="vehicle_body" unique_id=1382821880]
 process_mode = 3
-transform = Transform3D(0.062326744, 0, -0.9994688, 0, 1, 0, 0.9994688, 0, 0.062326744, -0.27493212, 2.6320844, -0.6610342)
+transform = Transform3D(0.849373, 0, -0.531497, 0, 1, 0, 0.531497, 0, 0.849373, -0.27493212, 2.6320844, -0.6610342)
 light_color = Color(1, 0.51950234, 0.23511073, 1)
 light_energy = 2.0
 light_volumetric_fog_energy = 5.0

@@ -54,6 +54,8 @@ class_name Forklift extends Node3D
 
 #Audio
 @onready var sfx_engine_loop: AudioStreamPlayer3D = %sfx_engine_loop
+@onready var sfx_mast_loop: AudioStreamPlayer3D = %sfx_mast_loop
+@onready var sfx_mast_clunk: AudioStreamPlayer3D = %sfx_mast_clunk
 
 #Camera
 @onready var fork_focus: RemoteTransform3D = %fork_focus
@@ -373,6 +375,7 @@ func _process_fork(delta: float) -> void:
 
 func _process(delta: float) -> void:
 	_process_audio(delta)
+	_process_mast_audio()
 	_process_mast_extension()
 	_process_thrust_wheel_visuals(delta)
 	
@@ -403,7 +406,26 @@ func _process_audio(delta: float) -> void:
 			and moving_speed < 0.1 \
 			and sfx_engine_loop.playing:
 		sfx_engine_loop.stop()
-
+		
+		
+func _process_mast_audio() -> void:
+#Mast
+	var is_lifting: bool = abs(_lift_input) > 0.05
+	if is_lifting:
+		if not sfx_mast_loop.playing:
+			sfx_mast_loop.play()
+	else:
+		if sfx_mast_loop.playing:
+			sfx_mast_loop.stop()
+	
+#Forks
+	var is_moving_forks: bool = abs(_shift_input) > 0.05 or abs(_widen_input) > 0.05
+	if is_moving_forks:
+		if not sfx_mast_clunk.playing:
+			sfx_mast_clunk.play()
+	else:
+		if sfx_mast_clunk.playing:
+			sfx_mast_clunk.stop()
 
 #var _was_accelerating: bool = false
 #func _process_audio(_delta: float) -> void:
