@@ -38,7 +38,7 @@ rough = true
 absorbent = true
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_lexek"]
-size = Vector3(1.0061035, 1.1855369, 0.15603134)
+size = Vector3(1.0061035, 1.2600086, 0.15603134)
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_v6tai"]
 friction = 0.95
@@ -198,7 +198,7 @@ unique_name_in_owner = true
 
 [node name="Rotating_Spotlight3D" type="SpotLight3D" parent="vehicle_body" unique_id=1382821880]
 process_mode = 3
-transform = Transform3D(0.97954804, 0, 0.20663773, 0, 1, 0, -0.20663773, 0, 0.97954804, -0.27493212, 2.6320844, -0.6610342)
+transform = Transform3D(-0.58528376, 0, -0.8122418, 0, 1, 0, 0.8122418, 0, -0.58528376, -0.27493212, 2.6320844, -0.6610342)
 light_color = Color(1, 0.51950234, 0.23511073, 1)
 light_energy = 2.0
 light_volumetric_fog_energy = 5.0
@@ -279,7 +279,7 @@ continuous_cd = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.063405514)
 
 [node name="coll_carriage" type="CollisionShape3D" parent="carriage_body" unique_id=1206881159]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.679847, 0.2719745)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.64261115, 0.2719745)
 shape = SubResource("BoxShape3D_lexek")
 debug_color = Color(0.9974175, 0, 0.17626175, 0.41960785)
 
