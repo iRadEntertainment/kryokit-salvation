@@ -33,14 +33,14 @@ albedo_texture = SubResource("ViewportTexture_mdew2")
 size = Vector2(1.3, 0.46)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_q5rnw"]
-size = Vector3(0.7092285, 2.856186, 0.27191162)
+size = Vector3(0.7092285, 2.794857, 0.27191162)
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ryygl"]
 rough = true
 absorbent = true
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_lexek"]
-size = Vector3(1.0061035, 1.2294722, 0.15603134)
+size = Vector3(1.0061035, 1.1855369, 0.15603134)
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_v6tai"]
 friction = 0.95
@@ -211,7 +211,7 @@ unique_name_in_owner = true
 
 [node name="Rotating_Spotlight3D" type="SpotLight3D" parent="vehicle_body" unique_id=1382821880]
 process_mode = 3
-transform = Transform3D(0.42443442, 0, 0.90629864, 0, 1, 0, -0.90629864, 0, 0.42443442, -0.27493212, 2.6320844, -0.6610342)
+transform = Transform3D(0.062326744, 0, -0.9994688, 0, 1, 0, 0.9994688, 0, 0.062326744, -0.27493212, 2.6320844, -0.6610342)
 light_color = Color(1, 0.51950234, 0.23511073, 1)
 light_energy = 2.0
 light_volumetric_fog_energy = 5.0
@@ -252,7 +252,7 @@ mass = 120.0
 can_sleep = false
 
 [node name="mast_coll" type="CollisionShape3D" parent="mast_body" unique_id=770754949]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0010986328, 1.330925, -0.04525757)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0010986328, 1.3616543, -0.04525757)
 shape = SubResource("BoxShape3D_q5rnw")
 debug_color = Color(0, 0.65, 0.021666646, 1)
 
@@ -292,7 +292,7 @@ continuous_cd = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.063405514)
 
 [node name="coll_carriage" type="CollisionShape3D" parent="carriage_body" unique_id=1206881159]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.65787935, 0.27197444)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.679847, 0.2719745)
 shape = SubResource("BoxShape3D_lexek")
 debug_color = Color(0.9974175, 0, 0.17626175, 0.41960785)
 
@@ -315,12 +315,12 @@ continuous_cd = true
 
 [node name="fork_l_coll" type="CollisionShape3D" parent="fork_l_body" unique_id=171380691]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.04121323, 0.9916544)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.025, 0.992)
 shape = SubResource("BoxShape3D_r8te8")
 debug_color = Color(0.639403, 0.5325897, 0, 0.83137256)
 
 [node name="fork_mesh" parent="fork_l_body" unique_id=1599815123 instance=ExtResource("5_x3x2s")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.34604788, 0.028, 0.068359375)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.346, 0.01, 0.068)
 
 [node name="fork_r_body" type="RigidBody3D" parent="." unique_id=1816431836]
 unique_name_in_owner = true
@@ -335,12 +335,12 @@ continuous_cd = true
 
 [node name="fork_r_coll" type="CollisionShape3D" parent="fork_r_body" unique_id=651667797]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.04121323, 0.9881494)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.025, 0.992)
 shape = SubResource("BoxShape3D_xoi5w")
 debug_color = Color(0.639403, 0.5325897, 0, 0.83137256)
 
 [node name="fork_mesh" parent="fork_r_body" unique_id=304025479 instance=ExtResource("5_x3x2s")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.34694678, 0.028, 0.068359375)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.347, 0.01, 0.068)
 
 [node name="joint_mast" type="Generic6DOFJoint3D" parent="." unique_id=462628112]
 unique_name_in_owner = true

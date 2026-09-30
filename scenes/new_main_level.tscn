@@ -52,6 +52,7 @@ environment = SubResource("Environment_64wi0")
 
 [node name="floor" type="StaticBody3D" parent="." unique_id=1904816557]
 physics_material_override = SubResource("PhysicsMaterial_cxvwm")
+constant_linear_velocity = Vector3(0, 0.1, 0)
 metadata/_edit_group_ = true
 metadata/_edit_lock_ = true
 
