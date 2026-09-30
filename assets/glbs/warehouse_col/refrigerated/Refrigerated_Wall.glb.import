@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://bh3tfwdfatidp"
-path="res://.godot/imported/Refrigerated_Wall.glb-1d40a12daf0fd473e1515955945ede3e.scn"
+path="res://.godot/imported/refrigerated_wall.glb-b2b6c22ff92a15aed8282d0bd763b9f1.scn"
 
 [deps]
 
-source_file="res://assets/glbs/warehouse_col/refrigerated/Refrigerated_Wall.glb"
-dest_files=["res://.godot/imported/Refrigerated_Wall.glb-1d40a12daf0fd473e1515955945ede3e.scn"]
+source_file="res://assets/glbs/warehouse_col/refrigerated/refrigerated_wall.glb"
+dest_files=["res://.godot/imported/refrigerated_wall.glb-b2b6c22ff92a15aed8282d0bd763b9f1.scn"]
 
 [params]
 
